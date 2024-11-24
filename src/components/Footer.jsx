@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaLink, FaHeadset, FaGlobe, FaPhoneVolume  } from "react-icons/fa6";
+import { FaLink, FaHeadset, FaGlobe, FaPhoneVolume } from "react-icons/fa6";
 
 const Footer = () => {
     return (
@@ -88,57 +88,57 @@ const Footer = () => {
 
 
 
-                        
+
                         <div className="text-white">
-  <h2 className="mb-6 text-sm font-semibold uppercase text-white flex align-middle items-center">
-    <FaPhoneVolume className="mr-2" />
-    Contact Us
-  </h2>
-  <ul className="space-y-4">
-    <li>
-      <p className="text-sm text-nowrap">
-        <span className="font-bold">Chief Coordinator, Pravah'25</span>
-        <br />
-        Mr. Abhishek Gupta -{" "}
-        <a
-          href="tel:9462326804"
-          className="underline hover:text-gray-400 transition"
-        >
-          9462326804
-        </a>
-      </p>
-    </li>
-    <li>
-      <p className="text-sm text-nowrap">
-        <span className="font-bold">Event Queries</span>
-        <br />
-        Paridhi Jain -{" "}
-        <a
-          href="tel:9929425337"
-          className="underline hover:text-gray-400 transition"
-        >
-          9929425337
-        </a>
-      </p>
-    </li>
-    <li>
-      <p className="text-sm text-nowrap">
-        <span className="font-bold">Website Head</span>
-        <br />
-        Kavya Gupta -{" "}
-        <a
-          href="tel:7976227748"
-          className="underline hover:text-gray-400 transition"
-        >
-          9057277613
-        </a>
-      </p>
-    </li>
-  </ul>
-</div>
+                            <h2 className="mb-6 text-sm font-semibold uppercase text-white flex align-middle items-center">
+                                <FaPhoneVolume className="mr-2" />
+                                Contact Us
+                            </h2>
+                            <ul className="space-y-4">
+                                <li>
+                                    <p className="text-sm text-nowrap">
+                                        <span className="font-bold">Chief Coordinator, Pravah'25</span>
+                                        <br />
+                                        Mr. Abhishek Gupta -{" "}
+                                        <a
+                                            href="tel:9462326804"
+                                            className="underline hover:text-gray-400 transition"
+                                        >
+                                            9462326804
+                                        </a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className="text-sm text-nowrap">
+                                        <span className="font-bold">Event Queries</span>
+                                        <br />
+                                        Paridhi Jain -{" "}
+                                        <a
+                                            href="tel:9929425337"
+                                            className="underline hover:text-gray-400 transition"
+                                        >
+                                            9929425337
+                                        </a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className="text-sm text-nowrap">
+                                        <span className="font-bold">Website Head</span>
+                                        <br />
+                                        Kavya Gupta -{" "}
+                                        <a
+                                            href="tel:7976227748"
+                                            className="underline hover:text-gray-400 transition"
+                                        >
+                                            9057277613
+                                        </a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
 
 
-{/* 
+                        {/* 
                         <div>
                             <h2 className="mb-6 text-sm font-semibold uppercase text-white flex align-middle items-center">
                             <FaGlobe className='mr-1' />
@@ -175,28 +175,28 @@ const Footer = () => {
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
                 <div className="sm:flex sm:items-center sm:justify-between">
-  <span className="text-sm text-white sm:text-center">
-    © 2025{" "}
-    <a href="https://flowbite.com/" className="hover:underline">
-      SKIT, Jaipur
-    </a>
-    . All Rights Reserved.
-  </span>
-  <div className="flex sm:justify-center sm:mt-0 space-x-4">
+                    <span className="text-sm text-white sm:text-center">
+                        © 2025{" "}
+                        <a href="https://flowbite.com/" className="hover:underline">
+                            SKIT, Jaipur
+                        </a>
+                        . All Rights Reserved.
+                    </span>
+                    <div className="flex sm:justify-center sm:mt-0 space-x-4">
 
-    <span className="text-sm text-white">
-      Designed and Developed by{" "}
-      <a
-        href="https://pravah.skit.ac.in/"
-        className="text-yellow-600 hover:underline"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Pravah Web Team
-      </a>
-    </span>
-  </div>
-</div>
+                        <span className="text-sm text-white">
+                            Designed and Developed by{" "}
+                            <a
+                                href="https://pravah.skit.ac.in/"
+                                className="text-yellow-600 hover:underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Pravah Web Team
+                            </a>
+                        </span>
+                    </div>
+                </div>
 
             </div>
         </footer>

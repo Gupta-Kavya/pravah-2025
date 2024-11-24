@@ -33,9 +33,8 @@ const Navbarr = ({ bgColor, textColor, filter }) => {
   return (
     <>
       <nav
-        className={`fixed w-full z-20 top-0 left-0 transition-colors duration-1000 ease-in-out ${
-          isDesktop ? bgColor : 'bg-white'
-        }`}
+        className={`fixed w-full z-20 top-0 left-0 transition-colors duration-1000 ease-in-out ${isDesktop ? bgColor : 'bg-white'
+          }`}
       >
         {/* Announcement Bar */}
         <div className="bg-gradient-to-r from-[#130d00] via-[#01001d] to-[#3d0075] text-white text-sm md:text-base font-medium py-2 sm:hidden">
@@ -57,25 +56,22 @@ const Navbarr = ({ bgColor, textColor, filter }) => {
           <div className="hidden md:flex space-x-8 items-center flex-grow justify-start">
             <a
               href="#"
-              className={`text-md font-medium ${
-                isDesktop ? textColor : 'text-black'
-              } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
+                } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
             >
               HOME
             </a>
             <a
               href="#"
-              className={`text-md font-medium ${
-                isDesktop ? textColor : 'text-black'
-              } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
+                } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
             >
               EVENTS & REGISTRATIONS
             </a>
             <a
               href="#"
-              className={`text-md font-medium ${
-                isDesktop ? textColor : 'text-black'
-              } hover:text-red-700 transition pr-4`}
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
+                } hover:text-red-700 transition pr-4`}
             >
               AAVEG
             </a>
@@ -88,31 +84,34 @@ const Navbarr = ({ bgColor, textColor, filter }) => {
               className={`sm:w-32 w-32 ${filter ? filter : ''}`} // Apply filter dynamically
               alt="SKIT M & G Logo"
             />
+
+            <img
+              src="/logo.png"
+              className={`sm:w-32 w-32 hidden sm:block`} // Apply filter dynamically
+              alt="SKIT M & G Logo"
+            />
           </div>
 
           {/* Right Links (for desktop) */}
           <div className="hidden md:flex space-x-8 items-center flex-grow justify-end">
             <a
               href="#"
-              className={`text-md font-medium ${
-                isDesktop ? textColor : 'text-black'
-              } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
+                } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
             >
               ABOUT US
             </a>
             <a
               href="#"
-              className={`text-md font-medium ${
-                isDesktop ? textColor : 'text-black'
-              } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
+                } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
             >
               SPONSORS
             </a>
             <a
               href="#"
-              className={`text-md font-medium ${
-                isDesktop ? textColor : 'text-black'
-              } hover:text-red-700 transition`}
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
+                } hover:text-red-700 transition`}
             >
               TEAM PRAVAH
             </a>
@@ -135,9 +134,8 @@ const Navbarr = ({ bgColor, textColor, filter }) => {
 
         {/* Mobile Menu */}
         <motion.div
-          className={`md:hidden transition-all duration-500 bg-white ${
-            isOpen ? 'h-screen w-full' : 'h-0 w-0'
-          }`}
+          className={`md:hidden transition-all duration-500 bg-white ${isOpen ? 'h-screen w-full' : 'h-0 w-0'
+            }`}
           initial={{ opacity: 0, y: -20 }}
           animate={{
             opacity: isOpen ? 1 : 0,

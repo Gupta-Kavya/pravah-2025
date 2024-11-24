@@ -9,14 +9,39 @@ import Footer from "./Footer";
 import ReactTypingEffect from 'react-typing-effect';
 import CountUp from 'react-countup';
 import EventCountdown from "./CountdownTimer";
-
+import Carousel from "./Carousel";
+import DesktopFooter from "./DesktopFooter";
+import SponsorCarousel from "./SponsorCarousel";
 
 const Home = () => {
 
 
+  const celebrities = [
+    { image: "/nushrat_barucha.jpg", name: "Nushrratt Bharuccha" },
+    { image: "/jassie_gill.jpg", name: "Jassie Gill" },
+    { image: "/navjot_ahuja.jpg", name: "Navjot Ahuja" },
+    { image: "/suniel-shetty.jpeg", name: "Suniel Shetty" },
+    { image: "/gajendra_verma.jpg", name: "Gajendra Verma" },
+    { image: "/nora_fatehi.png", name: "Nora Fatehi" },
+    { image: "/kumar_vishwas.jpg", name: "Kumar Vishwas" },
+    { image: "/shruti_sinha.jpg", name: "Shruti Sinha" },
+    { image: "/ravindra.jpg", name: "Ravindra Upadhyay" },
+    { image: "/naushad.jpg", name: "Naushad Ali Kawa" },
+  ];
 
 
+  const sponsors = [
+    { image: "https://pravah.skit.ac.in/_next/static/media/sp2.41c9d6ea.png", name: "Nushrratt Bharuccha" },
+    { image: "https://pravah.skit.ac.in/_next/static/media/sp1.1ab77316.png", name: "Jassie Gill" },
+    { image: "https://pravah.skit.ac.in/_next/static/media/sp8.75f6a318.png", name: "Navjot Ahuja" },
+    { image: "https://pravah.skit.ac.in/_next/static/media/sp7.2e4482a2.png", name: "Suniel Shetty" },
+    { image: "https://pravah.skit.ac.in/_next/static/media/sp5.8b4b3d25.png", name: "Gajendra Verma" },
+    { image: "https://pravah.skit.ac.in/_next/static/media/sp4.390e7292.png", name: "Nora Fatehi" },
+    { image: "https://pravah.skit.ac.in/_next/static/media/sp9.7118fa8c.png", name: "Kumar Vishwas" },
+    { image: "https://pravah.skit.ac.in/_next/static/media/sp3.336edc77.png", name: "Shruti Sinha" },
+    { image: "https://pravah.skit.ac.in/_next/static/media/sp6.f8cffbf3.png", name: "Ravindra Upadhyay" },
 
+  ];
 
   const [bgColor, setBgColor] = useState('bg-transparent');
   const [textColor, settextColor] = useState('text-white');
@@ -24,19 +49,50 @@ const Home = () => {
 
   const handleLeave = (origin, destination, direction) => {
     if (destination.index === 0) {
-      // User is on the first section
-      setBgColor('bg-transparent'); // Transparent background
-      settextColor("text-white"); // Text color set to white
-      setFilter("filter sm:invert sm:sepia sm:brightness-100 sm:contrast-100"); // Apply filter
+
+      setBgColor('bg-transparent');
+      settextColor("text-white");
+      setFilter("filter sm:invert sm:sepia sm:brightness-100 sm:contrast-100");
     } else {
-      // User is not on the first section
-      setBgColor('bg-transparent'); // Background set to white (or any other color you prefer)
-      settextColor("text-black"); // Text color set to black
-      setFilter(""); // Remove filter
+
+      setBgColor('bg-transparent');
+      settextColor("text-black");
+      setFilter("");
     }
   };
 
+  const [isDesktop, setIsDesktop] = useState(false);
 
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsDesktop(true);
+      } else {
+        setIsDesktop(false);
+      }
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
+
+  const [isVisible, setIsVisible] = useState({
+    events: false,
+    registration: false,
+    footfall: false,
+    winners: false,
+    sponsors: false,
+  });
+
+  const handleInView = (key) => {
+    setIsVisible((prev) => ({ ...prev, [key]: true }));
+  };
 
 
 
@@ -44,22 +100,22 @@ const Home = () => {
     {
       id: 1,
       name: "Sponsor 1",
-      image: "https://pravah.skit.ac.in/_next/static/media/sp2.41c9d6ea.png", // Replace with the actual image URL
+      image: "https://pravah.skit.ac.in/_next/static/media/sp2.41c9d6ea.png",
     },
     {
       id: 2,
       name: "Sponsor 2",
-      image: "https://pravah.skit.ac.in/_next/static/media/sp9.7118fa8c.png", // Replace with the actual image URL
+      image: "https://pravah.skit.ac.in/_next/static/media/sp9.7118fa8c.png",
     },
     {
       id: 3,
       name: "Sponsor 3",
-      image: "https://pravah.skit.ac.in/_next/static/media/sp6.f8cffbf3.png", // Replace with the actual image URL
+      image: "https://pravah.skit.ac.in/_next/static/media/sp6.f8cffbf3.png",
     },
     {
       id: 4,
       name: "Sponsor 4",
-      image: "https://pravah.skit.ac.in/_next/static/media/sp5.8b4b3d25.png", // Replace with the actual image URL
+      image: "https://pravah.skit.ac.in/_next/static/media/sp5.8b4b3d25.png",
     },
     {
       id: 5,
@@ -140,7 +196,7 @@ const Home = () => {
     },
     {
       id: 5,
-      name: "Rapraarazi",
+      name: "Rapaarazi",
       description: "An electrifying rap battle where words ignite and rhythms collide.",
       image: "https://t3.ftcdn.net/jpg/06/65/37/10/360_F_665371013_CpDsBpze9l3EZAmxNeesl4irAysgXJLK.jpg",
     },
@@ -168,7 +224,7 @@ const Home = () => {
     },
     {
       id: 5,
-      name: "Rapraarazi",
+      name: "Rapaarazi",
       description: "An electrifying rap battle where words ignite and rhythms collide.",
       image: "https://t3.ftcdn.net/jpg/06/65/37/10/360_F_665371013_CpDsBpze9l3EZAmxNeesl4irAysgXJLK.jpg",
     },
@@ -176,7 +232,7 @@ const Home = () => {
 
   const handleClick = (index) => {
     if (activeIndex !== index) {
-      // Set the clicked image as active
+
       setActiveIndex(index);
     }
   };
@@ -257,9 +313,9 @@ const Home = () => {
           scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
         }
       }
-    }, 3000); // Change slides every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(scrollInterval); // Cleanup on unmount
+    return () => clearInterval(scrollInterval);
   }, []);
 
 
@@ -269,11 +325,11 @@ const Home = () => {
 
 
 
-    // Add a click event listener to the button or element
+
     document.getElementById("vibrateButton").addEventListener("click", function () {
-      // Trigger device vibration
+
       if (navigator.vibrate) {
-        navigator.vibrate(200); // Vibrates for 200ms
+        navigator.vibrate(200);
       } else {
         console.log("Vibration API is not supported on this device.");
       }
@@ -288,18 +344,13 @@ const Home = () => {
       <Navbarr bgColor={bgColor} textColor={textColor} filter={filter} />
 
 
-
-
-
-
-
       <div className="">
 
         <ReactFullpage
-          // Fullpage.js options
-          licenseKey={"YOUR_KEY_HERE"} // Replace with your license key
-          scrollingSpeed={200} // Transition speed between sections
-          navigation={false} // Enables navigation dots
+
+          licenseKey={"YOUR_KEY_HERE"}
+          scrollingSpeed={200}
+          navigation={false}
           scrollOverflow={false}
           onLeave={handleLeave}
 
@@ -323,7 +374,7 @@ const Home = () => {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    zIndex: -2, // Place the video behind the overlay
+                    zIndex: -2,
                   }}
                 >
                   <source src="/bcvideo.mp4" type="video/mp4" />
@@ -338,8 +389,8 @@ const Home = () => {
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 0.7)", // Black with 40% opacity
-                    zIndex: -1, // Place it above the video but below the content
+                    backgroundColor: "rgba(0, 0, 0, 0.7)",
+                    zIndex: -1,
                   }}
                 ></div>
 
@@ -347,8 +398,8 @@ const Home = () => {
                 <div style={{ position: "relative", zIndex: 1, color: "white", textAlign: "center" }}>
                   {/* <motion.div
                   className="transparent-text mt-0 sm:mt-5"
-                  initial={{ scale: 0, rotate: -10 }} // Slight rotation to the left initially
-                  animate={{ scale: 1, rotate: 0 }} // Final position with slight left rotation
+                  initial={{ scale: 0, rotate: -10 }}
+                  animate={{ scale: 1, rotate: 0 }}
                   transition={{ duration: 1, ease: "easeOut" }}
                 >
                   Pravah
@@ -361,11 +412,11 @@ const Home = () => {
 
 
                   <ReactTypingEffect
-                    text={["Pravah 2025.", "Incredible India.", "Celebrating Culture.", "Pravah 2025.", "India's Vibrant Spirit.", "Pride of India."]}
+                    text={["Pravah 2025.", "Incredible India.", "Pravah 2025.", "Celebrating Culture."]}
                     className="text-8xl font-extrabold text-gradient bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 sm:block hidden"
-                    speed={100}  // Typing speed (ms)
-                    eraseDelay={2000} // Time before erasing text
-                    typingDelay={500} // Time before typing starts
+                    speed={100}
+                    eraseDelay={2000}
+                    typingDelay={500}
                     displayTextRenderer={(text, i) => {
                       return <h1 className="text-8xl font-extrabold text-gradient bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 sm:block hidden">{text}</h1>;
                     }}
@@ -382,8 +433,8 @@ const Home = () => {
 
                   <motion.div
                     className="transparent-text mt-0 sm:mt-5"
-                    initial={{ scale: 0, rotate: -10 }} // Slight rotation to the left initially
-                    animate={{ scale: 1, rotate: 0 }} // Final position with slight left rotation
+                    initial={{ scale: 0, rotate: -10 }}
+                    animate={{ scale: 1, rotate: 0 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                   >
                     Pravah
@@ -395,10 +446,10 @@ const Home = () => {
                   {/* <div
                   className="bg-gradient-to-r from-[#ffc895] via-[#ffc895] to-[#fac074] text-orange-700 text-sm md:text-base font-medium py-2 block sm:hidden hero-bar1 mt-16 border border-black"
                   style={{
-                    marginLeft: "-50vw", // Extend beyond the left
-                    marginRight: "-50vw", // Extend beyond the right
+                    marginLeft: "-50vw", 
+                    marginRight: "-50vw", 
                     position: "relative",
-                    zIndex: 1, // Make sure it stays on top of the video and overlay
+                    zIndex: 1,
                   }}
                 >
                   <div className="max-w-screen-xl mx-auto px-4 text-center">
@@ -415,10 +466,10 @@ const Home = () => {
                 <div
                   className="bg-gradient-to-r from-[#96b9ff] via-[#96b9ff] to-[#96b9ff] text-white text-sm md:text-base font-medium py-2 block sm:hidden hero-bar mt-3 border border-black"
                   style={{
-                    marginLeft: "-50vw", // Extend beyond the left
-                    marginRight: "-50vw", // Extend beyond the right
+                    marginLeft: "-50vw",
+                    marginRight: "-50vw",
                     position: "relative",
-                    zIndex: 1, // Make sure it stays on top of the video and overlay
+                    zIndex: 1,
                   }}
                 >
                   <div className="max-w-screen-xl mx-auto px-4 text-center">
@@ -435,10 +486,10 @@ const Home = () => {
                 <div
                   className="bg-gradient-to-r from-[#b6ffc2] via-[#b6ffc2] to-[#b6ffc2] text-green-700 text-sm md:text-base font-medium py-2 block sm:hidden hero-bar3 mt-3 border border-black"
                   style={{
-                    marginLeft: "-50vw", // Extend beyond the left
-                    marginRight: "-50vw", // Extend beyond the right
+                    marginLeft: "-50vw", 
+                    marginRight: "-50vw",
                     position: "relative",
-                    zIndex: 1, // Make sure it stays on top of the video and overlay
+                    zIndex: 1,
                   }}
                 >
                   <div className="max-w-screen-xl mx-auto px-4 text-center">
@@ -492,24 +543,24 @@ const Home = () => {
                 </div>
 
 
-                <div className="relative hidden sm:block">
+                {/* <div className="relative hidden sm:block">
                   <motion.img
                     src="rb_166391.png"
                     alt="Top Right Pattern"
                     className="absolute w-60"
-                    initial={{ x: 200 }} // Start off-screen to the right
-                    whileInView={{ x: 100 }} // Move to its normal position when in view
-                    viewport={{ once: false }} // Animation triggers only once when the image comes into view
+                    initial={{ x: 200 }} 
+                    whileInView={{ x: 100 }} 
+                    viewport={{ once: false }} 
                     transition={{
                       type: 'spring',
                       stiffness: 50,
                       damping: 20,
-                      duration: 10, // Adjust the duration for the speed of the animation
+                      duration: 10, 
                     }}
                     style={{
                       top: '100px',
                       right: '16px',
-                      transform: 'translateX(50%) translateY(-16px)', // Adjust the position to match your design
+                      transform: 'translateX(50%) translateY(-16px)', 
                     }}
                   />
                 </div>
@@ -522,22 +573,22 @@ const Home = () => {
                     src="rb_56649.png"
                     alt="Top Right Pattern"
                     className="absolute w-60"
-                    initial={{ x: -200 }} // Start off-screen to the left
-                    whileInView={{ x: 0 }} // Move to its normal position when in view (on the leftmost side)
-                    viewport={{ once: false }} // Animation triggers only once when the image comes into view
+                    initial={{ x: -200 }}
+                    whileInView={{ x: 0 }}
+                    viewport={{ once: false }}
                     transition={{
                       type: 'spring',
                       stiffness: 50,
                       damping: 20,
-                      duration: 10, // Adjust the duration for the speed of the animation
+                      duration: 10,
                     }}
                     style={{
-                      top: '100px', // Adjust as necessary
-                      left: '-70px',  // Align to the leftmost side
-                      transform: 'translateX(0) translateY(-16px)', // Adjust if necessary
+                      top: '100px', 
+                      left: '-70px',
+                      transform: 'translateX(0) translateY(-16px)',
                     }}
                   />
-                </div>
+                </div> */}
 
 
 
@@ -546,17 +597,17 @@ const Home = () => {
 
 
                 {/* Video Section - desktop */}
-                <div
-                  className="sm:flex sm:flex-row gap-8 min-h-screen hidden transform justify-center"
-                >
+                <div className="relative sm:flex sm:flex-row gap-8 min-h-screen hidden justify-center z-10 pointer-events-auto">
                   {/* Left Video Card */}
                   <motion.div
-                    className="video-card p-4 hover:scale-105 transform transition self-center"  // Add z-50 and relative to position it above other elements
-                    initial={{ opacity: 0, y: 300 }}
-                    whileInView={{ opacity: 1, y: -70, }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 1, ease: "easeOut" }}
+                    className="video-card p-4 hover:scale-105 transform transition self-center relative z-20 pointer-events-auto"
+                    style={{ top: '', right: '50px' }}
+                    initial={{ opacity: 0, y: 10, rotate: -15 }}
+                    whileInView={{ opacity: 1, y: -50, rotate: -10 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.7, ease: 'easeOut' }}
                   >
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center mt-4">Teaser Launch.</h3>
                     <iframe
                       width="350"
                       height="200"
@@ -565,20 +616,20 @@ const Home = () => {
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                      className="rounded-lg shadow-sm "
+                      className="rounded-lg shadow-sm"
                     ></iframe>
-
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center mt-4">Teaser Launch.</h3>
                   </motion.div>
 
                   {/* Right Video Card */}
                   <motion.div
-                    className="video-card rounded-lg p-4 hover:scale-105 transform transition self-center "  // Add z-50 and relative to position it above other elements
-                    initial={{ opacity: 0, y: 300 }}
-                    whileInView={{ opacity: 1, y: -70 }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                    className="video-card p-4 hover:scale-105 transform transition self-center relative z-20 pointer-events-auto"
+                    style={{ top: '30px', left: '50px' }}
+                    initial={{ opacity: 0, y: 100, rotate: 15 }}
+                    whileInView={{ opacity: 1, y: -120, rotate: 10 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
                   >
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center mt-4">Logo Reveal.</h3>
                     <iframe
                       width="350"
                       height="200"
@@ -589,10 +640,10 @@ const Home = () => {
                       allowFullScreen
                       className="rounded-lg shadow-sm"
                     ></iframe>
-
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center mt-4">Logo Reveal.</h3>
                   </motion.div>
                 </div>
+
+
 
 
 
@@ -634,11 +685,11 @@ const Home = () => {
                   <div
                     className="bg-gradient-to-r from-[#fff] via-[#fff] to-[#fff] text-yellow-600 text-sm md:text-base font-medium py-2 block sm:hidden hero-bar border border-black"
                     style={{
-                      marginLeft: "-50vw", // Extend beyond the left
-                      marginRight: "-50vw", // Extend beyond the right
+                      marginLeft: "-50vw",
+                      marginRight: "-50vw",
                       position: "relative",
-                      zIndex: 1, // Make sure it stays on top of the video and overlay
-                      overflow: "hidden", // Hide overflow to keep it neat
+                      zIndex: 1,
+                      overflow: "hidden",
                     }}
                   >
                     <div className="max-w-screen-xl mx-auto px-4 text-center">
@@ -688,18 +739,18 @@ const Home = () => {
                     alt="Top Right Pattern"
                     className="absolute w-60 opacity-30"
                     initial={{ y: -500 }} // Start off-screen to the left
-                    whileInView={{ x: -100, y: -100 }} // Move to its normal position when in view
-                    viewport={{ once: false }} // Animation triggers only once when the image comes into view
+                    whileInView={{ x: -100, y: -100 }} 
+                    viewport={{ once: false }} 
                     transition={{
                       type: 'spring',
                       stiffness: 50,
                       damping: 20,
-                      duration: 10, // Adjust the duration for the speed of the animation
+                      duration: 10, 
                     }}
                     style={{
-                      bottom: '0', // Position at the bottom of the container
-                      left: '50%',  // Align to the center horizontally
-                      transform: 'translateX(-50%) translateY(0)', // Center the image horizontally and keep vertical at the bottom
+                      bottom: '0', 
+                      left: '50%',  
+                      transform: 'translateX(-50%) translateY(0)',
                     }}
                   />
                 </div> */}
@@ -707,13 +758,15 @@ const Home = () => {
 
 
 
-                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0">
+                {/* Overlapping Himalayas Image */}
+                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-10 pointer-events-none">
                   <img
-                    src="file.png" // Replace with your Everest image URL
+                    src="rb_2149158786.png"
                     alt="Himalayas"
-                    className="w-full object-cover transform translate-y-[430px]"
+                    className="w-full object-cover transform lg:translate-y-[0px] 2xl:translate-y-[0px]"
                   />
                 </div>
+
 
 
               </div>
@@ -738,7 +791,7 @@ const Home = () => {
 
 
                 <div className="py-12 bg-transparent hidden sm:block">
-                  {/* Title with Animation */}
+                  {/* Title */}
                   <motion.div
                     className="text-center text-black font-bold text-4xl mb-8"
                     initial={{ opacity: 0, y: -50 }}
@@ -757,9 +810,12 @@ const Home = () => {
                       initial={{ opacity: 0, y: 100 }}
                       whileInView={{ opacity: 1, y: -40 }}
                       transition={{ duration: 0.8 }}
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
+                      onViewportEnter={() => handleInView("events")}
                     >
-                      <div className="text-2xl font-bold"><CountUp end={100} scrollSpyDelay={2000} enableScrollSpy={true} />+</div>
+                      <div className="text-2xl font-bold">
+                        {isVisible.events && <CountUp end={150} duration={2} />}+
+                      </div>
                       <div className="text-sm">Events</div>
                     </motion.div>
 
@@ -768,9 +824,12 @@ const Home = () => {
                       initial={{ opacity: 0, y: 100 }}
                       whileInView={{ opacity: 1, y: -40 }}
                       transition={{ duration: 0.8, delay: 0.2 }}
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
+                      onViewportEnter={() => handleInView("registration")}
                     >
-                      <div className="text-2xl font-bold"><CountUp end={4000} scrollSpyDelay={2000} enableScrollSpy={true} />+</div>
+                      <div className="text-2xl font-bold">
+                        {isVisible.registration && <CountUp end={6000} duration={2} />}+
+                      </div>
                       <div className="text-sm">Registration</div>
                     </motion.div>
 
@@ -779,9 +838,12 @@ const Home = () => {
                       initial={{ opacity: 0, y: 100 }}
                       whileInView={{ opacity: 1, y: -40 }}
                       transition={{ duration: 0.8, delay: 0.4 }}
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
+                      onViewportEnter={() => handleInView("footfall")}
                     >
-                      <div className="text-2xl font-bold"><CountUp end={6500} scrollSpyDelay={2000} enableScrollSpy={true} />+</div>
+                      <div className="text-2xl font-bold">
+                        {isVisible.footfall && <CountUp end={800} duration={2} />}+
+                      </div>
                       <div className="text-sm">Footfall</div>
                     </motion.div>
 
@@ -790,9 +852,12 @@ const Home = () => {
                       initial={{ opacity: 0, y: 100 }}
                       whileInView={{ opacity: 1, y: -40 }}
                       transition={{ duration: 0.8, delay: 0.6 }}
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
+                      onViewportEnter={() => handleInView("winners")}
                     >
-                      <div className="text-2xl font-bold"><CountUp end={300} scrollSpyDelay={2000} enableScrollSpy={true} />+</div>
+                      <div className="text-2xl font-bold">
+                        {isVisible.winners && <CountUp end={320} duration={2} />}+
+                      </div>
                       <div className="text-sm">Winners</div>
                     </motion.div>
 
@@ -801,9 +866,12 @@ const Home = () => {
                       initial={{ opacity: 0, y: 100 }}
                       whileInView={{ opacity: 1, y: -40 }}
                       transition={{ duration: 0.8, delay: 0.8 }}
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
+                      onViewportEnter={() => handleInView("sponsors")}
                     >
-                      <div className="text-2xl font-bold"><CountUp end={20} scrollSpyDelay={1000} enableScrollSpy={true} />+</div>
+                      <div className="text-2xl font-bold">
+                        {isVisible.sponsors && <CountUp end={100} duration={2} />}+
+                      </div>
                       <div className="text-sm">Sponsors</div>
                     </motion.div>
                   </div>
@@ -826,7 +894,7 @@ const Home = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  viewport={{ once: false }} // Trigger animation only once
+                  viewport={{ once: false }}
                 >
                   Pravah'25 Highlights
                 </motion.h2>
@@ -839,8 +907,8 @@ const Home = () => {
                       className="bg-black text-white rounded-lg shadow-xl hover:scale-105 transform transition duration-300"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.2 }} // Staggered animation for cards
-                      viewport={{ once: false }} // Trigger animation only once per card
+                      transition={{ duration: 0.5, delay: index * 0.2 }}
+                      viewport={{ once: false }}
                     >
                       <div className="p-4 text-center">
                         <p className="text-4xl font-bold text-yellow-500">{highlight.number}</p>
@@ -851,11 +919,11 @@ const Home = () => {
                 </div>
 
 
-                <div className="absolute bottom-0 left-0 w-full hidden sm:block">
+                <div className="absolute bottom-0 left-0 w-full hidden sm:block ">
                   <img
-                    src="rb_37172.png" // Replace with your Everest image URL
+                    src="rb_37172.png"
                     alt="Himalayas"
-                    className="w-full object-cover transform translate-y-80"
+                    className="w-full object-cover transform translate-y-80 lg:translate-y-80 2xl:translate-y-96"
                   />
                 </div>
               </div>
@@ -867,7 +935,7 @@ const Home = () => {
                 className="section p-8 bg-gray-100"
                 style={{
                   // backgroundImage:
-                  //   "url(/pixelbuddha-studio-tCm7ZKIt-yE-unsplash.jpg)", // Your background image URL
+                  //   "url(/pixelbuddha-studio-tCm7ZKIt-yE-unsplash.jpg)",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
@@ -902,7 +970,7 @@ const Home = () => {
                 <div className="relative">
                   {/* Title with animation from top */}
                   <motion.h2
-                    className="text-4xl font-bold text-center mb-10"
+                    className="text-4xl font-bold text-center mb-8"
                     initial={{ y: -50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -911,22 +979,22 @@ const Home = () => {
                   </motion.h2>
 
                   {/* Slider container animation with whileInView */}
-                  <motion.div
+                  <div
                     ref={scrollRef}
-                    className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide mb-40"
-                    initial={{ y: 200, opacity: 0 }} // Start below the viewport with opacity 0
-                    whileInView={{ y: 0, opacity: 1 }} // Animate to the final position when in view
-                    transition={{ duration: 2, ease: "easeOut" }} // Smooth animation
-                    viewport={{ once: false, amount: 0.3 }} // Trigger when 30% of the container is visible
+                    className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide lg:mb-80 xl:mb-40 "
+                    initial={{ y: 300, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 2, ease: "easeOut" }}
+                    viewport={{ once: false, amount: 0.3 }}
                   >
                     {devents.map((event, index) => (
                       <div
                         key={index}
-                        className="relative flex-shrink-0 w-96 h-48 rounded-lg bg-cover bg-top snap-center shadow-sm border-4 border-black"
+                        className="relative flex-shrink-0 w-96 h-44 rounded-lg bg-cover bg-top snap-center shadow-sm"
                         style={{ backgroundImage: `url(${event.image})` }}
                       >
                         {/* Darkness overlay */}
-                        <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
+                        <div className="absolute inset-0 bg-black bg-opacity-40 rounded-lg"></div>
 
                         {/* Event name */}
                         <h3 className="absolute bottom-16 left-4 text-xl font-semibold text-white z-10">
@@ -941,7 +1009,7 @@ const Home = () => {
                         </button>
                       </div>
                     ))}
-                  </motion.div>
+                  </div>
                 </div>
 
 
@@ -997,10 +1065,17 @@ const Home = () => {
 
 
                 <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0">
-                  <img
-                    src="rb_24165.png" // Replace with your Everest image URL
+                  <motion.img
+                    src="file (2).png"
                     alt="Himalayas"
-                    className="w-full object-cover transform translate-y-[420px]"
+                    className="w-full object-cover transform"
+                    initial={{ translateY: 100 }}
+                    whileInView={{ translateY: 40 }}
+                    viewport={{ once: false, amount: 0 }}
+                    transition={{
+                      duration: 0.3,
+                      ease: "easeOut",
+                    }}
                   />
                 </div>
 
@@ -1010,24 +1085,12 @@ const Home = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
               {/* Section 5*/}
               <div
-                className="section p-8"
+                className="section bg-gray-100"
                 style={{
-                  backgroundImage:
-                    "url(/pixelbuddha-studio-tCm7ZKIt-yE-unsplash.jpg)", // Your background image URL
+                  // backgroundImage:
+                  //   "url(/pixelbuddha-studio-tCm7ZKIt-yE-unsplash.jpg)",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
@@ -1052,7 +1115,7 @@ const Home = () => {
                 </div>
 
                 {/* Event Cards */}
-                <div className="space-y-6 top-16 relative">
+                <div className="space-y-6 top-16 relative sm:hidden">
                   {events2.map((event, index) => (
                     <motion.div
                       key={event.id}
@@ -1084,6 +1147,38 @@ const Home = () => {
                   ))}
                 </div>
 
+
+                <motion.h2
+                  className="text-4xl font-bold text-center"
+                  initial={{ y: 0, opacity: 0 }}
+                  whileInView={{ y: 20, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                  Ex-Celebrity Guests
+                </motion.h2>
+
+                <Carousel celebrities={celebrities} />
+
+
+
+
+
+
+                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0">
+                  <motion.img
+                    src="rb_2148618020.png"
+                    alt="Himalayas"
+                    className="w-full object-cover transform"
+                    initial={{ translateY: 100 }}
+                    whileInView={{ translateY: 40 }}
+                    viewport={{ once: false, amount: 0 }}
+                    transition={{
+                      duration: 0.3,
+                      ease: "easeOut",
+                    }}
+                  />
+                </div>
+
               </div>
 
 
@@ -1102,20 +1197,20 @@ const Home = () => {
 
               {/* Section 6*/}
               <div
-                className="section p-8 relative"
+                className="section p-8 relative bg-gray-100"
                 style={{
-                  backgroundImage: "url(/pixelbuddha-studio-tCm7ZKIt-yE-unsplash.jpg)", // Your background image URL
+                  // backgroundImage: "url(/pixelbuddha-studio-tCm7ZKIt-yE-unsplash.jpg)", 
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                 }}
               >
                 {/* Dark overlay */}
-                <div className="absolute inset-0 bg-black opacity-5 z-0"></div>
+                <div className="absolute inset-0 bg-black opacity-5 z-0 sm:hidden"></div>
 
                 {/* Content */}
                 <motion.h2
-                  className="text-xl font-bold text-center mb-8 relative top-16 z-10"
+                  className="text-xl font-bold text-center mb-8 relative top-16 z-10 sm:hidden"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
@@ -1125,7 +1220,7 @@ const Home = () => {
                 </motion.h2>
 
                 <motion.div
-                  className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 relative top-16 z-10"
+                  className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 relative top-16 z-10 sm:hidden"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
@@ -1158,78 +1253,155 @@ const Home = () => {
                     </motion.div>
                   ))}
                 </motion.div>
-              </div>
 
 
 
+                <div className="relative w-full h-screen z-50 glimpses">
+                  <div className="absolute inset-0 flex justify-center items-center">
 
-              {/* Section 6.1*/}
-              <div
-                className="section p-8 relative"
-                style={{
-                  backgroundImage: "url(/pixelbuddha-studio-tCm7ZKIt-yE-unsplash.jpg)", // Your background image URL
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                }}
-              >
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-black opacity-5 z-0"></div>
-
-                <motion.div
-                  className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 relative top-16 z-10"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ once: false }}
-                >
-                  {Celebrities1.map((celebrity) => (
+                    {/* Video 1 */}
                     <motion.div
-                      key={celebrity.id}
-                      className="flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 border-black border-2"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5 }}
-                      viewport={{ once: false }}
+                      className="absolute w-[300px] h-[200px] bg-white p-3 rounded-xl top-24 border-2 border-black"
+                      initial={{ rotate: 6 }}
+                      animate={{ rotate: [6, -6, 6] }}
+                      transition={{
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        duration: 2,
+                        ease: "easeInOut",
+                      }}
+                      style={{
+                        transformOrigin: "top center",
+                        boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
+                      }}
                     >
-                      {/* Image container with fixed height */}
-                      <div className="w-full h-20 overflow-hidden">
+                      <div className="absolute -top-12 left-[40%] p-2 ">
                         <img
-                          src={celebrity.image}
-                          alt={celebrity.name}
-                          className="w-full h-full object-cover"
+                          src="rb_1524.png"
+                          alt="Image 1"
+                          className="w-12 h-12 object-cover transform translate-z-1"
                         />
                       </div>
 
-                      {/* Text container */}
-                      <div className="p-4 text-center">
-                        <h3 className="text-sm font-semibold text-yellow-600 text-nowrap">
-                          {celebrity.name}
-                        </h3>
-                      </div>
+                      <iframe
+                        className="w-full h-[150px] rounded-xl shadow-md"
+                        src="https://www.youtube.com/embed/V-094flkqjI"
+                        title="YouTube video 1"
+                        allowFullScreen
+                      ></iframe>
+
+                      <p className="mt-2 text-center text-black">
+                        #AfterMovie
+                      </p>
                     </motion.div>
-                  ))}
-                </motion.div>
 
-                {/* Seamless Marquee Section */}
+                    {/* Video 2 */}
+                    <motion.div
+                      className="absolute top-44 left-0 -rotate-12 transform w-[300px] h-[200px] bg-white p-3 rounded-xl border-2 border-black"
+                      initial={{ rotate: -12 }}
+                      animate={{ rotate: [6, -6, 6] }}
+                      transition={{
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        duration: 2,
+                        ease: "easeInOut",
+                      }}
+                      style={{
+                        transformOrigin: "top center",
+                        boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
+                      }}
+                    >
+                      {/* Image */}
+                      <div className="absolute -top-12 left-[40%] p-2">
+                        <img
+                          src="rb_1524.png"
+                          alt="Image 2"
+                          className="w-12 h-12 object-cover transform translate-z-1"
+                        />
+                      </div>
+
+                      {/* Video */}
+                      <iframe
+                        className="w-full h-[150px] rounded-xl shadow-md"
+                        src="https://www.youtube.com/embed/DyuUx1obJ_M"
+                        title="YouTube video 2"
+                        allowFullScreen
+                      ></iframe>
+
+                      {/* Text */}
+                      <p className="mt-2 text-center text-black">
+                        #AAVEG
+                      </p>
+                    </motion.div>
+
+                    {/* Video 4 */}
+                    <motion.div
+                      className="absolute rotate-6 top-52 right-20 w-[300px] h-[200px] bg-white p-3 rounded-xl border-2 border-black"
+                      initial={{ rotate: 6 }}
+                      animate={{ rotate: [6, -6, 6] }}
+                      transition={{
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        duration: 2,
+                        ease: "easeInOut",
+                      }}
+                      style={{
+                        transformOrigin: "top center",
+                        boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
+                      }}
+                    >
+                      {/* Image */}
+                      <div className="absolute -top-12 left-[40%] p-2">
+                        <img
+                          src="rb_1524.png"
+                          alt="Image 3"
+                          className="w-12 h-12 object-cover transform translate-z-1"
+                        />
+                      </div>
+
+                      {/* Video */}
+                      <iframe
+                        className="w-full h-[150px] rounded-xl shadow-md"
+                        src="https://www.youtube.com/embed/HVL4Fgel8S4"
+                        title="YouTube video 4"
+                        allowFullScreen
+                      ></iframe>
+
+                      {/* Text */}
+                      <p className="mt-2 text-center text-black">
+                        #CelebrityNight
+                      </p>
+                    </motion.div>
+
+                  </div>
+                </div>
 
 
-                {/* Seamless Marquee Animation */}
-                <style jsx>{`
-    .marquee {
-      display: flex;
-      animation: marquee-scroll 15s linear infinite;
-    }
-    @keyframes marquee-scroll {
-      from {
-        transform: translateX(0%);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
-  `}</style>
+
+
+
+
+
+                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0">
+                  <motion.img
+                    src="rb_28055.png"
+                    alt="Himalayas"
+                    className="w-full object-cover transform"
+                    initial={{ translateY: 500 }}
+                    whileInView={{ translateY: 170 }}
+                    viewport={{ once: false, amount: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      ease: "easeOut",
+                    }}
+                  />
+                </div>
+
               </div>
+
+
+
+       
 
 
 
@@ -1242,31 +1414,30 @@ const Home = () => {
 
               {/* Section 7*/}
               <div
-                className="section relative"
+                className="section relative bg-gray-100"
                 style={{
-                  backgroundImage:
-                    "url(https://images.unsplash.com/photo-1653495482635-18acfead7ba8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)", // Your background image URL
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
-                  position: "relative", // Ensure stacking context
+                  position: "relative",
+                  overflow: "hidden",
                 }}
               >
                 {/* Overlay */}
                 <div
+                  className="sm:hidden"
                   style={{
                     position: "absolute",
                     top: 0,
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 0.7)", // Black color with 50% opacity
+                    backgroundColor: "rgba(0, 0, 0, 0.7)",
                     zIndex: 1,
                   }}
                 />
 
-
-                <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 opacity-50">
+                <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 opacity-50 sm:hidden">
                   <img
                     src="/logo.png"
                     alt="Bottom Center Pattern"
@@ -1275,11 +1446,34 @@ const Home = () => {
                 </div>
 
 
-                {/* Content */}
-                <div style={{ position: "relative", zIndex: 2 }}>
+                <motion.div
+                  className="text-center text-black font-bold text-2xl"
+                  initial={{ opacity: 0, y: 0 }}
+                  whileInView={{ opacity: 1, y: 110 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: false }}
+                >
+                  Past Patrons
+                </motion.div>
+
+                {/* Sponsor Carousel */}
+                <SponsorCarousel sponsors={sponsors} />
+
+
+
+                {/* Content Section */}
+                <div className="sm:hidden" style={{ position: "relative", zIndex: 2 }}>
                   <Footer />
                 </div>
+
+                <div className="hidden sm:block" style={{ position: "absolute", bottom: 0, left: 0, width: "100%", zIndex: 2 }}>
+                  <DesktopFooter />
+                </div>
+
+
               </div>
+
+
 
 
             </ReactFullpage.Wrapper>
