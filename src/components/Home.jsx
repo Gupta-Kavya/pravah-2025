@@ -12,6 +12,8 @@ import EventCountdown from "./CountdownTimer";
 import Carousel from "./Carousel";
 import DesktopFooter from "./DesktopFooter";
 import SponsorCarousel from "./SponsorCarousel";
+import { FaArrowRight } from "react-icons/fa6";
+
 
 const Home = () => {
 
@@ -43,21 +45,24 @@ const Home = () => {
 
   ];
 
-  const [bgColor, setBgColor] = useState('bg-transparent');
-  const [textColor, settextColor] = useState('text-white');
-  const [filter, setFilter] = useState('filter sm:invert sm:sepia sm:brightness-100 sm:contrast-100');
+  const [bgColor, setBgColor] = useState('bg-white');
+  const [textColor, settextColor] = useState('text-gray-700');
+  const [filter, setFilter] = useState();
+  const [announce, setAnnounce] = useState();
 
   const handleLeave = (origin, destination, direction) => {
     if (destination.index === 0) {
 
-      setBgColor('bg-transparent');
-      settextColor("text-white");
-      setFilter("filter sm:invert sm:sepia sm:brightness-100 sm:contrast-100");
+      setBgColor('bg-white');
+      settextColor("text-black");
+      // setFilter("filter sm:invert sm:sepia sm:brightness-100 sm:contrast-100");
+      setAnnounce("block");
     } else {
 
-      setBgColor('bg-transparent');
+      setBgColor('bg-white');
       settextColor("text-black");
       setFilter("");
+      setAnnounce("hidden");
     }
   };
 
@@ -168,37 +173,37 @@ const Home = () => {
       id: 1,
       name: "Thirak",
       description: "A mesmerizing cultural dance event.",
-      image: "https://pravah.skit.ac.in/_next/static/media/thirak.bd3de307.webp",
+      image: "/events/thirak.jpg",
     },
     {
       id: 2,
       name: "DJ Night",
       description: "An electrifying night with popular DJs.",
-      image: "https://pravah.skit.ac.in/_next/static/media/dj.cab3f656.webp",
+      image: "/events/djnight.jpg",
     },
     {
       id: 5,
       name: "Celebrity Night",
       description: "Meet your favorite celebrities in person.",
-      image: "https://pravah.skit.ac.in/_next/static/media/celebrityNight.c24587f0.webp",
+      image: "/events/cnight.jpg",
     },
     {
       id: 1,
       name: "Sur",
       description: "Feel the melody of enchanting voices.",
-      image: "https://pravah.skit.ac.in/_next/static/media/sur.0af72f62.webp",
+      image: "/events/sur.jpg",
     },
     {
       id: 2,
       name: "Rawaz",
       description: "A dazzling showcase of style and elegance through stunning modeling performances.",
-      image: "https://pravah.skit.ac.in/_next/static/media/rawaz.2c862ac8.webp",
+      image: "/events/rawaz.jpg",
     },
     {
       id: 5,
       name: "Rapaarazi",
       description: "An electrifying rap battle where words ignite and rhythms collide.",
-      image: "https://t3.ftcdn.net/jpg/06/65/37/10/360_F_665371013_CpDsBpze9l3EZAmxNeesl4irAysgXJLK.jpg",
+      image: "/events/raparrazi.jpg",
     },
   ];
 
@@ -341,7 +346,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbarr bgColor={bgColor} textColor={textColor} filter={filter} />
+      <Navbarr bgColor={bgColor} textColor={textColor} filter={filter} announce={announce} />
 
 
       <div className="">
@@ -349,8 +354,8 @@ const Home = () => {
         <ReactFullpage
 
           licenseKey={"YOUR_KEY_HERE"}
-          scrollingSpeed={200}
-          navigation={false}
+          scrollingSpeed={300}
+          navigation={true}
           scrollOverflow={false}
           onLeave={handleLeave}
 
@@ -361,163 +366,178 @@ const Home = () => {
 
 
               {/* Section 1 */}
-              <div className="section relative overflow-hidden" style={{ overflowX: 'hidden' }}>
-                {/* Video Background */}
-                <video
-                  autoPlay
-                  loop
-                  muted
+              <div
+                className="section relative overflow-hidden bg-white"
+                style={{
+                  overflowX: "hidden",
+                  // backgroundImage: "url('/background.jpg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  position: "relative",
+                }}
+              >
+                {/* Gradient Overlay */}
+                {/* <div
                   style={{
                     position: "absolute",
                     top: 0,
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    objectFit: "cover",
-                    zIndex: -2,
+                    background:
+                      "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))",
+                    zIndex: 0,
                   }}
-                >
-                  <source src="/bcvideo.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                ></div> */}
 
-                {/* Dark Overlay */}
+                {/* Main Content */}
                 <div
                   style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 0.7)",
-                    zIndex: -1,
+                    position: "relative",
+                    zIndex: 1,
+                    color: "white",
+                    textAlign: "center",
+                    padding: "50px 20px",
                   }}
-                ></div>
-
-                {/* Content */}
-                <div style={{ position: "relative", zIndex: 1, color: "white", textAlign: "center" }}>
-                  {/* <motion.div
-                  className="transparent-text mt-0 sm:mt-5"
-                  initial={{ scale: 0, rotate: -10 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ duration: 1, ease: "easeOut" }}
                 >
-                  Pravah
-                  <span className="year">2025</span>
-                </motion.div> */}
+                  {/* Logo */}
+                  {/* <img
+                    src="/logo.png"
+                    className="w-32 mx-auto sm:w-64 sm:mb-10"
+                    alt="Pravah 2025 Logo"
+                  /> */}
 
+                  {/* <h1 className="text-7xl sm:text-8xl font-extrabold text-black pattaya-regular">Pravah 2025</h1> */}
 
-                  <img src="/logo.png" className="w-full mx-auto sm:w-72 sm:mb-10 sm:hidden" />
-
-
-
+                  {/* Dynamic Typing Effect */}
                   <ReactTypingEffect
-                    text={["Pravah 2025.", "Incredible India.", "Pravah 2025.", "Celebrating Culture."]}
-                    className="text-8xl font-extrabold text-gradient bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 sm:block hidden"
-                    speed={100}
-                    eraseDelay={2000}
-                    typingDelay={500}
-                    displayTextRenderer={(text, i) => {
-                      return <h1 className="text-8xl font-extrabold text-gradient bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 sm:block hidden">{text}</h1>;
-                    }}
+                    text={[
+                      "Pravah 2025",
+                      "Celebrating Incredible India",
+                      "The Silver Jublee Year"
+                    ]}
+                    className="text-7xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-pink-500"
+                    speed={200}
+                    eraseDelay={100}
+                    typingDelay={300}
+                    displayTextRenderer={(text) => (
+                      <h1 className="text-7xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-pink-500">
+                        {text}
+                        <span className="text-black">|</span>
+                      </h1>
+                    )}
                   />
 
 
 
-                  <EventCountdown />
 
 
+                  {/* Countdown Timer */}
+                  <div className="mt-10 mb-20">
+                    <EventCountdown />
+                  </div>
 
-
-
-
-                  <motion.div
-                    className="transparent-text mt-0 sm:mt-5"
-                    initial={{ scale: 0, rotate: -10 }}
-                    animate={{ scale: 1, rotate: 0 }}
+                  {/* Decorative Text */}
+                  {/* <motion.div
+                    className="mt-5"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                   >
-                    Pravah
-                    <span className="year">2025</span>
-                  </motion.div>
+                    <p className="text-lg sm:text-xl font-semibold">
+                      Experience the Culture, Colors, and Festivity of India
+                    </p>
+                  </motion.div> */}
 
+                  {/* Call-to-Action Button */}
+                  {/* <div className="mt-8">
+                    <a
+                      href="#"
+                      className="inline-block px-8 py-3 text-white bg-gradient-to-r from-orange-500 to-pink-500 rounded-full font-bold text-lg shadow-lg transform hover:scale-105 transition-transform"
+                      onClick={() => handleDown()}
+                    >
+                      Learn More
+                    </a>
+                  </div> */}
+                </div>
 
-                  {/* Adjusted Bar with Extending Beyond Screen */}
-                  {/* <div
-                  className="bg-gradient-to-r from-[#ffc895] via-[#ffc895] to-[#fac074] text-orange-700 text-sm md:text-base font-medium py-2 block sm:hidden hero-bar1 mt-16 border border-black"
+                {/* Decorative Bars */}
+                {/* <div
+                  className="absolute bottom-0 w-full h-2"
                   style={{
-                    marginLeft: "-50vw", 
-                    marginRight: "-50vw", 
-                    position: "relative",
-                    zIndex: 1,
+                    background:
+                      "repeating-linear-gradient(45deg, #ff9e00, #ff9e00 10px, #d4145a 10px, #d4145a 20px)",
+                  }}
+                ></div> */}
+                {/* <div
+  className="absolute top-0 w-full h-2"
+  style={{
+    background:
+      "repeating-linear-gradient(45deg, #1a1a1d, #1a1a1d 10px, #4e4e50 10px, #4e4e50 20px)",
+  }}
+></div> */}
+
+
+                {/* Scroll Down Indicator */}
+                {/* <a
+                  href="#"
+                  className="scroll-down"
+                  onClick={() => handleDown()}
+                  id="vibrateButton"
+                  style={{
+                    position: "absolute",
+                    bottom: "30px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    animation: "bounce 2s infinite",
                   }}
                 >
-                  <div className="max-w-screen-xl mx-auto px-4 text-center">
-                    <div className="scrolling-text text-nowrap">
-                      Pravah 2025 | Incredible India | Experience the Culture
-                    </div>
-                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </a> */}
+
+
+
+
+                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-10 pointer-events-none">
+                  <img
+                    src="file (8).png"
+                    alt="Himalayas"
+                    className="w-full object-cover transform lg:translate-y-[140px] 2xl:translate-y-[0px]"
+                  />
                 </div>
 
 
-
-
-
-                <div
-                  className="bg-gradient-to-r from-[#96b9ff] via-[#96b9ff] to-[#96b9ff] text-white text-sm md:text-base font-medium py-2 block sm:hidden hero-bar mt-3 border border-black"
-                  style={{
-                    marginLeft: "-50vw",
-                    marginRight: "-50vw",
-                    position: "relative",
-                    zIndex: 1,
-                  }}
-                >
-                  <div className="max-w-screen-xl mx-auto px-4 text-center">
-                    <div className="scrolling-text text-nowrap">
-                      Unity in Diversity | Explore the Vibrance | Your Journey Starts Here
-                    </div>
-                  </div>
-                </div>
-
-
-
-
-
-                <div
-                  className="bg-gradient-to-r from-[#b6ffc2] via-[#b6ffc2] to-[#b6ffc2] text-green-700 text-sm md:text-base font-medium py-2 block sm:hidden hero-bar3 mt-3 border border-black"
-                  style={{
-                    marginLeft: "-50vw", 
-                    marginRight: "-50vw",
-                    position: "relative",
-                    zIndex: 1,
-                  }}
-                >
-                  <div className="max-w-screen-xl mx-auto px-4 text-center">
-                    <div className="scrolling-text text-nowrap">
-                      Amazing India | Wonderful India | Remarkable India | Fascinating India
-                    </div>
-                  </div>
+                {/* <div className="absolute -bottom-20 -right-20 w-80 hidden sm:block z-10 pointer-events-none">
+                  <img
+                    src="file (7).png"
+                    alt="Himalayas"
+                    className="w-full object-cover transform lg:translate-y-[0px] 2xl:translate-y-[0px]"
+                  />
                 </div> */}
 
 
-
-
-
-
-
-
-                </div>
-
-                <a href="#" className="scroll-down" address="true" onClick={() => { handleDown(); fullpageApi.moveSectionDown(); }} id="vibrateButton"></a>
               </div>
 
 
               {/* Section 2 */}
               <div
-                className="section p-8 bg-gray-100"
+                className="section p-8 bg-white"
                 style={{
-                  // backgroundImage:
-                  // "url(https://images.unsplash.com/photo-1566041510394-cf7c8fe21800?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
+                  // backgroundImage: "url(/background.jpg)",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
@@ -607,7 +627,9 @@ const Home = () => {
                     viewport={{ once: false, amount: 0.3 }}
                     transition={{ duration: 0.7, ease: 'easeOut' }}
                   >
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center mt-4">Teaser Launch.</h3>
+
+
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center mt-4 pattaya-regular">Teaser Launch.</h3>
                     <iframe
                       width="350"
                       height="200"
@@ -629,7 +651,7 @@ const Home = () => {
                     viewport={{ once: false, amount: 0.3 }}
                     transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
                   >
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center mt-4">Logo Reveal.</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center mt-4 pattaya-regular">Logo Reveal.</h3>
                     <iframe
                       width="350"
                       height="200"
@@ -679,6 +701,8 @@ const Home = () => {
                     </p>
 
                   </motion.div>
+
+
 
 
 
@@ -773,9 +797,226 @@ const Home = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
               {/* Section 3 */}
               <div
-                className="section p-8 bg-gray-100"
+                className="section p-16 bg-white"
+                style={{
+                  // backgroundImage: "url(/background.jpg)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                {/* Bottom Center Pattern */}
+                <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-50 sm:hidden">
+                  <img
+                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
+                    alt="Bottom Center Pattern"
+                    className="w-auto"
+                  />
+                </div>
+
+                {/* Top Right Pattern */}
+                <div className="absolute top-0 right-0 opacity-50 translate-x-1/2 -translate-y-16 sm:hidden">
+                  <img
+                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
+                    alt="Top Right Pattern"
+                    className="w-auto"
+                  />
+                </div>
+
+
+
+
+
+
+                {/* Event Cards - desktop*/}
+
+
+                <div className="relative">
+                  {/* Title with animation from top */}
+                  <motion.h2
+                    className="text-4xl font-bold text-center mb-8 my-16 cookie-regular"
+                    initial={{ y: -50, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                  >
+                    Cultural Wonders
+                  </motion.h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  {/* Slider container animation with whileInView */}
+                  <div
+                    ref={scrollRef}
+                    className="space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide lg:mb-80 xl:mb-0 flex z-50 relative bg-white"
+                    initial={{ y: 300, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 2, ease: "easeOut" }}
+                    viewport={{ once: false, amount: 0.3 }}
+                  >
+                    {devents.map((event, index) => (
+                      <div
+                        key={index}
+                        className="relative flex-shrink-0 w-96 h-52 rounded-xl bg-cover bg-center snap-center  transform transition-transform duration-300 ease-in-out bg-clip-padding shadow-xl"
+                        style={{
+                          backgroundImage: `url(${event.image})`,
+                          backgroundPosition: "center",
+                          backgroundSize: "cover",
+                          borderRadius: "1rem",
+                        }}
+                      >
+                        {/* Gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-xl bg-opacity-80"></div>
+
+                        {/* Event name */}
+                        <h3 className="absolute bottom-4 left-4 text-3xl font-semibold text-white z-10 drop-shadow-md pattaya-regular">
+                          {event.name}
+                        </h3>
+
+                        {/* Explore button (styled) */}
+                        <button
+                          className="absolute right-4 bottom-4 w-8 h-8 flex items-center justify-center text-lg font-medium text-white border-2 border-white rounded-xl bg-gradient-to-r from-orange-400 to-red-500 transition-all duration-300 ease-out hover:scale-105 hover:from-orange-500 hover:to-red-600 z-50"
+                        >
+                          <span className="text-1xl text-white"><FaArrowRight /></span>
+                        </button>
+
+                        {/* 3D Border Effect */}
+                        {/* <div className="absolute inset-0 border-2 border-gray-900 transform scale-10  rounded-xl z-0"></div> */}
+                      </div>
+                    ))}
+                  </div>
+
+
+
+                  <button className="flex items-center px-6 py-3 text-lg font-semibold text-white border-2 border-white rounded-full bg-gradient-to-r from-orange-400 to-red-500 transition-all duration-300 ease-out hover:scale-105 hover:from-orange-400 hover:to-red-500 shadow-sm m-auto mb-24 mt-5 relative z-50 cursor-pointer">
+                    <span>Explore</span>
+                    <span className="ml-3 text-2xl">
+                      <FaArrowRight />
+                    </span>
+                  </button>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* Event Cards */}
+                <div className="space-y-6 top-16 relative sm:hidden">
+                  {events.map((event, index) => (
+                    <motion.div
+                      key={event.id}
+                      onClick={() => handleClick(index)}
+                      className={`relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 ${activeIndex === index ? "h-[200px]" : "h-[100px]"
+                        }`}
+                      style={{
+                        backgroundImage: `url(${event.image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.2 }}
+                      viewport={{ once: false }}
+                    >
+                      {/* Overlay that is always visible */}
+                      <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white px-4">
+                        <h3 className="text-xl font-bold">{event.name}</h3>
+
+                        {/* Description appears only if active */}
+                        {activeIndex === index && (
+                          <p className="text-center mt-2 transition-opacity duration-300">
+                            {event.description}
+                          </p>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+
+
+
+
+
+
+
+
+                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0 ">
+                  <motion.img
+                    src="file (9).png"
+                    alt="Himalayas"
+                    className="w-full object-cover transform"
+                    initial={{ translateY: 400 }}
+                    whileInView={{ translateY: 330 }}
+                    viewport={{ once: false, amount: 0 }}
+                    transition={{
+                      duration: 0.3,
+                      ease: "easeOut",
+                    }}
+                  />
+                </div>
+
+
+
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              {/* Section 4 */}
+              <div
+                className="section p-8 bg-white"
                 style={{
                   // backgroundImage: "url(/pixelbuddha-studio-tCm7ZKIt-yE-unsplash.jpg)", // Your background image URL
                   backgroundSize: "cover",
@@ -793,7 +1034,7 @@ const Home = () => {
                 <div className="py-12 bg-transparent hidden sm:block">
                   {/* Title */}
                   <motion.div
-                    className="text-center text-black font-bold text-4xl mb-8"
+                    className="text-center text-black font-bold text-3xl mb-8 cookie-regular"
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: -70 }}
                     transition={{ duration: 1 }}
@@ -890,7 +1131,7 @@ const Home = () => {
 
                 {/* Animated Title */}
                 <motion.h2
-                  className="text-xl font-bold text-center text-[#1a1a1a] mt-28 sm:hidden"
+                  className="text-xl font-bold text-center text-[#1a1a1a] mt-28 sm:hidden "
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
@@ -930,167 +1171,15 @@ const Home = () => {
 
 
 
-              {/* Section 4 */}
-              <div
-                className="section p-8 bg-gray-100"
-                style={{
-                  // backgroundImage:
-                  //   "url(/pixelbuddha-studio-tCm7ZKIt-yE-unsplash.jpg)",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                }}
-              >
-                {/* Bottom Center Pattern */}
-                <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-50 sm:hidden">
-                  <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-                    alt="Bottom Center Pattern"
-                    className="w-auto"
-                  />
-                </div>
-
-                {/* Top Right Pattern */}
-                <div className="absolute top-0 right-0 opacity-50 translate-x-1/2 -translate-y-16 sm:hidden">
-                  <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-                    alt="Top Right Pattern"
-                    className="w-auto"
-                  />
-                </div>
-
-
-
-
-
-
-                {/* Event Cards - desktop*/}
-
-
-                <div className="relative">
-                  {/* Title with animation from top */}
-                  <motion.h2
-                    className="text-4xl font-bold text-center mb-8"
-                    initial={{ y: -50, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                  >
-                    Cultural Wonders
-                  </motion.h2>
-
-                  {/* Slider container animation with whileInView */}
-                  <div
-                    ref={scrollRef}
-                    className="flex space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide lg:mb-80 xl:mb-40 "
-                    initial={{ y: 300, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 2, ease: "easeOut" }}
-                    viewport={{ once: false, amount: 0.3 }}
-                  >
-                    {devents.map((event, index) => (
-                      <div
-                        key={index}
-                        className="relative flex-shrink-0 w-96 h-44 rounded-lg bg-cover bg-top snap-center shadow-sm"
-                        style={{ backgroundImage: `url(${event.image})` }}
-                      >
-                        {/* Darkness overlay */}
-                        <div className="absolute inset-0 bg-black bg-opacity-40 rounded-lg"></div>
-
-                        {/* Event name */}
-                        <h3 className="absolute bottom-16 left-4 text-xl font-semibold text-white z-10">
-                          {event.name}
-                        </h3>
-
-                        {/* Explore button (always visible) */}
-                        <button
-                          className="absolute left-4 px-4 py-2 bottom-4 text-sm font-medium text-white border-2 border-white rounded-lg z-10 transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        >
-                          Explore &rarr;
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                {/* Event Cards */}
-                <div className="space-y-6 top-16 relative sm:hidden">
-                  {events.map((event, index) => (
-                    <motion.div
-                      key={event.id}
-                      onClick={() => handleClick(index)}
-                      className={`relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 ${activeIndex === index ? "h-[200px]" : "h-[100px]"
-                        }`}
-                      style={{
-                        backgroundImage: `url(${event.image})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.2 }}
-                      viewport={{ once: false }}
-                    >
-                      {/* Overlay that is always visible */}
-                      <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white px-4">
-                        <h3 className="text-xl font-bold">{event.name}</h3>
-
-                        {/* Description appears only if active */}
-                        {activeIndex === index && (
-                          <p className="text-center mt-2 transition-opacity duration-300">
-                            {event.description}
-                          </p>
-                        )}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-
-
-
-
-
-                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0">
-                  <motion.img
-                    src="file (2).png"
-                    alt="Himalayas"
-                    className="w-full object-cover transform"
-                    initial={{ translateY: 100 }}
-                    whileInView={{ translateY: 40 }}
-                    viewport={{ once: false, amount: 0 }}
-                    transition={{
-                      duration: 0.3,
-                      ease: "easeOut",
-                    }}
-                  />
-                </div>
-
-
-              </div>
 
 
 
 
               {/* Section 5*/}
               <div
-                className="section bg-gray-100"
+                className="section bg-white"
                 style={{
-                  // backgroundImage:
-                  //   "url(/pixelbuddha-studio-tCm7ZKIt-yE-unsplash.jpg)",
+                  // backgroundImage: "url(/background.jpg)",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
@@ -1149,15 +1238,15 @@ const Home = () => {
 
 
                 <motion.h2
-                  className="text-4xl font-bold text-center"
+                  className="text-3xl font-bold text-center cookie-regular mt-10"
                   initial={{ y: 0, opacity: 0 }}
                   whileInView={{ y: 20, opacity: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  Ex-Celebrity Guests
+                  Former Celebrity Guests
                 </motion.h2>
 
-                <Carousel celebrities={celebrities} />
+                <Carousel celebrities={celebrities} frameImage={"/AdobeStock_727905617.png"} />
 
 
 
@@ -1166,11 +1255,11 @@ const Home = () => {
 
                 <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0">
                   <motion.img
-                    src="rb_2148618020.png"
+                    src="vecteezy_abstract-ethnic-geometric-pattern-background-design_13991676.jpg"
                     alt="Himalayas"
                     className="w-full object-cover transform"
-                    initial={{ translateY: 100 }}
-                    whileInView={{ translateY: 40 }}
+                    initial={{ translateY: 150 }}
+                    whileInView={{ translateY: 80 }}
                     viewport={{ once: false, amount: 0 }}
                     transition={{
                       duration: 0.3,
@@ -1197,9 +1286,9 @@ const Home = () => {
 
               {/* Section 6*/}
               <div
-                className="section p-8 relative bg-gray-100"
+                className="section p-8 relative bg-white"
                 style={{
-                  // backgroundImage: "url(/pixelbuddha-studio-tCm7ZKIt-yE-unsplash.jpg)", 
+                  // backgroundImage: "url(/background.jpg)",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
@@ -1256,7 +1345,26 @@ const Home = () => {
 
 
 
-                <div className="relative w-full h-screen z-50 glimpses">
+
+
+
+
+
+                {/* <Cardswipe />
+
+
+
+
+
+
+
+ */}
+
+
+
+
+
+                <div className="relative w-full h-screen z-50 glimpses hidden">
                   <div className="absolute inset-0 flex justify-center items-center">
 
                     {/* Video 1 */}
@@ -1382,7 +1490,7 @@ const Home = () => {
 
 
 
-                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0">
+                <div className="absolute bottom-0 left-0 w-full sm:hidden z-0 hidden">
                   <motion.img
                     src="rb_28055.png"
                     alt="Himalayas"
@@ -1401,7 +1509,7 @@ const Home = () => {
 
 
 
-       
+
 
 
 
@@ -1414,7 +1522,7 @@ const Home = () => {
 
               {/* Section 7*/}
               <div
-                className="section relative bg-gray-100"
+                className="section relative bg-white"
                 style={{
                   backgroundSize: "cover",
                   backgroundPosition: "center",

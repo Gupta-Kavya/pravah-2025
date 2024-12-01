@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom'; // Import useLocation to detect active link
 import '../style.css';
 
-const Navbarr = ({ bgColor, textColor, filter }) => {
+const Navbarr = ({ bgColor, textColor, filter, announce }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const location = useLocation(); // Get the current location
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -30,91 +32,105 @@ const Navbarr = ({ bgColor, textColor, filter }) => {
     };
   }, []);
 
+  // Function to determine if the current link is active
+  const isActiveLink = (path) => location.pathname === path;
+
   return (
     <>
       <nav
-        className={`fixed w-full z-20 top-0 left-0 transition-colors duration-1000 ease-in-out ${isDesktop ? bgColor : 'bg-white'
-          }`}
+        className={`fixed w-full top-0 left-0 transition-colors duration-1000 ease-in-out bg-white  ${isDesktop ? bgColor : 'bg-white'}`}
+        style={{ zIndex: 1000 }}
       >
         {/* Announcement Bar */}
-        <div className="bg-gradient-to-r from-[#130d00] via-[#01001d] to-[#3d0075] text-white text-sm md:text-base font-medium py-2 sm:hidden">
-          <div className="max-w-screen-xl mx-auto px-4 text-center">
+        <div className={`bg-gradient-to-r from-[#221b63] via-[#01001d] to-[#3d0075] text-white text-sm md:text-base font-medium py-2 ${isDesktop ? announce : 'hidden'} `}>
+          <div className="max-w-screen-xl mx-auto px-4 text-center font-sans">
             Pravah 2024 is about to hit. Have you registered for any event?{' '}
-            <a
-              href="#"
+            <Link
+              to="/event-registration"
               className="text-blue-200 underline font-semibold hover:text-blue-600 transition"
             >
               Click here
-            </a>{' '}
+            </Link>{' '}
             for event registration.
           </div>
         </div>
 
         {/* Navbar */}
-        <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-4">
+        <div className="max-w-screen-xl flex items-center justify-center mx-auto px-4 py-4 dynapuff bg-white">
           {/* Left Links (for desktop) */}
-          <div className="hidden md:flex space-x-8 items-center flex-grow justify-start">
-            <a
-              href="#"
-              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
-                } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
+          <div className="flex space-x-8 items-center flex-shrink-0 justify-end">
+            <Link
+              to="/skit-pravah-2025"
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
             >
               HOME
-            </a>
-            <a
-              href="#"
-              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
-                } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
+              <span
+                className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/skit-pravah-2025') ? 'w-full' : 'w-0'}`}
+              ></span>
+            </Link>
+            <Link
+              to="/skit-pravah-2025-events"
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
             >
               EVENTS & REGISTRATIONS
-            </a>
-            <a
-              href="#"
-              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
-                } hover:text-red-700 transition pr-4`}
+              <span
+                className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/skit-pravah-2025-events') ? 'w-full' : 'w-0'}`}
+              ></span>
+            </Link>
+            <Link
+              to="/skit-pravah-2025-AAVEG"
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
             >
               AAVEG
-            </a>
+              <span
+                className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/skit-pravah-2025-AAVEG') ? 'w-full' : 'w-0'}`}
+              ></span>
+            </Link>
           </div>
 
           {/* Logo (Centered) */}
-          <div className="sm:flex sm:justify-center sm:items-center flex-grow">
+          <div className="flex justify-center items-center flex-grow">
             <img
               src="https://pravah.skit.ac.in/_next/static/media/navbarText.cfcb7a68.png"
-              className={`sm:w-32 w-32 ${filter ? filter : ''}`} // Apply filter dynamically
+              className={`sm:w-28 w-28 ${filter ? filter : ''}`} // Apply filter dynamically
               alt="SKIT M & G Logo"
             />
-
             <img
               src="/logo.png"
-              className={`sm:w-32 w-32 hidden sm:block`} // Apply filter dynamically
+              className="sm:w-28 w-28 hidden sm:block"
               alt="SKIT M & G Logo"
             />
           </div>
 
           {/* Right Links (for desktop) */}
-          <div className="hidden md:flex space-x-8 items-center flex-grow justify-end">
-            <a
-              href="#"
-              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
-                } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
+          <div className="flex space-x-8 items-center flex-shrink-0 justify-start">
+            <Link
+              to="/about-skit-pravah-2025"
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
             >
               ABOUT US
-            </a>
-            <a
-              href="#"
-              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
-                } hover:text-red-700 transition border-r-2 border-gray-400 pr-4`}
+              <span
+                className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/about-skit-pravah-2025') ? 'w-full' : 'w-0'}`}
+              ></span>
+            </Link>
+            <Link
+              to="/skit-pravah-2025-sponsors"
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
             >
               SPONSORS
-            </a>
-            <a
-              href="#"
-              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'
-                } hover:text-red-700 transition`}
+              <span
+                className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/skit-pravah-2025-sponsors') ? 'w-full' : 'w-0'}`}
+              ></span>
+            </Link>
+            <Link
+              to="/team"
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
             >
               TEAM PRAVAH
-            </a>
+              <span
+                className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/team') ? 'w-full' : 'w-0'}`}
+              ></span>
+            </Link>
           </div>
 
           {/* Toggler Button for Mobile */}
@@ -134,8 +150,7 @@ const Navbarr = ({ bgColor, textColor, filter }) => {
 
         {/* Mobile Menu */}
         <motion.div
-          className={`md:hidden transition-all duration-500 bg-white ${isOpen ? 'h-screen w-full' : 'h-0 w-0'
-            }`}
+          className={`md:hidden transition-all duration-500 bg-white ${isOpen ? 'h-screen w-full' : 'h-0 w-0'}`}
           initial={{ opacity: 0, y: -20 }}
           animate={{
             opacity: isOpen ? 1 : 0,
@@ -158,49 +173,42 @@ const Navbarr = ({ bgColor, textColor, filter }) => {
           </button>
 
           <div className="flex flex-col items-center space-y-4 py-8">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               HOME
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/events"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               EVENTS & REGISTRATIONS
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/aaveg"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               AAVEG
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/about"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               ABOUT US
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/sponsors"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               SPONSORS
-            </a>
-            <a
-              href="#"
-              className="text-lg font-medium text-black hover:text-yellow-600 transition"
+            </Link>
+            <Link
+              to="/team"
+              className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               TEAM PRAVAH
-            </a>
-
-            {/* Himalayas graphic image */}
-            <img
-              src="/himalya.png"
-              alt="Himalayas Graphics"
-              className="mt-8 w-full max-w-md object-contain transform translate-y-1/2"
-            />
+            </Link>
           </div>
         </motion.div>
       </nav>

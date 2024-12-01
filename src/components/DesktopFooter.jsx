@@ -4,7 +4,7 @@ import { FaLink, FaHeadset, FaPhoneVolume, FaGlobe } from "react-icons/fa6";
 const DesktopFooter = () => {
   return (
     <footer
-      className="bg-white dark:bg-gray-900 relative bottom-0"
+      className="bg-black dark:bg-gray-900 relative bottom-0 font-sans"
       style={{
         backgroundImage:
           "url(https://images.unsplash.com/photo-1653495482635-18acfead7ba8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
@@ -32,7 +32,7 @@ const DesktopFooter = () => {
 
           <div className="grid grid-cols-2 gap-6 sm:gap-6 sm:grid-cols-4">
             <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-white flex items-center">
+              <h2 className="mb-6 text-sm font-extrabold uppercase text-white flex items-center">
                 <FaLink className='mr-2' />
                 Quick Links
               </h2>
@@ -53,7 +53,7 @@ const DesktopFooter = () => {
             </div>
 
             <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-white flex items-center">
+              <h2 className="mb-6 text-sm font-extrabold uppercase text-white flex items-center">
                 <FaHeadset className='mr-2' />
                 Help Desk
               </h2>
@@ -77,7 +77,7 @@ const DesktopFooter = () => {
             </div>
 
             <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-white flex items-center">
+              <h2 className="mb-6 text-sm font-extrabold uppercase text-white flex items-center">
                 <FaGlobe className='mr-2' />
                 Social Handles
               </h2>
@@ -98,7 +98,7 @@ const DesktopFooter = () => {
             </div>
 
             <div className="text-white">
-              <h2 className="mb-6 text-sm font-semibold uppercase text-white flex items-center">
+              <h2 className="mb-6 text-sm font-extrabold uppercase text-white flex items-center">
                 <FaPhoneVolume className="mr-2" />
                 Contact Us
               </h2>
@@ -153,7 +153,7 @@ const DesktopFooter = () => {
               Designed and Developed by{" "}
               <a
                 href="https://pravah.skit.ac.in/"
-                className="text-yellow-600 hover:underline"
+                className="text-gray-400 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
