@@ -17,14 +17,44 @@ const CountdownTimer = ({ eventDate }) => {
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [isLive, setIsLive] = useState(false); // Track if the event is live
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      const time = calculateTimeLeft();
+      setTimeLeft(time);
+
+      // Check if the countdown is over
+      if (Object.keys(time).length === 0) {
+        setIsLive(true); // Set event as live
+        clearInterval(timer); // Stop the timer
+      }
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
+
+  if (isLive) {
+
+    return (
+      <div className="flex items-center justify-center mt-8 space-x-3">
+        {/* Gradient Circle */}
+        <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-ping relative">
+          <div className="absolute inset-0 w-full h-full bg-red-500 rounded-full"></div>
+        </div>
+        {/* Live Text */}
+        <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-600 tracking-wide dynapuff">
+          Event is Live Now
+        </span>
+
+        {/* Gradient Circle */}
+        <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-ping relative">
+          <div className="absolute inset-0 w-full h-full bg-red-500 rounded-full"></div>
+        </div>
+      </div>
+
+    );
+  }
 
   return (
     <div className="text-center">

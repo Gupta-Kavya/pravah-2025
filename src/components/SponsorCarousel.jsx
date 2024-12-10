@@ -4,7 +4,7 @@ const SponsorCarousel = ({ sponsors, speed = 30 }) => {
   const sponsorList = sponsors.concat(sponsors); // Duplicate the list for seamless looping
 
   return (
-    <div className="relative w-full h-96 flex items-center justify-center overflow-hidden mb-52">
+    <div className="relative w-full h-96  items-center justify-center overflow-hidden mb-52 hidden sm:flex">
       <div
         className="flex items-center whitespace-nowrap animate-slide"
         style={{

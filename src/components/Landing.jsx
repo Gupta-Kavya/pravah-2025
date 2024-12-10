@@ -1,138 +1,130 @@
-import React from 'react'
-import '../style.css';
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion"; // Import motion for animations
+import "../style.css";
+import { FaArrowRight } from "react-icons/fa";
+import Home from "./Home";
 
 const Landing = () => {
+  const [showLanding, setShowLanding] = useState(true);
+
+  const handleDiveIntoPravah = () => {
+    setShowLanding(false); // Trigger the slide-up animation
+  };
+
   return (
-    <div className="App overflow-hidden">
-      <div
-        className="relative flex items-center justify-center h-screen bg-cover bg-center text-black p-8"
-        style={{
-          backgroundImage: 'url(/background.jpg)', // Replace with your texture background image path
-        }}
-      >
-        {/* Left Corner Image Patterns (Hidden on mobile) */}
-        <div className="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-20 hidden sm:block">
-          <img
-            src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-            alt="Left Pattern 1"
-            className="w-80"
-          />
-        </div>
-        <div className="absolute bottom-0 left-0 transform -translate-x-8 translate-y-1/2 opacity-90 hidden sm:block">
-          <img
-            src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-            alt="Left Pattern 2"
-            className="w-80"
-          />
-        </div>
-
-        {/* Right Corner Image Patterns (Hidden on mobile) */}
-        <div className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 opacity-80 hidden sm:block">
-          <img
-            src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-            alt="Right Pattern 1"
-            className="w-80"
-          />
-        </div>
-
-        <div className="absolute bottom-0 right-0 transform translate-x-16 translate-y-16 opacity-80 hidden sm:block">
-          <img
-            src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-            alt="Right Pattern 2"
-            className="w-100"
-          />
-        </div>
-
-        {/* Main Content */}
-        <div className="max-w-md text-center">
-          {/* Logos */}
-          <div className="flex items-center justify-center space-x-4 mb-8">
-            <motion.img
-              src="https://baselius.ac.in/wp-content/uploads/2022/10/download__10_-removebg-preview.png"
-              alt="NAAC Logo"
-              className="h-12"
-              initial={{ opacity: 0, y: 20 }} // Initial state (invisible and slightly down)
-              animate={{ opacity: 1, y: 0 }} // Final state (fully visible and moved to normal position)
-              transition={{ duration: 1 }} // Duration of the animation
-            />
-            <div className="border-l-2 border-gray-300 h-8 mx-4"></div> {/* Vertical line */}
-            <motion.img
-              src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731940821/brltooiipjnbypobpw9x.png"
-              alt="SKIT Logo"
-              className="h-12"
-              initial={{ opacity: 0, y: 20 }} // Initial state (invisible and slightly down)
-              animate={{ opacity: 1, y: 0 }} // Final state (fully visible and moved to normal position)
-              transition={{ duration: 1 }} // Duration of the animation
-            />
-            <div className="border-l-2 border-gray-300 h-8 mx-4"></div> {/* Vertical line */}
-            <motion.img
-              src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731940965/iekobc4hutqgbs5ton7c.png"
-              alt="Another Logo"
-              className="h-12"
-              initial={{ opacity: 0, y: 20 }} // Initial state (invisible and slightly down)
-              animate={{ opacity: 1, y: 0 }} // Final state (fully visible and moved to normal position)
-              transition={{ duration: 1 }} // Duration of the animation
-            />
-          </div>
-
-          {/* Institute Name */}
-          <h1 className="text-sm font-semibold text-gray-800 sm:text-lg">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }} // Initial state (invisible and slightly down)
-              animate={{ opacity: 1, y: 0 }} // Final state (fully visible and moved to normal position)
-              transition={{ duration: 1 }} // Duration of the animation
-            >
-              Swami Keshvanand Institute of Technology, Management Gramothan, Jaipur
-            </motion.span>
-          </h1>
-
-          {/* Welcome Text */}
-          <motion.p
-            className="mt-4 text-lg font-sans text-[#B8860B]"
-            initial={{ opacity: 0, y: 20 }} // Initial state (invisible and slightly down)
-            animate={{ opacity: 1, y: 0 }} // Final state (fully visible and moved to normal position)
-            transition={{ duration: 1 }} // Duration of the animation
-          >
-            Welcomes You To
-          </motion.p>
-
-          {/* Event Image */}
-          <div className="mt-6">
-            <motion.img
-              src="/logo-text.png" // Replace with the actual path to the "Pravah 2025" image
-              alt="Pravah 2025"
-              className="mx-auto w-100"
-              initial={{ opacity: 0, y: 50, scale: 0.8 }} // Initial state: hidden, positioned down, and slightly zoomed out
-              animate={{ opacity: 1, y: 0, scale: 1 }} // Animate to fully visible, original position, and normal scale
-              transition={{ duration: 1, ease: "easeInOut" }} // Animation duration and easing
-            />
-          </div>
-
-
-
-          
-
-          {/* Button */}
-          <div className="mt-14">
-            <motion.button
-              className="button-transition px-6 py-3 bg-[#996515] text-white font-semibold rounded-full"
-              initial={{ opacity: 0, y: 50, scale: 0.9 }} // Initial state: hidden, positioned down, and slightly zoomed out
-              animate={{ opacity: 1, y: 0, scale: 1 }} // Animate to fully visible, original position, and normal scale
-              transition={{ duration: 0.7, ease: 'easeInOut' }} // Animation duration and easing
-            >
-              <span className="text">Dive into Pravah</span>
-              <span className="group-hover:inline-block ml-3">
-                <img
-                  src="https://pravah.skit.ac.in/_next/static/media/cursorTwo.349a9f8e.png"
-                  alt="Right Arrow"
-                  className="w-5 h-5 inline-block"
+    <div className="relative h-screen overflow-hidden">
+      {/* Landing Page */}
+      {showLanding && (
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full bg-black z-50"
+          initial={{ y: 0 }}
+          animate={{ y: 0 }}
+          exit={{ y: "-100%" }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+        >
+          <div className="relative h-screen flex">
+            {/* Left Section */}
+            <div className="w-1/2 bg-black flex flex-col justify-center items-center">
+              <div className="mt-4 text-center px-6">
+                <motion.img
+                  src="https://pravah.skit.ac.in/_next/static/media/navbarText.cfcb7a68.png"
+                  alt=""
+                  className="filter invert sepia-0 saturate-0 brightness-200 w-40"
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: -50 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
                 />
-              </span>
-            </motion.button>
+              </div>
+
+              <div className="mt-8 text-center px-6">
+                <motion.p
+                  className="text-xl font-semibold lexend mb-2 text-white"
+                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
+                >
+                  Presents Our
+                </motion.p>
+
+                <motion.p
+                  className="text-6xl sm:text-7xl font-bold lexend"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, #FF6F00, #00A859, #FFFFFF)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
+                  }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: -50 }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
+                >
+                  Annual Cultural Techno Sports Fest
+                </motion.p>
+              </div>
+
+              <div className="mt-6 w-2/3 h-1 bg-gradient-to-r from-[#797979] to-[#7c7c7c] rounded-full"></div>
+
+              <div className="mt-6 text-center px-6">
+                <motion.p
+                  className="text-white text-lg font-semibold lexend"
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: 0.6 }}
+                >
+                  Celebrating Diversity, Culture, and Innovation
+                </motion.p>
+              </div>
+            </div>
+
+            {/* Right Section */}
+            <div className="w-1/2 relative overflow-hidden">
+              <video
+                className="absolute top-0 left-0 w-full h-[100vh] object-cover"
+                src="/teaser.mp4"
+                autoPlay
+                loop
+                muted
+              />
+              <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-60"></div>
+              <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+                <motion.h1
+                  className="uppercase bungee-shade-regular text-[10rem] sm:text-[10rem] lg:text-[5rem]"
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                >
+                  PRAVAH'25
+                </motion.h1>
+                <div className="mt-8">
+                  <motion.button
+                    className="px-6 py-3 text-white rounded-full border-2 border-transparent bg-transparent transition-all duration-300 hover:scale-105 squada-one-regular text-lg"
+                    style={{
+                      borderImage: "linear-gradient(to right, #FF7E5F, #FEB47B) 1",
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleDiveIntoPravah}
+                  >
+                    Dive Into Pravah <FaArrowRight className="inline-block ml-2" />
+                  </motion.button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      )}
+
+      {/* Home Page */}
+      <motion.div
+        className="relative h-full"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showLanding ? 0 : 1 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+      >
+        <Home />
+      </motion.div>
     </div>
   );
 };

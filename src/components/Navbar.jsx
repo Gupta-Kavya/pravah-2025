@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom'; // Import useLocation to detect active link
 import '../style.css';
 
-const Navbarr = ({ bgColor, textColor, filter, announce }) => {
+const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const location = useLocation(); // Get the current location
@@ -38,17 +38,14 @@ const Navbarr = ({ bgColor, textColor, filter, announce }) => {
   return (
     <>
       <nav
-        className={`fixed w-full top-0 left-0 transition-colors duration-1000 ease-in-out bg-white  ${isDesktop ? bgColor : 'bg-white'}`}
+        className={`fixed w-full top-0 left-0 transition-colors duration-1000 ease-in-out bg-white ${isDesktop ? bgColor : 'bg-white'} ${isDesktop ? navbarDisplay : 'block'}`}
         style={{ zIndex: 1000 }}
       >
         {/* Announcement Bar */}
-        <div className={`bg-gradient-to-r from-[#221b63] via-[#01001d] to-[#3d0075] text-white text-sm md:text-base font-medium py-2 ${isDesktop ? announce : 'hidden'} `}>
+        <div className={`bg-gradient-to-r from-[#221b63] via-[#01001d] to-[#3d0075] text-white text-sm md:text-base font-medium py-2 ${isDesktop ? announce : 'block'}`}>
           <div className="max-w-screen-xl mx-auto px-4 text-center font-sans">
             Pravah 2024 is about to hit. Have you registered for any event?{' '}
-            <Link
-              to="/event-registration"
-              className="text-blue-200 underline font-semibold hover:text-blue-600 transition"
-            >
+            <Link to="/event-registration" className="text-blue-200 underline font-semibold hover:text-blue-600 transition">
               Click here
             </Link>{' '}
             for event registration.
@@ -56,16 +53,16 @@ const Navbarr = ({ bgColor, textColor, filter, announce }) => {
         </div>
 
         {/* Navbar */}
-        <div className="max-w-screen-xl flex items-center justify-center mx-auto px-4 py-4 dynapuff bg-white">
+        <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-4 dynapuff bg-white">
           {/* Left Links (for desktop) */}
-          <div className="flex space-x-8 items-center flex-shrink-0 justify-end">
+          <div className="hidden md:flex space-x-8 items-center flex-grow justify-start">
             <Link
-              to="/skit-pravah-2025"
+              to="/"
               className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
             >
               HOME
               <span
-                className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/skit-pravah-2025') ? 'w-full' : 'w-0'}`}
+                className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/skit-pravah-2025') || isActiveLink('/') ? 'w-full' : 'w-0'}`}
               ></span>
             </Link>
             <Link
@@ -89,21 +86,31 @@ const Navbarr = ({ bgColor, textColor, filter, announce }) => {
           </div>
 
           {/* Logo (Centered) */}
-          <div className="flex justify-center items-center flex-grow">
-            <img
-              src="https://pravah.skit.ac.in/_next/static/media/navbarText.cfcb7a68.png"
-              className={`sm:w-28 w-28 ${filter ? filter : ''}`} // Apply filter dynamically
-              alt="SKIT M & G Logo"
-            />
-            <img
-              src="/logo.png"
-              className="sm:w-28 w-28 hidden sm:block"
-              alt="SKIT M & G Logo"
-            />
-          </div>
+          <Link to="/skit-pravah-2025te">
+            <div className="sm:flex sm:justify-center sm:items-center flex-grow">
 
+              <img
+                src="https://www.skit.ac.in/images/headers/skit_logo.png"
+                className={`sm:w-14 w-14 ${filter || ''} mx-4`} // Apply filter dynamically
+                alt="SKIT M & G Logo"
+              />
+
+
+              <img
+                src="https://pravah.skit.ac.in/_next/static/media/navbarText.cfcb7a68.png"
+                className={`sm:w-32 w-32 ${filter || ''} mx-4`} // Apply filter dynamically
+                alt="SKIT M & G Logo"
+              />
+
+              <img
+                src="/logo.png"
+                className="sm:w-16 w-16 hidden sm:block mx-4" // Apply filter dynamically
+                alt="SKIT M & G Logo"
+              />
+            </div>
+          </Link>
           {/* Right Links (for desktop) */}
-          <div className="flex space-x-8 items-center flex-shrink-0 justify-start">
+          <div className="hidden md:flex space-x-8 items-center flex-grow justify-end">
             <Link
               to="/about-skit-pravah-2025"
               className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
@@ -123,7 +130,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce }) => {
               ></span>
             </Link>
             <Link
-              to="/team"
+              to="/the-team-behind-skit-pravah-2025"
               className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
             >
               TEAM PRAVAH
@@ -173,42 +180,49 @@ const Navbarr = ({ bgColor, textColor, filter, announce }) => {
           </button>
 
           <div className="flex flex-col items-center space-y-4 py-8">
-            <Link
-              to="/"
+            <a
+              href="#"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               HOME
-            </Link>
-            <Link
-              to="/events"
+            </a>
+            <a
+              href="#"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               EVENTS & REGISTRATIONS
-            </Link>
-            <Link
-              to="/aaveg"
+            </a>
+            <a
+              href="#"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               AAVEG
-            </Link>
-            <Link
-              to="/about"
+            </a>
+            <a
+              href="#"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               ABOUT US
-            </Link>
-            <Link
-              to="/sponsors"
+            </a>
+            <a
+              href="#"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               SPONSORS
-            </Link>
-            <Link
-              to="/team"
-              className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
+            </a>
+            <a
+              href="#"
+              className="text-lg font-medium text-black hover:text-yellow-600 transition"
             >
               TEAM PRAVAH
-            </Link>
+            </a>
+
+            {/* Himalayas graphic image */}
+            <img
+              src="/himalya.png"
+              alt="Himalayas Graphics"
+              className="mt-8 w-full max-w-md object-contain transform translate-y-1/2"
+            />
           </div>
         </motion.div>
       </nav>
