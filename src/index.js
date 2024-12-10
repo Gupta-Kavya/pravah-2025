@@ -16,6 +16,14 @@ import Footer from './components/Footer';
 import About from './components/About';
 import Events from './components/Events';
 import Aaveg from './components/Aaveg';
+import Sponsors from './components/Sponsors';
+import Teampravah from './components/Teampravah';
+import Eventlist from './components/Eventlist';
+import Eventdetails from './components/Eventdetails';
+import Loader from './components/Loader';
+import { HelmetProvider } from "react-helmet-async";
+import Thirakgallery from './components/Thirakgallery';
+
 
 const router = createBrowserRouter([
   {
@@ -51,17 +59,44 @@ const router = createBrowserRouter([
   {
     path: "/skit-pravah-2025-sponsors",
     element: (
-      <Aaveg />
+      <Sponsors />
     ),
   },
+  {
+    path: "/the-team-behind-skit-pravah-2025",
+    element: (
+      <Teampravah />
+    ),
+  },
+  {
+    path: "/skit-pravah-2025-events/:eventcat",
+    element: (
+      <Eventlist />
+    ),
+  },
+  {
+    path: "/skit-pravah-2025-events/:eventcat/:eventid",
+    element: (
+      <Eventdetails />
+    ),
+  },
+  {
+    path: "/skit-pravah-2025-events-thirak-gallery",
+    element: (
+      <Thirakgallery />
+    ),
+  }
+
 
 ]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<>
-{/* <AnimatedCursor
+  <>
+    <HelmetProvider>
+      <Loader />
+      {/* <AnimatedCursor
   innerSize={8}
   outerSize={8}
   color='193, 11, 111'
@@ -81,14 +116,14 @@ root.render(
     'button',
     '.link'
   ]}
-  style={{ zIndex: 3000 }} // Add z-index to the cursor's style
+  style={{ zIndex: 10000 }} // Add z-index to the cursor's style
 /> */}
 
 
-<div className='hide-scrollbar' >
-  <RouterProvider router={router} />
-  </div>
-
+      <div className='hide-scrollbar' >
+        <RouterProvider router={router} />
+      </div>
+    </HelmetProvider>
   </>
 
 );
