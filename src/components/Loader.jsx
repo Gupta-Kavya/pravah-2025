@@ -39,13 +39,13 @@ const Loader = () => {
                     className="fixed top-0 z-[60] flex h-screen w-full items-center justify-center bg-black"
                     style={{ zIndex: 5000 }}
                 >
-                    {/* {loaderProgress !== 100 && (
+                    {loaderProgress !== 100 && (
                         <div className="absolute bottom-0 right-0 m-5">
                             <p className="text-2xl font-bold uppercase text-white ">
-                                {Math.floor(loaderProgress)}%
+                               Loading {Math.floor(loaderProgress)}%
                             </p>
                         </div>
-                    )} */}
+                    )}
 
                     {/* <div
                         className={`absolute bottom-8 left-1/2 -translate-x-1/2 duration-300 ${loaderProgress === 100 ? 'opacity-100' : 'opacity-0'

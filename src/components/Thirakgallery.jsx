@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet';
 
 const Thirakgallery = () => {
   return (
-    <div className="text-gray-900 relative overflow-hidden bg-black">
+    <div className="text-gray-900 relative overflow-hidden bg-white">
       <Helmet>
         <title>Thirak Gallery - Celebrate Dance & Culture | SKIT</title>
         <meta
@@ -39,13 +39,13 @@ const Thirakgallery = () => {
 
     
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
+      {/* <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div> */}
 
       <Navbarr />
 
       <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-16 relative z-20">
         {/* Heading Section */}
-        <div className="absolute top-0 left-0 right-0 h-72 bg-gradient-to-b from-black via-transparent to-transparent z-10"></div>
+        {/* <div className="absolute top-0 left-0 right-0 h-72 bg-gradient-to-b from-black via-transparent to-transparent z-10"></div> */}
 
         {/* Gallery Section */}
         <div className="grid gallery-grid">
@@ -84,9 +84,9 @@ const Thirakgallery = () => {
               <div className="relative">
                 {/* Main Heading */}
                 <motion.h1
-                  className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-300 tracking-widest pattaya-regular"
+                  className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-500 tracking-widest pattaya-regular"
                 >
-                  Thirak Gallery
+                  Thirak
                 </motion.h1>
 
               </div>

@@ -300,6 +300,8 @@ const Home = () => {
   ];
 
 
+  const [selectedVideo, setSelectedVideo] = useState('');
+
 
 
   const Celebrities1 = [
@@ -458,13 +460,14 @@ const Home = () => {
                   {/* Logo */}
                   {/* <img
                     src="/logo.png"
-                    className="w-32 mx-auto sm:w-64 sm:mb-10"
+                    className="w-32 mx-auto sm:w-64 sm:mb-10 absolute top-60 z-0"
                     alt="Pravah 2025 Logo"
                   /> */}
 
-                  <h1 className="text-7xl sm:text-4xl font-extrabold text-black cookie-regular sm:hidden mt-10">Pravah 2025</h1>
+                  {/* <h1 className="text-7xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-900 via-indigo-500 to-pink-500 hidden sm:block">Pravah'25</h1> */}
 
                   {/* Dynamic Typing Effect */}
+       
                   <ReactTypingEffect
                     text={[
                       "Pravah 2025",
@@ -482,7 +485,6 @@ const Home = () => {
                       </h1>
                     )}
                   />
-
 
 
 
@@ -594,6 +596,10 @@ const Home = () => {
                   />
                 </div>
 
+       
+
+
+
                 <div className="absolute bottom-0 -left-20 w-96 hidden sm:block z-0 pointer-events-none">
                   <img
                     src="rb_24869.png"
@@ -601,6 +607,7 @@ const Home = () => {
                     className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[100px]"
                   />
                 </div>
+
 
                 <div className="absolute bottom-0 -right-20 w-96 hidden sm:block z-50 pointer-events-none">
                   <img
@@ -616,7 +623,7 @@ const Home = () => {
 
               {/* Section 2 */}
               <div
-                className="section p-8 sm:bg-white section-2"
+                className="section p-0 sm:bg-white section-2"
 
               >
 
@@ -692,52 +699,84 @@ const Home = () => {
 
 
                 {/* Video Section - desktop */}
-                <div className="relative sm:flex sm:flex-row gap-8 min-h-screen hidden justify-center z-10 pointer-events-auto">
+                <div className="relative sm:flex sm:flex-row gap-8 min-h-screen hidden justify-center z-10 pointer-events-auto ">
                   {/* Left Video Card */}
                   <motion.div
-                    className="video-card p-4 hover:scale-105 transform transition self-center relative z-20 pointer-events-auto"
+                    className="video-card p-4 hover:scale-105 transform transition self-center relative z-10 pointer-events-auto cursor-pointer"
                     style={{ top: '', right: '50px' }}
                     initial={{ opacity: 0, y: 10, rotate: -15 }}
-                    whileInView={{ opacity: 1, y: -50, rotate: -10 }}
+                    whileInView={{ opacity: 1, y: -10, rotate: -10 }}
                     viewport={{ once: false, amount: 0.3 }}
                     transition={{ duration: 0.7, ease: 'easeOut' }}
+                    onClick={() => setSelectedVideo('teaser')}
                   >
-
-
                     <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center mt-4 pattaya-regular">Teaser Launch</h3>
-                    <iframe
-                      width="350"
-                      height="200"
-                      src="https://www.youtube.com/embed/DyuUx1obJ_M"
-                      title="Teaser Launch of Pravah"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="rounded-lg shadow-sm"
-                    ></iframe>
+                    <img
+                      src="/naushad.jpg"
+                      alt="Teaser Launch"
+                      className="rounded-lg shadow-sm w-80 h-44 object-cover"
+                    />
                   </motion.div>
 
                   {/* Right Video Card */}
                   <motion.div
-                    className="video-card p-4 hover:scale-105 transform transition self-center relative z-20 pointer-events-auto"
+                    className="video-card p-4 hover:scale-105 transform transition self-center relative z-10 pointer-events-auto cursor-pointer"
                     style={{ top: '30px', left: '50px' }}
                     initial={{ opacity: 0, y: 100, rotate: 15 }}
-                    whileInView={{ opacity: 1, y: -120, rotate: 10 }}
+                    whileInView={{ opacity: 1, y: -100, rotate: 10 }}
                     viewport={{ once: false, amount: 0.3 }}
                     transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+                    onClick={() => setSelectedVideo('logo')}
                   >
                     <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center mt-4 pattaya-regular">Logo Reveal</h3>
-                    <iframe
-                      width="350"
-                      height="200"
-                      src="https://www.youtube.com/embed/HVL4Fgel8S4"
-                      title="Logo Reveal of Pravah"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="rounded-lg shadow-sm"
-                    ></iframe>
+                    <img
+                      src="/naushad.jpg"
+                      alt="Logo Reveal"
+                      className="rounded-lg shadow-sm w-80 h-44 object-cover"
+                    />
                   </motion.div>
+
+                  {/* Himalayas Image */}
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full hidden sm:block z-10 pointer-events-none "
+                    initial={{ y: 0 }}
+                    animate={{ y: selectedVideo ? 200 : 0 }}
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  >
+                    <img
+                      src="rb_2149158786.png"
+                      alt="Himalayas"
+                      className="w-full object-cover transform lg:translate-y-[0px] 2xl:translate-y-[0px]"
+                    />
+                  </motion.div>
+
+                  {selectedVideo && (
+                    <motion.div
+                      className="absolute bottom-0 left-0 w-full h-full bg-black bg-opacity-75 flex items-center justify-center z-50"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      <div className="relative w-full h-full">
+                        <video
+                          src={
+                            selectedVideo === 'teaser'
+                              ? '/teaser.mp4'
+                              : '/path/to/logo-video.mp4'
+                          }
+                          autoPlay
+                          className="w-full h-full object-cover"
+                          loop
+                        ></video>
+                        <button
+                          className="absolute bottom-4 right-4 bg-orange-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-orange-600 font-bold"
+                          onClick={() => setSelectedVideo(null)}
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
 
 
@@ -858,21 +897,21 @@ const Home = () => {
 
 
                 {/* Overlapping Himalayas Image */}
-                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-10 pointer-events-none">
+                {/* <div className="absolute bottom-0 left-0 w-full hidden sm:block z-10 pointer-events-none">
                   <img
                     src="rb_2149158786.png"
                     alt="Himalayas"
                     className="w-full object-cover transform lg:translate-y-[0px] 2xl:translate-y-[0px]"
                   />
-                </div>
+                </div> */}
 
-                <div className="absolute bottom-60 right-0 w-full hidden sm:block z-0 pointer-events-none">
+                {/* <div className="absolute bottom-60 right-0 w-full hidden sm:block z-0 pointer-events-none">
                   <img
                     src="rb_28055.png"
                     alt="Himalayas"
                     className="w-full object-cover transform lg:translate-y-[250px] 2xl:translate-y-[0px] opacity-10"
                   />
-                </div>
+                </div> */}
 
 
                 {/* <div className="absolute -bottom-20 -left-20 w-96 hidden sm:block z-0 pointer-events-none">
@@ -908,7 +947,7 @@ const Home = () => {
 
               {/* Section 3 */}
               <div
-                className="section p-8 sm:p-16 sm:bg-white section-3"
+                className="section p-8 sm:p-16 sm:bg-white section-3 z-50"
               >
                 {/* Bottom Center Pattern */}
                 <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-50 sm:hidden">
@@ -1101,7 +1140,7 @@ const Home = () => {
 
               {/* Section 4 */}
               <div
-                className="section p-8 sm:bg-white section-4"
+                className="section p-8 sm:bg-white section-4 z-50"
 
               >
 
@@ -1361,7 +1400,7 @@ const Home = () => {
                 </div>
 
 
-                
+{/* 
                 <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0">
                   <motion.img
                     src="rb_38558.png"
@@ -1375,7 +1414,7 @@ const Home = () => {
                       ease: "easeOut",
                     }}
                   />
-                </div>
+                </div> */}
 
               </div>
 
