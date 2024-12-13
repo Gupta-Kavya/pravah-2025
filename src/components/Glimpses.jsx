@@ -5,75 +5,80 @@ const Glimpses = () => {
     const images = {
         thirak: [
             [
-                "https://pravah.skit.ac.in/_next/static/media/1.1c9659af.webp",
-                "https://pravah.skit.ac.in/_next/static/media/2.16458c60.webp",
-                "https://pravah.skit.ac.in/_next/static/media/4.d89f0a77.webp",
-                "https://pravah.skit.ac.in/_next/static/media/5.25f0e39c.webp",
-                "https://pravah.skit.ac.in/_next/static/media/15.1f1c488c.webp",
-                "https://pravah.skit.ac.in/_next/static/media/18.e2bdc5e6.webp"
+                "Thirak/1.jpg",
+                "Thirak/2.jpg",
+                "Thirak/3.jpg",
+                "Thirak/4.jpg",
+                "Thirak/5.JPG",
+                "Thirak/6.JPG"
             ],
             [
-                "https://pravah.skit.ac.in/_next/static/media/6.9cfa68e3.webp",
-                "https://pravah.skit.ac.in/_next/static/media/8.0db58226.webp",
-                "https://pravah.skit.ac.in/_next/static/media/9.bf49675c.webp",
-                "https://pravah.skit.ac.in/_next/static/media/6.e96bb34a.webp",
-                "https://pravah.skit.ac.in/_next/static/media/16.c3a84896.webp",
-                "https://pravah.skit.ac.in/_next/static/media/19.c8c4260a.webp"
+                "Thirak/7.jpg",
+                "Thirak/8.jpg",
+                "Thirak/9.jpg",
+                "Thirak/10.jpg",
+                "Thirak/11.JPG",
+                "Thirak/12.JPG"
             ],
             [
-                "https://pravah.skit.ac.in/_next/static/media/11.48c8791b.webp",
-                "https://pravah.skit.ac.in/_next/static/media/12.f15cb5e6.webp",
-                "https://pravah.skit.ac.in/_next/static/media/13.e3f8585b.webp",
-                "https://pravah.skit.ac.in/_next/static/media/14.e0c98f1e.webp",
-                "https://pravah.skit.ac.in/_next/static/media/17.67359ed9.webp"
+                "Thirak/13.jpg",
+                "Thirak/14.jpg",
+                "Thirak/15.jpg",
+                "Thirak/16.jpg",
+                "Thirak/17.JPG",
+                "Thirak/18.JPG"
             ],
         ],
         rawaz: [
             [
-                "https://pravah.skit.ac.in/_next/static/media/1.9a8b7e19.webp",
-                "https://pravah.skit.ac.in/_next/static/media/6.a7018b4e.webp",
-                "https://pravah.skit.ac.in/_next/static/media/11.2eb1859b.webp",
-                "https://pravah.skit.ac.in/_next/static/media/15.25a12dcc.webp",
-                "https://pravah.skit.ac.in/_next/static/media/14.952a2246.webp"
+                "Rawaz/1.JPG",
+                "Rawaz/2.JPG",
+                "Rawaz/3.JPG",
+                "Rawaz/4.JPG",
+                "Rawaz/5.JPG",
+                "Rawaz/6.JPG",
             ],
             [
-                "https://pravah.skit.ac.in/_next/static/media/3.5e0c0aa4.webp",
-                "https://pravah.skit.ac.in/_next/static/media/18.34386cfb.webp",
-                "https://pravah.skit.ac.in/_next/static/media/9.3ed16db8.webp",
-                "https://pravah.skit.ac.in/_next/static/media/12.e6f6b053.webp",
-                "https://pravah.skit.ac.in/_next/static/media/13.2979014c.webp"
+                "Rawaz/7.JPG",
+                "Rawaz/8.JPG",
+                "Rawaz/9.JPG",
+                "Rawaz/10.JPG",
+                "Rawaz/11.JPG",
+                "Rawaz/12.JPG",
             ],
             [
-                "https://pravah.skit.ac.in/_next/static/media/2.efed8c55.webp",
-                "https://pravah.skit.ac.in/_next/static/media/4.9579bce9.webp",
-                "https://pravah.skit.ac.in/_next/static/media/8.d5cbb22a.webp",
-                "https://pravah.skit.ac.in/_next/static/media/17.234eae2b.webp",
-                "https://pravah.skit.ac.in/_next/static/media/16.5d99e12b.webp",
-                "https://pravah.skit.ac.in/_next/static/media/19.6fc2c3aa.webp"
+                "Rawaz/13.JPG",
+                "Rawaz/14.JPG",
+                "Rawaz/15.JPG",
+                "Rawaz/16.JPG",
+                "Rawaz/17.JPG",
+                "Rawaz/18.JPG",
             ],
         ],
         djnight: [
             [
-                "https://pravah.skit.ac.in/_next/static/media/1.0ed2fcca.webp",
-                "https://pravah.skit.ac.in/_next/static/media/2.0f558fcf.webp",
-                "https://pravah.skit.ac.in/_next/static/media/3.8121e741.webp",
-                "https://pravah.skit.ac.in/_next/static/media/4.d3917e1b.webp",
-                "https://pravah.skit.ac.in/_next/static/media/5.1854ad24.webp"
+                "djnight/1.JPG",
+                "djnight/2.JPG",
+                "djnight/3.JPG",
+                "djnight/4.JPG",
+                "djnight/5.JPG",
+                "djnight/6.JPG",
             ],
             [
-                "https://pravah.skit.ac.in/_next/static/media/6.a22533c3.webp",
-                "https://pravah.skit.ac.in/_next/static/media/7.e84350db.webp",
-                "https://pravah.skit.ac.in/_next/static/media/8.e5ffd7de.webp",
-                "https://pravah.skit.ac.in/_next/static/media/9.bea0f7ae.webp",
-                "https://pravah.skit.ac.in/_next/static/media/10.02023cf2.webp"
+                "djnight/7.JPG",
+                "djnight/15.JPG",
+                "djnight/9.JPG",
+                "djnight/10.JPG",
+                "djnight/11.JPG",
+                "djnight/12.JPG",
             ],
             [
-                "https://pravah.skit.ac.in/_next/static/media/11.776ef5f1.webp",
-                "https://pravah.skit.ac.in/_next/static/media/10.02023cf2.webp",
-                "https://pravah.skit.ac.in/_next/static/media/7.e84350db.webp",
-                "https://pravah.skit.ac.in/_next/static/media/9.bea0f7ae.webp",
-                "https://pravah.skit.ac.in/_next/static/media/4.d3917e1b.webp",
-                "https://pravah.skit.ac.in/_next/static/media/5.1854ad24.webp"
+                "djnight/13.JPG",
+                "djnight/14.JPG",
+                "djnight/8.JPG",
+                "djnight/16.JPG",
+                "djnight/17.JPG",
+                "djnight/18.JPG",
             ],
         ],
         sur: [
