@@ -5,22 +5,22 @@ import DesktopFooter from './DesktopFooter';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 
-const Thirakgallery = () => {
+const Rawazgallery = () => {
   return (
     <div className="text-gray-900 relative overflow-hidden bg-black">
       <Helmet>
-        <title>Thirak Gallery - Celebrate Dance & Culture | SKIT</title>
+        <title>Rawaz Gallery - Showcase Faishon & Culture | SKIT</title>
         <meta
           name="description"
-          content="Explore the Thirak Gallery, a visual celebration of the dynamic dance competition showcasing the spirit of Incredible India at SKIT."
+          content="Explore the Rawaz Gallery, a visual celebration of the dynamic faishon show showcasing the spirit of Incredible India at SKIT."
         />
         <meta
           name="keywords"
-          content="Thirak, dance competition, cultural events, Incredible India, SKIT, Swami Keshvanand Institute of Technology, youth fest, gallery"
+          content="Rawaz, faishon show, cultural events, Incredible India, SKIT, Swami Keshvanand Institute of Technology, youth fest, gallery"
         />
         <meta
           property="og:title"
-          content="Thirak Gallery - Celebrate Dance & Culture | SKIT"
+          content="Rawaz Gallery - Celebrate Dance & Culture | SKIT"
         />
         <meta
           property="og:description"
@@ -50,29 +50,29 @@ const Thirakgallery = () => {
         {/* Gallery Section */}
         <div className="grid gallery-grid">
           <div className="columnn">
-            <img src="Thirak/1.jpg" alt="" />
-            <img src="Thirak/2.jpg" alt="" />
-            <img src="Thirak/3.jpg" alt="" />
-            <img src="Thirak/4.jpg" alt="" />
-            <img src="Thirak/5.jpg" alt="" />
-            <img src="Thirak/6.jpg" alt="" />
+            <img src="Rawaz/1.jpg" alt="" />
+            <img src="Rawaz/2.jpg" alt="" />
+            <img src="Rawaz/3.jpg" alt="" />
+            <img src="Rawaz/4.jpg" alt="" />
+            <img src="Rawaz/5.jpg" alt="" />
+            <img src="Rawaz/6.jpg" alt="" />
 
           </div>
           <div className="columnn">
-          <img src="Thirak/7.jpg" alt="" />
-            <img src="Thirak/8.jpg" alt="" />
-            <img src="Thirak/9.jpg" alt="" />
-            <img src="Thirak/10.jpg" alt="" />
-            <img src="Thirak/11.jpg" alt="" />
-            <img src="Thirak/12.jpg" alt="" />
+          <img src="Rawaz/7.jpg" alt="" />
+            <img src="Rawaz/8.jpg" alt="" />
+            <img src="Rawaz/9.jpg" alt="" />
+            <img src="Rawaz/10.jpg" alt="" />
+            <img src="Rawaz/11.jpg" alt="" />
+            <img src="Rawaz/12.jpg" alt="" />
           </div>
           <div className="columnn">
-          <img src="Thirak/13.jpg" alt="" />
-            <img src="Thirak/14.jpg" alt="" />
-            <img src="Thirak/15.jpg" alt="" />
-            <img src="Thirak/16.jpg" alt="" />
-            <img src="Thirak/17.jpg" alt="" />
-            <img src="Thirak/18.jpg" alt="" />
+          <img src="Rawaz/13.jpg" alt="" />
+            <img src="Rawaz/14.jpg" alt="" />
+            <img src="Rawaz/15.jpg" alt="" />
+            <img src="Rawaz/16.jpg" alt="" />
+            <img src="Rawaz/17.jpg" alt="" />
+            <img src="Rawaz/18.jpg" alt="" />
 
             <motion.section
               className="text-center"
@@ -85,7 +85,7 @@ const Thirakgallery = () => {
                 <motion.h1
                   className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-300 tracking-widest pattaya-regular"
                 >
-                  Thirak Gallery
+                  Rawaz Gallery
                 </motion.h1>
 
               </div>
@@ -93,20 +93,21 @@ const Thirakgallery = () => {
 
           </div>
           <div className="columnn">
-          <img src="Thirak/10.jpg" alt="" />
-            <img src="Thirak/2.jpg" alt="" />
-            <img src="Thirak/3.jpg" alt="" />
-            <img src="Thirak/4.jpg" alt="" />
-            <img src="Thirak/9.jpg" alt="" />
-            <img src="Thirak/6.jpg" alt="" />
+          <img src="Rawaz/13.jpg" alt="" />
+            <img src="Rawaz/14.jpg" alt="" />
+            <img src="Rawaz/15.jpg" alt="" />
+            <img src="Rawaz/16.jpg" alt="" />
+            <img src="Rawaz/17.jpg" alt="" />
+            <img src="Rawaz/18.jpg" alt="" />
+
           </div>
           <div className="columnn">
-          <img src="Thirak/8.jpg" alt="" />
-            <img src="Thirak/14.jpg" alt="" />
-            <img src="Thirak/10.jpg" alt="" />
-            <img src="Thirak/16.jpg" alt="" />
-            <img src="Thirak/17.jpg" alt="" />
-            <img src="Thirak/18.jpg" alt="" />
+          <img src="Rawaz/7.jpg" alt="" />
+            <img src="Rawaz/8.jpg" alt="" />
+            <img src="Rawaz/9.jpg" alt="" />
+            <img src="Rawaz/10.jpg" alt="" />
+            <img src="Rawaz/11.jpg" alt="" />
+            <img src="Rawaz/12.jpg" alt="" />
           </div>
 
 
@@ -119,4 +120,4 @@ const Thirakgallery = () => {
   );
 };
 
-export default Thirakgallery;
+export default Rawazgallery;

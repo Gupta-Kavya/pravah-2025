@@ -5,7 +5,7 @@ import DesktopFooter from './DesktopFooter';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 
-const Thirakgallery = () => {
+const djnightgallery = () => {
   return (
     <div className="text-gray-900 relative overflow-hidden bg-black">
       <Helmet>
@@ -50,29 +50,31 @@ const Thirakgallery = () => {
         {/* Gallery Section */}
         <div className="grid gallery-grid">
           <div className="columnn">
-            <img src="Thirak/1.jpg" alt="" />
-            <img src="Thirak/2.jpg" alt="" />
-            <img src="Thirak/3.jpg" alt="" />
-            <img src="Thirak/4.jpg" alt="" />
-            <img src="Thirak/5.jpg" alt="" />
-            <img src="Thirak/6.jpg" alt="" />
+            <img src="djnight/1.jpg" alt="" />
+            <img src="djnight/2.jpg" alt="" />
+            <img src="djnight/3.jpg" alt="" />
+            <img src="djnight/4.jpg" alt="" />
+            <img src="djnight/5.jpg" alt="" />
+            <img src="djnight/6.jpg" alt="" />
 
           </div>
           <div className="columnn">
-          <img src="Thirak/7.jpg" alt="" />
-            <img src="Thirak/8.jpg" alt="" />
-            <img src="Thirak/9.jpg" alt="" />
-            <img src="Thirak/10.jpg" alt="" />
-            <img src="Thirak/11.jpg" alt="" />
-            <img src="Thirak/12.jpg" alt="" />
+          <img src="djnight/7.jpg" alt="" />
+            <img src="djnight/8.jpg" alt="" />
+            <img src="djnight/9.jpg" alt="" />
+            <img src="djnight/10.jpg" alt="" />
+            <img src="djnight/11.jpg" alt="" />
+            <img src="djnight/12.jpg" alt="" />
+
           </div>
           <div className="columnn">
-          <img src="Thirak/13.jpg" alt="" />
-            <img src="Thirak/14.jpg" alt="" />
-            <img src="Thirak/15.jpg" alt="" />
-            <img src="Thirak/16.jpg" alt="" />
-            <img src="Thirak/17.jpg" alt="" />
-            <img src="Thirak/18.jpg" alt="" />
+          <img src="djnight/13.jpg" alt="" />
+            <img src="djnight/14.jpg" alt="" />
+            <img src="djnight/15.jpg" alt="" />
+            <img src="djnight/16.jpg" alt="" />
+            <img src="djnight/17.jpg" alt="" />
+            <img src="djnight/18.jpg" alt="" />
+
 
             <motion.section
               className="text-center"
@@ -93,20 +95,22 @@ const Thirakgallery = () => {
 
           </div>
           <div className="columnn">
-          <img src="Thirak/10.jpg" alt="" />
-            <img src="Thirak/2.jpg" alt="" />
-            <img src="Thirak/3.jpg" alt="" />
-            <img src="Thirak/4.jpg" alt="" />
-            <img src="Thirak/9.jpg" alt="" />
-            <img src="Thirak/6.jpg" alt="" />
+          <img src="djnight/1.jpg" alt="" />
+            <img src="djnight/2.jpg" alt="" />
+            <img src="djnight/3.jpg" alt="" />
+            <img src="djnight/4.jpg" alt="" />
+            <img src="djnight/5.jpg" alt="" />
+            <img src="djnight/16.jpg" alt="" />
+
           </div>
           <div className="columnn">
-          <img src="Thirak/8.jpg" alt="" />
-            <img src="Thirak/14.jpg" alt="" />
-            <img src="Thirak/10.jpg" alt="" />
-            <img src="Thirak/16.jpg" alt="" />
-            <img src="Thirak/17.jpg" alt="" />
-            <img src="Thirak/18.jpg" alt="" />
+          <img src="djnight/14.jpg" alt="" />
+            <img src="djnight/13.jpg" alt="" />
+            <img src="djnight/12.jpg" alt="" />
+            <img src="djnight/11.jpg" alt="" />
+            <img src="djnight/10.jpg" alt="" />
+            <img src="djnight/8.jpg" alt="" />
+
           </div>
 
 
@@ -119,4 +123,4 @@ const Thirakgallery = () => {
   );
 };
 
-export default Thirakgallery;
+export default djnightgallery;
