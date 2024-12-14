@@ -25,6 +25,9 @@ import { HelmetProvider } from "react-helmet-async";
 import Thirakgallery from './components/Thirakgallery';
 import Rawazgallery from './components/Rawazgallery';
 import Djnightgallery from './components/djnightgallery';
+import Surgallery from './components/Surgallery';
+import Celebritygallery from './components/Celebritygallery';
+import AnnualDaygallery from './components/AnnualDaygallery';
 
 
 const router = createBrowserRouter([
@@ -99,9 +102,25 @@ const router = createBrowserRouter([
     element: (
       <Djnightgallery />
     ),
+  },
+  {
+    path: "/skit-pravah-2025-events-Sur-gallery",
+    element: (
+      <Surgallery />
+    ),
+  },
+  {
+    path: "/skit-pravah-2025-events-Celebrity-gallery",
+    element: (
+      <Celebritygallery />
+    ),
+  },
+  {
+    path: "/skit-pravah-2025-events-AnnualDay-gallery",
+    element: (
+      <AnnualDaygallery />
+    ),
   }
-
-
 ]);
 
 
