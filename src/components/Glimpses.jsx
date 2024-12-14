@@ -83,52 +83,77 @@ const Glimpses = () => {
         ],
         sur: [
             [
-                "https://pravah.skit.ac.in/_next/static/media/7.9602e318.webp",
-                "https://pravah.skit.ac.in/_next/static/media/12.2e2a2ed5.webp",
-                "https://pravah.skit.ac.in/_next/static/media/9.4dc835ab.webp",
-                "https://pravah.skit.ac.in/_next/static/media/14.b422f5b8.webp",
-                "https://pravah.skit.ac.in/_next/static/media/1.e0ce2e93.webp",
-                "https://pravah.skit.ac.in/_next/static/media/10.75a59fc5.webp"
+                "Sur/1.jpg",
+                "Sur/2.jpg",
+                "Sur/3.jpg",
+                "Sur/4.jpg",
+                "Sur/5.jpg",
+                "Sur/6.jpg"
             ],
             [
-                "https://pravah.skit.ac.in/_next/static/media/16.72bbc5df.webp",
-                "https://pravah.skit.ac.in/_next/static/media/6.5bd28590.webp",
-                "https://pravah.skit.ac.in/_next/static/media/3.afbd8132.webp",
-                "https://pravah.skit.ac.in/_next/static/media/4.560badd9.webp",
-                "https://pravah.skit.ac.in/_next/static/media/17.708da01a.webp"
+                "Sur/7.jpg",
+                "Sur/8.jpg",
+                "Sur/9.jpg",
+                "Sur/10.jpg",
+                "Sur/11.jpg"
             ],
             [
-                "https://pravah.skit.ac.in/_next/static/media/11.74db53b3.webp",
-                "https://pravah.skit.ac.in/_next/static/media/5.052f6cfc.webp",
-                "https://pravah.skit.ac.in/_next/static/media/13.a2a2b24e.webp",
-                "https://pravah.skit.ac.in/_next/static/media/2.aee62845.webp",
-                "https://pravah.skit.ac.in/_next/static/media/8.9b7a19e6.webp",
-                "https://pravah.skit.ac.in/_next/static/media/15.88341168.webp"
+                "Sur/12.jpg",
+                "Sur/13.jpg",
+                "Sur/14.jpg",
+                "Sur/15.jpg",
+                "Sur/16.jpg",
+                "Sur/17.jpg"
             ],
         ],
         celebnight: [
             [
-                "https://pravah.skit.ac.in/_next/static/media/1.34cb6058.webp",
-                "https://pravah.skit.ac.in/_next/static/media/2.d8d896a3.webp",
-                "https://pravah.skit.ac.in/_next/static/media/3.dd4b7df0.webp",
-                "https://pravah.skit.ac.in/_next/static/media/4.6f770fbc.webp",
-                "https://pravah.skit.ac.in/_next/static/media/5.273040f3.webp",
-                "https://pravah.skit.ac.in/_next/static/media/6.e96bb34a.webp"
+                "Celebrity/1.jpg",
+                "Celebrity/8.jpg",
+                "Celebrity/3.jpg",
+                "Celebrity/23.jpg",
+                "Celebrity/5.jpg",
+                "Celebrity/6.jpg"
             ],
             [
-                "https://pravah.skit.ac.in/_next/static/media/7.cfb544f3.webp",
-                "https://pravah.skit.ac.in/_next/static/media/8.428a06de.webp",
-                "https://pravah.skit.ac.in/_next/static/media/9.9f47038f.webp",
-                "https://pravah.skit.ac.in/_next/static/media/10.2122d74f.webp",
-                "https://pravah.skit.ac.in/_next/static/media/11.caa46a4a.webp"
+               "Celebrity/7.jpg",
+               "Celebrity/21.jpg",
+               "Celebrity/18.jpg",
+               "Celebrity/10.jpg",
+               "Celebrity/11.jpg"
             ],
             [
-                "https://pravah.skit.ac.in/_next/static/media/12.0f65612d.webp",
-                "https://pravah.skit.ac.in/_next/static/media/5.052f6cfc.webp",
-                "https://pravah.skit.ac.in/_next/static/media/6.e96bb34a.webp",
-                "https://pravah.skit.ac.in/_next/static/media/5.273040f3.webp",
-                "https://pravah.skit.ac.in/_next/static/media/10.2122d74f.webp",
-                "https://pravah.skit.ac.in/_next/static/media/11.caa46a4a.webp"
+               "Celebrity/12.jpg",
+               "Celebrity/13.jpg",
+               "Celebrity/22.jpg",
+               "Celebrity/15.jpg",
+               "Celebrity/20.jpg",
+               "Celebrity/9.jpg"
+            ],
+        ],
+        AnnualDay: [
+            [
+                "AnnualDay/1.jpg",
+                "AnnualDay/2.jpg",
+                "AnnualDay/3.jpg",
+                "AnnualDay/4.jpg",
+                "AnnualDay/5.jpg",
+                "AnnualDay/6.jpg"
+            ],
+            [
+                "AnnualDay/7.jpg",
+                "AnnualDay/8.jpg",
+                "AnnualDay/9.jpg",
+                "AnnualDay/10.jpg",
+                "AnnualDay/11.jpg"
+            ],
+            [
+                "AnnualDay/12.jpg",
+                "AnnualDay/13.jpg",
+                "AnnualDay/14.jpg",
+                "AnnualDay/15.jpg",
+                "AnnualDay/16.jpg",
+                "AnnualDay/17.jpg"
             ],
         ],
     };
@@ -180,10 +205,10 @@ const Glimpses = () => {
 
             {/* Category Buttons */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-16 z-20 cookie-regular">
-                {["thirak", "rawaz", "djnight", "sur", "celebnight"].map((category) => (
+                {["thirak", "rawaz", "djnight", "sur", "celebnight", "AnnualDay"].map((category) => (
                     <button
                         key={category}
-                        className={`relative text-3xl font-bold transition-all duration-500 ${selectedCategory === category
+                        className={`relative text-3xl font-bold transition-all duration-500 text-nowrap ${selectedCategory === category
                             ? "bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-pink-300"
                             : "text-white"
                             }`}
