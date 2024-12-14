@@ -190,7 +190,7 @@ const Home = () => {
       name: "DJ Night",
       description: "An electrifying night with popular DJs.",
       image: "/events/djnight.jpg",
-      url: "/skit-pravah-2025-events-thirak-gallery"
+      url: "/skit-pravah-2025-events-djnight-gallery"
     },
     {
       id: 5,
@@ -211,7 +211,7 @@ const Home = () => {
       name: "Rawaz",
       description: "A dazzling showcase of style and elegance through stunning modeling performances.",
       image: "/events/rawaz.jpg",
-      url: "/skit-pravah-2025-events-thirak-gallery"
+      url: "/skit-pravah-2025-events-rawaz-gallery"
     },
     {
       id: 5,
@@ -602,11 +602,22 @@ const Home = () => {
 
                 <div className="absolute bottom-0 -left-20 w-96 hidden sm:block z-0 pointer-events-none">
                   <img
-                    src="rb_24869.png"
+                    src="file (6).png"
                     alt="Himalayas"
-                    className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[100px]"
+                    className="w-full object-cover transform"
                   />
                 </div>
+
+
+                
+                <div className="absolute -bottom-20 left-40 w-96 hidden sm:block z-0 pointer-events-none">
+                  <img
+                    src="rb_24869.png"
+                    alt="Himalayas"
+                    className="w-full object-cover transform lg:translate-y-[0] 2xl:translate-y-[0]"
+                  />
+                </div>
+
 
 
                 <div className="absolute bottom-0 -right-20 w-96 hidden sm:block z-50 pointer-events-none">

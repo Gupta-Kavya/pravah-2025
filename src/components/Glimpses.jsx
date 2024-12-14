@@ -5,15 +5,15 @@ const Glimpses = () => {
     const images = {
         thirak: [
             [
-                "Thirak/1.jpg",
-                "Thirak/2.jpg",
+                "Thirak/19.jpeg",
+                "Thirak/22.jpeg",
                 "Thirak/3.jpg",
                 "Thirak/4.jpg",
                 "Thirak/5.JPG",
                 "Thirak/6.JPG"
             ],
             [
-                "Thirak/7.jpg",
+                "Thirak/20.jpeg",
                 "Thirak/8.jpg",
                 "Thirak/9.jpg",
                 "Thirak/10.jpg",
@@ -21,7 +21,7 @@ const Glimpses = () => {
                 "Thirak/12.JPG"
             ],
             [
-                "Thirak/13.jpg",
+                "Thirak/21.jpeg",
                 "Thirak/14.jpg",
                 "Thirak/15.jpg",
                 "Thirak/16.jpg",

@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Navbarr from './Navbar';
 import './gallery.css';
 import DesktopFooter from './DesktopFooter';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
+import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa";
 
 const Rawazgallery = () => {
+
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const handleAudioToggle = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+
   return (
     <div className="text-gray-900 relative overflow-hidden bg-black">
       <Helmet>
@@ -37,7 +55,7 @@ const Rawazgallery = () => {
         />
       </Helmet>
 
-    
+
       {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
 
@@ -59,7 +77,7 @@ const Rawazgallery = () => {
 
           </div>
           <div className="columnn">
-          <img src="Rawaz/7.jpg" alt="" />
+            <img src="Rawaz/7.jpg" alt="" />
             <img src="Rawaz/8.jpg" alt="" />
             <img src="Rawaz/9.jpg" alt="" />
             <img src="Rawaz/10.jpg" alt="" />
@@ -67,7 +85,7 @@ const Rawazgallery = () => {
             <img src="Rawaz/12.jpg" alt="" />
           </div>
           <div className="columnn">
-          <img src="Rawaz/13.jpg" alt="" />
+            <img src="Rawaz/13.jpg" alt="" />
             <img src="Rawaz/14.jpg" alt="" />
             <img src="Rawaz/15.jpg" alt="" />
             <img src="Rawaz/16.jpg" alt="" />
@@ -80,12 +98,12 @@ const Rawazgallery = () => {
               whileInView={{ opacity: 1, y: 20 }}
               transition={{ duration: 1, ease: 'easeOut' }}
             >
-              <div className="relative">
+              <div className="relative mt-10 mb-20">
                 {/* Main Heading */}
                 <motion.h1
                   className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-300 tracking-widest pattaya-regular"
                 >
-                  Rawaz Gallery
+                  Rawaz
                 </motion.h1>
 
               </div>
@@ -93,16 +111,16 @@ const Rawazgallery = () => {
 
           </div>
           <div className="columnn">
-          <img src="Rawaz/13.jpg" alt="" />
-            <img src="Rawaz/14.jpg" alt="" />
+            <img src="Rawaz/16.jpg" alt="" />
+            <img src="Rawaz/18.jpg" alt="" />
             <img src="Rawaz/15.jpg" alt="" />
             <img src="Rawaz/16.jpg" alt="" />
             <img src="Rawaz/17.jpg" alt="" />
-            <img src="Rawaz/18.jpg" alt="" />
+            <img src="Rawaz/15.jpg" alt="" />
 
           </div>
           <div className="columnn">
-          <img src="Rawaz/7.jpg" alt="" />
+            <img src="Rawaz/11.jpg" alt="" />
             <img src="Rawaz/8.jpg" alt="" />
             <img src="Rawaz/9.jpg" alt="" />
             <img src="Rawaz/10.jpg" alt="" />
@@ -114,6 +132,21 @@ const Rawazgallery = () => {
 
         </div>
       </main>
+
+      {/* Voice Button */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <button
+          onClick={handleAudioToggle}
+          className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-lg border-2 border-purple-400"
+
+        >
+          {isPlaying ? <FaMicrophoneSlash size={24} color='white' /> : <FaMicrophone size={24} color='white' />}
+        </button>
+
+      </div>
+
+      {/* Audio Element */}
+      <audio ref={audioRef} src="/Rawaz/audio.mp3" />
 
       <DesktopFooter />
     </div>

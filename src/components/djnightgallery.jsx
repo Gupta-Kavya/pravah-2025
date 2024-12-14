@@ -5,7 +5,7 @@ import DesktopFooter from './DesktopFooter';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 
-const djnightgallery = () => {
+const Djnightgallery = () => {
   return (
     <div className="text-gray-900 relative overflow-hidden bg-black">
       <Helmet>
@@ -82,12 +82,12 @@ const djnightgallery = () => {
               whileInView={{ opacity: 1, y: 20 }}
               transition={{ duration: 1, ease: 'easeOut' }}
             >
-              <div className="relative">
+              <div className="relative mb-20 mt-10">
                 {/* Main Heading */}
                 <motion.h1
                   className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-300 tracking-widest pattaya-regular"
                 >
-                  Thirak Gallery
+                  DJ Night
                 </motion.h1>
 
               </div>
@@ -123,4 +123,4 @@ const djnightgallery = () => {
   );
 };
 
-export default djnightgallery;
+export default Djnightgallery;

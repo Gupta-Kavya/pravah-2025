@@ -23,6 +23,8 @@ import Eventdetails from './components/Eventdetails';
 import Loader from './components/Loader';
 import { HelmetProvider } from "react-helmet-async";
 import Thirakgallery from './components/Thirakgallery';
+import Rawazgallery from './components/Rawazgallery';
+import Djnightgallery from './components/djnightgallery';
 
 
 const router = createBrowserRouter([
@@ -84,6 +86,18 @@ const router = createBrowserRouter([
     path: "/skit-pravah-2025-events-thirak-gallery",
     element: (
       <Thirakgallery />
+    ),
+  },
+  {
+    path: "/skit-pravah-2025-events-rawaz-gallery",
+    element: (
+      <Rawazgallery />
+    ),
+  },
+  {
+    path: "/skit-pravah-2025-events-djnight-gallery",
+    element: (
+      <Djnightgallery />
     ),
   }
 

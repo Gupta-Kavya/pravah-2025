@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Navbarr from './Navbar';
 import './gallery.css';
 import DesktopFooter from './DesktopFooter';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
+import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa";
 
 const Thirakgallery = () => {
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const handleAudioToggle = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+
   return (
+
     <div className="text-gray-900 relative overflow-hidden bg-black">
       <Helmet>
         <title>Thirak Gallery - Celebrate Dance & Culture | SKIT</title>
@@ -37,7 +55,7 @@ const Thirakgallery = () => {
         />
       </Helmet>
 
-    
+
       {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
 
@@ -50,7 +68,7 @@ const Thirakgallery = () => {
         {/* Gallery Section */}
         <div className="grid gallery-grid">
           <div className="columnn">
-            <img src="Thirak/1.jpg" alt="" />
+            <img src="Thirak/19.jpeg" alt="" />
             <img src="Thirak/2.jpg" alt="" />
             <img src="Thirak/3.jpg" alt="" />
             <img src="Thirak/4.jpg" alt="" />
@@ -59,15 +77,16 @@ const Thirakgallery = () => {
 
           </div>
           <div className="columnn">
-          <img src="Thirak/7.jpg" alt="" />
+            <img src="Thirak/20.jpeg" alt="" />
             <img src="Thirak/8.jpg" alt="" />
             <img src="Thirak/9.jpg" alt="" />
             <img src="Thirak/10.jpg" alt="" />
             <img src="Thirak/11.jpg" alt="" />
             <img src="Thirak/12.jpg" alt="" />
+            <img src="Thirak/9.jpg" alt="" />
           </div>
           <div className="columnn">
-          <img src="Thirak/13.jpg" alt="" />
+            <img src="Thirak/21.jpeg" alt="" />
             <img src="Thirak/14.jpg" alt="" />
             <img src="Thirak/15.jpg" alt="" />
             <img src="Thirak/16.jpg" alt="" />
@@ -83,9 +102,9 @@ const Thirakgallery = () => {
               <div className="relative">
                 {/* Main Heading */}
                 <motion.h1
-                  className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-300 tracking-widest pattaya-regular"
+                  className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-300 tracking-widest pattaya-regular mb-20 mt-10"
                 >
-                  Thirak Gallery
+                  Thirak
                 </motion.h1>
 
               </div>
@@ -93,15 +112,16 @@ const Thirakgallery = () => {
 
           </div>
           <div className="columnn">
-          <img src="Thirak/10.jpg" alt="" />
+            <img src="Thirak/10.jpg" alt="" />
             <img src="Thirak/2.jpg" alt="" />
             <img src="Thirak/3.jpg" alt="" />
             <img src="Thirak/4.jpg" alt="" />
             <img src="Thirak/9.jpg" alt="" />
             <img src="Thirak/6.jpg" alt="" />
+            <img src="Thirak/10.jpg" alt="" />
           </div>
           <div className="columnn">
-          <img src="Thirak/8.jpg" alt="" />
+            <img src="Thirak/22.jpeg" alt="" />
             <img src="Thirak/14.jpg" alt="" />
             <img src="Thirak/10.jpg" alt="" />
             <img src="Thirak/16.jpg" alt="" />
@@ -114,8 +134,26 @@ const Thirakgallery = () => {
         </div>
       </main>
 
+
+      {/* Voice Button */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <button
+          onClick={handleAudioToggle}
+          className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-lg border-2 border-purple-400"
+  
+        >
+          {isPlaying ? <FaMicrophoneSlash size={24} color='white'/> : <FaMicrophone size={24} color='white'/>}
+        </button>
+
+      </div>
+
+      {/* Audio Element */}
+      <audio ref={audioRef} src="/Thirak/audio.mp3" />
+
+
       <DesktopFooter />
     </div>
+
   );
 };
 
