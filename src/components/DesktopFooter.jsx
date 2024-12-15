@@ -21,7 +21,7 @@ const DesktopFooter = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 relative z-10">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <a href="https://flowbite.com/" className="flex">
+            <a href="https://pravah.skit.ac.in/" className="flex">
               <img
                 src="/logo.png"
                 className="w-40"
@@ -38,16 +38,16 @@ const DesktopFooter = () => {
               </h2>
               <ul className="text-white font-medium text-sm">
                 <li className="mb-2">
-                  <a href="https://flowbite.com/">Team Pravah</a>
+                  <a href="#">Team Pravah</a>
                 </li>
                 <li className="mb-2">
-                  <a href="https://tailwindcss.com/">AAVEG</a>
+                  <a href="#">AAVEG</a>
                 </li>
                 <li className="mb-2">
-                  <a href="https://tailwindcss.com/">Events</a>
+                  <a href="#">Events</a>
                 </li>
                 <li className="mb-2">
-                  <a href="https://tailwindcss.com/">Campus Ambassador</a>
+                  <a href="#">Campus Ambassador</a>
                 </li>
               </ul>
             </div>
@@ -59,19 +59,16 @@ const DesktopFooter = () => {
               </h2>
               <ul className="text-white font-medium text-sm">
                 <li className="mb-2">
-                  <a href="https://github.com/themesberg/flowbite">Website</a>
+                  <a href="#">Website</a>
                 </li>
                 <li className="mb-2">
-                  <a href="https://discord.gg/4eeurUVvTy">Events</a>
+                  <a href="#">Events</a>
                 </li>
                 <li className="mb-2">
-                  <a href="https://discord.gg/4eeurUVvTy">Accommodation</a>
+                  <a href="#">Accommodation</a>
                 </li>
                 <li className="mb-2">
-                  <a href="https://discord.gg/4eeurUVvTy">Bug Report</a>
-                </li>
-                <li className="mb-2">
-                  <a href="https://discord.gg/4eeurUVvTy">Pravah Web Team</a>
+                  <a href="#">Bug Report</a>
                 </li>
               </ul>
             </div>
@@ -83,16 +80,16 @@ const DesktopFooter = () => {
               </h2>
               <ul className="text-white font-medium text-sm">
                 <li className="mb-2">
-                  <a href="https://github.com/themesberg/flowbite">Instagram</a>
+                  <a href="https://www.instagram.com/skitpravah/">Instagram</a>
                 </li>
                 <li className="mb-2">
-                  <a href="https://discord.gg/4eeurUVvTy">Facebook</a>
+                  <a href="https://www.facebook.com/pravah.skit">Facebook</a>
                 </li>
                 <li className="mb-2">
-                  <a href="https://discord.gg/4eeurUVvTy">Twitter</a>
+                  <a href="https://twitter.com/@pravah_skit">Twitter</a>
                 </li>
                 <li className="mb-2">
-                  <a href="https://discord.gg/4eeurUVvTy">Youtube</a>
+                  <a href="https://www.youtube.com/@skitpravah4946">Youtube</a>
                 </li>
               </ul>
             </div>
@@ -152,7 +149,7 @@ const DesktopFooter = () => {
             <span className="text-sm text-white mb-0">
               Designed and Developed by{" "}
               <a
-                href="https://pravah.skit.ac.in/"
+                href="#"
                 className="text-gray-400 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"

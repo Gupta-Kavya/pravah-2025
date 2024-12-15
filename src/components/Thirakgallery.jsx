@@ -27,7 +27,7 @@ const Thirakgallery = () => {
 
     <div className="text-gray-900 relative overflow-hidden bg-black">
       <Helmet>
-        <title>Thirak Gallery - Celebrate Dance & Culture | SKIT</title>
+        <title>Thirak - Celebrate Dance & Culture | SKIT</title>
         <meta
           name="description"
           content="Explore the Thirak Gallery, a visual celebration of the dynamic dance competition showcasing the spirit of Incredible India at SKIT."

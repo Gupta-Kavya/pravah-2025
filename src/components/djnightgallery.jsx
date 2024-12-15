@@ -1,32 +1,50 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Navbarr from './Navbar';
 import './gallery.css';
 import DesktopFooter from './DesktopFooter';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
+import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa";
 
 const Djnightgallery = () => {
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const handleAudioToggle = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+
+
   return (
     <div className="text-gray-900 relative overflow-hidden bg-black">
       <Helmet>
-        <title>Thirak Gallery - Celebrate Dance & Culture | SKIT</title>
+        <title>DJ Night - Electrifying Beats & Energy | SKIT</title>
         <meta
           name="description"
-          content="Explore the Thirak Gallery, a visual celebration of the dynamic dance competition showcasing the spirit of Incredible India at SKIT."
+          content="Get ready to groove at DJ Night, an electrifying celebration of music and energy, bringing everyone together to dance under the stars at SKIT."
         />
         <meta
           name="keywords"
-          content="Thirak, dance competition, cultural events, Incredible India, SKIT, Swami Keshvanand Institute of Technology, youth fest, gallery"
+          content="DJ Night, music event, Pravah 25, electrifying beats, energy, dance, Incredible India, SKIT, youth fest, celebration"
         />
         <meta
           property="og:title"
-          content="Thirak Gallery - Celebrate Dance & Culture | SKIT"
+          content="DJ Night - Electrifying Beats & Energy | SKIT"
         />
         <meta
           property="og:description"
-          content="Dive into the vibrant visuals of Thirak, the high-energy dance competition at SKIT, celebrating the diverse and colorful culture of India."
+          content="Join us for an unforgettable night of music, energy, and celebration at DJ Night, where beats and rhythm unite everyone in the spirit of Pravah 25."
         />
-        <meta property="og:url" content="http://mysite.com/thirak-gallery" />
+        <meta property="og:url" content="http://mysite.com/dj-night" />
         <meta
           name="author"
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -37,7 +55,8 @@ const Djnightgallery = () => {
         />
       </Helmet>
 
-    
+
+
       {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
 
@@ -59,7 +78,7 @@ const Djnightgallery = () => {
 
           </div>
           <div className="columnn">
-          <img src="djnight/7.jpg" alt="" />
+            <img src="djnight/7.jpg" alt="" />
             <img src="djnight/8.jpg" alt="" />
             <img src="djnight/9.jpg" alt="" />
             <img src="djnight/10.jpg" alt="" />
@@ -68,7 +87,7 @@ const Djnightgallery = () => {
 
           </div>
           <div className="columnn">
-          <img src="djnight/13.jpg" alt="" />
+            <img src="djnight/13.jpg" alt="" />
             <img src="djnight/14.jpg" alt="" />
             <img src="djnight/15.jpg" alt="" />
             <img src="djnight/16.jpg" alt="" />
@@ -95,7 +114,7 @@ const Djnightgallery = () => {
 
           </div>
           <div className="columnn">
-          <img src="djnight/1.jpg" alt="" />
+            <img src="djnight/1.jpg" alt="" />
             <img src="djnight/2.jpg" alt="" />
             <img src="djnight/3.jpg" alt="" />
             <img src="djnight/4.jpg" alt="" />
@@ -104,7 +123,7 @@ const Djnightgallery = () => {
 
           </div>
           <div className="columnn">
-          <img src="djnight/14.jpg" alt="" />
+            <img src="djnight/14.jpg" alt="" />
             <img src="djnight/13.jpg" alt="" />
             <img src="djnight/12.jpg" alt="" />
             <img src="djnight/11.jpg" alt="" />
@@ -117,6 +136,22 @@ const Djnightgallery = () => {
 
         </div>
       </main>
+
+
+      {/* Voice Button */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <button
+          onClick={handleAudioToggle}
+          className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-lg border-2 border-purple-400"
+
+        >
+          {isPlaying ? <FaMicrophoneSlash size={24} color='white' /> : <FaMicrophone size={24} color='white' />}
+        </button>
+
+      </div>
+
+      {/* Audio Element */}
+      <audio ref={audioRef} src="/djnight/audio.mp3" />
 
       <DesktopFooter />
     </div>

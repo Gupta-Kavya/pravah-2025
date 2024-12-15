@@ -158,7 +158,7 @@ const Glimpses = () => {
         ],
     };
 
-    const [selectedCategory, setSelectedCategory] = useState("djnight");
+    const [selectedCategory, setSelectedCategory] = useState("thirak");
     const [isFading, setIsFading] = useState(false);
 
 

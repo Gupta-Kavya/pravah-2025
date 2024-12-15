@@ -44,8 +44,8 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
         {/* Announcement Bar */}
         <div className={`bg-gradient-to-r from-[#221b63] via-[#01001d] to-[#3d0075] text-white text-sm md:text-base font-medium py-2 ${isDesktop ? announce : 'block'}`}>
           <div className="max-w-screen-xl mx-auto px-4 text-center font-sans">
-            Pravah 2024 is about to hit. Have you registered for any event?{' '}
-            <Link to="/event-registration" className="text-blue-200 underline font-semibold hover:text-blue-600 transition">
+            Pravah 2025 is about to hit. Have you registered for any event?{' '}
+            <Link to="/skit-pravah-2025-events" className="text-blue-200 underline font-semibold hover:text-blue-600 transition">
               Click here
             </Link>{' '}
             for event registration.
@@ -86,12 +86,12 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
           </div>
 
           {/* Logo (Centered) */}
-          <Link to="/skit-pravah-2025te">
+          <Link to="/skit-pravah-2025">
             <div className="sm:flex sm:justify-center sm:items-center flex-grow">
 
               <img
                 src="https://www.skit.ac.in/images/headers/skit_logo.png"
-                className={`sm:w-14 w-14 ${filter || ''} mx-4`} // Apply filter dynamically
+                className={`sm:w-14 w-14 ${filter || ''} mx-4 hidden sm:block`} // Apply filter dynamically
                 alt="SKIT M & G Logo"
               />
 

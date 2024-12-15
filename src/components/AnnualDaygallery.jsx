@@ -26,34 +26,35 @@ const AnnualDaygallery = () => {
 
   return (
     <div className="text-gray-900 relative overflow-hidden bg-black">
-      <Helmet>
-        <title>AnnualDay Gallery - Showcase Faishon & Culture | SKIT</title>
-        <meta
-          name="description"
-          content="SKIT's Annual Day celebrates excellence, creativity, and talent through vibrant performances, inspiring speeches, and heartfelt moments, showcasing the achievements and unity of our dynamic community in a grand, memorable celebration."
-        />
-        <meta
-          name="keywords"
-          content="Annual Day, faishon show, cultural events, Incredible India, SKIT, Swami Keshvanand Institute of Technology, youth fest, gallery"
-        />
-        <meta
-          property="og:title"
-          content="AnnualDay Gallery - Celebrate Dance & Culture | SKIT"
-        />
-        <meta
-          property="og:description"
-          content="Dive into the vibrant visuals of Thirak, the high-energy dance competition at SKIT, celebrating the diverse and colorful culture of India."
-        />
-        <meta property="og:url" content="http://mysite.com/thirak-gallery" />
-        <meta
-          name="author"
-          content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
-        />
-        <meta
-          name="organization"
-          content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
-        />
-      </Helmet>
+<Helmet>
+  <title>Annual Day - Celebrate Excellence & Talent | SKIT</title>
+  <meta
+    name="description"
+    content="SKIT's Annual Day celebrates excellence, creativity, and talent through vibrant performances, inspiring speeches, and heartfelt moments, showcasing the achievements and unity of our dynamic community in a grand, memorable celebration."
+  />
+  <meta
+    name="keywords"
+    content="Annual Day, fashion show, cultural events, creativity, SKIT, Swami Keshvanand Institute of Technology, youth fest, gallery"
+  />
+  <meta
+    property="og:title"
+    content="Annual Day Gallery - Celebrate Excellence & Talent | SKIT"
+  />
+  <meta
+    property="og:description"
+    content="Experience the unforgettable moments of SKIT's Annual Day, where vibrant performances and inspiring speeches highlight the spirit of creativity and achievement within our community."
+  />
+  <meta property="og:url" content="http://mysite.com/annual-day-gallery" />
+  <meta
+    name="author"
+    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+  />
+  <meta
+    name="organization"
+    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+  />
+</Helmet>
+
 
 
       {/* Overlay */}
@@ -103,7 +104,7 @@ const AnnualDaygallery = () => {
                 <motion.h1
                   className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-300 tracking-widest pattaya-regular"
                 >
-                  Rawaz
+                  Annual Day
                 </motion.h1>
 
               </div>
@@ -146,7 +147,7 @@ const AnnualDaygallery = () => {
       </div>
 
       {/* Audio Element */}
-      <audio ref={audioRef} src="/AnnualDay/audio.mp3" />
+      <audio ref={audioRef} src="AnnualDay/audio.mp3" />
 
       <DesktopFooter />
     </div>

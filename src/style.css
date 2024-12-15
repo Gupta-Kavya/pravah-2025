@@ -105,6 +105,9 @@
       overflow: hidden;
     }
     
+    #fp-nav{
+      display:none;
+    }
     
 
   }
@@ -281,7 +284,7 @@
 
 .abeezee-regular {
   font-family: "ABeeZee", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -415,12 +418,87 @@ html, body {
 
 
 
+/* Define custom properties */
+@property --diameter {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --spacing {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --size {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --spread {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+
+
+.radial-grid {
+  --mx: 50%;
+  --my: 50%;
+  --diameter: 8;
+  --spacing: 14;
+  --size: 12;
+  --spread: 40;
+  --light-color: #fff7a3;
+  --bg-color: #0a0a0a;
+  --halftone: 0;
+
+  background: var(--bg-color);
+  background-image: radial-gradient(
+      circle at var(--mx) var(--my),
+      transparent calc(var(--size) * 1%),
+      var(--bg-color) calc((var(--size) + var(--spread)) * 1%)
+    ),
+    radial-gradient(
+      var(--light-color) calc(var(--diameter) * 0.1px),
+      transparent calc(var(--diameter) * 0.1px + 0.2px)
+    );
+  background-size: 100% 100%, calc(var(--spacing) * 1px) calc(var(--spacing) * 1px);
+  transition: all 0.1s ease;
+}
+
+.radial-grid::before {
+  --brightness: brightness(calc(max(var(--halftone) * 0.8, 1)));
+  --blur: blur(calc(var(--halftone) * 3px));
+  --contrast: contrast(calc(max(var(--halftone) * 999, 1)));
+
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: var(--brightness) var(--blur) var(--contrast);
+}
 
 
 
 
+/* Custom Glow Effect */
+/* @keyframes glowAnimation {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 242, 251, 0.5), 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgb(255, 241, 253), 0 0 20px rgba(248, 229, 250, 0.7), 0 0 30px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(253, 164, 249, 0.5), 0 0 10px rgba(214, 12, 12, 0.3), 0 0 15px rgba(206, 10, 10, 0.1);
+  }
+} */
 
-
-
-
-
+.glow-effect {
+  animation: glowAnimation 1.5s infinite alternate;
+  border: 2px solid rgba(255, 255, 255, 0.6); /* Semi-transparent white for the border */
+  box-shadow: 0 0 10px rgb(255, 241, 253), 0 0 20px rgba(248, 229, 250, 0.7), 0 0 30px rgba(255, 255, 255, 0.5);
+}

@@ -26,34 +26,35 @@ const Celebritygallery = () => {
 
   return (
     <div className="text-gray-900 relative overflow-hidden bg-black">
-      <Helmet>
-        <title>Celebrity Gallery - Showcase Faishon & Culture | SKIT</title>
-        <meta
-          name="description"
-          content=" Celebrity night, SKIT's cultural music event, celebrates Incredible India with vibrant melodies, diverse traditions, and rich heritage, uniting hearts harmoniously."
-        />
-        <meta
-          name="keywords"
-          content="Sur, singing competion, cultural events, Incredible India, SKIT, Swami Keshvanand Institute of Technology, youth fest, gallery"
-        />
-        <meta
-          property="og:title"
-          content="Rawaz Gallery - Celebrate Dance & Culture | SKIT"
-        />
-        <meta
-          property="og:description"
-          content="Dive into the vibrant visuals of Thirak, the high-energy dance competition at SKIT, celebrating the diverse and colorful culture of India."
-        />
-        <meta property="og:url" content="http://mysite.com/thirak-gallery" />
-        <meta
-          name="author"
-          content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
-        />
-        <meta
-          name="organization"
-          content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
-        />
-      </Helmet>
+<Helmet>
+  <title>Celebrity Night - Live Performances & Entertainment | SKIT</title>
+  <meta
+    name="description"
+    content="Celebrity Night at SKIT's Pravah'25 brings together live performances, music, and celebrations of Incredible India with vibrant melodies and diverse traditions."
+  />
+  <meta
+    name="keywords"
+    content="Celebrity Night, live performance, cultural events, Incredible India, SKIT, Swami Keshvanand Institute of Technology, Pravah'25, youth fest, gallery"
+  />
+  <meta
+    property="og:title"
+    content="Celebrity Night - Experience the Stars | SKIT"
+  />
+  <meta
+    property="og:description"
+    content="Celebrate the best of entertainment with live celebrity performances at Pravah'25. A night of music, dance, and memories that will last forever!"
+  />
+  <meta property="og:url" content="http://mysite.com/celebrity-night-gallery" />
+  <meta
+    name="author"
+    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+  />
+  <meta
+    name="organization"
+    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+  />
+</Helmet>
+
 
 
       {/* Overlay */}
@@ -103,7 +104,7 @@ const Celebritygallery = () => {
                 <motion.h1
                   className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-300 tracking-widest pattaya-regular"
                 >
-                  Rawaz
+                  Celebrity Night
                 </motion.h1>
 
               </div>
@@ -117,6 +118,7 @@ const Celebritygallery = () => {
             <img src="Celebrity/20.jpg" alt="" />
             <img src="Celebrity/21.jpg" alt="" />
             <img src="Celebrity/22.jpg" alt="" />
+            <img src="Celebrity/8.jpg" alt="" />
 
           </div>
           <div className="columnn">
@@ -146,7 +148,7 @@ const Celebritygallery = () => {
       </div>
 
       {/* Audio Element */}
-      <audio ref={audioRef} src="/Celebrity/audio.mp3" />
+      <audio ref={audioRef} src="Celebrity/audio.mp3" />
 
       <DesktopFooter />
     </div>

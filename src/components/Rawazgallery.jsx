@@ -27,7 +27,7 @@ const Rawazgallery = () => {
   return (
     <div className="text-gray-900 relative overflow-hidden bg-black">
       <Helmet>
-        <title>Rawaz Gallery - Showcase Faishon & Culture | SKIT</title>
+        <title>Rawaz - Showcase Faishon & Culture | SKIT</title>
         <meta
           name="description"
           content="Explore the Rawaz Gallery, a visual celebration of the dynamic faishon show showcasing the spirit of Incredible India at SKIT."
@@ -137,7 +137,7 @@ const Rawazgallery = () => {
       <div className="fixed bottom-4 right-4 z-50">
         <button
           onClick={handleAudioToggle}
-          className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-lg border-2 border-purple-400"
+          className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-2xl border-2 border-purple-400"
 
         >
           {isPlaying ? <FaMicrophoneSlash size={24} color='white' /> : <FaMicrophone size={24} color='white' />}

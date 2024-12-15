@@ -27,24 +27,24 @@ const Surgallery = () => {
   return (
     <div className="text-gray-900 relative overflow-hidden bg-black">
       <Helmet>
-        <title>Sur Gallery - Showcase Faishon & Culture | SKIT</title>
+        <title>Sur - Musical Harmony & Culture | SKIT</title>
         <meta
           name="description"
-          content="Sur, SKIT's cultural music event, celebrates Incredible India with vibrant melodies, diverse traditions, and rich heritage, uniting hearts harmoniously"
+          content="Sur, SKIT's cultural music event, celebrates Incredible India with vibrant melodies, diverse traditions, and rich heritage, uniting hearts harmoniously."
         />
         <meta
           name="keywords"
-          content="Sur, singing competion, cultural events, Incredible India, SKIT, Swami Keshvanand Institute of Technology, youth fest, gallery"
+          content="Sur, singing competition, cultural events, Incredible India, SKIT, Swami Keshvanand Institute of Technology, youth fest, gallery"
         />
         <meta
           property="og:title"
-          content="Rawaz Gallery - Celebrate Dance & Culture | SKIT"
+          content="Sur Gallery - Celebrating Musical Harmony | SKIT"
         />
         <meta
           property="og:description"
-          content="Dive into the vibrant visuals of Thirak, the high-energy dance competition at SKIT, celebrating the diverse and colorful culture of India."
+          content="Immerse yourself in the beautiful melodies and soulful performances of Sur, SKIT's annual musical celebration, honoring India's rich music tradition."
         />
-        <meta property="og:url" content="http://mysite.com/thirak-gallery" />
+        <meta property="og:url" content="http://mysite.com/sur-gallery" />
         <meta
           name="author"
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -54,6 +54,7 @@ const Surgallery = () => {
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
         />
       </Helmet>
+
 
 
       {/* Overlay */}
@@ -85,7 +86,7 @@ const Surgallery = () => {
             <img src="Sur/15.jpg" alt="" />
           </div>
           <div className="columnn">
-            <img src="Sur/13.jpg" alt="" />
+            <img src="Sur/12.jpg" alt="" />
             <img src="Sur/14.jpg" alt="" />
             <img src="Sur/17.jpg" alt="" />
             <img src="Sur/16.jpg" alt="" />
@@ -103,7 +104,7 @@ const Surgallery = () => {
                 <motion.h1
                   className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-300 tracking-widest pattaya-regular"
                 >
-                  Rawaz
+                  Sur
                 </motion.h1>
 
               </div>
@@ -111,7 +112,7 @@ const Surgallery = () => {
 
           </div>
           <div className="columnn">
-            <img src="Sur/12.JPG" alt="" />
+            <img src="Sur/13.JPG" alt="" />
             <img src="Sur/18.jpg" alt="" />
             <img src="Sur/19.jpg" alt="" />
             <img src="Sur/20.jpg" alt="" />
@@ -146,7 +147,7 @@ const Surgallery = () => {
       </div>
 
       {/* Audio Element */}
-      <audio ref={audioRef} src="/Sur/audio.mp3" />
+      <audio ref={audioRef} src="SUR/audio.mp3" />
 
       <DesktopFooter />
     </div>
