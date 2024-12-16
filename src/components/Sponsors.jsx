@@ -4,6 +4,7 @@ import Navbarr from './Navbar';
 import DesktopFooter from './DesktopFooter';
 import Sponsorform from './Sponsorform';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 
 const Sponsors = () => {
     const handleButtonClick = () => {
@@ -12,47 +13,38 @@ const Sponsors = () => {
 
     return (
         <div className="text-gray-900 relative overflow-hidden">
+            <Helmet>
+                <title>Become a Sponsor - Partner with Aaveg and Pravah | SKIT</title>
+                <meta
+                    name="description"
+                    content="Partner with Aaveg and Pravah at SKIT and showcase your brand at one of the largest sports and cultural fests. Support innovation, creativity, and youth engagement."
+                />
+                <meta
+                    name="keywords"
+                    content="Aaveg sponsors, Pravah sponsors, SKIT sponsors, sponsor opportunities, brand partnership, youth fest sponsorship, cultural fest sponsorship, sports fest sponsorship"
+                />
+                <meta
+                    property="og:title"
+                    content="Become a Sponsor - Partner with Aaveg and Pravah | SKIT"
+                />
+                <meta
+                    property="og:description"
+                    content="Gain valuable exposure and support dynamic sports and cultural events by sponsoring Aaveg and Pravah at SKIT. Connect with a vibrant and energetic audience."
+                />
+                <meta property="og:url" content="http://mysite.com/sponsors" />
+                <meta
+                    name="author"
+                    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+                />
+                <meta
+                    name="organization"
+                    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+                />
+            </Helmet>
+
             <Navbarr />
 
-            <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-16 relative">
-
-                <motion.section
-                    className="text-center space-y-8"
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{ opacity: 1, y: 100 }}
-                    transition={{ duration: 1, ease: 'easeOut' }}
-                >
-                    <div className="relative">
-                        {/* Main Heading */}
-                        <motion.h1
-                            className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-pink-500 tracking-widest pattaya-regular"
-                        >
-                            Partner with Pravah'25
-                        </motion.h1>
-
-                        {/* Tagline */}
-                        <motion.h2
-                            className="absolute right-0 top-6 md:top-16 text-sm md:text-md font-semibold text-gray-700 italic tracking-widest font-serif"
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.5, duration: 1 }}
-                        >
-                            Celebrate 25 years of excellence with us.
-                        </motion.h2>
-                    </div>
-
-
-
-
-
-
-                </motion.section>
-
-      
-                    <Sponsorform />
-         
-
-            </main>
+            <Comingsoon />
             <DesktopFooter />
         </div>
     );

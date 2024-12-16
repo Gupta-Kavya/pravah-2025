@@ -21,6 +21,7 @@ import Landing from "./Landing";
 import { FaMicrophone, FaMicrophoneSlash, FaCalendarAlt } from "react-icons/fa";
 import SpotlightGrid from "./SpotlightGrid";
 import Tunnel from "./Tunnel";
+import Cube from "./Cube";
 
 
 const Home = () => {
@@ -473,12 +474,15 @@ const Home = () => {
                   {/* Content on Top of Video */}
                   <div className="relative flex flex-col items-center justify-center h-full text-white text-center px-4">
                     {/* Main Heading */}
-                    <h1 className="text-5xl font-bold mb-4 lexend tracking-widest">
-                      Pravah'25
-                    </h1>
+                    
+                    <img
+                      src="logo-text.png"
+                      alt=""
+                      className="filter invert sepia-0 saturate-0 brightness-200"
+                    />
 
                     {/* Date Subheading */}
-                    <p className="text-2xl font-medium mb-6">
+                    <p className="text-2xl font-medium mb-6 mt-6">
                       15<sup>th</sup> - 22<sup>nd</sup> January
                     </p>
 
@@ -487,30 +491,7 @@ const Home = () => {
                       Celebrating <span className="text-orange-400 font-semibold abeezee-regular">Incredible India</span> – A Journey Through Diversity and Unity
                     </p>
 
-                    {/* Decorative Elements */}
-                    <div className="flex justify-center space-x-8">
-                      {/* Icon 1 */}
-                      <div className="flex flex-col items-center">
-                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-500 to-red-500 flex items-center justify-center shadow-lg">
-                          <img src="/rb_81355.png" alt="Music Icon" className="w-10 h-10" />
-                        </div>
-                        <p className="mt-2 text-sm">Cultural Fest</p>
-                      </div>
-                      {/* Icon 2 */}
-                      <div className="flex flex-col items-center">
-                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center shadow-lg">
-                          <img src="/rb_24869.png" alt="Dance Icon" className="w-10 h-10" />
-                        </div>
-                        <p className="mt-2 text-sm">Dance Gala</p>
-                      </div>
-                      {/* Icon 3 */}
-                      <div className="flex flex-col items-center">
-                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg">
-                          <img src="/rb_2148506879.png" alt="Craft Icon" className="w-10 h-10" />
-                        </div>
-                        <p className="mt-2 text-sm">Art & Craft</p>
-                      </div>
-                    </div>
+              
                   </div>
                 </div>
 
@@ -717,7 +698,7 @@ const Home = () => {
                   <img
                     src="rb_2149151140.png"
                     alt="Himalayas"
-                    className="w-full object-cover transform lg:translate-y-[170px] 2xl:translate-y-[170px] opacity-30"
+                    className="w-full object-cover transform lg:translate-y-[170px] 2xl:translate-y-[210px] opacity-30"
                   />
                 </div>
 
@@ -726,7 +707,7 @@ const Home = () => {
                   <img
                     src="rb_2149151140.png"
                     alt="Himalayas"
-                    className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[170px] opacity-20"
+                    className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[210px] opacity-20"
                   />
                 </div>
 
@@ -735,7 +716,7 @@ const Home = () => {
                   <img
                     src="rb_2149158780.png"
                     alt="Himalayas"
-                    className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[170px] opacity-5"
+                    className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[450px] opacity-5"
                   />
                 </div>
 
@@ -864,7 +845,7 @@ const Home = () => {
 
 
                 {/* Video Section */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-1 min-h-screen sm:hidden">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-1 min-h-screen sm:hidden ">
 
 
 
@@ -874,7 +855,7 @@ const Home = () => {
                   <motion.div
                     className="video-card rounded-lg p-4 hover:scale-105 transform transition self-center z-50"
                     initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 40 }}
                     viewport={{ once: false }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                   >
@@ -899,9 +880,9 @@ const Home = () => {
 
 
 
-
+{/* 
                   <div
-                    className="bg-gradient-to-r from-[#fff] via-[#fff] to-[#fff] text-yellow-600 text-sm md:text-base font-medium py-2 block sm:hidden hero-bar border border-black"
+                    className="bg-gradient-to-r from-[#fff] via-[#fff] to-[#fff] text-yellow-600 text-sm md:text-base font-medium py-2 block sm:hidden hero-bar border border-black mt-10"
                     style={{
                       marginLeft: "-50vw",
                       marginRight: "-50vw",
@@ -920,7 +901,7 @@ const Home = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
 
 
@@ -928,7 +909,7 @@ const Home = () => {
                   <motion.div
                     className="video-card rounded-lg p-4 hover:scale-105 transform transition self-center z-50"
                     initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 60 }}
                     viewport={{ once: false }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                   >
@@ -1199,7 +1180,7 @@ const Home = () => {
 
 
 
-                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0 ">
+                <div className="absolute lg:bottom-0 left-0 w-full hidden sm:block z-0 2xl:-bottom-16">
                   <motion.img
                     src="file (9).png"
                     alt="Himalayas"
@@ -1624,7 +1605,6 @@ const Home = () => {
 
 
 
-
               {/* Section 5*/}
               <div
                 className="section sm:bg-white p-8 sm:p-0 section-5 z-50"
@@ -1703,7 +1683,7 @@ const Home = () => {
 
 
 
-                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0">
+                <div className="absolute lg:bottom-0 left-0 w-full hidden sm:block z-0 2xl:-bottom-6">
                   <motion.img
                     src="vecteezy_abstract-ethnic-geometric-pattern-background-design_13991676.jpg"
                     alt="Himalayas"
@@ -1765,7 +1745,7 @@ const Home = () => {
 
               {/* Section 7*/}
               <div
-                className="section relative sm:bg-white section-7"
+                className="section relative sm:bg-white section-7 z-50"
               >
                 {/* Overlay */}
                 <div

@@ -35,7 +35,7 @@ const SpotlightGrid = () => {
 
   return (
     <div
-      className="relative h-screen w-screen overflow-hidden"
+      className="relative h-screen w-screen overflow-hidden hidden sm:block"
       onMouseMove={handleMouseMove}
     >
       <div
@@ -117,7 +117,7 @@ const SpotlightGrid = () => {
           onClick={() => setSelectedVideo("teaser")}
         >
           {/* Background effect with dark gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-10 rounded-lg"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-5 rounded-lg"></div>
 
           {/* Video Thumbnail */}
           <iframe src="https://www.youtube.com/embed/DyuUx1obJ_M" title="Teaser Launch of Pravah 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-80 h-44 rounded-lg"></iframe>
@@ -145,7 +145,7 @@ const SpotlightGrid = () => {
         >
 
           {/* Background effect with dark gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-10 rounded-lg"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-5 rounded-lg"></div>
 
           {/* Video Thumbnail */}
           <iframe width="853" height="480" src="https://www.youtube.com/embed/HVL4Fgel8S4" title="Logo Reveal of PRAVAH 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-80 h-44 rounded-lg"></iframe>
@@ -177,7 +177,7 @@ const SpotlightGrid = () => {
 
 
 
-      <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-black to-transparent opacity-30 z-10"></div>
+      <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black to-transparent opacity-80 z-10"></div>
 
 
 

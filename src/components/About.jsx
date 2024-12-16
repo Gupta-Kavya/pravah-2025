@@ -3,12 +3,42 @@ import Navbarr from './Navbar'
 import Comingsoon from './Comingsoon'
 import { motion } from 'framer-motion';
 import DesktopFooter from './DesktopFooter';
+import { Helmet } from 'react-helmet';
 
 
 const About = () => {
   return (
 
     <div>
+      <Helmet>
+  <title>Pravah 2025 - Celebrate Culture and Tradition | SKIT</title>
+  <meta
+    name="description"
+    content="Immerse yourself in Pravah 2025 at SKIT, a vibrant celebration of cultural diversity, creativity, and tradition, showcasing the spirit of Incredible India."
+  />
+  <meta
+    name="keywords"
+    content="Pravah 2025, cultural events, SKIT, Swami Keshvanand Institute of Technology, youth fest, traditional events, creative arts, Incredible India"
+  />
+  <meta
+    property="og:title"
+    content="Pravah 2025 - Celebrate Culture and Tradition | SKIT"
+  />
+  <meta
+    property="og:description"
+    content="Experience the essence of culture and tradition at Pravah 2025, SKIT's premier cultural festival, featuring dynamic performances, arts, and creativity."
+  />
+  <meta property="og:url" content="http://mysite.com/pravah-2025" />
+  <meta
+    name="author"
+    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+  />
+  <meta
+    name="organization"
+    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+  />
+</Helmet>
+
       <Navbarr />
 
 
