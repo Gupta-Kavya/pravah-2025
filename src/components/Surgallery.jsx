@@ -121,29 +121,29 @@ const Surgallery = () => {
         {/* Gallery Section */}
         <div className="grid gallery-grid">
           <div className="columnn">
-            <img src="Sur/1.JPG" alt="" />
-            <img src="Sur/2.JPG" alt="" />
-            <img src="Sur/3.JPG" alt="" />
-            <img src="Sur/4.JPG" alt="" />
-            <img src="Sur/5.JPG" alt="" />
-            <img src="Sur/6.JPG" alt="" />
+            <img src="Sur/1.png" alt="" />
+            <img src="Sur/2.png" alt="" />
+            <img src="Sur/3.png" alt="" />
+            <img src="Sur/4.png" alt="" />
+            <img src="Sur/5.png" alt="" />
+            <img src="Sur/6.png" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="Sur/7.JPG" alt="" />
-            <img src="Sur/8.JPG" alt="" />
-            <img src="Sur/9.JPG" alt="" />
-            <img src="Sur/10.JPG" alt="" />
-            <img src="Sur/11.JPG" alt="" />
-            <img src="Sur/15.JPG" alt="" />
+            <img src="Sur/7.png" alt="" />
+            <img src="Sur/8.png" alt="" />
+            <img src="Sur/9.png" alt="" />
+            <img src="Sur/10.png" alt="" />
+            <img src="Sur/11.png" alt="" />
+            <img src="Sur/15.png" alt="" />
           </div>
           <div className="columnn">
-            <img src="Sur/12.JPG" alt="" />
-            <img src="Sur/14.JPG" alt="" />
-            <img src="Sur/17.JPG" alt="" />
-            <img src="Sur/16.JPG" alt="" />
-            <img src="Sur/12.JPG" alt="" />
-            <img src="Sur/18.JPG" alt="" />
+            <img src="Sur/12.png" alt="" />
+            <img src="Sur/14.png" alt="" />
+            <img src="Sur/17.png" alt="" />
+            <img src="Sur/16.png" alt="" />
+            <img src="Sur/12.png" alt="" />
+            <img src="Sur/18.png" alt="" />
 
             <motion.section
               className="text-center"
@@ -164,21 +164,21 @@ const Surgallery = () => {
 
           </div>
           <div className="columnn">
-            <img src="Sur/13.JPG" alt="" />
-            <img src="Sur/18.jpg" alt="" />
-            <img src="Sur/19.jpg" alt="" />
-            <img src="Sur/20.jpg" alt="" />
-            <img src="Sur/21.jpg" alt="" />
-            <img src="Sur/22.jpg" alt="" />
+            <img src="Sur/13.png" alt="" />
+            <img src="Sur/18.png" alt="" />
+            <img src="Sur/19.png" alt="" />
+            <img src="Sur/20.png" alt="" />
+            <img src="Sur/21.png" alt="" />
+            <img src="Sur/22.png" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="Sur/23.jpg" alt="" />
-            <img src="Sur/24.jpg" alt="" />
-            <img src="Sur/25.jpg" alt="" />
-            <img src="Sur/10.jpg" alt="" />
-            <img src="Sur/11.jpg" alt="" />
-            <img src="Sur/12.jpg" alt="" />
+            <img src="Sur/23.png" alt="" />
+            <img src="Sur/24.png" alt="" />
+            <img src="Sur/25.png" alt="" />
+            <img src="Sur/10.png" alt="" />
+            <img src="Sur/11.png" alt="" />
+            <img src="Sur/12.png" alt="" />
           </div>
 
 
@@ -199,7 +199,7 @@ const Surgallery = () => {
       </div>
 
       {/* Audio Element */}
-      <audio ref={audioRef} src="SUR/audio.mp3" />
+      <audio ref={audioRef} src="Sur/audio.mp3" />
 
       <DesktopFooter />
     </div>

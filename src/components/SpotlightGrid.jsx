@@ -93,7 +93,7 @@ const SpotlightGrid = () => {
               loop
             ></video>
             <button
-              className="absolute bottom-4 left-4 bg-orange-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-orange-600 font-bold"
+              className="absolute lg:bottom-4 left-4 bg-orange-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-orange-600 font-bold bottom-20"
               onClick={() => setSelectedVideo(null)}
             >
               Close
@@ -119,20 +119,25 @@ const SpotlightGrid = () => {
           {/* Background effect with dark gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-5 rounded-lg"></div>
 
+          {/* Positioned Image at Top-Left Corner */}
+          <img
+            src="tech-pattern.png" // Replace with your image path
+            alt="Background"
+            className="absolute top-[0px] left-[0px] w-full object-cover opacity-20 z-0"
+          />
+
           {/* Video Thumbnail */}
-          <img src="teaser_graphic.jpg" alt="" className="w-80 h-44 rounded-lg" />
+          <img src="teaser_graphic.png" alt="" className="w-80 h-44 rounded-lg relative z-10" />
 
           {/* Title */}
-          <h3 className="text-2xl font-bold text-white mb-4 text-center mt-4 z-20 font-mono">
+          <h3 className="text-2xl font-bold text-white mb-4 text-center mt-4 z-20 font-mono relative">
             Pravah Teaser
-
           </h3>
-
 
           {/* Add glow effect */}
           <div className="absolute inset-0 border-4 border-solid border-transparent rounded-lg glow-effect"></div>
-
         </motion.div>
+
         {/* Right Video Card */}
         <motion.div
           className="video-card p-4 hover:scale-105 transform transition self-center relative z-10 pointer-events-auto cursor-pointer bg-gray-800"
@@ -146,12 +151,18 @@ const SpotlightGrid = () => {
 
           {/* Background effect with dark gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-5 rounded-lg"></div>
-
+          <img
+            src="tech-pattern.png" // Replace with your image path
+            alt="Background"
+            className="absolute top-[0px] left-[0px] w-full object-cover opacity-20 z-0"
+          />
           {/* Video Thumbnail */}
-          <img src="logo_graphic.png" alt="" className="w-80 h-44 rounded-lg" />
+          <img src="logo_graphic.png" alt="" className="w-80 h-44 rounded-lg z-15 relative" />
+
+
 
           {/* Title */}
-          <h3 className="text-2xl font-bold text-white mb-4 text-center mt-4 z-20 font-mono">
+          <h3 className="text-2xl font-bold text-white mb-4 text-center mt-4 z-20 font-mono relative">
             Logo Reveal
           </h3>
 
@@ -180,13 +191,13 @@ const SpotlightGrid = () => {
           whileInView={{ opacity: 1, y: -120, rotate: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          onClick={() => setSelectedVideo("teaser")}
+        // onClick={() => setSelectedVideo("teaser")}
         >
           {/* Background effect with dark gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-0 rounded-lg"></div>
 
           {/* Video Thumbnail */}
-          <iframe src="https://www.youtube.com/embed/DyuUx1obJ_M" title="Teaser Launch of Pravah 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-64 h-44 rounded-lg"></iframe>
+          <iframe src="https://www.youtube.com/embed/esOx6T4uQwI" title="Teaser Launch of Pravah 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-64 h-44 rounded-lg relative z-50"></iframe>
 
           {/* Title */}
           <h3 className="text-lg font-bold text-white text-center mt-4 z-20 font-mono">
@@ -213,7 +224,7 @@ const SpotlightGrid = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-0 rounded-lg"></div>
 
           {/* Video Thumbnail */}
-          <iframe width="853" height="480" src="https://www.youtube.com/embed/HVL4Fgel8S4" title="Logo Reveal of PRAVAH 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-64 h-44 rounded-lg"></iframe>
+          <img src="logo_graphic.png" alt="" className="w-80 h-44 rounded-lg" />
 
           {/* Title */}
           <h3 className="text-lg font-bold text-white text-center mt-4 z-20 font-mono">

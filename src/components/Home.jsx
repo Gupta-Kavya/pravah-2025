@@ -550,7 +550,7 @@ const Home = () => {
                 </div>
 
                 {/* Audio Element */}
-                <audio ref={audioRef} src="/section1     -audio.mp3" />
+                <audio ref={audioRef} src="/section1-audio.mp3" />
 
 
 
@@ -1626,7 +1626,7 @@ const Home = () => {
 
 
 
-                <div className="absolute lg:-bottom-20 left-0 w-full sm:block z-0 2xl:-bottom-6 bottom-0">
+                <div className="absolute lg:-bottom-20 left-0 w-full sm:block z-0 2xl:-bottom-6 bottom-0 hidden">
                   <motion.img
                     src="/mandala.png"
                     alt="Himalayas"

@@ -83,27 +83,27 @@ const Glimpses = () => {
         ],
         sur: [
             [
-                "Sur/1.JPG",
-                "Sur/2.JPG",
-                "Sur/3.JPG",
-                "Sur/4.JPG",
-                "Sur/5.JPG",
-                "Sur/6.JPG"
+                "Sur/1.png",
+                "Sur/2.png",
+                "Sur/3.png",
+                "Sur/4.png",
+                "Sur/5.png",
+                "Sur/6.png"
             ],
             [
-                "Sur/7.JPG",
-                "Sur/8.JPG",
-                "Sur/9.JPG",
-                "Sur/10.JPG",
-                "Sur/11.JPG"
+                "Sur/7.png",
+                "Sur/8.png",
+                "Sur/9.png",
+                "Sur/10.png",
+                "Sur/11.png"
             ],
             [
-                "Sur/12.JPG",
-                "Sur/13.JPG",
-                "Sur/14.JPG",
-                "Sur/15.JPG",
-                "Sur/16.JPG",
-                "Sur/17.JPG"
+                "Sur/12.png",
+                "Sur/13.png",
+                "Sur/14.png",
+                "Sur/15.png",
+                "Sur/16.png",
+                "Sur/17.png"
             ],
         ],
         celebnight: [
