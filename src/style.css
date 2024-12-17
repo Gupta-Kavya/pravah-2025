@@ -452,8 +452,8 @@ html, body {
   --spacing: 14;
   --size: 12;
   --spread: 40;
-  --light-color: #fff7a3;
-  --bg-color: #0a0a0a;
+  --light-color: #b0ccf7;
+  --bg-color: #000000;
   --halftone: 0;
 
   background: var(--bg-color);
@@ -485,7 +485,7 @@ html, body {
 
 
 /* Custom Glow Effect */
-/* @keyframes glowAnimation {
+@keyframes glowAnimation {
   0% {
     box-shadow: 0 0 5px rgba(255, 242, 251, 0.5), 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.1);
   }
@@ -495,12 +495,12 @@ html, body {
   100% {
     box-shadow: 0 0 5px rgba(253, 164, 249, 0.5), 0 0 10px rgba(214, 12, 12, 0.3), 0 0 15px rgba(206, 10, 10, 0.1);
   }
-} */
+}
 
 .glow-effect {
   animation: glowAnimation 1.5s infinite alternate;
   border: 2px solid rgba(255, 255, 255, 0.6); /* Semi-transparent white for the border */
-  box-shadow: 0 0 10px rgb(255, 241, 253), 0 0 20px rgba(248, 229, 250, 0.7), 0 0 30px rgba(255, 255, 255, 0.5);
+  
 }
 
 

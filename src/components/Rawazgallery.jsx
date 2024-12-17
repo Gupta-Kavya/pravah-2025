@@ -96,7 +96,7 @@ const Rawazgallery = () => {
           property="og:description"
           content="Dive into the vibrant visuals of Thirak, the high-energy dance competition at SKIT, celebrating the diverse and colorful culture of India."
         />
-        <meta property="og:url" content="http://mysite.com/thirak-gallery" />
+        <meta property="og:url" content="https://pravah.skit.ac.in/skit-pravah-2025-events-rawaz-gallery" />
         <meta
           name="author"
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -120,29 +120,29 @@ const Rawazgallery = () => {
         {/* Gallery Section */}
         <div className="grid gallery-grid">
           <div className="columnn">
-            <img src="Rawaz/1.jpg" alt="" />
-            <img src="Rawaz/2.jpg" alt="" />
-            <img src="Rawaz/3.jpg" alt="" />
-            <img src="Rawaz/4.jpg" alt="" />
-            <img src="Rawaz/5.jpg" alt="" />
-            <img src="Rawaz/6.jpg" alt="" />
+            <img src="Rawaz/1.JPG" alt="" />
+            <img src="Rawaz/2.JPG" alt="" />
+            <img src="Rawaz/3.JPG" alt="" />
+            <img src="Rawaz/4.JPG" alt="" />
+            <img src="Rawaz/5.JPG" alt="" />
+            <img src="Rawaz/6.JPG" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="Rawaz/7.jpg" alt="" />
-            <img src="Rawaz/8.jpg" alt="" />
-            <img src="Rawaz/9.jpg" alt="" />
-            <img src="Rawaz/10.jpg" alt="" />
-            <img src="Rawaz/11.jpg" alt="" />
-            <img src="Rawaz/12.jpg" alt="" />
+            <img src="Rawaz/7.JPG" alt="" />
+            <img src="Rawaz/8.JPG" alt="" />
+            <img src="Rawaz/9.JPG" alt="" />
+            <img src="Rawaz/10.JPG" alt="" />
+            <img src="Rawaz/11.JPG" alt="" />
+            <img src="Rawaz/12.JPG" alt="" />
           </div>
           <div className="columnn">
-            <img src="Rawaz/13.jpg" alt="" />
-            <img src="Rawaz/14.jpg" alt="" />
-            <img src="Rawaz/15.jpg" alt="" />
-            <img src="Rawaz/16.jpg" alt="" />
-            <img src="Rawaz/17.jpg" alt="" />
-            <img src="Rawaz/18.jpg" alt="" />
+            <img src="Rawaz/13.JPG" alt="" />
+            <img src="Rawaz/14.JPG" alt="" />
+            <img src="Rawaz/15.JPG" alt="" />
+            <img src="Rawaz/16.JPG" alt="" />
+            <img src="Rawaz/17.JPG" alt="" />
+            <img src="Rawaz/18.JPG" alt="" />
 
             <motion.section
               className="text-center"
@@ -163,21 +163,21 @@ const Rawazgallery = () => {
 
           </div>
           <div className="columnn">
-            <img src="Rawaz/16.jpg" alt="" />
-            <img src="Rawaz/18.jpg" alt="" />
-            <img src="Rawaz/15.jpg" alt="" />
-            <img src="Rawaz/16.jpg" alt="" />
-            <img src="Rawaz/17.jpg" alt="" />
-            <img src="Rawaz/15.jpg" alt="" />
+            <img src="Rawaz/16.JPG" alt="" />
+            <img src="Rawaz/18.JPG" alt="" />
+            <img src="Rawaz/15.JPG" alt="" />
+            <img src="Rawaz/16.JPG" alt="" />
+            <img src="Rawaz/17.JPG" alt="" />
+            <img src="Rawaz/15.JPG" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="Rawaz/11.jpg" alt="" />
-            <img src="Rawaz/8.jpg" alt="" />
-            <img src="Rawaz/9.jpg" alt="" />
-            <img src="Rawaz/10.jpg" alt="" />
-            <img src="Rawaz/11.jpg" alt="" />
-            <img src="Rawaz/12.jpg" alt="" />
+            <img src="Rawaz/11.JPG" alt="" />
+            <img src="Rawaz/8.JPG" alt="" />
+            <img src="Rawaz/9.JPG" alt="" />
+            <img src="Rawaz/10.JPG" alt="" />
+            <img src="Rawaz/11.JPG" alt="" />
+            <img src="Rawaz/12.JPG" alt="" />
           </div>
 
 

@@ -100,7 +100,7 @@ const Celebritygallery = () => {
     property="og:description"
     content="Celebrate the best of entertainment with live celebrity performances at Pravah'25. A night of music, dance, and memories that will last forever!"
   />
-  <meta property="og:url" content="http://mysite.com/celebrity-night-gallery" />
+  <meta property="og:url" content="https://pravah.skit.ac.in/skit-pravah-2025-events-Celebrity-gallery" />
   <meta
     name="author"
     content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -125,29 +125,29 @@ const Celebritygallery = () => {
         {/* Gallery Section */}
         <div className="grid gallery-grid">
           <div className="columnn">
-            <img src="Celebrity/1.jpg" alt="" />
-            <img src="Celebrity/2.jpg" alt="" />
-            <img src="Celebrity/3.jpg" alt="" />
-            <img src="Celebrity/4.jpg" alt="" />
-            <img src="Celebrity/5.jpg" alt="" />
-            <img src="Celebrity/6.jpg" alt="" />
+            <img src="Celebrity/1.JPG" alt="" />
+            <img src="Celebrity/2.JPG" alt="" />
+            <img src="Celebrity/3.JPG" alt="" />
+            <img src="Celebrity/4.JPG" alt="" />
+            <img src="Celebrity/5.JPG" alt="" />
+            <img src="Celebrity/6.JPG" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="Celebrity/7.jpg" alt="" />
-            <img src="Celebrity/15.jpg" alt="" />
-            <img src="Celebrity/24.jpg" alt="" />
-            <img src="Celebrity/10.jpg" alt="" />
-            <img src="Celebrity/11.jpg" alt="" />
-            <img src="Celebrity/15.jpg" alt="" />
+            <img src="Celebrity/7.JPG" alt="" />
+            <img src="Celebrity/15.JPG" alt="" />
+            <img src="Celebrity/24.JPG" alt="" />
+            <img src="Celebrity/10.JPG" alt="" />
+            <img src="Celebrity/11.JPG" alt="" />
+            <img src="Celebrity/15.JPG" alt="" />
           </div>
           <div className="columnn">
-            <img src="Celebrity/22.jpg" alt="" />
-            <img src="Celebrity/18.jpg" alt="" />
-            <img src="Celebrity/9.jpg" alt="" />
-            <img src="Celebrity/6.jpg" alt="" />
-            <img src="Celebrity/12.jpg" alt="" />
-            <img src="Celebrity/18.jpg" alt="" />
+            <img src="Celebrity/22.JPG" alt="" />
+            <img src="Celebrity/18.JPG" alt="" />
+            <img src="Celebrity/9.JPG" alt="" />
+            <img src="Celebrity/6.JPG" alt="" />
+            <img src="Celebrity/12.JPG" alt="" />
+            <img src="Celebrity/18.JPG" alt="" />
 
             <motion.section
               className="text-center"
@@ -169,21 +169,21 @@ const Celebritygallery = () => {
           </div>
           <div className="columnn">
             <img src="Celebrity/12.JPG" alt="" />
-            <img src="Celebrity/11.jpg" alt="" />
-            <img src="Celebrity/8.jpg" alt="" />
-            <img src="Celebrity/20.jpg" alt="" />
-            <img src="Celebrity/21.jpg" alt="" />
-            <img src="Celebrity/22.jpg" alt="" />
-            <img src="Celebrity/8.jpg" alt="" />
+            <img src="Celebrity/11.JPG" alt="" />
+            <img src="Celebrity/8.JPG" alt="" />
+            <img src="Celebrity/20.JPG" alt="" />
+            <img src="Celebrity/21.JPG" alt="" />
+            <img src="Celebrity/22.JPG" alt="" />
+            <img src="Celebrity/8.JPG" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="Celebrity/23.jpg" alt="" />
-            <img src="Celebrity/24.jpg" alt="" />
-            <img src="Celebrity/6.jpg" alt="" />
-            <img src="Celebrity/10.jpg" alt="" />
-            <img src="Celebrity/11.jpg" alt="" />
-            <img src="Celebrity/12.jpg" alt="" />
+            <img src="Celebrity/23.JPG" alt="" />
+            <img src="Celebrity/24.JPG" alt="" />
+            <img src="Celebrity/6.JPG" alt="" />
+            <img src="Celebrity/10.JPG" alt="" />
+            <img src="Celebrity/11.JPG" alt="" />
+            <img src="Celebrity/12.JPG" alt="" />
           </div>
 
 

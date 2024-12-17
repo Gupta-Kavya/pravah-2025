@@ -96,7 +96,7 @@ const AnnualDaygallery = () => {
     property="og:description"
     content="Experience the unforgettable moments of SKIT's Annual Day, where vibrant performances and inspiring speeches highlight the spirit of creativity and achievement within our community."
   />
-  <meta property="og:url" content="http://mysite.com/annual-day-gallery" />
+  <meta property="og:url" content="https://pravah.skit.ac.in/skit-pravah-2025-events-AnnualDay-gallery" />
   <meta
     name="author"
     content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -121,29 +121,29 @@ const AnnualDaygallery = () => {
         {/* Gallery Section */}
         <div className="grid gallery-grid">
           <div className="columnn">
-            <img src="AnnualDay/1.jpg" alt="" />
-            <img src="AnnualDay/2.jpg" alt="" />
-            <img src="AnnualDay/3.jpg" alt="" />
-            <img src="AnnualDay/4.jpg" alt="" />
-            <img src="AnnualDay/5.jpg" alt="" />
-            <img src="AnnualDay/6.jpg" alt="" />
+            <img src="AnnualDay/1.JPG" alt="" />
+            <img src="AnnualDay/2.JPG" alt="" />
+            <img src="AnnualDay/3.JPG" alt="" />
+            <img src="AnnualDay/4.JPG" alt="" />
+            <img src="AnnualDay/5.JPG" alt="" />
+            <img src="AnnualDay/6.JPG" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="AnnualDay/7.jpg" alt="" />
-            <img src="AnnualDay/8.jpg" alt="" />
-            <img src="AnnualDay/9.jpg" alt="" />
-            <img src="AnnualDay/10.jpg" alt="" />
-            <img src="AnnualDay/11.jpg" alt="" />
-            <img src="AnnualDay/12.jpg" alt="" />
+            <img src="AnnualDay/7.JPG" alt="" />
+            <img src="AnnualDay/8.JPG" alt="" />
+            <img src="AnnualDay/9.JPG" alt="" />
+            <img src="AnnualDay/10.JPG" alt="" />
+            <img src="AnnualDay/11.JPG" alt="" />
+            <img src="AnnualDay/12.JPG" alt="" />
           </div>
           <div className="columnn">
-            <img src="AnnualDay/13.jpg" alt="" />
-            <img src="AnnualDay/14.jpg" alt="" />
-            <img src="AnnualDay/15.jpg" alt="" />
-            <img src="AnnualDay/16.jpg" alt="" />
-            <img src="AnnualDay/17.jpg" alt="" />
-            <img src="AnnualDay/18.jpg" alt="" />
+            <img src="AnnualDay/13.JPG" alt="" />
+            <img src="AnnualDay/14.JPG" alt="" />
+            <img src="AnnualDay/15.JPG" alt="" />
+            <img src="AnnualDay/16.JPG" alt="" />
+            <img src="AnnualDay/17.JPG" alt="" />
+            <img src="AnnualDay/18.JPG" alt="" />
 
             <motion.section
               className="text-center"
@@ -165,20 +165,20 @@ const AnnualDaygallery = () => {
           </div>
           <div className="columnn">
             <img src="AnnualDay/19.JPG" alt="" />
-            <img src="AnnualDay/20.jpg" alt="" />
-            <img src="AnnualDay/21.jpg" alt="" />
-            <img src="AnnualDay/22.jpg" alt="" />
-            <img src="AnnualDay/23.jpg" alt="" />
-            <img src="AnnualDay/24.jpg" alt="" />
+            <img src="AnnualDay/20.JPG" alt="" />
+            <img src="AnnualDay/21.JPG" alt="" />
+            <img src="AnnualDay/22.JPG" alt="" />
+            <img src="AnnualDay/23.JPG" alt="" />
+            <img src="AnnualDay/24.JPG" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="AnnualDay/25.jpg" alt="" />
-            <img src="AnnualDay/26.jpg" alt="" />
-            <img src="AnnualDay/27.jpg" alt="" />
-            <img src="AnnualDay/6.jpg" alt="" />
-            <img src="AnnualDay/12.jpg" alt="" />
-            <img src="AnnualDay/18.jpg" alt="" />
+            <img src="AnnualDay/25.JPG" alt="" />
+            <img src="AnnualDay/26.JPG" alt="" />
+            <img src="AnnualDay/27.JPG" alt="" />
+            <img src="AnnualDay/6.JPG" alt="" />
+            <img src="AnnualDay/12.JPG" alt="" />
+            <img src="AnnualDay/18.JPG" alt="" />
           </div>
 
 

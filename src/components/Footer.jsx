@@ -6,8 +6,8 @@ const Footer = () => {
         <footer className="bg-transparent top-14 relative">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
-                    <div className="mb-6 md:mb-0">
-                        <a href="https://flowbite.com/" className="flex items-center">
+                    {/* <div className="mb-6 md:mb-0">
+                        <a href="#" className="flex items-center">
                             <img
                                 src="/logo.png"
                                 className="w-10 me-3"
@@ -17,8 +17,8 @@ const Footer = () => {
                                 Pravah 2025
                             </span>
                         </a>
-                    </div>
-                    <div className="grid grid-cols-2 gap-6 sm:gap-6 sm:grid-cols-3">
+                    </div> */}
+                    <div className="grid grid-cols-2 gap-6 sm:gap-6 sm:grid-cols-3 mt-6">
                         <div>
                             <h2 className="mb-6 text-sm font-semibold uppercase text-white flex align-middle items-center">
                                 <FaLink className='mr-1' />
@@ -26,22 +26,22 @@ const Footer = () => {
                             </h2>
                             <ul className="text-white font-medium text-sm">
                                 <li>
-                                    <a href="https://flowbite.com/" className="hover:underline">
+                                    <a href="#" className="hover:underline">
                                         Team Pravah
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://tailwindcss.com/" className="hover:underline">
+                                    <a href="#" className="hover:underline">
                                         AAVEG
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://tailwindcss.com/" className="hover:underline">
+                                    <a href="#" className="hover:underline">
                                         Events
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://tailwindcss.com/" className="hover:underline">
+                                    <a href="#" className="hover:underline">
                                         Campus Ambassador
                                     </a>
                                 </li>
@@ -55,29 +55,29 @@ const Footer = () => {
                             <ul className="text-white font-medium text-sm">
                                 <li>
                                     <a
-                                        href="https://github.com/themesberg/flowbite"
+                                        href="#"
                                         className="hover:underline"
                                     >
                                         Website
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">
+                                    <a href="#" className="hover:underline">
                                         Events
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">
+                                    <a href="#" className="hover:underline">
                                         Accomodation
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">
+                                    <a href="#" className="hover:underline">
                                         Bug Report
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">
+                                    <a href="#" className="hover:underline">
                                         Pravah Web Team
                                     </a>
                                 </li>
@@ -99,31 +99,42 @@ const Footer = () => {
                                     <p className="text-sm text-nowrap">
                                         <span className="font-bold">Chief Coordinator, Pravah'25</span>
                                         <br />
-                                        Mr. Abhishek Gupta -{" "}
+                                        Mr. Rohit Mukherjee -{" "}
                                         <a
-                                            href="tel:9462326804"
+                                            href="tel:9414051576"
                                             className="underline hover:text-gray-400 transition"
                                         >
-                                            9462326804
+                                            9414051576
                                         </a>
                                     </p>
+                                </li>
+                                <li className="mb-2">
+                                    <p className="text-sm text-nowrap">
+                                        <span className="font-bold">Chief Co-Coordinator, Pravah'25</span>
+                                        <br />
+                                        Mr. Amber Srivastava -{" "}
+                                        <a href="tel:9828298243" className="underline hover:text-gray-400 transition">
+                                            9828298243
+                                        </a>
+                                    </p>
+
                                 </li>
                                 <li>
                                     <p className="text-sm text-nowrap">
                                         <span className="font-bold">Event Queries</span>
                                         <br />
-                                        Paridhi Jain -{" "}
+                                        Dipesh Kaushik -{" "}
                                         <a
-                                            href="tel:9929425337"
+                                            href="tel:9001928479"
                                             className="underline hover:text-gray-400 transition"
                                         >
-                                            9929425337
+                                            9001928479
                                         </a>
                                     </p>
                                 </li>
                                 <li>
                                     <p className="text-sm text-nowrap">
-                                        <span className="font-bold">Website Head</span>
+                                        <span className="font-bold">For Website</span>
                                         <br />
                                         Kavya Gupta -{" "}
                                         <a
@@ -177,7 +188,7 @@ const Footer = () => {
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-white sm:text-center">
                         © 2025{" "}
-                        <a href="https://flowbite.com/" className="hover:underline">
+                        <a href="#" className="hover:underline">
                             SKIT, Jaipur
                         </a>
                         . All Rights Reserved.
@@ -188,7 +199,7 @@ const Footer = () => {
                             Designed and Developed by{" "}
                             <a
                                 href="https://pravah.skit.ac.in/"
-                                className="text-yellow-600 hover:underline"
+                                className="text-yellow-100 hover:underline"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

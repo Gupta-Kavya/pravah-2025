@@ -18,7 +18,10 @@ const Carousel = ({ celebrities, frameImage }) => {
     const images = [...celebrities, ...celebrities];
 
     return (
-        <div className="relative w-full h-96  items-center justify-center overflow-hidden lg:mb-5 2xl:mb-28 hidden sm:flex">
+        <div className="relative w-full h-96  items-center justify-center overflow-hidden lg:mb-5 2xl:mb-28  sm:flex mt-20 sm:mt-0
+        
+        
+        ">
             <div className="relative w-full flex items-center justify-center overflow-hidden">
                 <motion.div
                     className="flex items-center transition-transform ease-in-out duration-3000"

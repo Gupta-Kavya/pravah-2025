@@ -26,7 +26,7 @@ const Thirakgallery = () => {
   return (
 
     <div className="text-gray-900 relative overflow-hidden bg-black">
-       <style>{`
+      <style>{`
         :root {
           --gap: 1rem;
           --card-width: clamp(280px, 20vw, 100vw);
@@ -96,7 +96,7 @@ const Thirakgallery = () => {
           property="og:description"
           content="Dive into the vibrant visuals of Thirak, the high-energy dance competition at SKIT, celebrating the diverse and colorful culture of India."
         />
-        <meta property="og:url" content="http://mysite.com/thirak-gallery" />
+        <meta property="og:url" content="https://pravah.skit.ac.in/skit-pravah-2025-events-thirak-gallery" />
         <meta
           name="author"
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -120,30 +120,30 @@ const Thirakgallery = () => {
         {/* Gallery Section */}
         <div className="grid gallery-grid">
           <div className="columnn">
-            <img src="Thirak/19.jpeg" alt="" />
-            <img src="Thirak/2.jpg" alt="" />
-            <img src="Thirak/3.jpg" alt="" />
-            <img src="Thirak/4.jpg" alt="" />
-            <img src="Thirak/5.jpg" alt="" />
-            <img src="Thirak/6.jpg" alt="" />
+            <img src="Thirak/19.JPG" alt="" />
+            <img src="Thirak/2.JPG" alt="" />
+            <img src="Thirak/3.JPG" alt="" />
+            <img src="Thirak/4.JPG" alt="" />
+            <img src="Thirak/5.JPG" alt="" />
+            <img src="Thirak/6.JPG" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="Thirak/20.jpeg" alt="" />
-            <img src="Thirak/8.jpg" alt="" />
-            <img src="Thirak/9.jpg" alt="" />
-            <img src="Thirak/10.jpg" alt="" />
-            <img src="Thirak/11.jpg" alt="" />
-            <img src="Thirak/12.jpg" alt="" />
-            <img src="Thirak/9.jpg" alt="" />
+            <img src="Thirak/20.JPG" alt="" />
+            <img src="Thirak/8.JPG" alt="" />
+            <img src="Thirak/9.JPG" alt="" />
+            <img src="Thirak/10.JPG" alt="" />
+            <img src="Thirak/11.JPG" alt="" />
+            <img src="Thirak/12.JPG" alt="" />
+            <img src="Thirak/9.JPG" alt="" />
           </div>
           <div className="columnn">
-            <img src="Thirak/21.jpeg" alt="" />
-            <img src="Thirak/14.jpg" alt="" />
-            <img src="Thirak/15.jpg" alt="" />
-            <img src="Thirak/16.jpg" alt="" />
-            <img src="Thirak/17.jpg" alt="" />
-            <img src="Thirak/18.jpg" alt="" />
+            <img src="Thirak/21.JPG" alt="" />
+            <img src="Thirak/14.JPG" alt="" />
+            <img src="Thirak/15.JPG" alt="" />
+            <img src="Thirak/16.JPG" alt="" />
+            <img src="Thirak/17.JPG" alt="" />
+            <img src="Thirak/18.JPG" alt="" />
 
             <motion.section
               className="text-center"
@@ -164,21 +164,21 @@ const Thirakgallery = () => {
 
           </div>
           <div className="columnn">
-            <img src="Thirak/10.jpg" alt="" />
-            <img src="Thirak/2.jpg" alt="" />
-            <img src="Thirak/3.jpg" alt="" />
-            <img src="Thirak/4.jpg" alt="" />
-            <img src="Thirak/9.jpg" alt="" />
-            <img src="Thirak/6.jpg" alt="" />
-            <img src="Thirak/10.jpg" alt="" />
+            <img src="Thirak/10.JPG" alt="" />
+            <img src="Thirak/2.JPG" alt="" />
+            <img src="Thirak/3.JPG" alt="" />
+            <img src="Thirak/4.JPG" alt="" />
+            <img src="Thirak/9.JPG" alt="" />
+            <img src="Thirak/6.JPG" alt="" />
+            <img src="Thirak/10.JPG" alt="" />
           </div>
           <div className="columnn">
-            <img src="Thirak/22.jpeg" alt="" />
-            <img src="Thirak/14.jpg" alt="" />
-            <img src="Thirak/10.jpg" alt="" />
-            <img src="Thirak/16.jpg" alt="" />
-            <img src="Thirak/17.jpg" alt="" />
-            <img src="Thirak/18.jpg" alt="" />
+            <img src="Thirak/22.JPG" alt="" />
+            <img src="Thirak/14.JPG" alt="" />
+            <img src="Thirak/10.JPG" alt="" />
+            <img src="Thirak/16.JPG" alt="" />
+            <img src="Thirak/17.JPG" alt="" />
+            <img src="Thirak/18.JPG" alt="" />
           </div>
 
 
@@ -192,9 +192,9 @@ const Thirakgallery = () => {
         <button
           onClick={handleAudioToggle}
           className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-lg border-2 border-purple-400"
-  
+
         >
-          {isPlaying ? <FaMicrophoneSlash size={24} color='white'/> : <FaMicrophone size={24} color='white'/>}
+          {isPlaying ? <FaMicrophoneSlash size={24} color='white' /> : <FaMicrophone size={24} color='white' />}
         </button>
 
       </div>

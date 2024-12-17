@@ -31,7 +31,7 @@ const Sponsors = () => {
                     property="og:description"
                     content="Gain valuable exposure and support dynamic sports and cultural events by sponsoring Aaveg and Pravah at SKIT. Connect with a vibrant and energetic audience."
                 />
-                <meta property="og:url" content="http://mysite.com/sponsors" />
+                <meta property="og:url" content="https://pravah.skit.ac.in/skit-pravah-2025-sponsors" />
                 <meta
                     name="author"
                     content="Swami Keshvanand Institute of Technology, Management, and Gramothan"

@@ -96,7 +96,7 @@ const Djnightgallery = () => {
           property="og:description"
           content="Join us for an unforgettable night of music, energy, and celebration at DJ Night, where beats and rhythm unite everyone in the spirit of Pravah 25."
         />
-        <meta property="og:url" content="http://mysite.com/dj-night" />
+        <meta property="og:url" content="https://pravah.skit.ac.in/skit-pravah-2025-events-djnight-gallery" />
         <meta
           name="author"
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -121,30 +121,30 @@ const Djnightgallery = () => {
         {/* Gallery Section */}
         <div className="grid gallery-grid">
           <div className="columnn">
-            <img src="djnight/1.jpg" alt="" />
-            <img src="djnight/2.jpg" alt="" />
-            <img src="djnight/3.jpg" alt="" />
-            <img src="djnight/4.jpg" alt="" />
-            <img src="djnight/5.jpg" alt="" />
-            <img src="djnight/6.jpg" alt="" />
+            <img src="djnight/1.JPG" alt="" />
+            <img src="djnight/2.JPG" alt="" />
+            <img src="djnight/3.JPG" alt="" />
+            <img src="djnight/4.JPG" alt="" />
+            <img src="djnight/5.JPG" alt="" />
+            <img src="djnight/6.JPG" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="djnight/7.jpg" alt="" />
-            <img src="djnight/8.jpg" alt="" />
-            <img src="djnight/9.jpg" alt="" />
-            <img src="djnight/10.jpg" alt="" />
-            <img src="djnight/11.jpg" alt="" />
-            <img src="djnight/12.jpg" alt="" />
+            <img src="djnight/7.JPG" alt="" />
+            <img src="djnight/8.JPG" alt="" />
+            <img src="djnight/9.JPG" alt="" />
+            <img src="djnight/10.JPG" alt="" />
+            <img src="djnight/11.JPG" alt="" />
+            <img src="djnight/12.JPG" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="djnight/13.jpg" alt="" />
-            <img src="djnight/14.jpg" alt="" />
-            <img src="djnight/15.jpg" alt="" />
-            <img src="djnight/16.jpg" alt="" />
-            <img src="djnight/17.jpg" alt="" />
-            <img src="djnight/18.jpg" alt="" />
+            <img src="djnight/13.JPG" alt="" />
+            <img src="djnight/14.JPG" alt="" />
+            <img src="djnight/15.JPG" alt="" />
+            <img src="djnight/16.JPG" alt="" />
+            <img src="djnight/17.JPG" alt="" />
+            <img src="djnight/18.JPG" alt="" />
 
 
             <motion.section
@@ -166,21 +166,21 @@ const Djnightgallery = () => {
 
           </div>
           <div className="columnn">
-            <img src="djnight/1.jpg" alt="" />
-            <img src="djnight/2.jpg" alt="" />
-            <img src="djnight/3.jpg" alt="" />
-            <img src="djnight/4.jpg" alt="" />
-            <img src="djnight/5.jpg" alt="" />
-            <img src="djnight/16.jpg" alt="" />
+            <img src="djnight/1.JPG" alt="" />
+            <img src="djnight/2.JPG" alt="" />
+            <img src="djnight/3.JPG" alt="" />
+            <img src="djnight/4.JPG" alt="" />
+            <img src="djnight/5.JPG" alt="" />
+            <img src="djnight/16.JPG" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="djnight/14.jpg" alt="" />
-            <img src="djnight/13.jpg" alt="" />
-            <img src="djnight/12.jpg" alt="" />
-            <img src="djnight/11.jpg" alt="" />
-            <img src="djnight/10.jpg" alt="" />
-            <img src="djnight/8.jpg" alt="" />
+            <img src="djnight/14.JPG" alt="" />
+            <img src="djnight/13.JPG" alt="" />
+            <img src="djnight/12.JPG" alt="" />
+            <img src="djnight/11.JPG" alt="" />
+            <img src="djnight/10.JPG" alt="" />
+            <img src="djnight/8.JPG" alt="" />
 
           </div>
 

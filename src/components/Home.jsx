@@ -56,15 +56,17 @@ const Home = () => {
 
 
   const sponsors = [
-    { image: "https://pravah.skit.ac.in/_next/static/media/sp2.41c9d6ea.png", name: "Nushrratt Bharuccha" },
-    { image: "https://pravah.skit.ac.in/_next/static/media/sp1.1ab77316.png", name: "Jassie Gill" },
-    { image: "https://pravah.skit.ac.in/_next/static/media/sp8.75f6a318.png", name: "Navjot Ahuja" },
-    { image: "https://pravah.skit.ac.in/_next/static/media/sp7.2e4482a2.png", name: "Suniel Shetty" },
-    { image: "https://pravah.skit.ac.in/_next/static/media/sp5.8b4b3d25.png", name: "Gajendra Verma" },
-    { image: "https://pravah.skit.ac.in/_next/static/media/sp4.390e7292.png", name: "Nora Fatehi" },
-    { image: "https://pravah.skit.ac.in/_next/static/media/sp9.7118fa8c.png", name: "Kumar Vishwas" },
-    { image: "https://pravah.skit.ac.in/_next/static/media/sp3.336edc77.png", name: "Shruti Sinha" },
-    { image: "https://pravah.skit.ac.in/_next/static/media/sp6.f8cffbf3.png", name: "Ravindra Upadhyay" },
+    { image: "sponsors/1.png", },
+    { image: "sponsors/2.png", },
+    { image: "sponsors/3.png", },
+    { image: "sponsors/4.png", },
+    { image: "sponsors/5.png", },
+    { image: "sponsors/6.png", },
+    { image: "sponsors/7.png", },
+    { image: "sponsors/8.png", },
+    { image: "sponsors/9.png", },
+    { image: "sponsors/10.png", },
+    { image: "sponsors/11.png", },
 
   ];
 
@@ -130,35 +132,6 @@ const Home = () => {
 
 
 
-  const PriorSponsors = [
-    {
-      id: 1,
-      name: "Sponsor 1",
-      image: "https://pravah.skit.ac.in/_next/static/media/sp2.41c9d6ea.png",
-    },
-    {
-      id: 2,
-      name: "Sponsor 2",
-      image: "https://pravah.skit.ac.in/_next/static/media/sp9.7118fa8c.png",
-    },
-    {
-      id: 3,
-      name: "Sponsor 3",
-      image: "https://pravah.skit.ac.in/_next/static/media/sp6.f8cffbf3.png",
-    },
-    {
-      id: 4,
-      name: "Sponsor 4",
-      image: "https://pravah.skit.ac.in/_next/static/media/sp5.8b4b3d25.png",
-    },
-    {
-      id: 5,
-      name: "Sponsor 5",
-      image: "https://pravah.skit.ac.in/_next/static/media/sp4.390e7292.png",
-
-
-    }
-  ]
 
 
 
@@ -179,19 +152,37 @@ const Home = () => {
       id: 1,
       name: "Thirak",
       description: "A mesmerizing cultural dance event.",
-      image: "https://pravah.skit.ac.in/_next/static/media/thirak.bd3de307.webp",
+      image: "/events/thirak.jpg",
     },
     {
       id: 2,
       name: "DJ Night",
       description: "An electrifying night with popular DJs.",
-      image: "https://pravah.skit.ac.in/_next/static/media/dj.cab3f656.webp",
+      image: "/events/djnight.jpg",
     },
     {
       id: 5,
       name: "Celebrity Night",
       description: "Meet your favorite celebrities in person.",
-      image: "https://pravah.skit.ac.in/_next/static/media/celebrityNight.c24587f0.webp",
+      image: "/events/cnight.jpg",
+    },
+    {
+      id: 1,
+      name: "Sur",
+      description: "Feel the melody of enchanting voices.",
+      image: "/events/sur.jpg",
+    },
+    {
+      id: 2,
+      name: "Rawaz",
+      description: "A dazzling showcase of style and elegance through stunning modeling performances.",
+      image: "/events/rawaz.jpg",
+    },
+    {
+      id: 5,
+      name: "Annual Day",
+      description: "An electrifying rap battle where words ignite and rhythms collide.",
+      image: "/events/annual.jpg",
     },
   ];
 
@@ -255,19 +246,19 @@ const Home = () => {
       id: 1,
       name: "Sur",
       description: "Feel the melody of enchanting voices.",
-      image: "https://pravah.skit.ac.in/_next/static/media/sur.0af72f62.webp",
+      image: "/events/sur.jpg",
     },
     {
       id: 2,
       name: "Rawaz",
       description: "A dazzling showcase of style and elegance through stunning modeling performances.",
-      image: "https://pravah.skit.ac.in/_next/static/media/rawaz.2c862ac8.webp",
+      image: "/events/rawaz.jpg",
     },
     {
       id: 5,
-      name: "Rapaarazi",
+      name: "Annual Day",
       description: "An electrifying rap battle where words ignite and rhythms collide.",
-      image: "https://t3.ftcdn.net/jpg/06/65/37/10/360_F_665371013_CpDsBpze9l3EZAmxNeesl4irAysgXJLK.jpg",
+      image: "/events/annual.jpg",
     },
   ];
 
@@ -403,7 +394,7 @@ const Home = () => {
           property="og:description"
           content="Discover the essence of unity in diversity with a spectacular showcase of Indian art, music, and history at SKIT."
         />
-        <meta property="og:url" content="http://mysite.com/pravah-2025" />
+        <meta property="og:url" content="https://pravah.skit.ac.in/" />
         <meta
           name="author"
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -437,7 +428,7 @@ const Home = () => {
 
               {/* Section 1 */}
               <div
-                className="section relative overflow-hidden"
+                className="section relative overflow-hidden bg-slate-100"
                 style={{
                   overflowX: "hidden",
                   // backgroundImage: "url('/background.jpg')",
@@ -457,43 +448,87 @@ const Home = () => {
 
 
 
+<div className="relative h-screen w-screen overflow-hidden sm:hidden bg-slate-100">
+  {/* Flex container for centering h1 and EventCountdown */}
+  <div className="flex flex-col justify-center items-center min-h-screen">
+    {/* <h1 className="cookie-regular" style={{fontSize:"5rem"}}>Pravah'25</h1> */}
 
-                <div className="relative h-screen w-screen overflow-hidden sm:hidden">
-                  {/* Background Video */}
-                  <video
-                    className="absolute top-0 left-0 w-full h-full object-cover"
-                    src="/teaser.mp4" // Replace with your video file path
-                    autoPlay
-                    loop
-                    muted
-                  ></video>
+    <img src="logo-text.png" alt="" className=""/>
+    <p className="text-lg sm:text-xl md:text-2xl font-medium text-black mb-8 abeezee-regular mt-5">
+      February 15<sup>th</sup> - February 22<sup>nd</sup>, 2025
+    </p>
 
-                  {/* Dark Overlay */}
-                  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70"></div>
 
-                  {/* Content on Top of Video */}
-                  <div className="relative flex flex-col items-center justify-center h-full text-white text-center px-4">
-                    {/* Main Heading */}
-                    
-                    <img
-                      src="logo-text.png"
-                      alt=""
-                      className="filter invert sepia-0 saturate-0 brightness-200"
-                    />
+    <button
+              className="relative px-8 py-4 text-xl font-semibold text-white bg-transparent rounded-full overflow-hidden group mb-20"
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-60 group-hover:opacity-40 rounded-full "></span>
+              <span className="relative z-10">Explore</span>
+            </button>
 
-                    {/* Date Subheading */}
-                    <p className="text-2xl font-medium mb-6 mt-6">
-                      15<sup>th</sup> - 22<sup>nd</sup> January
-                    </p>
 
-                    {/* Thematic Line */}
-                    <p className="text-lg mb-10 italic tracking-wide abeezee-regular">
-                      Celebrating <span className="text-orange-400 font-semibold abeezee-regular">Incredible India</span> – A Journey Through Diversity and Unity
-                    </p>
+  </div>
 
-              
-                  </div>
-                </div>
+
+
+  {/* Images with the background */}
+  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 sm:block z-0 pointer-events-none hidden">
+    <img
+      src="file (8).png"
+      alt="Himalayas"
+      className="w-full object-cover transform lg:translate-y-[140px] 2xl:translate-y-[140px] opacity-70"
+    />
+  </div>
+
+  <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-20 pointer-events-none">
+    <img
+      src="file (9).png"
+      alt="Himalayas"
+      className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[380px]"
+    />
+  </div>
+
+  <div className="absolute bottom-10 -right-0 w-full sm:block z-0 pointer-events-none">
+    <img
+      src="rb_2149151140.png"
+      alt="Himalayas"
+      className="w-full object-cover transform lg:translate-y-[170px] 2xl:translate-y-[210px] opacity-30"
+    />
+  </div>
+
+  <div className="absolute bottom-0 -right-0 w-full sm:block z-0 pointer-events-none">
+    <img
+      src="rb_2149151140.png"
+      alt="Himalayas"
+      className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[210px] opacity-20"
+    />
+  </div>
+
+  <div className="absolute bottom-0 -right-0 w-full sm:block z-0 pointer-events-none">
+    <img
+      src="rb_2149158780.png"
+      alt="Himalayas"
+      className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[450px] opacity-5"
+    />
+  </div>
+
+  <div className="absolute -bottom-20 -left-20 w-96 sm:block z-0 pointer-events-none">
+    <img
+      src="rb_24869.png"
+      alt="Himalayas"
+      className="w-full object-cover transform"
+    />
+  </div>
+
+  <div className="absolute bottom-0 -right-20 w-96 sm:block z-50 pointer-events-none">
+    <img
+      src="rb_2150428350.png"
+      alt="Himalayas"
+      className="w-full object-cover transform lg:translate-y-[40px] 2xl:translate-y-[40px]"
+    />
+  </div>
+</div>
+
 
 
 
@@ -515,7 +550,7 @@ const Home = () => {
                 </div>
 
                 {/* Audio Element */}
-                <audio ref={audioRef} src="/section1-audio.mp3" />
+                <audio ref={audioRef} src="/section1     -audio.mp3" />
 
 
 
@@ -572,7 +607,7 @@ const Home = () => {
                         "Celebrating Incredible India",
                         "The Silver Jubilee Year"
                       ]}
-                      className="text-7xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-pink-500 hidden sm:block"
+                      className="text-7xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-pink-500 hidden sm:block mt-0"
                       speed={200}
                       eraseDelay={100}
                       typingDelay={300}
@@ -759,6 +794,15 @@ const Home = () => {
               </div>
 
 
+
+
+
+
+
+
+
+
+
               {/* Section 2 */}
               <div
                 className="section p-0 sm:bg-white section-2"
@@ -766,7 +810,7 @@ const Home = () => {
               >
 
 
-                <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-10 sm:hidden">
+                <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-10 sm:hidden hidden">
                   <img
                     src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
                     alt="Bottom Center Pattern"
@@ -774,7 +818,7 @@ const Home = () => {
                   />
                 </div>
 
-                <div className="absolute top-0 right-0 opacity-10 translate-x-1/2 -translate-y-16 sm:hidden">
+                <div className="absolute top-0 right-0 opacity-10 translate-x-1/2 -translate-y-16 sm:hidden hidden">
                   <img
                     src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
                     alt="Top Right Pattern"
@@ -845,7 +889,7 @@ const Home = () => {
 
 
                 {/* Video Section */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-1 min-h-screen sm:hidden ">
+                <div className=" flex-col sm:flex-row items-center justify-center gap-1 min-h-screen sm:hidden hidden">
 
 
 
@@ -880,7 +924,7 @@ const Home = () => {
 
 
 
-{/* 
+                  {/* 
                   <div
                     className="bg-gradient-to-r from-[#fff] via-[#fff] to-[#fff] text-yellow-600 text-sm md:text-base font-medium py-2 block sm:hidden hero-bar border border-black mt-10"
                     style={{
@@ -1010,10 +1054,10 @@ const Home = () => {
 
               {/* Section 3 */}
               <div
-                className="section p-8 sm:p-16 sm:bg-white section-3 z-50"
+                className="section p-8 sm:p-16 lg:bg-slate-100 z-50 bg-slate-100 "
               >
                 {/* Bottom Center Pattern */}
-                <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-50 sm:hidden">
+                <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-50 sm:hidden hidden">
                   <img
                     src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
                     alt="Bottom Center Pattern"
@@ -1022,7 +1066,7 @@ const Home = () => {
                 </div>
 
                 {/* Top Right Pattern */}
-                <div className="absolute top-0 right-0 opacity-50 translate-x-1/2 -translate-y-16 sm:hidden">
+                <div className="absolute top-0 right-0 opacity-50 translate-x-1/2 -translate-y-16 sm:hidden hidden">
                   <img
                     src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
                     alt="Top Right Pattern"
@@ -1053,7 +1097,7 @@ const Home = () => {
                 {/* Event Cards - desktop*/}
 
 
-                <div className="relative hidden sm:block">
+                <div className="relative hidden sm:block ">
                   {/* Title with animation from top */}
                   <motion.h2
                     className="text-4xl font-bold text-center mb-8 my-16 cookie-regular"
@@ -1072,7 +1116,7 @@ const Home = () => {
                   {/* Slider container animation with whileInView */}
                   <div
                     ref={scrollRef}
-                    className="space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide lg:mb-80 xl:mb-0 flex z-50 relative bg-white"
+                    className="space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide lg:mb-80 xl:mb-0 flex z-50 relative bg-slate-100"
                     initial={{ y: 300, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 2, ease: "easeOut" }}
@@ -1140,37 +1184,42 @@ const Home = () => {
 
 
                 {/* Event Cards */}
-                <div className="space-y-6 top-16 relative sm:hidden">
-                  {events.map((event, index) => (
-                    <motion.div
-                      key={event.id}
-                      onClick={() => handleClick(index)}
-                      className={`relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 ${activeIndex === index ? "h-[200px]" : "h-[100px]"
-                        }`}
-                      style={{
-                        backgroundImage: `url(${event.image})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.2 }}
-                      viewport={{ once: false }}
-                    >
-                      {/* Overlay that is always visible */}
-                      <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-white px-4">
-                        <h3 className="text-3xl font-bold pattaya-regular">{event.name}</h3>
+                <div className="grid grid-cols-2 gap-3 p-3 sm:hidden mt-10">
+  {events.map((event, index) => (
+    <motion.div
+      key={event.id}
+      onClick={() => handleClick(index)}
+      className={`relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 shadow-md ${
+        activeIndex === index ? "h-[160px]" : "h-[120px]"
+      }`}
+      style={{
+        backgroundImage: `url(${event.image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
+      viewport={{ once: false }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-2 text-white">
+        <h3 className="text-sm font-bold mb-1 drop-shadow-md">{event.name}</h3>
 
-                        {/* Description appears only if active */}
-                        {activeIndex === index && (
-                          <p className="text-center mt-2 transition-opacity duration-300 font-sans">
-                            {event.description}
-                          </p>
-                        )}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+        {/* Description appears only if active */}
+        {activeIndex === index && (
+          <p className="text-xs transition-opacity duration-300">{event.description}</p>
+        )}
+      </div>
+
+      {/* Highlight border when active */}
+      {activeIndex === index && (
+        <div className="absolute inset-0 border-2 border-yellow-400 rounded-lg animate-pulse"></div>
+      )}
+    </motion.div>
+  ))}
+</div>
+
 
 
 
@@ -1196,6 +1245,15 @@ const Home = () => {
                 </div>
 
 
+                <div className="absolute lg:bottom-0 left-0 w-full sm:hidden z-10 2xl:-bottom-16 bottom-0">
+                  <img
+                    src="file (2).png"
+                    alt="Himalayas"
+                    className="w-full object-cover transform"
+                        />
+                </div>
+
+
               </div>
 
 
@@ -1210,7 +1268,7 @@ const Home = () => {
 
               {/* Section 6*/}
               <div
-                className="section p-8 sm:p-0 relative sm:bg-black section-6"
+                className="section p-0 sm:p-0 relative sm:bg-black section-6"
                 style={{
                   // backgroundImage: "url(/background.jpg)",
                   backgroundSize: "cover",
@@ -1225,12 +1283,13 @@ const Home = () => {
 
 
 
+
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black opacity-0 z-0"></div>
 
                 {/* Content */}
                 <motion.h2
-                  className="text-3xl font-bold text-center mb-8 relative top-16 z-10 sm:hidden pattaya-regular"
+                  className="text-3xl font-bold text-center mb-8 relative top-16 z-10 sm:hidden pattaya-regular hidden"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
@@ -1240,7 +1299,7 @@ const Home = () => {
                 </motion.h2>
 
                 <motion.div
-                  className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 relative top-16 z-10 sm:hidden"
+                  className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 relative top-16 z-10 sm:hidden hidden"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
@@ -1288,128 +1347,7 @@ const Home = () => {
 
 
 
-                <div className="relative w-full h-screen z-50 glimpses hidden">
-                  <div className="absolute inset-0 flex justify-center items-center">
-
-                    {/* Video 1 */}
-                    <motion.div
-                      className="absolute w-[300px] h-[200px] bg-white p-3 rounded-xl top-24 border-2 border-black"
-                      initial={{ rotate: 6 }}
-                      animate={{ rotate: [6, -6, 6] }}
-                      transition={{
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        duration: 2,
-                        ease: "easeInOut",
-                      }}
-                      style={{
-                        transformOrigin: "top center",
-                        boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
-                      }}
-                    >
-                      <div className="absolute -top-12 left-[40%] p-2 ">
-                        <img
-                          src="rb_1524.png"
-                          alt="Image 1"
-                          className="w-12 h-12 object-cover transform translate-z-1"
-                        />
-                      </div>
-
-                      <iframe
-                        className="w-full h-[150px] rounded-xl shadow-md"
-                        src="https://www.youtube.com/embed/V-094flkqjI"
-                        title="YouTube video 1"
-                        allowFullScreen
-                      ></iframe>
-
-                      <p className="mt-2 text-center text-black">
-                        #AfterMovie
-                      </p>
-                    </motion.div>
-
-                    {/* Video 2 */}
-                    <motion.div
-                      className="absolute top-44 left-0 -rotate-12 transform w-[300px] h-[200px] bg-white p-3 rounded-xl border-2 border-black"
-                      initial={{ rotate: -12 }}
-                      animate={{ rotate: [6, -6, 6] }}
-                      transition={{
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        duration: 2,
-                        ease: "easeInOut",
-                      }}
-                      style={{
-                        transformOrigin: "top center",
-                        boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
-                      }}
-                    >
-                      {/* Image */}
-                      <div className="absolute -top-12 left-[40%] p-2">
-                        <img
-                          src="rb_1524.png"
-                          alt="Image 2"
-                          className="w-12 h-12 object-cover transform translate-z-1"
-                        />
-                      </div>
-
-                      {/* Video */}
-                      <iframe
-                        className="w-full h-[150px] rounded-xl shadow-md"
-                        src="https://www.youtube.com/embed/DyuUx1obJ_M"
-                        title="YouTube video 2"
-                        allowFullScreen
-                      ></iframe>
-
-                      {/* Text */}
-                      <p className="mt-2 text-center text-black">
-                        #AAVEG
-                      </p>
-                    </motion.div>
-
-                    {/* Video 4 */}
-                    <motion.div
-                      className="absolute rotate-6 top-52 right-20 w-[300px] h-[200px] bg-white p-3 rounded-xl border-2 border-black"
-                      initial={{ rotate: 6 }}
-                      animate={{ rotate: [6, -6, 6] }}
-                      transition={{
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        duration: 2,
-                        ease: "easeInOut",
-                      }}
-                      style={{
-                        transformOrigin: "top center",
-                        boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
-                      }}
-                    >
-                      {/* Image */}
-                      <div className="absolute -top-12 left-[40%] p-2">
-                        <img
-                          src="rb_1524.png"
-                          alt="Image 3"
-                          className="w-12 h-12 object-cover transform translate-z-1"
-                        />
-                      </div>
-
-                      {/* Video */}
-                      <iframe
-                        className="w-full h-[150px] rounded-xl shadow-md"
-                        src="https://www.youtube.com/embed/HVL4Fgel8S4"
-                        title="YouTube video 4"
-                        allowFullScreen
-                      ></iframe>
-
-                      {/* Text */}
-                      <p className="mt-2 text-center text-black">
-                        #CelebrityNight
-                      </p>
-                    </motion.div>
-
-                  </div>
-                </div>
-
-
-
+      
 
 
 
@@ -1440,7 +1378,7 @@ const Home = () => {
 
               {/* Section 4 */}
               <div
-                className="section p-8 sm:bg-white section-4 z-50"
+                className="section p-8 sm:bg-slate-100 z-50 bg-slate-100"
 
               >
 
@@ -1453,7 +1391,7 @@ const Home = () => {
                 <div className="py-12 bg-transparent hidden sm:block z-20">
                   {/* Title */}
                   <motion.div
-                    className="text-center text-black font-bold text-3xl mb-8 cookie-regular"
+                    className="text-center text-black font-bold text-3xl mb-8 cookie-regular mt-0"
                     initial={{ opacity: 0, y: -50 }}
                     whileInView={{ opacity: 1, y: -70 }}
                     transition={{ duration: 1 }}
@@ -1550,7 +1488,7 @@ const Home = () => {
 
                 {/* Animated Title */}
                 <motion.h2
-                  className="text-3xl font-bold text-center text-[#1a1a1a] mt-28 sm:hidden pattaya-regular"
+                  className="text-3xl font-bold text-center text-[#1a1a1a] mt-16 sm:hidden cookie-regular"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
@@ -1560,23 +1498,28 @@ const Home = () => {
                 </motion.h2>
 
                 {/* Highlight Cards */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-12 sm:hidden">
-                  {highlights.map((highlight, index) => (
-                    <motion.div
-                      key={index}
-                      className="bg-black text-white rounded-lg shadow-xl hover:scale-105 transform transition duration-300"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.2 }}
-                      viewport={{ once: false }}
-                    >
-                      <div className="p-4 text-center">
-                        <p className="text-4xl font-bold text-yellow-500">{highlight.number}</p>
-                        <p className="text-lg mt-2">{highlight.label}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+                <div className="grid grid-cols-2 gap-8 mt-8 sm:hidden px-4">
+  {highlights.map((highlight, index) => (
+    <motion.div
+      key={index}
+      className="bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-xl shadow-lg hover:scale-105 transform transition duration-300 p-4"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.2 }}
+      viewport={{ once: false }}
+    >
+      <div className="flex flex-col items-center">
+        <p className="text-2xl font-extrabold text-yellow-400 mb-2 drop-shadow-md">
+          {highlight.number}
+        </p>
+        <p className="text-md font-medium text-gray-300 text-center tracking-wide">
+          {highlight.label}
+        </p>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
 
 
                 <div className="absolute bottom-0 left-0 w-full hidden sm:block z-10">
@@ -1588,11 +1531,11 @@ const Home = () => {
                 </div>
 
 
-                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-30">
+                <div className="absolute bottom-0 left-0 w-full sm:block z-30">
                   <img
                     src="rb_37172.png"
                     alt="Himalayas"
-                    className="w-full object-cover transform translate-y-80 lg:translate-y-80 2xl:translate-y-96"
+                    className="w-full object-cover transform translate-y-16 lg:translate-y-80 2xl:translate-y-96"
                   />
                 </div>
 
@@ -1607,7 +1550,7 @@ const Home = () => {
 
               {/* Section 5*/}
               <div
-                className="section sm:bg-white p-8 sm:p-0 section-5 z-50"
+                className="section sm:bg-slate-100 p-0 sm:p-0  z-50 bg-slate-100"
                 style={{
                   // backgroundImage: "url(/background.jpg)",
                   backgroundSize: "cover",
@@ -1616,7 +1559,7 @@ const Home = () => {
                 }}
               >
                 {/* Bottom Center Pattern */}
-                <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-50 sm:hidden">
+                <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-50 sm:hidden hidden">
                   <img
                     src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
                     alt="Bottom Center Pattern"
@@ -1625,7 +1568,7 @@ const Home = () => {
                 </div>
 
                 {/* Top Right Pattern */}
-                <div className="absolute top-0 right-0 opacity-50 translate-x-1/2 -translate-y-16 sm:hidden">
+                <div className="absolute top-0 right-0 opacity-50 translate-x-1/2 -translate-y-16 sm:hidden hidden">
                   <img
                     src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
                     alt="Top Right Pattern"
@@ -1634,7 +1577,7 @@ const Home = () => {
                 </div>
 
                 {/* Event Cards */}
-                <div className="space-y-6 top-16 relative sm:hidden">
+                <div className="space-y-6 top-16 relative sm:hidden hidden">
                   {events2.map((event, index) => (
                     <motion.div
                       key={event.id}
@@ -1668,7 +1611,7 @@ const Home = () => {
 
 
                 <motion.h2
-                  className="text-3xl font-bold text-center cookie-regular mt-10 hidden sm:block"
+                  className="text-3xl font-bold text-center cookie-regular mt-32 sm:block p-4 sm:mt-16"
                   initial={{ y: 0, opacity: 0 }}
                   whileInView={{ y: 20, opacity: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
@@ -1683,14 +1626,13 @@ const Home = () => {
 
 
 
-                <div className="absolute lg:bottom-0 left-0 w-full hidden sm:block z-0 2xl:-bottom-6">
+                <div className="absolute lg:-bottom-20 left-0 w-full sm:block z-0 2xl:-bottom-6 bottom-0">
                   <motion.img
-                    src="vecteezy_abstract-ethnic-geometric-pattern-background-design_13991676.jpg"
+                    src="/mandala.png"
                     alt="Himalayas"
                     className="w-full object-cover transform"
                     initial={{ translateY: 150 }}
-                    whileInView={{ translateY: 80 }}
-                    viewport={{ once: false, amount: 0 }}
+                    animate={{ translateY: 0 }}
                     transition={{
                       duration: 0.3,
                       ease: "easeOut",
@@ -1745,7 +1687,7 @@ const Home = () => {
 
               {/* Section 7*/}
               <div
-                className="section relative sm:bg-white section-7 z-50"
+                className="section relative sm:bg-slate-100 section-7 z-50"
               >
                 {/* Overlay */}
                 <div

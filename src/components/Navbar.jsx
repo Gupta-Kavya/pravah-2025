@@ -38,7 +38,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
   return (
     <>
       <nav
-        className={`fixed w-full top-0 left-0 transition-colors duration-1000 ease-in-out bg-white ${isDesktop ? bgColor : 'bg-white'} ${isDesktop ? navbarDisplay : 'block'}`}
+        className={`fixed w-full top-0 left-0 transition-colors duration-1000 ease-in-out bg-white ${isDesktop ? bgColor : 'bg-white'} ${navbarDisplay}`}
         style={{ zIndex: 1000 }}
       >
         {/* Announcement Bar */}
@@ -53,7 +53,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
         </div>
 
         {/* Navbar */}
-        <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-4 dynapuff bg-white">
+        <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-4 dynapuff bg-slate-100">
           {/* Left Links (for desktop) */}
           <div className="hidden md:flex space-x-8 items-center flex-grow justify-start">
             <Link
@@ -90,14 +90,14 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
             <div className="sm:flex sm:justify-center sm:items-center flex-grow">
 
               <img
-                src="https://www.skit.ac.in/images/headers/skit_logo.png"
+                src="/skit_logo.png"
                 className={`sm:w-14 w-14 ${filter || ''} mx-4 hidden sm:block`} // Apply filter dynamically
                 alt="SKIT M & G Logo"
               />
 
 
               <img
-                src="https://pravah.skit.ac.in/_next/static/media/navbarText.cfcb7a68.png"
+                src="/logo-skit.png"
                 className={`sm:w-32 w-32 ${filter || ''} mx-4`} // Apply filter dynamically
                 alt="SKIT M & G Logo"
               />
@@ -179,43 +179,44 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
             &times;
           </button>
 
+
           <div className="flex flex-col items-center space-y-4 py-8">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               HOME
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/skit-pravah-2025-events"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               EVENTS & REGISTRATIONS
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/skit-pravah-2025-AAVEG"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               AAVEG
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/about-skit-pravah-2025"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               ABOUT US
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/skit-pravah-2025-sponsors"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
               SPONSORS
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/the-team-behind-skit-pravah-2025"
               className="text-lg font-medium text-black hover:text-yellow-600 transition"
             >
               TEAM PRAVAH
-            </a>
+            </Link>
 
             {/* Himalayas graphic image */}
             <img
@@ -224,6 +225,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
               className="mt-8 w-full max-w-md object-contain transform translate-y-1/2"
             />
           </div>
+
         </motion.div>
       </nav>
     </>

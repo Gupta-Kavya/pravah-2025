@@ -76,7 +76,7 @@ const Aaveg = () => {
           property="og:description"
           content="Experience the thrill of Aaveg 2025 at SKIT, where sportsmanship meets culture, embodying the vibrant essence of Incredible India."
         />
-        <meta property="og:url" content="http://mysite.com/aaveg-2025" />
+        <meta property="og:url" content="https://pravah.skit.ac.in/skit-pravah-2025-AAVEG" />
         <meta
           name="author"
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"

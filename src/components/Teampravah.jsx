@@ -25,7 +25,7 @@ const Teampravah = () => {
                     property="og:description"
                     content="Get to know the dynamic team behind Pravah at SKIT. These creative minds and organizers are the driving force behind this incredible cultural fest."
                 />
-                <meta property="og:url" content="http://mysite.com/team-pravah" />
+                <meta property="og:url" content="https://pravah.skit.ac.in/the-team-behind-skit-pravah-2025" />
                 <meta
                     name="author"
                     content="Swami Keshvanand Institute of Technology, Management, and Gramothan"

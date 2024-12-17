@@ -35,7 +35,6 @@ const CountdownTimer = ({ eventDate }) => {
   }, []);
 
   if (isLive) {
-
     return (
       <div className="flex items-center justify-center mt-8 space-x-3">
         {/* Gradient Circle */}
@@ -52,20 +51,20 @@ const CountdownTimer = ({ eventDate }) => {
           <div className="absolute inset-0 w-full h-full bg-red-500 rounded-full"></div>
         </div>
       </div>
-
     );
   }
 
   return (
     <div className="text-center">
       {/* Countdown Timer */}
-      <div className="flex justify-center space-x-6 sm:space-x-8 mt-8">
-        {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => (
+      <div className="flex justify-center space-x-4 sm:space-x-8 mt-0">
+        {["Days", "Hours", "Mins", "Sec"].map((unit, index) => (
           <div
             key={unit}
-            className="w-24 h-24 sm:w-22 sm:h-22 bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 rounded-full flex flex-col items-center justify-center text-white shadow-lg transform transition-transform duration-300 hover:scale-105"
+            className="w-16 h-16 lg:w-24 lg:h-24 bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 rounded-full flex flex-col items-center justify-center text-white shadow-lg transform transition-transform duration-300 hover:scale-105"
+            style={{ aspectRatio: '1' }} // Ensure the aspect ratio is always 1:1
           >
-            <p className="text-4xl sm:text-4xl font-extrabold">
+            <p className="text-2xl sm:text-4xl font-extrabold">
               {Object.values(timeLeft)[index] || 0}
             </p>
             <p className="text-xs sm:text-sm font-medium uppercase tracking-wide dynapuff">
@@ -74,8 +73,6 @@ const CountdownTimer = ({ eventDate }) => {
           </div>
         ))}
       </div>
-
-
     </div>
   );
 };
@@ -84,7 +81,7 @@ const EventCountdown = () => {
   const eventDate = "2025-02-15T00:00:00";
 
   return (
-    <div className="p-0">
+    <div className="p-3 sm:p-0">
       <CountdownTimer eventDate={eventDate} />
     </div>
   );

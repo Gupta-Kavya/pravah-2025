@@ -96,7 +96,7 @@ const Surgallery = () => {
           property="og:description"
           content="Immerse yourself in the beautiful melodies and soulful performances of Sur, SKIT's annual musical celebration, honoring India's rich music tradition."
         />
-        <meta property="og:url" content="http://mysite.com/sur-gallery" />
+        <meta property="og:url" content="https://pravah.skit.ac.in/skit-pravah-2025-events-Sur-gallery" />
         <meta
           name="author"
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -121,29 +121,29 @@ const Surgallery = () => {
         {/* Gallery Section */}
         <div className="grid gallery-grid">
           <div className="columnn">
-            <img src="Sur/1.jpg" alt="" />
-            <img src="Sur/2.jpg" alt="" />
-            <img src="Sur/3.jpg" alt="" />
-            <img src="Sur/4.jpg" alt="" />
-            <img src="Sur/5.jpg" alt="" />
-            <img src="Sur/6.jpg" alt="" />
+            <img src="Sur/1.JPG" alt="" />
+            <img src="Sur/2.JPG" alt="" />
+            <img src="Sur/3.JPG" alt="" />
+            <img src="Sur/4.JPG" alt="" />
+            <img src="Sur/5.JPG" alt="" />
+            <img src="Sur/6.JPG" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="Sur/7.jpg" alt="" />
-            <img src="Sur/8.jpg" alt="" />
-            <img src="Sur/9.jpg" alt="" />
-            <img src="Sur/10.jpg" alt="" />
-            <img src="Sur/11.jpg" alt="" />
-            <img src="Sur/15.jpg" alt="" />
+            <img src="Sur/7.JPG" alt="" />
+            <img src="Sur/8.JPG" alt="" />
+            <img src="Sur/9.JPG" alt="" />
+            <img src="Sur/10.JPG" alt="" />
+            <img src="Sur/11.JPG" alt="" />
+            <img src="Sur/15.JPG" alt="" />
           </div>
           <div className="columnn">
-            <img src="Sur/12.jpg" alt="" />
-            <img src="Sur/14.jpg" alt="" />
-            <img src="Sur/17.jpg" alt="" />
-            <img src="Sur/16.jpg" alt="" />
-            <img src="Sur/12.jpg" alt="" />
-            <img src="Sur/18.jpg" alt="" />
+            <img src="Sur/12.JPG" alt="" />
+            <img src="Sur/14.JPG" alt="" />
+            <img src="Sur/17.JPG" alt="" />
+            <img src="Sur/16.JPG" alt="" />
+            <img src="Sur/12.JPG" alt="" />
+            <img src="Sur/18.JPG" alt="" />
 
             <motion.section
               className="text-center"

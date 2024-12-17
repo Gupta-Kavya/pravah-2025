@@ -35,7 +35,7 @@ const SpotlightGrid = () => {
 
   return (
     <div
-      className="relative h-screen w-screen overflow-hidden hidden sm:block"
+      className="relative h-screen w-screen overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       <div
@@ -43,7 +43,7 @@ const SpotlightGrid = () => {
         style={{ "--mx": mousePos.x, "--my": mousePos.y }}
       />
 
-      <div className="absolute bottom-4 right-4 z-50" style={{ zIndex: 1000 }}>
+      <div className="absolute bottom-4 right-4 z-50 hidden sm:block" style={{ zIndex: 1000 }}>
         <button
           onClick={handleAudioToggle}
 
@@ -60,7 +60,7 @@ const SpotlightGrid = () => {
 
 
       <motion.h2
-        className="text-4xl font-bold text-center mb-8 my-16 cookie-regular text-white relative left-20"
+        className="text-4xl font-bold text-center mb-8 my-16 cookie-regular text-white relative lg:left-20"
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -86,7 +86,7 @@ const SpotlightGrid = () => {
               src={
                 selectedVideo === 'teaser'
                   ? '/teaser.mp4'
-                  : '/path/to/logo-video.mp4'
+                  : '/logo_reveal.mov'
               }
               autoPlay
               className="w-full h-full object-cover"
@@ -105,7 +105,7 @@ const SpotlightGrid = () => {
 
 
 
-      <div className="relative sm:flex sm:flex-row gap-0 min-h-screen hidden justify-center z-10 pointer-events-auto left-20">
+      <div className="relative sm:flex sm:flex-row gap-0 min-h-screen hidden justify-center z-10 pointer-events-auto left-20 ">
         {/* Left Video Card */}
         <motion.div
           className="video-card p-4 hover:scale-105 transform transition self-center relative z-10 pointer-events-auto cursor-pointer bg-gray-800"
@@ -120,7 +120,7 @@ const SpotlightGrid = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-5 rounded-lg"></div>
 
           {/* Video Thumbnail */}
-          <iframe src="https://www.youtube.com/embed/DyuUx1obJ_M" title="Teaser Launch of Pravah 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-80 h-44 rounded-lg"></iframe>
+          <img src="teaser_graphic.jpg" alt="" className="w-80 h-44 rounded-lg" />
 
           {/* Title */}
           <h3 className="text-2xl font-bold text-white mb-4 text-center mt-4 z-20 font-mono">
@@ -148,7 +148,7 @@ const SpotlightGrid = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-5 rounded-lg"></div>
 
           {/* Video Thumbnail */}
-          <iframe width="853" height="480" src="https://www.youtube.com/embed/HVL4Fgel8S4" title="Logo Reveal of PRAVAH 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-80 h-44 rounded-lg"></iframe>
+          <img src="logo_graphic.png" alt="" className="w-80 h-44 rounded-lg" />
 
           {/* Title */}
           <h3 className="text-2xl font-bold text-white mb-4 text-center mt-4 z-20 font-mono">
@@ -169,7 +169,67 @@ const SpotlightGrid = () => {
 
 
 
-      <div className="flex justify-center absolute -right-1 top-6" style={{ zIndex: 1000 }}>
+
+
+      <div className="relative lg:hidden gap-0 min-h-screen justify-center z-10 pointer-events-auto p-8">
+        {/* Left Video Card */}
+        <motion.div
+          className="video-card p-4 hover:scale-105 transform transition self-center relative z-10 pointer-events-auto cursor-pointer bg-gray-800 rounded-lg"
+          style={{ top: "100px", right: "0px" }}
+          initial={{ opacity: 0, y: 10, rotate: 0 }}
+          whileInView={{ opacity: 1, y: -120, rotate: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          onClick={() => setSelectedVideo("teaser")}
+        >
+          {/* Background effect with dark gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-0 rounded-lg"></div>
+
+          {/* Video Thumbnail */}
+          <iframe src="https://www.youtube.com/embed/DyuUx1obJ_M" title="Teaser Launch of Pravah 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-64 h-44 rounded-lg"></iframe>
+
+          {/* Title */}
+          <h3 className="text-lg font-bold text-white text-center mt-4 z-20 font-mono">
+            Pravah Teaser
+
+          </h3>
+
+
+
+
+        </motion.div>
+        {/* Right Video Card */}
+        <motion.div
+          className="video-card p-4 hover:scale-105 transform transition self-center relative z-10 pointer-events-auto cursor-pointer bg-gray-800 rounded-lg"
+          style={{ top: '120px', left: '0px' }}
+          initial={{ opacity: 0, y: 10, rotate: 0 }}
+          whileInView={{ opacity: 1, y: -120, rotate: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+          onClick={() => setSelectedVideo('logo')}
+        >
+
+          {/* Background effect with dark gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-0 rounded-lg"></div>
+
+          {/* Video Thumbnail */}
+          <iframe width="853" height="480" src="https://www.youtube.com/embed/HVL4Fgel8S4" title="Logo Reveal of PRAVAH 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-64 h-44 rounded-lg"></iframe>
+
+          {/* Title */}
+          <h3 className="text-lg font-bold text-white text-center mt-4 z-20 font-mono">
+            Logo Reveal
+          </h3>
+        </motion.div>
+
+
+
+
+
+
+      </div>
+
+
+      <div className="justify-center absolute -right-1 top-6 hidden lg:flex" style={{ zIndex: 1000 }}>
         <button className="px-6 py-3 text-lg font-bold text-purple-100 bg-black border border-white rounded-l-full shadow-lg">
           Discover Technical Events
         </button>
@@ -177,7 +237,7 @@ const SpotlightGrid = () => {
 
 
 
-      <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black to-transparent opacity-80 z-10"></div>
+      <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black to-transparent opacity-60 z-10"></div>
 
 
 
@@ -185,18 +245,18 @@ const SpotlightGrid = () => {
 
 
       <motion.div
-  className="absolute bottom-0 -left-40 w-full hidden sm:block z-0 pointer-events-none h-screen"
-  initial={{ x: -300, opacity: 0 }}
-  whileInView={{ x: 0, opacity: 1 }}
-  transition={{ duration: 0.5, ease: "easeOut" }}
-  viewport={{ once: false }}
->
-  <motion.img
-    src="rb_2148402774.png"
-    alt="Himalayas"
-    className="object-cover transform opacity-100 h-screen"
-  />
-</motion.div>
+        className="absolute bottom-0 -left-40 w-full hidden sm:block z-0 pointer-events-none h-screen"
+        initial={{ x: -300, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        viewport={{ once: false }}
+      >
+        <motion.img
+          src="rb_2148402774.png"
+          alt="Himalayas"
+          className="object-cover transform opacity-100 h-screen"
+        />
+      </motion.div>
 
 
       <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-0 pointer-events-none">

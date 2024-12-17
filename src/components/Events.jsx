@@ -70,7 +70,7 @@ const Events = () => {
           property="og:description"
           content="Join us at Pravah 2025, hosted by SKIT, to participate in vibrant events showcasing the cultural heritage and unity of Incredible India."
         />
-        <meta property="og:url" content="http://mysite.com/pravah-2025-events" />
+        <meta property="og:url" content="https://pravah.skit.ac.in/skit-pravah-2025-events" />
         <meta
           name="author"
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -85,7 +85,7 @@ const Events = () => {
 
       <Navbarr />
 
-    
+
       {/* <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0 ">
                   <motion.img
                     src="/file (14).png"
@@ -102,7 +102,7 @@ const Events = () => {
                   
                 </div> */}
 
-<Comingsoon />
+      <Comingsoon />
 
       <DesktopFooter />
     </div>

@@ -27,7 +27,7 @@ const Landing = () => {
             <div className="w-full lg:w-1/2 bg-black flex flex-col justify-center items-center p-4">
               <div className="mt-4 text-center px-6">
                 <motion.img
-                  src="https://pravah.skit.ac.in/_next/static/media/navbarText.cfcb7a68.png"
+                  src="/logo-skit.png"
                   alt=""
                   className="filter invert sepia-0 saturate-0 brightness-200 w-40"
                   whileInView={{ opacity: 1, y: 0 }}

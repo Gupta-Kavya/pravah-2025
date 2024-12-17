@@ -28,7 +28,7 @@ const About = () => {
     property="og:description"
     content="Experience the essence of culture and tradition at Pravah 2025, SKIT's premier cultural festival, featuring dynamic performances, arts, and creativity."
   />
-  <meta property="og:url" content="http://mysite.com/pravah-2025" />
+  <meta property="og:url" content="https://pravah.skit.ac.in/about-skit-pravah-2025" />
   <meta
     name="author"
     content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -43,7 +43,7 @@ const About = () => {
 
 
 
-      <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-16 relative">
+      <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-16 relative bg-slate-100">
 
 
 

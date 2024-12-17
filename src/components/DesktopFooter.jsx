@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLink, FaHeadset, FaPhoneVolume, FaGlobe } from "react-icons/fa6";
+import { FaLink, FaHeadset, FaPhoneVolume, FaGlobe, FaUsers } from "react-icons/fa6";
 
 const DesktopFooter = () => {
   return (
@@ -20,15 +20,7 @@ const DesktopFooter = () => {
 
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 relative z-10">
         <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
-            <a href="https://pravah.skit.ac.in/" className="flex">
-              <img
-                src="/logo.png"
-                className="w-40"
-                alt="FlowBite Logo"
-              />
-            </a>
-          </div>
+
 
           <div className="grid grid-cols-2 gap-6 sm:gap-6 sm:grid-cols-4">
             <div>
@@ -96,43 +88,81 @@ const DesktopFooter = () => {
 
             <div className="text-white">
               <h2 className="mb-6 text-sm font-extrabold uppercase text-white flex items-center">
-                <FaPhoneVolume className="mr-2" />
-                Contact Us
+                <FaUsers className="mr-2" />
+                Event Leadership
               </h2>
               <ul className="space-y-4">
                 <li className="mb-2">
                   <p className="text-sm">
                     <span className="font-bold">Chief Coordinator, Pravah'25</span>
                     <br />
-                    Mr. Abhishek Gupta -{" "}
-                    <a href="tel:9462326804" className="underline hover:text-gray-400 transition">
-                      9462326804
+                    Mr. Rohit Mukherjee -{" "}
+                    <a href="tel:9414051576" className="underline hover:text-gray-400 transition">
+                      9414051576
                     </a>
                   </p>
+
                 </li>
+
                 <li className="mb-2">
                   <p className="text-sm">
-                    <span className="font-bold">Event Queries</span>
+                    <span className="font-bold">Chief Co-Coordinator, Pravah'25</span>
                     <br />
-                    Paridhi Jain -{" "}
-                    <a href="tel:9929425337" className="underline hover:text-gray-400 transition">
-                      9929425337
+                    Mr. Amber Srivastava -{" "}
+                    <a href="tel:9828298243" className="underline hover:text-gray-400 transition">
+                      9828298243
                     </a>
                   </p>
+
                 </li>
-                <li className="mb-2">
-                  <p className="text-sm">
-                    <span className="font-bold">Website Head</span>
-                    <br />
-                    Kavya Gupta -{" "}
-                    <a href="tel:7976227748" className="underline hover:text-gray-400 transition">
-                      9057277613
-                    </a>
-                  </p>
-                </li>
+
               </ul>
             </div>
+
+
+
+
+
+
           </div>
+
+
+
+
+          <div className="text-white">
+            <h2 className="mb-6 text-sm font-extrabold uppercase text-white flex items-center">
+              <FaPhoneVolume className="mr-2" />
+              Queries
+            </h2>
+            <ul className="space-y-4">
+              <li className="mb-2">
+                <p className="text-sm">
+                  <span className="font-bold">For Events</span>
+                  <br />
+                  Dipesh Kaushik -{" "}
+                  <a href="tel:9001928479" className="underline hover:text-gray-400 transition">
+                    9001928479
+                  </a>
+                </p>
+
+              </li>
+
+              <li className="mb-2">
+                <p className="text-sm">
+                  <span className="font-bold">For Website</span>
+                  <br />
+                  Kavya Gupta -{" "}
+                  <a href="tel:9057277613" className="underline hover:text-gray-400 transition">
+                    9057277613
+                  </a>
+                </p>
+
+              </li>
+
+            </ul>
+          </div>
+
+
         </div>
 
         <hr className="my-6 border-gray-200 sm:mx-auto lg:my-5" />
@@ -140,7 +170,7 @@ const DesktopFooter = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-white sm:text-center mb-0">
             © 2025{" "}
-            <a href="https://flowbite.com/" className="hover:underline">
+            <a href="#" className="hover:underline">
               SKIT, Jaipur
             </a>
             . All Rights Reserved.
