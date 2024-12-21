@@ -19,9 +19,11 @@ import { Link } from "react-router-dom";
 import Confetti from 'react-confetti'
 import Landing from "./Landing";
 import { FaMicrophone, FaMicrophoneSlash, FaCalendarAlt } from "react-icons/fa";
+import { RiVoiceprintFill } from "react-icons/ri";
 import SpotlightGrid from "./SpotlightGrid";
 import Tunnel from "./Tunnel";
 import Cube from "./Cube";
+import Eventcardmob from "./Eventcardmob";
 
 
 const Home = () => {
@@ -86,7 +88,7 @@ const Home = () => {
       setnavbarDisplay("hidden");
     } else if (destination.index === 0) {
       setAnnounce("block");
-      setnavbarDisplay("block");
+      isOpen ? setnavbarDisplay("hidden") : setnavbarDisplay("block")
 
     } else {
       setBgColor('bg-white');
@@ -141,7 +143,6 @@ const Home = () => {
     { number: '6500+', label: 'Footfall' },
     { number: '300+', label: 'Winners' },
     { number: '20+', label: 'Sponsors' },
-    { number: '50+', label: 'Cricket' },
   ];
 
   const [activeIndex, setActiveIndex] = useState(1);
@@ -373,6 +374,10 @@ const Home = () => {
 
   }
 
+
+  const [isOpen, setIsOpen] = useState(false);
+
+
   return (
     <>
       {/* <Landing /> */}
@@ -410,7 +415,7 @@ const Home = () => {
       <Navbarr bgColor={bgColor} textColor={textColor} filter={filter} announce={announce} navbarDisplay={navbarDisplay} />
 
 
-      <div className="">
+      <div className="" style={{ zIndex: 200 }}>
 
         <ReactFullpage
 
@@ -439,118 +444,111 @@ const Home = () => {
                 }}
               >
 
-                {/* <Confetti
-      width={3000}
-      height={1000}
-    />
- */}
 
 
 
-
-<div className="relative h-screen w-screen overflow-hidden sm:hidden bg-slate-100">
-  {/* Flex container for centering h1 and EventCountdown */}
-  <div className="flex flex-col justify-center items-center min-h-screen">
-    {/* <h1 className="cookie-regular" style={{fontSize:"5rem"}}>Pravah'25</h1> */}
-
-    <img src="logo-text.png" alt="" className=""/>
-    <p className="text-lg sm:text-xl md:text-2xl font-medium text-black mb-8 abeezee-regular mt-5">
-      February 15<sup>th</sup> - February 22<sup>nd</sup>, 2025
-    </p>
-
-
-    <button
-              className="relative px-8 py-4 text-xl font-semibold text-white bg-transparent rounded-full overflow-hidden group mb-20"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-60 group-hover:opacity-40 rounded-full "></span>
-              <span className="relative z-10">Explore</span>
-            </button>
-
-
-  </div>
-
-
-
-  {/* Images with the background */}
-  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 sm:block z-0 pointer-events-none hidden">
-    <img
-      src="file (8).png"
-      alt="Himalayas"
-      className="w-full object-cover transform lg:translate-y-[140px] 2xl:translate-y-[140px] opacity-70"
-    />
-  </div>
-
-  <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-20 pointer-events-none">
-    <img
-      src="file (9).png"
-      alt="Himalayas"
-      className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[380px]"
-    />
-  </div>
-
-  <div className="absolute bottom-10 -right-0 w-full sm:block z-0 pointer-events-none">
-    <img
-      src="rb_2149151140.png"
-      alt="Himalayas"
-      className="w-full object-cover transform lg:translate-y-[170px] 2xl:translate-y-[210px] opacity-30"
-    />
-  </div>
-
-  <div className="absolute bottom-0 -right-0 w-full sm:block z-0 pointer-events-none">
-    <img
-      src="rb_2149151140.png"
-      alt="Himalayas"
-      className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[210px] opacity-20"
-    />
-  </div>
-
-  <div className="absolute bottom-0 -right-0 w-full sm:block z-0 pointer-events-none">
-    <img
-      src="rb_2149158780.png"
-      alt="Himalayas"
-      className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[450px] opacity-5"
-    />
-  </div>
-
-  <div className="absolute -bottom-20 -left-20 w-96 sm:block z-0 pointer-events-none">
-    <img
-      src="rb_24869.png"
-      alt="Himalayas"
-      className="w-full object-cover transform"
-    />
-  </div>
-
-  <div className="absolute bottom-0 -right-20 w-96 sm:block z-50 pointer-events-none">
-    <img
-      src="rb_2150428350.png"
-      alt="Himalayas"
-      className="w-full object-cover transform lg:translate-y-[40px] 2xl:translate-y-[40px]"
-    />
-  </div>
-</div>
-
-
-
-
-
-
-
-
-                {/* Voice Button */}
-                <div className="fixed bottom-4 right-4 z-50" style={{ zIndex: 1000 }}>
-                  <button
-                    onClick={handleAudioToggle}
-
-                    className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-lg border-2 border-purple-400"
-
+                {!isOpen && (
+                  <motion.div
+                    className="fixed bottom-2 right-2 z-50 cursor-pointer"
+                    onClick={() => { setIsOpen(true); setnavbarDisplay("hidden"); }}
+                    style={{ zIndex: 1000 }}
                   >
-                    {isPlaying ? <FaMicrophoneSlash size={24} color='white' /> : <FaMicrophone size={24} color='white' />}
-                  </button>
+                    <div className="flex items-center space-x-2 px-3   py-2 bg-black border-2 border-black rounded-full shadow-2xl group-hover:bg-[#9b4dff] animate-glow">
+                      <span className="text-sm font-bold text-gray-200 group-hover:text-white">
+                        Reveal Date
+                      </span>
+                    </div>
+                  </motion.div>
 
+
+                )}
+
+
+                <div className="relative h-screen w-screen overflow-hidden bg-slate-100 sm:hidden">
+                  {/* Flex container for centering h1 and EventCountdown */}
+                  <div className="flex flex-col justify-center items-center min-h-screen px-4 sm:px-6">
+                    {/* Logo Image */}
+                    <img src="logo-text.png" alt="Pravah Logo" className="w-3/4 sm:w-1/2 md:w-1/3 mb-4" />
+
+                    {/* Event Date */}
+                    <p className="text-lg sm:text-xl md:text-2xl font-medium text-black mb-8 abeezee-regular mt-5">
+                      February 15<sup>th</sup> - February 22<sup>nd</sup>, 2025
+                    </p>
+
+                    {/* Explore Button */}
+                    <button className="relative px-8 py-4 text-xl font-semibold text-white bg-transparent rounded-full overflow-hidden group mb-20">
+                      <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-60 group-hover:opacity-40 rounded-full"></span>
+                      <span className="relative z-10">Explore Events </span>
+                    </button>
+                  </div>
+
+                  {/* Images with the background */}
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 sm:block z-0 pointer-events-none hidden">
+                    <img
+                      src="file (8).png"
+                      alt="Himalayas"
+                      className="w-full object-cover transform lg:translate-y-[140px] 2xl:translate-y-[140px] opacity-70"
+                    />
+                  </div>
+
+                  <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-20 pointer-events-none">
+                    <img
+                      src="file (9).png"
+                      alt="Himalayas"
+                      className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[380px]"
+                    />
+                  </div>
+
+                  <div className="absolute bottom-10 -right-0 w-full sm:block z-0 pointer-events-none">
+                    <img
+                      src="rb_2149151140.png"
+                      alt="Himalayas"
+                      className="w-full object-cover transform lg:translate-y-[170px] 2xl:translate-y-[210px] opacity-30"
+                    />
+                  </div>
+
+                  <div className="absolute bottom-0 -right-0 w-full sm:block z-0 pointer-events-none">
+                    <img
+                      src="rb_2149151140.png"
+                      alt="Himalayas"
+                      className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[210px] opacity-20"
+                    />
+                  </div>
+
+                  <div className="absolute bottom-0 -right-0 w-full sm:block z-0 pointer-events-none">
+                    <img
+                      src="rb_2149158780.png"
+                      alt="Himalayas"
+                      className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[450px] opacity-5"
+                    />
+                  </div>
+
+                  <div className="absolute -bottom-20 -left-20 w-96 sm:block z-0 pointer-events-none">
+                    <img
+                      src="rb_24869.png"
+                      alt="Himalayas"
+                      className="w-full object-cover transform"
+                    />
+                  </div>
+
+                  <div className="absolute bottom-0 -right-20 w-96 sm:block z-50 pointer-events-none">
+                    <img
+                      src="rb_2150428350.png"
+                      alt="Himalayas"
+                      className="w-full object-cover transform lg:translate-y-[40px] 2xl:translate-y-[40px]"
+                    />
+                  </div>
                 </div>
 
-                {/* Audio Element */}
-                <audio ref={audioRef} src="/section1-audio.mp3" />
+
+
+
+
+
+
+
+
+
 
 
 
@@ -597,17 +595,17 @@ const Home = () => {
 
                   {/* Dynamic Typing Effect */}
                   <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 50 }}  // Start above the viewport
+                    whileInView={{ opacity: 1, y: 0 }}  // Animate to normal position
                     transition={{ duration: 1, ease: "easeOut" }}
                   >
                     <ReactTypingEffect
                       text={[
                         "Pravah 2025",
                         "Celebrating Incredible India",
-                        "The Silver Jubilee Year"
+                        "The Silver Jubilee Year",
                       ]}
-                      className="text-7xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-pink-500 hidden sm:block mt-0"
+                      className="text-7xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-pink-500 hidden sm:block"
                       speed={200}
                       eraseDelay={100}
                       typingDelay={300}
@@ -618,19 +616,95 @@ const Home = () => {
                         </h1>
                       )}
                     />
-
                   </motion.div>
-
 
                   <div className="mt-10 mb-20 hidden sm:block">
                     <motion.div
-                      initial={{ opacity: 0, y: 50 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 50 }}  // Start above the viewport
+                      whileInView={{ opacity: 1, y: 0 }}  // Animate to normal position
                       transition={{ duration: 1, ease: "easeOut" }}
                     >
                       <EventCountdown />
                     </motion.div>
                   </div>
+
+
+
+
+
+
+                  {isOpen && (
+                    <motion.div
+                      initial={{ x: "-100%" }}
+                      animate={{ x: 0 }}
+                      transition={{ duration: 0.4, ease: "easeInOut" }}
+                      className="absolute inset-0 bg-slate-100 flex flex-col items-center h-screen z-0"
+                    >
+
+                      <Confetti
+                        width={3000}
+                        height={1000}
+                      />
+
+
+                      <h1 className="text-6xl font-extrabold mb-6 text-gray-500 text-center">
+                        Finally, it's happening!
+                      </h1>
+
+
+                      {/* Date */}
+                      <p className="text-8xl font-extrabold text-black">
+                        15th - 22nd February
+                      </p>
+
+                      {/* Close Button aligned to left center */}
+                      <button
+                        onClick={() => { setIsOpen(false); setnavbarDisplay("block"); }}
+                        className="fixed top-4 right-4 px-6 py-3 bg-[#f55474] text-white rounded-full shadow-lg hover:bg-[#e14b6b] transition duration-300 font-semibold"
+                      >
+                        Close
+                      </button>
+
+
+                      <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
+                        <img
+                          src="rb_2149151140.png"
+                          alt="Himalayas"
+                          className="w-full object-cover transform lg:translate-y-[120px] 2xl:translate-y-[120px] opacity-30"
+                        />
+                      </div>
+
+
+                      <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
+                        <img
+                          src="rb_2149151140.png"
+                          alt="Himalayas"
+                          className="w-full object-cover transform lg:translate-y-[50px] 2xl:translate-y-[50px] opacity-20"
+                        />
+                      </div>
+
+
+                      <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
+                        <img
+                          src="rb_2149158780.png"
+                          alt="Himalayas"
+                          className="w-full object-cover transform lg:translate-y-[250px] 2xl:translate-y-[250px] opacity-5"
+                        />
+                      </div>
+
+                      <div className="absolute -bottom-0 -left-20 w-96 hidden sm:block z-0 pointer-events-none">
+                        <img
+                          src="rb_24869.png"
+                          alt="Himalayas"
+                          className="w-full object-cover transform"
+                        />
+                      </div>
+
+
+                    </motion.div>
+                  )}
+
+
 
 
 
@@ -805,7 +879,7 @@ const Home = () => {
 
               {/* Section 2 */}
               <div
-                className="section p-0 sm:bg-white section-2"
+                className="section p-0 bg-slate-100"
 
               >
 
@@ -889,91 +963,77 @@ const Home = () => {
 
 
                 {/* Video Section */}
-                <div className=" flex-col sm:flex-row items-center justify-center gap-1 min-h-screen sm:hidden hidden">
-
-
-
-
+                <div className="flex flex-col items-center justify-center gap-6 min-h-screen px-4 sm:hidden">
+                  <div
+                    className="radial-grid absolute inset-0"
+                  />
 
                   {/* Left Video Card */}
                   <motion.div
-                    className="video-card rounded-lg p-4 hover:scale-105 transform transition self-center z-50"
+                    className="video-card relative rounded-lg w-72 h-48 bg-gray-100 shadow-md overflow-hidden hover:scale-105 transform transition z-50"
                     initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 40 }}
+                    whileInView={{ opacity: 1, y: 30 }}
                     viewport={{ once: false }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                   >
-                    <iframe
-                      width="320"
-                      height="180"
-                      src="https://www.youtube.com/embed/DyuUx1obJ_M"
-                      title="Teaser Launch of Pravah"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="rounded-lg shadow-xl"
-                    ></iframe>
-
-
-                    <p className="text-lg text-center font-semibold mt-4 text-black pattaya-regular">
-                      Teaser Launch
-                    </p>
-
-                  </motion.div>
-
-
-
-
-                  {/* 
-                  <div
-                    className="bg-gradient-to-r from-[#fff] via-[#fff] to-[#fff] text-yellow-600 text-sm md:text-base font-medium py-2 block sm:hidden hero-bar border border-black mt-10"
-                    style={{
-                      marginLeft: "-50vw",
-                      marginRight: "-50vw",
-                      position: "relative",
-                      zIndex: 1,
-                      overflow: "hidden",
-                    }}
-                  >
-                    <div className="max-w-screen-xl mx-auto px-4 text-center">
-                      <div className="marquee">
-                        <div className="scrolling-text">
-                          Unity in Diversity | Explore the Vibrance | Your Journey Starts Here
-                        </div>
-                        <div className="scrolling-text">
-                          Unity in Diversity | Explore the Vibrance | Your Journey Starts Here
-                        </div>
-                      </div>
+                    <div className="relative w-full h-full group">
+                      {/* Poster Image */}
+                      <img
+                        src="teaser_graphic.png"
+                        alt="Teaser Poster"
+                        className="w-full h-full object-cover cursor-pointer rounded-lg group-hover:opacity-90 border-[3px] border-transparent group-hover:border-blue-400 group-hover:shadow-[0_0_15px_4px_rgba(58,134,255,0.7)] transition duration-300"
+                        onClick={() => (document.getElementById('teaser-video').style.display = 'block')}
+                      />
+                      {/* YouTube Video (Initially Hidden) */}
+                      <iframe
+                        id="teaser-video"
+                        width="100%"
+                        height="100%"
+                        src="https://www.youtube.com/embed/esOx6T4uQwI?autoplay=1"
+                        title="Teaser Launch of Pravah"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full rounded-lg hidden"
+                      ></iframe>
                     </div>
-                  </div> */}
-
-
+                    <p className="text-center text-sm font-medium mt-2 text-gray-800 group-hover:text-blue-400 transition duration-300">Teaser Launch</p>
+                  </motion.div>
 
                   {/* Right Video Card */}
                   <motion.div
-                    className="video-card rounded-lg p-4 hover:scale-105 transform transition self-center z-50"
+                    className="video-card relative rounded-lg w-72 h-48 bg-gray-100 shadow-md overflow-hidden hover:scale-105 transform transition z-50"
                     initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 60 }}
+                    whileInView={{ opacity: 1, y: 30 }}
                     viewport={{ once: false }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                   >
-                    <iframe
-                      width="320"
-                      height="180"
-                      src="https://www.youtube.com/embed/HVL4Fgel8S4"
-                      title="Logo Reveal of Pravah"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="rounded-lg shadow-xl"
-                    ></iframe>
-
-                    <p className="text-lg text-center font-semibold mt-4 text-black pattaya-regular">
-                      Logo Reveal
-                    </p>
-
+                    <div className="relative w-full h-full group">
+                      {/* Poster Image */}
+                      <img
+                        src="logo_graphic.png"
+                        alt="Logo Reveal Poster"
+                        className="w-full h-full object-cover cursor-pointer rounded-lg group-hover:opacity-90 border-[3px] border-transparent group-hover:border-pink-400 group-hover:shadow-[0_0_15px_4px_rgba(255,105,180,0.7)] transition duration-300"
+                        onClick={() => (document.getElementById('logo-video').style.display = 'block')}
+                      />
+                      {/* YouTube Video (Initially Hidden) */}
+                      <iframe
+                        id="logo-video"
+                        width="100%"
+                        height="100%"
+                        src="https://www.youtube.com/embed/HVL4Fgel8S4?autoplay=1"
+                        title="Logo Reveal of Pravah"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 w-full h-full rounded-lg hidden"
+                      ></iframe>
+                    </div>
+                    <p className="text-center text-sm font-medium mt-2 text-gray-800 group-hover:text-pink-400 transition duration-300">Logo Reveal</p>
                   </motion.div>
                 </div>
+
+
 
 
                 {/* <div className="relative hidden sm:block">
@@ -1077,14 +1137,14 @@ const Home = () => {
 
 
 
-                <div className="absolute bottom-4 right-4 z-50" style={{ zIndex: 1000 }}>
+                <div className="absolute bottom-4 right-4 z-50 hidden sm:block" style={{ zIndex: 1000 }}>
                   <button
                     onClick={handleAudioToggle}
 
                     className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-2xl border-2 border-purple-400"
 
                   >
-                    {isPlaying ? <FaMicrophoneSlash size={24} color='white' /> : <FaMicrophone size={24} color='white' />}
+                    {isPlaying ? <FaMicrophoneSlash size={24} color='white' /> : <RiVoiceprintFill size={24} color='white' />}
                   </button>
 
                 </div>
@@ -1157,7 +1217,7 @@ const Home = () => {
 
 
 
-                  <Link to="/skit-pravah-2025-events">
+                  <Link to="/skit-pravah-2025-events/Cultural">
                     <button className="flex items-center px-6 py-3 text-lg font-semibold text-white border-2 border-white rounded-full bg-gradient-to-r from-orange-400 to-red-500 transition-all duration-300 ease-out hover:scale-105 hover:from-orange-400 hover:to-red-500 shadow-sm m-auto mb-24 mt-5 relative z-50 cursor-pointer hover:bg-hsl(0, 100%, 60%)">
                       <span>Explore</span>
                       <span className="ml-3 text-2xl">
@@ -1184,42 +1244,8 @@ const Home = () => {
 
 
                 {/* Event Cards */}
-                <div className="grid grid-cols-2 gap-3 p-3 sm:hidden mt-10">
-  {events.map((event, index) => (
-    <motion.div
-      key={event.id}
-      onClick={() => handleClick(index)}
-      className={`relative overflow-hidden rounded-lg cursor-pointer transition-all duration-300 shadow-md ${
-        activeIndex === index ? "h-[160px]" : "h-[120px]"
-      }`}
-      style={{
-        backgroundImage: `url(${event.image})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
-      viewport={{ once: false }}
-    >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-2 text-white">
-        <h3 className="text-sm font-bold mb-1 drop-shadow-md">{event.name}</h3>
 
-        {/* Description appears only if active */}
-        {activeIndex === index && (
-          <p className="text-xs transition-opacity duration-300">{event.description}</p>
-        )}
-      </div>
-
-      {/* Highlight border when active */}
-      {activeIndex === index && (
-        <div className="absolute inset-0 border-2 border-yellow-400 rounded-lg animate-pulse"></div>
-      )}
-    </motion.div>
-  ))}
-</div>
-
+                <Eventcardmob events={events} />
 
 
 
@@ -1245,12 +1271,12 @@ const Home = () => {
                 </div>
 
 
-                <div className="absolute lg:bottom-0 left-0 w-full sm:hidden z-10 2xl:-bottom-16 bottom-0">
+                <div className="absolute lg:bottom-0 left-0 w-full hidden z-10 2xl:-bottom-16 bottom-0">
                   <img
                     src="file (2).png"
                     alt="Himalayas"
                     className="w-full object-cover transform"
-                        />
+                  />
                 </div>
 
 
@@ -1347,7 +1373,7 @@ const Home = () => {
 
 
 
-      
+
 
 
 
@@ -1488,7 +1514,7 @@ const Home = () => {
 
                 {/* Animated Title */}
                 <motion.h2
-                  className="text-3xl font-bold text-center text-[#1a1a1a] mt-16 sm:hidden cookie-regular"
+                  className="text-3xl font-bold text-center text-[#1a1a1a] mt-16 sm:hidden abeezee-regular text-nowrap"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
@@ -1499,26 +1525,26 @@ const Home = () => {
 
                 {/* Highlight Cards */}
                 <div className="grid grid-cols-2 gap-8 mt-8 sm:hidden px-4">
-  {highlights.map((highlight, index) => (
-    <motion.div
-      key={index}
-      className="bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-xl shadow-lg hover:scale-105 transform transition duration-300 p-4"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
-      viewport={{ once: false }}
-    >
-      <div className="flex flex-col items-center">
-        <p className="text-2xl font-extrabold text-yellow-400 mb-2 drop-shadow-md">
-          {highlight.number}
-        </p>
-        <p className="text-md font-medium text-gray-300 text-center tracking-wide">
-          {highlight.label}
-        </p>
-      </div>
-    </motion.div>
-  ))}
-</div>
+                  {highlights.map((highlight, index) => (
+                    <motion.div
+                      key={index}
+                      className="bg-gradient-to-br from-black to-black text-white rounded-xl shadow-lg hover:scale-105 transform transition duration-300 p-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.2 }}
+                      viewport={{ once: false }}
+                    >
+                      <div className="flex flex-col items-center">
+                        <p className="text-2xl font-extrabold text-gray-50 mb-2 drop-shadow-md">
+                          {highlight.number}
+                        </p>
+                        <p className="text-md font-normal text-gray-50 text-center tracking-wide">
+                          {highlight.label}
+                        </p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
 
 
 
@@ -1619,7 +1645,7 @@ const Home = () => {
                   Former Celebrity Guests
                 </motion.h2>
 
-                <Carousel celebrities={celebrities} frameImage={"/AdobeStock_727905617.png"} />
+                <Carousel celebrities={celebrities} frameImage={"/mandala-frame.png"} />
 
 
 

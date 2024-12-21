@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Audiowide&family=Cinzel+Decorative:wght@400;700;900&family=Cookie&family=DynaPuff:wght@400..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100..900&family=Mukta:wght@200;300;400;500;600;700;800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Pattaya&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rasa:ital,wght@0,300..700;1,300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sevillana&family=Silkscreen:wght@400;700&family=Squada+One&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Audiowide&family=Cinzel+Decorative:wght@400;700;900&family=Cookie&family=DynaPuff:wght@400..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100..900&family=Mukta:wght@200;300;400;500;600;700;800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Pattaya&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rasa:ital,wght@0,300..700;1,300..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sevillana&family=Silkscreen:wght@400;700&family=Squada+One&family=Style+Script&family=Yeseva+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
 .navbar{
@@ -282,7 +282,7 @@
 }
 
 
-.abeezee-regular {
+. {
   font-family: "ABeeZee", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -508,3 +508,76 @@ html, body {
 
 
 
+.audiowide-regular {
+  font-family: "Audiowide", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kanit-thin {
+  font-family: "Kanit", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.mukta-light {
+  font-family: "Mukta", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.pacifico-regular {
+  font-family: "Pacifico", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-regular {
+  font-family: "Silkscreen", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.yeseva-one-regular {
+  font-family: "Yeseva One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.bg-pattern-stripes {
+  background-image: linear-gradient(45deg, #636363 25%, transparent 25%), 
+                    linear-gradient(-45deg, #E1F5FE 25%, transparent 25%);
+  background-size: 4px 4px;
+  background-position: 0 0, 2px 2px;
+}
+
+
+.abeezee-regular {
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+@keyframes glow {
+  0% {
+    border-color: #9b4dff;
+    box-shadow: 0 0 5px #9b4dff, 0 0 10px #9b4dff, 0 0 15px #9b4dff;
+  }
+  50% {
+    border-color: #ff4dff;
+    box-shadow: 0 0 10px #ff4dff, 0 0 20px #ff4dff, 0 0 30px #ff4dff;
+  }
+  100% {
+    border-color: #9b4dff;
+    box-shadow: 0 0 5px #9b4dff, 0 0 10px #9b4dff, 0 0 15px #9b4dff;
+  }
+}
+
+.animate-glow {
+  animation: glow 1.5s infinite;
+}

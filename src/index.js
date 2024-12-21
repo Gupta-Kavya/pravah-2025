@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -28,6 +28,8 @@ import Djnightgallery from './components/djnightgallery';
 import Surgallery from './components/Surgallery';
 import Celebritygallery from './components/Celebritygallery';
 import AnnualDaygallery from './components/AnnualDaygallery';
+import { Button, Drawer } from "flowbite-react";
+
 
 
 const router = createBrowserRouter([
@@ -124,42 +126,62 @@ const router = createBrowserRouter([
 ]);
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <>
+
+function Root() {
+  const [isOpen, setIsOpen] = useState(true);
+  const handleClose = () => setIsOpen(false);
+
+  return (
     <HelmetProvider>
       <Loader />
+      {/* Optional Animated Cursor */}
       {/* <AnimatedCursor
-  innerSize={8}
-  outerSize={8}
-  color='193, 11, 111'
-  outerAlpha={0.2}
-  innerScale={0.7}
-  outerScale={5}
-  clickables={[
-    'a',
-    'input[type="text"]',
-    'input[type="email"]',
-    'input[type="number"]',
-    'input[type="submit"]',
-    'input[type="image"]',
-    'label[for]',
-    'select',
-    'textarea',
-    'button',
-    '.link'
-  ]}
-  style={{ zIndex: 10000 }} // Add z-index to the cursor's style
-/> */}
+        innerSize={8}
+        outerSize={8}
+        color="193, 11, 111"
+        outerAlpha={0.2}
+        innerScale={0.7}
+        outerScale={5}
+        clickables={[
+          'a',
+          'input[type="text"]',
+          'input[type="email"]',
+          'input[type="number"]',
+          'input[type="submit"]',
+          'input[type="image"]',
+          'label[for]',
+          'select',
+          'textarea',
+          'button',
+          '.link'
+        ]}
+        style={{ zIndex: 10000 }}
+      /> */}
 
-
-      <div className='hide-scrollbar' >
+      <div className="hide-scrollbar">
         <RouterProvider router={router} />
       </div>
+
+      <Drawer 
+  open={isOpen} 
+  onClose={handleClose} 
+  position="bottom"
+  className="rounded-t-lg"
+>
+  <Drawer.Header title="Site Under Construction" />
+  <Drawer.Items>
+    <p className="mb-6 text-sm text-gray-500 dark:text-gray-400">
+    Our website is live but still in development. You can explore it now, but for the best experience, we recommend viewing it on a laptop for now. So stay tuned as we continue to improve and add exciting features!
+    </p>
+  </Drawer.Items>
+</Drawer>
+
     </HelmetProvider>
-  </>
+  );
+}
 
-);
-
+// Render root
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Root />);
 
 reportWebVitals();

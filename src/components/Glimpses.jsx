@@ -191,33 +191,41 @@ const Glimpses = () => {
 
         <>
 
-            <div className="relative h-screen overflow-hidden bg-black text-white justify-center sm:flex lg:hidden" style={{ zIndex: "100" }}>
-                <h1
-                    className="z-20 flex items-center justify-center cookie-regular bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-pink-300"
+            <div className="relative h-screen overflow-hidden text-white sm:hidden flex flex-col items-center">
+
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#1b1b1b] to-[#0f0f0f] opacity-90"></div>
+                <div className="absolute top-10 left-20 w-60 h-60 bg-[#333333] rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
+                <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-[#006d77] rounded-full filter blur-2xl opacity-70 animate-pulse"></div>
+
+
+
+
+                {/* Heading */}
+                {/* <h1
+                    className="z-20 text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-gray-500 to-gray-400 mb-8"
                     style={{
                         height: "10vh",
                         textAlign: "center",
-                        color: "white",
-                        fontSize: "50px",
                     }}
                 >
                     Pravah'25 Glimpses
-                </h1>
+                </h1> */}
 
                 {/* Gradient Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent z-10"></div> */}
 
                 {/* Toggler Button */}
-                <div className="absolute bottom-20 right-4 z-50">
+                <div className="absolute bottom-20 right-6 z-50">
                     <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-full shadow-lg"
+                        className="bg-[#1b1b1b]/100 backdrop-blur-md text-gray-300 w-16 h-16 rounded-full shadow-xl border border-[#333] flex items-center justify-center"
                         onClick={() => setShowCategories((prev) => !prev)}
                     >
                         ☰
                     </motion.button>
                 </div>
+
 
                 {/* Popup for Categories */}
                 <AnimatePresence>
@@ -226,7 +234,7 @@ const Glimpses = () => {
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 50 }}
-                            className="absolute bottom-40 right-4 bg-gray-900 p-4 rounded-lg shadow-2xl z-50"
+                            className="absolute bottom-40 right-6 bg-[#1a1a1a]/90 backdrop-blur-lg p-6 rounded-lg shadow-2xl border border-[#444] z-50"
                         >
                             <div className="flex flex-col space-y-4">
                                 {categories.map((category) => (
@@ -235,8 +243,8 @@ const Glimpses = () => {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         className={`py-2 px-4 rounded-md text-lg font-semibold transition-all duration-300 font-sans ${selectedCategory === category
-                                                ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
-                                                : "bg-gray-800 text-gray-200"
+                                            ? "bg-gradient-to-r from-[#333] to-[#555] text-white shadow-md"
+                                            : "bg-[#1c1c1c]/70 text-gray-400 hover:text-white hover:bg-[#2a2a2a]/80"
                                             }`}
                                         onClick={() => handleCategoryChange(category)}
                                     >
@@ -249,18 +257,27 @@ const Glimpses = () => {
                 </AnimatePresence>
 
                 {/* Images Section */}
-                <div className={`flex flex-wrap justify-center space-x-4 h-full transition-opacity duration-500`}>
+                <div className="relative w-full flex flex-wrap justify-center items-start gap-4 overflow-y-auto px-4">
                     {images[selectedCategory].map((columnImages, columnIndex) => (
-                        <div key={columnIndex} className="w-full sm:w-1/3 flex-shrink-1 relative overflow-hidden h-full px-2 mb-4 sm:mb-0">
-                            <motion.div variants={scrollVariants(columnIndex + 16)} animate="animate" className="flex flex-col">
+                        <div
+                            key={columnIndex}
+                            className="w-5/12
+                            
+                            flex-shrink-1 relative overflow-hidden px-2 mb-6"
+                        >
+                            <motion.div
+                                variants={scrollVariants(columnIndex + 16)}
+                                animate="animate"
+                                className="flex flex-col"
+                            >
                                 {columnImages.map((image, imageIndex) => (
                                     <img
                                         key={imageIndex}
                                         src={image}
                                         alt={`Gallery Image ${imageIndex}`}
-                                        className="rounded-lg shadow-lg w-full h-auto mb-4 border border-black"
+                                        className="rounded-lg shadow-lg w-full h-auto mb-4 border border-gray-700"
                                         style={{
-                                            boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.4)",
+                                            boxShadow: "0px 6px 12px rgba(0, 0, 0, 0.6)",
                                         }}
                                     />
                                 ))}
@@ -269,6 +286,24 @@ const Glimpses = () => {
                     ))}
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <div className="relative h-screen overflow-hidden bg-black text-white justify-center sm:flex hidden" style={{ zIndex: "100" }}>
 

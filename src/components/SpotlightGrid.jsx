@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa";
+import { RiVoiceprintFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const SpotlightGrid = () => {
   const [selectedVideo, setSelectedVideo] = useState('');
@@ -35,7 +37,7 @@ const SpotlightGrid = () => {
 
   return (
     <div
-      className="relative h-screen w-screen overflow-hidden"
+      className="relative h-screen w-screen overflow-hidden hidden sm:block"
       onMouseMove={handleMouseMove}
     >
       <div
@@ -50,7 +52,7 @@ const SpotlightGrid = () => {
           className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-2xl border-2 border-purple-400"
 
         >
-          {isPlaying ? <FaMicrophoneSlash size={24} color='white' /> : <FaMicrophone size={24} color='white' />}
+          {isPlaying ? <FaMicrophone size={24} color='white' /> : <RiVoiceprintFill size={24} color='white' />}
         </button>
 
       </div>
@@ -60,13 +62,13 @@ const SpotlightGrid = () => {
 
 
       <motion.h2
-        className="text-4xl font-bold text-center mb-8 my-16 cookie-regular text-white relative lg:left-20"
+        className="text-4xl font-bold text-center mb-8 my-16 audiowide-regular text-white relative lg:left-20"
         initial={{ y: -50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         Unveil Pravah'25
-        <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-40 h-[4px] bg-gradient-to-r from-[#FF6A00] to-[#660066] mt-1 rounded-full"></span>
+        <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-40 h-[4px] bg-gradient-to-r from-[#dadada] to-[#ce02ce] mt-1 rounded-full"></span>
 
 
 
@@ -121,16 +123,16 @@ const SpotlightGrid = () => {
 
           {/* Positioned Image at Top-Left Corner */}
           <img
-            src="tech-pattern.png" // Replace with your image path
+            src="rb_2149621072.png" // Replace with your image path
             alt="Background"
-            className="absolute top-[0px] left-[0px] w-full object-cover opacity-20 z-0"
+            className="absolute top-[0px] left-[0px] w-full object-cover opacity-30 z-0 h-full"
           />
 
           {/* Video Thumbnail */}
           <img src="teaser_graphic.png" alt="" className="w-80 h-44 rounded-lg relative z-10" />
 
           {/* Title */}
-          <h3 className="text-2xl font-bold text-white mb-4 text-center mt-4 z-20 font-mono relative">
+          <h3 className="text-2xl font-bold text-white mb-4 text-center mt-4 z-20 silkscreen-regular relative">
             Pravah Teaser
           </h3>
 
@@ -152,9 +154,9 @@ const SpotlightGrid = () => {
           {/* Background effect with dark gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-5 rounded-lg"></div>
           <img
-            src="tech-pattern.png" // Replace with your image path
+            src="rb_2149621072.png" // Replace with your image path
             alt="Background"
-            className="absolute top-[0px] left-[0px] w-full object-cover opacity-20 z-0"
+            className="absolute top-[0px] left-[0px] w-full object-cover opacity-30 z-0 h-full"
           />
           {/* Video Thumbnail */}
           <img src="logo_graphic.png" alt="" className="w-80 h-44 rounded-lg z-15 relative" />
@@ -162,8 +164,8 @@ const SpotlightGrid = () => {
 
 
           {/* Title */}
-          <h3 className="text-2xl font-bold text-white mb-4 text-center mt-4 z-20 font-mono relative">
-            Logo Reveal
+          <h3 className="text-2xl font-bold text-white mb-4 text-center mt-4 z-20 silkscreen-regular relative">
+            Pravah Logo
           </h3>
 
 
@@ -228,7 +230,7 @@ const SpotlightGrid = () => {
 
           {/* Title */}
           <h3 className="text-lg font-bold text-white text-center mt-4 z-20 font-mono">
-            Logo Reveal
+            Pravah Logo
           </h3>
         </motion.div>
 
@@ -241,14 +243,16 @@ const SpotlightGrid = () => {
 
 
       <div className="justify-center absolute -right-1 top-6 hidden lg:flex" style={{ zIndex: 1000 }}>
-        <button className="px-6 py-3 text-lg font-bold text-purple-100 bg-black border border-white rounded-l-full shadow-lg">
-          Discover Technical Events
-        </button>
+        <Link to="/skit-pravah-2025-events/Technical">
+          <button className="px-6 py-3 text-lg font-bold text-purple-100 bg-black border border-white rounded-l-full shadow-lg">
+            Discover Technical Events
+          </button>
+        </Link>
       </div>
 
 
 
-      <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black to-transparent opacity-60 z-10"></div>
+      <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black to-transparent opacity-40 z-10"></div>
 
 
 

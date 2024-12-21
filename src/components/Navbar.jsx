@@ -38,23 +38,24 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
   return (
     <>
       <nav
-        className={`fixed w-full top-0 left-0 transition-colors duration-1000 ease-in-out bg-white ${isDesktop ? bgColor : 'bg-white'} ${isDesktop ? navbarDisplay : "block"}`}
+        className={`fixed w-full top-0 left-0 transition-colors duration-1000 ease-in-out ${isDesktop ? bgColor : 'bg-slate-100'} ${isDesktop ? navbarDisplay : "block"}`}
         style={{ zIndex: 1000 }}
       >
         {/* Announcement Bar */}
         <div className={`bg-gradient-to-r from-[#221b63] via-[#01001d] to-[#3d0075] text-white text-sm md:text-base font-medium py-2 ${isDesktop ? announce : 'block'}`}>
-          <div className="max-w-screen-xl mx-auto px-4 text-center font-sans">
-            🌟 Experience the magic of **Pravah 2025**! Have you secured your spot yet?{' '}
-            <Link to="/skit-pravah-2025-events" className="text-blue-200 underline font-semibold hover:text-blue-600 transition">
-              Register Now
-            </Link>{' '}
-            and be part of this extraordinary celebration!
-          </div>
-        </div>
+  <div className="max-w-screen-xl mx-auto px-4 text-center font-sans">
+    🌟 Join **Pravah 2025**! Have you registered yet?{' '}
+    <Link to="/skit-pravah-2025-events" className="text-blue-200 underline font-semibold hover:text-blue-600 transition">
+      Register Now
+    </Link>{' '}
+    and be part of the celebration!
+  </div>
+</div>
+
 
 
         {/* Navbar */}
-        <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-4 dynapuff bg-slate-100">
+        <div className="max-w-screen-2xl flex items-center justify-between mx-auto px-4 py-4 dynapuff bg-slate-100">
           {/* Left Links (for desktop) */}
           <div className="hidden md:flex space-x-8 items-center flex-grow justify-start">
             <Link

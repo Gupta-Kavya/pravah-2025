@@ -14,7 +14,7 @@ const DesktopFooter = () => {
       }}
     >
       <div
-        className="absolute inset-0 bg-black opacity-80"
+        className="absolute inset-0 bg-black opacity-100"
         aria-hidden="true"
       ></div>
 
