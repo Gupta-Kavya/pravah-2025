@@ -453,7 +453,7 @@ const Home = () => {
                     onClick={() => { setIsOpen(true); setnavbarDisplay("hidden"); }}
                     style={{ zIndex: 1000 }}
                   >
-                    <div className="flex items-center space-x-2 px-3   py-2 bg-black border-2 border-black rounded-full shadow-2xl group-hover:bg-[#9b4dff] animate-glow">
+                    <div className="flex items-center space-x-2 px-3   py-2 bg-black border-2 border-black rounded-full shadow-2xl group-hover:bg-[#9b4dff]">
                       <span className="text-sm font-bold text-gray-200 group-hover:text-white">
                         Reveal Date
                       </span>

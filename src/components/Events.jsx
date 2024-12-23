@@ -8,6 +8,7 @@ import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Comingsoon from './Comingsoon';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 const Events = () => {
   const [categories, setCategories] = useState([]);
@@ -101,8 +102,157 @@ const Events = () => {
                   />
                   
                 </div> */}
+      <ParallaxProvider>
+        <Parallax speed={-15}>
 
-      <Comingsoon />
+
+          <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-16 relative mb-60">
+            {/* Heading Section */}
+            <motion.section
+              className="text-center space-y-8"
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 130 }}
+              transition={{ duration: 1, ease: 'easeOut' }}
+            >
+              <div className="relative">
+                <motion.h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black font-sans tracking-tight">
+                  The Event Collection
+                  <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-[4px] bg-gradient-to-r from-[#351332] to-[#9e1c9e] mt-1 rounded-full"></span>
+
+
+                </motion.h1>
+
+                {/* <motion.h2
+              className="absolute right-0 top-6 md:top-16 text-sm md:text-md font-semibold text-gray-700 italic tracking-widest font-serif"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5, duration: 1 }}
+            >
+              of Incredible India
+            </motion.h2> */}
+              </div>
+
+              {/* Search Bar */}
+              {/* <motion.div
+            className="relative w-96 max-w-2xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            <input
+              type="text"
+              placeholder="Search Event categories..."
+              value={searchQuery}
+              onChange={handleSearch}
+              className="w-full px-5 py-3 text-gray-800 bg-white bg-opacity-70 border border-gray-300 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent pr-12"
+              style={{ backdropFilter: 'blur(10px)' }}
+            />
+            <span className="absolute inset-y-0 right-4 flex items-center text-purple-600">
+              <FaSearch className="text-lg" />
+            </span>
+          </motion.div> */}
+
+            </motion.section>
+
+
+
+            {/* Render categories dynamically */}
+            <motion.div className="mt-20 flex flex-wrap justify-center items-center gap-8 w-full max-w-6xl mb-20">
+              {loading ? (
+                // Skeleton loading for categories
+                <div className="flex flex-wrap gap-8 w-full justify-center">
+                  {[...Array(3)].map((_, index) => (
+                    <div
+                      key={index}
+                      className="w-80 flex flex-row items-center bg-gray-50 rounded-lg overflow-hidden border border-gray-200 justify-center"
+                    >
+                      <div className="w-full h-44 md:h-48 relative p-3">
+                        <Skeleton height={192} width="100%" />
+                      </div>
+                      <div className="flex flex-col justify-between p-6 leading-normal space-y-4 w-full">
+                        <Skeleton height={30} width="80%" />
+                        <Skeleton height={40} width="100%" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : filteredCategories.length > 0 ? (
+                filteredCategories.map((category, index) => (
+                  <motion.div
+                    key={category._id}
+                    className="flex flex-col items-center bg-gray-50 rounded-xl overflow-hidden border border-black cursor-pointer"
+                    initial={{ opacity: 0, y: 160 }} // Start animation state
+                    whileInView={{ opacity: 1, y: 120 }} // Trigger when in view
+                    viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% of the card is visible
+                    transition={{
+                      delay: index * 0.2, // Stagger based on index
+                      duration: 0.8,
+                      ease: 'easeOut',
+                    }}
+                    onClick={() => handleCategoryClick(category.categoryName)}
+                  >
+                    {/* Image container */}
+                    <div className="relative w-full h-44 md:h-48 p-3 group">
+                      <img
+                        className="object-cover w-80 h-48 rounded-xl border-2 border-gray-100"
+                        src={category.categoryImage}
+                        alt={category.categoryName}
+                      />
+
+                      <div className="absolute inset-0 bg-black bg-opacity-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center group rounded-xl w-80 h-48 m-3">
+                        <p className="text-white text-md p-3 text-center font-sans">Cultural events celebrate traditions, art, and heritage through activities like festivals, performances, and exhibitions, bringing communities together to share and appreciate diverse cultures.</p>
+                      </div>
+
+                    </div>
+
+                    {/* Category name */}
+                    <div className="flex flex-col justify-between p-6 leading-normal space-y-4 w-full">
+                      <h5
+                        className="text-lg font-bold text-gray-900 tracking-tight cookie-regular text-center mt-2"
+                        style={{ fontSize: '35px' }}
+                      >
+                        {category.categoryName} Events
+                      </h5>
+                    </div>
+                  </motion.div>
+                ))
+              ) : (
+                <p className="text-gray-600 relative"></p>
+              )}
+            </motion.div>
+
+
+
+
+            <motion.div
+              className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-10"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 0.5 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+            >
+              <img
+                src="/rb_2149151140.png"
+                alt="Himalayas"
+                className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-20"
+              />
+            </motion.div>
+
+            <div className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-20 ">
+              <img
+                src="/rb_2149158780.png"
+                alt="Himalayas"
+                className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-10 "
+              />
+            </div>
+
+
+          </main>
+
+        </Parallax>
+      </ParallaxProvider>
+
+
 
       <DesktopFooter />
     </div>

@@ -43,14 +43,14 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
       >
         {/* Announcement Bar */}
         <div className={`bg-gradient-to-r from-[#221b63] via-[#01001d] to-[#3d0075] text-white text-sm md:text-base font-medium py-2 ${isDesktop ? announce : 'block'}`}>
-  <div className="max-w-screen-xl mx-auto px-4 text-center font-sans">
-    🌟 Join **Pravah 2025**! Have you registered yet?{' '}
-    <Link to="/skit-pravah-2025-events" className="text-blue-200 underline font-semibold hover:text-blue-600 transition">
-      Register Now
-    </Link>{' '}
-    and be part of the celebration!
-  </div>
-</div>
+          <div className="max-w-screen-xl mx-auto px-4 text-center font-sans">
+            🌟 Join **Pravah 2025**! Have you registered yet?{' '}
+            <Link to="/skit-pravah-2025-events" className="text-blue-200 underline font-semibold hover:text-blue-600 transition">
+              Register Now
+            </Link>{' '}
+            and be part of the celebration!
+          </div>
+        </div>
 
 
 
@@ -71,7 +71,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
               to="/skit-pravah-2025-events"
               className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
             >
-              EVENTS & REGISTRATIONS
+              DISCOVER EVENTS
               <span
                 className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/skit-pravah-2025-events') ? 'w-full' : 'w-0'}`}
               ></span>
@@ -123,6 +123,15 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
               ></span>
             </Link>
             <Link
+              to="/skit-pravah-2025-events-schedule"
+              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
+            >
+              SCHEDULE
+              <span
+                className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/skit-pravah-2025-events-schedule') ? 'w-full' : 'w-0'}`}
+              ></span>
+            </Link>
+            <Link
               to="/skit-pravah-2025-sponsors"
               className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
             >
@@ -131,15 +140,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
                 className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/skit-pravah-2025-sponsors') ? 'w-full' : 'w-0'}`}
               ></span>
             </Link>
-            <Link
-              to="/the-team-behind-skit-pravah-2025"
-              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
-            >
-              TEAM PRAVAH
-              <span
-                className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/team') ? 'w-full' : 'w-0'}`}
-              ></span>
-            </Link>
+
           </div>
 
           {/* Toggler Button for Mobile */}

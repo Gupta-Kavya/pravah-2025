@@ -29,6 +29,7 @@ import Surgallery from './components/Surgallery';
 import Celebritygallery from './components/Celebritygallery';
 import AnnualDaygallery from './components/AnnualDaygallery';
 import { Button, Drawer } from "flowbite-react";
+import Schedule from './components/Schedule';
 
 
 
@@ -122,6 +123,12 @@ const router = createBrowserRouter([
     element: (
       <AnnualDaygallery />
     ),
+  },
+  {
+    path: "/skit-pravah-2025-events-schedule",
+    element: (
+      <Schedule />
+    ),
   }
 ]);
 
@@ -162,7 +169,7 @@ function Root() {
         <RouterProvider router={router} />
       </div>
 
-      <Drawer 
+      {/* <Drawer 
   open={isOpen} 
   onClose={handleClose} 
   position="bottom"
@@ -174,7 +181,7 @@ function Root() {
     Our website is live but still in development. You can explore it now, but for the best experience, we recommend viewing it on a laptop for now. So stay tuned as we continue to improve and add exciting features!
     </p>
   </Drawer.Items>
-</Drawer>
+</Drawer> */}
 
     </HelmetProvider>
   );
