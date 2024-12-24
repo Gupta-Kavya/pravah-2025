@@ -7,7 +7,11 @@ module.exports = {
     flowbite.content(),
   ],
   theme: {
-    extend: {},
+    extend: {
+      zIndex: {
+        '2000': '2000',
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')
