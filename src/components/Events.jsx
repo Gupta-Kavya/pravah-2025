@@ -200,7 +200,7 @@ const Events = () => {
                       />
 
                       <div className="absolute inset-0 bg-black bg-opacity-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center group rounded-xl w-80 h-48 m-3">
-                        <p className="text-white text-md p-3 text-center font-sans">Cultural events celebrate traditions, art, and heritage through activities like festivals, performances, and exhibitions, bringing communities together to share and appreciate diverse cultures.</p>
+                        <p className="text-white text-md p-3 text-center font-sans">{category.categoryDescription}</p>
                       </div>
 
                     </div>
@@ -225,7 +225,7 @@ const Events = () => {
 
 
             <motion.div
-              className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-10"
+              className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-10"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 0.5 }}
               viewport={{ once: true }}
@@ -238,7 +238,7 @@ const Events = () => {
               />
             </motion.div>
 
-            <div className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-20 ">
+            <div className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-20 ">
               <img
                 src="/rb_2149158780.png"
                 alt="Himalayas"

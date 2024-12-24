@@ -30,6 +30,7 @@ import Celebritygallery from './components/Celebritygallery';
 import AnnualDaygallery from './components/AnnualDaygallery';
 import { Button, Drawer } from "flowbite-react";
 import Schedule from './components/Schedule';
+import Clashofbandsgallery from './components/Clashofbandsgallery';
 
 
 
@@ -122,6 +123,12 @@ const router = createBrowserRouter([
     path: "/skit-pravah-2025-events-AnnualDay-gallery",
     element: (
       <AnnualDaygallery />
+    ),
+  },
+  {
+    path: "/skit-pravah-2025-events-cob-gallery",
+    element: (
+      <Clashofbandsgallery />
     ),
   },
   {

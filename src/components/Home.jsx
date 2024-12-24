@@ -225,14 +225,21 @@ const Home = () => {
       image: "/events/rawaz.jpg",
       url: "/skit-pravah-2025-events-rawaz-gallery"
     },
-
     {
       id: 5,
+      name: "Clash of Bands",
+      description: "An electrifying rap battle where words ignite and rhythms collide.",
+      image: "/events/cob.jpg",
+      url: "/skit-pravah-2025-events-cob-gallery"
+    },
+    {
+      id: 6,
       name: "Annual Day",
       description: "An electrifying rap battle where words ignite and rhythms collide.",
       image: "/events/annual.jpg",
       url: "/skit-pravah-2025-events-AnnualDay-gallery"
     },
+
   ];
 
 

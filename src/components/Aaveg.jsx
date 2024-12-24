@@ -196,10 +196,9 @@ const Aaveg = () => {
                     alt={event.eventName}
                   />
                 </div>
-                <div className="flex flex-col justify-between p-6 leading-normal space-y-4 w-full">
+                <div className="flex flex-col justify-between p-3 leading-normal space-y-4 w-full">
                   <h5
-                    className="text-lg font-bold text-gray-900 tracking-tight cookie-regular text-center mt-2"
-                    style={{ fontSize: '35px' }}
+                    className="text-xl font-bold text-gray-900 tracking-tight text-center mt-2"
                   >
                     {event.eventName}
                   </h5>
@@ -296,7 +295,7 @@ const Aaveg = () => {
         <img
           src="/rb_2149151140.png"
           alt="Himalayas"
-          className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-20"
+          className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-30"
         />
       </motion.div>
 

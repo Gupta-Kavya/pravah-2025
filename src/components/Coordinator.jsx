@@ -8,7 +8,7 @@ const Coordinator = ({ name, number }) => {
       className="flex justify-center items-center py-6"
       initial={{ opacity: 0, y: 50 }} // Start with the card off-screen
       whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and position when in view
-      viewport={{ once: false, amount: 0.2 }} // Trigger once when 20% of the card is visible
+      viewport={{ once: true, amount: 0.2 }} // Trigger once when 20% of the card is visible
       transition={{ duration: 0.8, ease: 'easeOut' }} // Duration and easing for the animation
     >
       <div

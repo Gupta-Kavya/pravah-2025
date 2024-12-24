@@ -87,8 +87,8 @@ const SpotlightGrid = () => {
             <video
               src={
                 selectedVideo === 'teaser'
-                  ? '/teaser.mp4'
-                  : '/logo_reveal.mov'
+                  ? 'https://res.cloudinary.com/dktkdi3sm/video/upload/v1735058849/jh7kxjik6xrk9ya0tjnm.mp4'
+                  : 'http://res.cloudinary.com/dktkdi3sm/video/upload/v1735058976/pdgzqt05kbfyrcts8rkz.mov'
               }
               autoPlay
               className="w-full h-full object-cover"

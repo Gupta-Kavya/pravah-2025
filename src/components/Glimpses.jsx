@@ -156,7 +156,7 @@ const Glimpses = () => {
                 "AnnualDay/17.JPG"
             ],
         ],
-        Clashofbands: [
+        ClashOfBands: [
             [
                 "COB/1.JPG",
                 "COB/2.JPG",
@@ -208,7 +208,7 @@ const Glimpses = () => {
         }
     };
 
-    const categories = ["thirak", "rawaz", "djnight", "sur", "celebnight", "AnnualDay", "Clash Of Bands"];
+    const categories = ["thirak", "rawaz", "djnight", "sur", "celebnight", "AnnualDay"];
 
 
     return (
@@ -350,7 +350,7 @@ const Glimpses = () => {
 
                 {/* Category Buttons */}
                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-16 z-20 cookie-regular">
-                    {["thirak", "rawaz", "djnight", "sur", "celebnight", "AnnualDay"].map((category) => (
+                    {["thirak", "rawaz", "djnight", "sur", "celebnight", "AnnualDay" , "ClashOfBands"].map((category) => (
                         <button
                             key={category}
                             className={`relative text-3xl font-bold transition-all duration-500 text-nowrap ${selectedCategory === category

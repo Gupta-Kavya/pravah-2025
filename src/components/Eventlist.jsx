@@ -120,7 +120,7 @@ const Eventlist = () => {
                         </motion.section>
 
                         <motion.div
-                            className="mt-20 flex flex-wrap justify-center items-center gap-x-14 gap-y-8 w-full max-w-6xl"
+                            className="mt-20 flex flex-wrap justify-center items-center gap-x-8 gap-y-8 w-full max-w-6xl"
                             initial={{ opacity: 0, y: 160 }}
                             whileInView={{ opacity: 1, y: 120 }}
                             viewport={{ once: true, amount: 0.2 }}
@@ -130,7 +130,7 @@ const Eventlist = () => {
                                 filteredEvents.map((event) => (
                                     <div
                                         key={event._id}
-                                        className="flex flex-col items-center bg-gray-50 rounded-xl overflow-hidden w-80 border border-black transform hover:scale-105 hover:shadow-lg transition duration-300 ease-in-out"
+                                        className="flex flex-col items-center bg-gray-50 rounded-xl overflow-hidden w-80 border border-black shadow-lg"
                                     >
                                         <div className="relative w-full p-2 group">
                                             <img
