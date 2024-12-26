@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import { Helmet } from 'react-helmet';
 
 const Schedule = () => {
     const [events, setEvents] = useState([]);
@@ -66,16 +67,47 @@ const Schedule = () => {
 
 
     const formatTime = (time) => {
-        const [hours, minutes] = time.split(':').map(Number); 
-        const period = hours >= 12 ? 'PM' : 'AM'; 
-        const formattedHours = hours % 12 || 12; 
+        const [hours, minutes] = time.split(':').map(Number);
+        const period = hours >= 12 ? 'PM' : 'AM';
+        const formattedHours = hours % 12 || 12;
         return `${formattedHours}:${minutes.toString().padStart(2, '0')} ${period}`;
-      };
+    };
 
 
     return (
         <div>
 
+            <Helmet>
+                <title>Event Schedule - Pravah 2025 | SKIT</title>
+                <meta
+                    name="description"
+                    content="Explore the event schedule for Pravah 2025 at SKIT. Get all the details on upcoming events, workshops, seminars, and cultural programs."
+                />
+                <meta
+                    name="keywords"
+                    content="Pravah 2025, event schedule, SKIT, Swami Keshvanand Institute of Technology, workshops, seminars, cultural events, youth fest"
+                />
+                <meta
+                    property="og:title"
+                    content="Event Schedule - Pravah 2025 | SKIT"
+                />
+                <meta
+                    property="og:description"
+                    content="Discover the complete event schedule for Pravah 2025 at SKIT. Find out about all the exciting workshops, seminars, and cultural events happening throughout the festival."
+                />
+                <meta
+                    property="og:url"
+                    content="https://pravah.skit.ac.in/skit-pravah-2025-events-schedule   "
+                />
+                <meta
+                    name="author"
+                    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+                />
+                <meta
+                    name="organization"
+                    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+                />
+            </Helmet>
 
 
             <Navbarr />

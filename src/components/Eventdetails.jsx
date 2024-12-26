@@ -8,6 +8,8 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { FaArrowRight } from "react-icons/fa";
 import Coordinator from "./Coordinator";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { ToastContainer, toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const Eventdetails = () => {
   const { eventid } = useParams(); // Get the eventid from URL
@@ -38,10 +40,17 @@ const Eventdetails = () => {
         const response = await fetch(
           `https://skit-pravah-backend.vercel.app/api/events/${eventid}`
         );
-        const data = await response.json();
-        setEvent(data); // Set event details
+
+        if (response.status === 404) {
+          setError("Event not found. Please check the event ID.");
+        } else if (!response.ok) {
+          setError("Failed to fetch event details. Please try again later.");
+        } else {
+          const data = await response.json();
+          setEvent(data); // Set event details
+        }
       } catch (error) {
-        setError("Failed to fetch event details. Please try again.");
+        setError("Failed to fetch event details. Please check your network connection.");
       } finally {
         setLoading(false); // Stop loading
       }
@@ -52,6 +61,39 @@ const Eventdetails = () => {
 
   return (
     <div>
+      {event && (
+        <Helmet>
+          <title>{`${event?.eventTitle} - Explore ${event?.eventCategory} Excellence | SKIT`}</title>
+          <meta
+            name="description"
+            content={`Dive into ${event?.eventTitle}, a hallmark of ${event?.eventCategory} excellence at SKIT. Join us for an unforgettable experience celebrating innovation and culture.`}
+          />
+          <meta
+            name="keywords"
+            content={`${event?.eventTitle}, ${event?.eventCategory}, ${event?.eventCategory} events, SKIT, Swami Keshvanand Institute of Technology, workshops, seminars, cultural programs`}
+          />
+          <meta
+            property="og:title"
+            content={`${event?.eventTitle} - Explore ${event?.eventCategory} Excellence | SKIT`}
+          />
+          <meta
+            property="og:description"
+            content={`Join ${event?.eventTitle} to experience the best of ${event?.eventCategory} at SKIT. Unleash your creativity and talents!`}
+          />
+          <meta
+            property="og:url"
+            content={`https://pravah.skit.ac.in/skit-pravah-2025-events/${event?.eventCategory}/${eventid}`}
+          />
+          <meta
+            name="author"
+            content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+          />
+          <meta
+            name="organization"
+            content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+          />
+        </Helmet>
+      )}
       <Navbarr />
       <ParallaxProvider>
         <Parallax speed={-15}>
@@ -97,7 +139,7 @@ const Eventdetails = () => {
               <p className="text-red-500 relative">{error}</p>
             ) : (
               <motion.div
-                className="relative flex flex-col md:flex-row items-center bg-gradient-to-br from-white to-gray-100 rounded-lg shadow-lg overflow-hidden w-full max-w-4xl mb-16 transition-transform transform hover:scale-105 border border-gray-200 mt-0"
+                className="relative flex flex-col md:flex-row items-center bg-gradient-to-br from-gray-100 to-gray-100 rounded-lg shadow-lg overflow-hidden w-full max-w-4xl mb-16 transition-transform transform hover:scale-105 border border-gray-200 mt-0"
                 initial={{ opacity: 0, y: 160 }}
                 animate={{ opacity: 1, y: 150 }}
                 transition={{
@@ -105,7 +147,50 @@ const Eventdetails = () => {
                   ease: "easeOut",
                 }}
               >
-
+                {/* Copy Link Button */}
+                <button
+                  onClick={() => {
+                    if (navigator.clipboard) {
+                      navigator.clipboard.writeText(window.location.href)
+                        .then(() => {
+                          toast.success("Link copied to clipboard!", {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: true,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            theme: "colored",
+                          });
+                        })
+                        .catch((err) => {
+                          toast.error("Failed to copy link. Please try again.", {
+                            position: "top-right",
+                            autoClose: 3000,
+                            hideProgressBar: true,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            theme: "colored",
+                          });
+                          console.error("Clipboard error:", err);
+                        });
+                    } else {
+                      toast.error("Clipboard API not supported in this browser.", {
+                        position: "top-right",
+                        autoClose: 3000,
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        theme: "colored",
+                      });
+                    }
+                  }}
+                  className="absolute top-4 right-4 bg-gray-200 text-black font-medium text-sm px-3 py-1 rounded-lg  transition duration-300 border border-gray-300 shadow-sm"
+                >
+                  Copy Link
+                </button>
 
                 {/* Event Image */}
                 <div className="w-full md:w-1/2 h-60 md:h-80 relative ml-0">
@@ -116,14 +201,12 @@ const Eventdetails = () => {
                     className="object-cover w-full h-full rounded-l-lg"
                     src={event?.eventImage}
                     alt={event?.eventTitle}
+                    draggable="false"
                   />
                 </div>
 
                 {/* Event Info */}
                 <div className="flex flex-col items-center md:items-start w-full md:w-1/2 p-8 space-y-6 h-full justify-between text-center md:text-left font-sans">
-                  {/* Event Title */}
-                  {/* <h2 className="text-3xl font-bold text-gray-800 tracking-tight">{event?.eventTitle}</h2> */}
-
                   {/* Date */}
                   <p className="text-lg text-gray-700">
                     <strong>Date:</strong> {formatDate(event?.eventDate)}
@@ -141,8 +224,10 @@ const Eventdetails = () => {
 
                   {/* Event Fees */}
                   <p className="text-lg text-gray-700">
-                    <strong>Registration Fee:</strong> ₹{event?.eventFees} per{" "}
-                    {event.eventparticipationCategory === "Single" ? "Individual" : "Team"}
+                    <strong>Registration Fee:</strong>{" "}
+                    {event?.eventFees !== 0
+                      ? `₹${event?.eventFees} per ${event.eventparticipationCategory === "Single" ? "Individual" : "Team"}`
+                      : "FREE"}
                   </p>
 
                   {/* Conditionally Render Notes */}
@@ -152,17 +237,31 @@ const Eventdetails = () => {
                     </p>
                   )}
 
-                  {/* Register Button */}
+                  {/* Conditional Button/Message */}
                   <div className="w-full mt-4">
-                    <button
-                      onClick={() => window.open(event?.erpLink, "_blank")}
-                      className="bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-700 hover:to-indigo-800 text-white font-semibold w-full px-6 py-3 rounded-md shadow-lg transform transition duration-300 hover:scale-105 flex justify-center items-center"
-                    >
-                      Register Now <FaArrowRight className="ml-2" />
-                    </button>
+                    {event?.eventFees === 0 ? (
+                      <div className="text-green-600 font-semibold text-lg">
+                        <button
+                          onClick={() => window.open(event?.erpLink, "_blank")}
+                          className="bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white font-semibold w-full px-6 py-3 rounded-md shadow-lg transform transition duration-300 flex justify-center items-center"
+                          disabled={true}
+                        >
+                          No Registration Fee Required
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        onClick={() => window.open(event?.erpLink, "_blank")}
+                        className="bg-gradient-to-r from-green-400 to-green-600  text-white font-semibold w-full px-6 py-3 rounded-md shadow-lg transform transition duration-300 flex justify-center items-center"
+                      >
+                        Register Now <FaArrowRight className="ml-2" />
+                      </button>
+                    )}
                   </div>
                 </div>
               </motion.div>
+
+
 
 
             )}
@@ -234,6 +333,7 @@ const Eventdetails = () => {
 
 
       <DesktopFooter />
+      <ToastContainer />
     </div>
   );
 };

@@ -12,24 +12,27 @@ const About = () => {
 
     <div>
       <Helmet>
-        <title>Pravah 2025 - Celebrate Culture and Tradition | SKIT</title>
+        <title>About Pravah 2025 - Celebrating Innovation and Culture | SKIT</title>
         <meta
           name="description"
-          content="Immerse yourself in Pravah 2025 at SKIT, a vibrant celebration of cultural diversity, creativity, and tradition, showcasing the spirit of Incredible India."
+          content="Learn about Pravah 2025, an exciting celebration of innovation, creativity, and cultural excellence at SKIT. Join us for a journey filled with engaging events and memorable experiences."
         />
         <meta
           name="keywords"
-          content="Pravah 2025, cultural events, SKIT, Swami Keshvanand Institute of Technology, youth fest, traditional events, creative arts, Incredible India"
+          content="Pravah 2025, SKIT, Swami Keshvanand Institute of Technology, innovation, creativity, cultural events, workshops, seminars, youth fest"
         />
         <meta
           property="og:title"
-          content="Pravah 2025 - Celebrate Culture and Tradition | SKIT"
+          content="About Pravah 2025 - Celebrating Innovation and Culture | SKIT"
         />
         <meta
           property="og:description"
-          content="Experience the essence of culture and tradition at Pravah 2025, SKIT's premier cultural festival, featuring dynamic performances, arts, and creativity."
+          content="Dive into Pravah 2025 at SKIT, where innovation meets culture. Join us in celebrating excellence through a series of inspiring events and activities."
         />
-        <meta property="og:url" content="https://pravah.skit.ac.in/about-skit-pravah-2025" />
+        <meta
+          property="og:url"
+          content="https://pravah.skit.ac.in/about-skit-pravah-2025"
+        />
         <meta
           name="author"
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -39,6 +42,7 @@ const About = () => {
           content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
         />
       </Helmet>
+
 
       <Navbarr />
 

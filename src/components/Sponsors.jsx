@@ -5,6 +5,7 @@ import DesktopFooter from './DesktopFooter';
 import Sponsorform from './Sponsorform';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 const Sponsors = () => {
     const handleButtonClick = () => {
@@ -43,8 +44,38 @@ const Sponsors = () => {
             </Helmet>
 
             <Navbarr />
+            <ParallaxProvider>
+                <Parallax speed={-15}>
+                    <main className="min-h-screen flex flex-col items-center px-6 md:px-12 mt-16 relative mb-72 ">
+                        {/* <Sponsorform /> */}
+                        <Comingsoon />
+                    </main>
 
-            <Comingsoon />
+                </Parallax>
+
+                {/* <motion.div
+                    className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-10"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 0.5 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1 }}
+                >
+                    <img
+                        src="/rb_2149151140.png"
+                        alt="Himalayas"
+                        className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-30"
+                    />
+                </motion.div>
+
+                <div className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-20">
+                    <img
+                        src="/rb_2149158780.png"
+                        alt="Himalayas"
+                        className="w-full h-auto object-cover transform translate-y-[300px] translate-x-0 opacity-10"
+                    />
+                </div> */}
+            </ParallaxProvider>
+
             <DesktopFooter />
         </div>
     );

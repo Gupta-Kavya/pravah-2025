@@ -7,6 +7,7 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { Helmet } from "react-helmet";
 
 const Eventlist = () => {
     const { eventcat } = useParams();
@@ -16,7 +17,6 @@ const Eventlist = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [searchQuery, setSearchQuery] = useState("");
-    const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
     const loader = useRef(null);
 
@@ -25,15 +25,18 @@ const Eventlist = () => {
             setLoading(true);
             try {
                 const response = await fetch(
-                    `https://skit-pravah-backend.vercel.app/api/events/category/${eventcat}?page=${page}`
+                    `https://skit-pravah-backend.vercel.app/api/events/category/${eventcat}`
                 );
                 const data = await response.json();
 
-                if (data.length === 0) {
+                // Ensure data is always an array
+                const eventsData = Array.isArray(data) ? data : [];
+
+                if (eventsData.length === 0) {
                     setHasMore(false);
                 } else {
-                    setEvents((prevEvents) => [...prevEvents, ...data]);
-                    setFilteredEvents((prevEvents) => [...prevEvents, ...data]);
+                    setEvents((prevEvents) => [...prevEvents, ...eventsData]);
+                    setFilteredEvents((prevEvents) => [...prevEvents, ...eventsData]);
                 }
             } catch (error) {
                 setError("Failed to fetch events. Please try again.");
@@ -43,28 +46,9 @@ const Eventlist = () => {
         };
 
         fetchEvents();
-    }, [eventcat, page]);
+    }, [eventcat]);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                if (entries[0].isIntersecting && hasMore) {
-                    setPage((prevPage) => prevPage + 1);
-                }
-            },
-            { threshold: 1.0 }
-        );
 
-        if (loader.current) {
-            observer.observe(loader.current);
-        }
-
-        return () => {
-            if (loader.current) {
-                observer.unobserve(loader.current);
-            }
-        };
-    }, [hasMore]);
 
     const handleSearch = (e) => {
         const query = e.target.value.toLowerCase();
@@ -78,6 +62,37 @@ const Eventlist = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>{`Explore ${eventcat} Events - PRAVAH 2025 | SKIT`}</title>
+                <meta
+                    name="description"
+                    content={`Discover all the exciting ${eventcat} events at SKIT. Join us for an unforgettable journey of innovation, creativity, and excellence in ${eventcat}.`}
+                />
+                <meta
+                    name="keywords"
+                    content={`${eventcat} events, SKIT ${eventcat}, Swami Keshvanand Institute of Technology, ${eventcat} programs, workshops, seminars, cultural experiences`}
+                />
+                <meta
+                    property="og:title"
+                    content={`Explore ${eventcat} Events - PRAVAH 2025 | SKIT`}
+                />
+                <meta
+                    property="og:description"
+                    content={`Explore the vibrant world of ${eventcat} events at SKIT. Join us to experience workshops, seminars, and programs that embody excellence in ${eventcat}.`}
+                />
+                <meta
+                    property="og:url"
+                    content={`https://pravah.skit.ac.in/skit-pravah-2025-events/${eventcat}`}
+                />
+                <meta
+                    name="author"
+                    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+                />
+                <meta
+                    name="organization"
+                    content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+                />
+            </Helmet>
             <Navbarr />
 
             <ParallaxProvider>
@@ -98,7 +113,7 @@ const Eventlist = () => {
                                 </motion.h1>
                             </div>
 
-                            <motion.div
+                            {/* <motion.div
                                 className="relative w-96 max-w-2xl"
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
@@ -116,11 +131,11 @@ const Eventlist = () => {
                                     <FaSearch className="text-lg" />
                                 </span>
 
-                            </motion.div>
+                            </motion.div> */}
                         </motion.section>
 
                         <motion.div
-                            className="mt-20 flex flex-wrap justify-center items-center gap-x-8 gap-y-8 w-full max-w-6xl"
+                            className="mt-20 flex flex-wrap justify-center gap-8"
                             initial={{ opacity: 0, y: 160 }}
                             whileInView={{ opacity: 1, y: 120 }}
                             viewport={{ once: true, amount: 0.2 }}
@@ -130,28 +145,32 @@ const Eventlist = () => {
                                 filteredEvents.map((event) => (
                                     <div
                                         key={event._id}
-                                        className="flex flex-col items-center bg-gray-50 rounded-xl overflow-hidden w-80 border border-black shadow-lg"
+                                        className="flex flex-col items-center bg-gray-50 rounded-2xl overflow-hidden border hover:shadow-2xl transition-shadow duration-300 group shadow-lg w-full sm:w-[calc(50%-16px)] lg:w-[calc(25%-16px)]"
                                     >
-                                        <div className="relative w-full p-2 group">
+                                        <div className="relative w-full">
                                             <img
-                                                className="object-cover w-80 h-40 rounded-xl border-2 border-gray-100"
+                                                className="object-cover w-full h-40 rounded-t-2xl"
                                                 src={event.eventImage}
                                                 alt={event.eventTitle}
                                             />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                                         </div>
-                                        <div className="flex flex-col items-center w-full p-0 mt-2 mb-4">
+                                        <div className="flex flex-col items-center w-full mt-4">
                                             <h5
-                                                className="text-2xl font-bold text-gray-900 tracking-tight text-center"
+                                                className="text-xl font-semibold text-gray-800 transition-colors duration-300 font-sans"
                                             >
                                                 {event.eventTitle}
                                             </h5>
                                         </div>
-                                        <div className="flex flex-col justify-between w-full h-full px-3 pb-3">
+                                        <div className="w-full p-4">
                                             <button
-                                                onClick={() => navigate(`/skit-pravah-2025-events/${eventcat}/${event._id}`)}
-                                                className="bg-gradient-to-r from-purple-600 to-indigo-800 hover:from-purple-700 hover:to-indigo-900 text-white font-bold w-full px-6 py-3 rounded-lg shadow-sm hover:bg-gradient-to-r transition duration-300 abeezee-regular relative z-50"
+                                                onClick={() =>
+                                                    navigate(`/skit-pravah-2025-events/${eventcat}/${event._id}`)
+                                                }
+                                                className="w-full bg-gradient-to-r from-black via-gray-800 to-gray-900 hover:from-gray-900 hover:via-black hover:to-gray-800 text-white font-medium py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
                                             >
-                                                Book Your Spot <FaArrowRight className="ml-2 inline" />
+                                                Book Your Spot
+                                                <FaArrowRight className="ml-2 inline-block" />
                                             </button>
                                         </div>
                                     </div>
@@ -178,7 +197,7 @@ const Eventlist = () => {
                             )}
                         </motion.div>
 
-                        {hasMore && !loading && <div ref={loader} className="h-10 w-full"></div>}
+
                     </main>
                 </Parallax>
 

@@ -88,7 +88,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
           </div>
 
           {/* Logo (Centered) */}
-          <Link to="/skit-pravah-2025">
+          <a href="/skit-pravah-2025">
             <div className="sm:flex sm:justify-center sm:items-center flex-grow">
 
               <img
@@ -110,7 +110,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
                 alt="SKIT M & G Logo"
               />
             </div>
-          </Link>
+          </a>
           {/* Right Links (for desktop) */}
           <div className="hidden md:flex space-x-8 items-center flex-grow justify-end">
             <Link

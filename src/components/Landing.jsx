@@ -45,7 +45,7 @@ const Landing = () => {
         </div>
       </div> */}
 
-      
+
 
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#FFEBEE] to-[#E1F5FE] bg-pattern-stripes"></div>
 
@@ -80,32 +80,32 @@ const Landing = () => {
               <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-[#80DEEA] rounded-full filter blur-2xl opacity-80 animate-pulse"></div>
 
               <div className="fixed bottom-4 left-4 z-50">
-  <img
-    src="/skit_logo.png"
-    alt="Logo"
-    className="w-16 h-16 sm:w-20 sm:h-20 object-contain hidden sm:block"
-  />
-</div>
+                <img
+                  src="/skit_logo.png"
+                  alt="Logo"
+                  className="w-16 h-16 sm:w-16 sm:h-16 object-contain hidden sm:block"
+                />
+              </div>
 
 
 
-<div className="fixed -bottom-20 left-1/2 transform -translate-x-1/2 z-0 flex justify-center w-full">
-  <img
-    src="/rb_38558.png"
-    alt="Logo"
-    className="w-full h-full sm:w-full sm:h-full object-contain opacity-5"
-    draggable="false"
-  />
-</div>
+              <div className="fixed -bottom-20 left-1/2 transform -translate-x-1/2 z-0 flex justify-center w-full">
+                <img
+                  src="/rb_38558.png"
+                  alt="Logo"
+                  className="w-full h-full sm:w-full sm:h-full object-contain opacity-5"
+                  draggable="false"
+                />
+              </div>
 
-<div className="fixed -top-28 left-1/2 transform -translate-x-1/2 z-0 flex justify-center w-full">
-  <img
-    src="/rb_37172 - Copy.png"
-    alt="Logo"
-    className="w-full h-full sm:w-full sm:h-full object-contain opacity-5"
-    draggable="false"
-  />
-</div>
+              <div className="fixed -top-28 left-1/2 transform -translate-x-1/2 z-0 flex justify-center w-full">
+                <img
+                  src="/rb_37172 - Copy.png"
+                  alt="Logo"
+                  className="w-full h-full sm:w-full sm:h-full object-contain opacity-5"
+                  draggable="false"
+                />
+              </div>
 
 
 
@@ -113,7 +113,7 @@ const Landing = () => {
 
               <div className="text-center px-6 relative z-10 hidden sm:block">
 
-                
+
                 <motion.h1
                   className="uppercase text-[18vw] sm:text-[16vw] md:text-[14vw] font-bold lexend sm:tracking-[15px]"
                   style={{
@@ -176,68 +176,68 @@ const Landing = () => {
 
               <div className="flex flex-col justify-center items-center px-4 relative z-10 sm:hidden text-center max-h-screen">
 
-{/* <img
+                {/* <img
   src="/skit_logo.png"
   alt="Logo"
   className="w-16 h-16 object-contain m-auto mb-10"
 /> */}
 
-<motion.h1
-  className="uppercase text-[10vw] sm:text-[8vw] md:text-[6vw] font-bold lexend sm:tracking-[15px]"
-  style={{
-    backgroundImage: "linear-gradient(to right, #D32F2F, #FF5252, #D32F2F)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-  }}
-  whileInView={{ opacity: 1, y: 0 }}
-  initial={{ opacity: 0, y: -50 }}
-  transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
->
-  Pravah'25
-</motion.h1>
+                <motion.h1
+                  className="uppercase text-[10vw] sm:text-[8vw] md:text-[6vw] font-bold lexend sm:tracking-[15px]"
+                  style={{
+                    backgroundImage: "linear-gradient(to right, #D32F2F, #FF5252, #D32F2F)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: -50 }}
+                  transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
+                >
+                  Pravah'25
+                </motion.h1>
 
-<motion.p
-  className="text-sm sm:text-lg md:text-xl font-light text-gray-800 mb-2 tracking-wide"
-  whileInView={{ opacity: 1, x: 0 }}
-  initial={{ opacity: 0, x: -50 }}
-  transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
->
-  Swami Keshvanand Institute of Technology, Management & Gramothan, Jaipur
-</motion.p>
+                <motion.p
+                  className="text-sm sm:text-lg md:text-xl font-light text-gray-800 mb-2 tracking-wide"
+                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
+                >
+                  Swami Keshvanand Institute of Technology, Management & Gramothan, Jaipur
+                </motion.p>
 
-<motion.p
-  className="text-base sm:text-xl md:text-2xl font-medium text-gradient mb-6 text-pink-700 kanit-thin"
-  whileInView={{ opacity: 1, x: 0 }}
-  initial={{ opacity: 0, x: 50 }}
-  transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
->
-  Celebrating 25 Years of Excellence and the Spirit of Incredible India
-</motion.p>
+                <motion.p
+                  className="text-base sm:text-xl md:text-2xl font-medium text-gradient mb-6 text-pink-700 kanit-thin"
+                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: 50 }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
+                >
+                  Celebrating 25 Years of Excellence and the Spirit of Incredible India
+                </motion.p>
 
-<motion.p
-  className="text-base sm:text-lg md:text-xl font-semibold mb-6 text-gray-800 transition-transform transform hover:scale-105 break-words"
-  whileInView={{ opacity: 1, x: 0 }}
-  initial={{ opacity: 0, x: -50 }}
-  transition={{ duration: 1, ease: "easeInOut", delay: 0.7 }}
->
-  <span className="font-bold dynapuff">Annual</span>
-  <span className="font-bold silkscreen-regular ml-2 sm:ml-4">Techno</span>
-  <span className="font-medium ml-2 sm:ml-4 pacifico-regular">Cultural</span>
-  <span className="font-light ml-2 sm:ml-4 audiowide-regular">Sports</span>
-  <span className="font-bold ml-2 sm:ml-4 font-mono">Fest</span>
-</motion.p>
+                <motion.p
+                  className="text-base sm:text-lg md:text-xl font-semibold mb-6 text-gray-800 transition-transform transform hover:scale-105 break-words"
+                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: 0.7 }}
+                >
+                  <span className="font-bold dynapuff">Annual</span>
+                  <span className="font-bold silkscreen-regular ml-2 sm:ml-4">Techno</span>
+                  <span className="font-medium ml-2 sm:ml-4 pacifico-regular">Cultural</span>
+                  <span className="font-light ml-2 sm:ml-4 audiowide-regular">Sports</span>
+                  <span className="font-bold ml-2 sm:ml-4 font-mono">Fest</span>
+                </motion.p>
 
-<motion.button
-  className="relative px-4 sm:px-8 py-2 sm:py-4 text-white rounded-full bg-gradient-to-r from-[#311321] to-[#311321] transition-all duration-300 hover:scale-110 text-sm sm:text-xl shadow-xl transform hover:rotate-12 border-none"
-  whileHover={{ scale: 1.2 }}
-  whileTap={{ scale: 0.95 }}
-  onClick={handleDiveIntoPravah}
->
-  <span className="relative z-10 font-medium">Dive Into Pravah</span>
-  <FaArrowRight className="inline-block ml-2 sm:ml-3 animate-bounce" />
-  <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-[#9C27B0] to-[#6200EA] opacity-20 blur-sm"></div>
-</motion.button>
-</div>
+                <motion.button
+                  className="relative px-4 sm:px-8 py-2 sm:py-4 text-white rounded-full bg-gradient-to-r from-[#311321] to-[#311321] transition-all duration-300 hover:scale-110 text-sm sm:text-xl shadow-xl transform hover:rotate-12 border-none"
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleDiveIntoPravah}
+                >
+                  <span className="relative z-10 font-medium">Dive Into Pravah</span>
+                  <FaArrowRight className="inline-block ml-2 sm:ml-3 animate-bounce" />
+                  <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-[#9C27B0] to-[#6200EA] opacity-20 blur-sm"></div>
+                </motion.button>
+              </div>
 
 
 
@@ -288,7 +288,7 @@ const Landing = () => {
 
 
 
- 
+
 
     </>
   );
