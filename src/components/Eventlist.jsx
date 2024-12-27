@@ -25,7 +25,7 @@ const Eventlist = () => {
             setLoading(true);
             try {
                 const response = await fetch(
-                    `https://skit-pravah-backend.vercel.app/api/events/category/${eventcat}`
+                    `${process.env.REACT_APP_API_URL}api/events/category/${eventcat}`
                 );
                 const data = await response.json();
 
@@ -104,14 +104,17 @@ const Eventlist = () => {
                             animate={{ opacity: 1, y: 130 }}
                             transition={{ duration: 1, ease: "easeOut" }}
                         >
-                            <div className="relative">
-                                <motion.h1
-                                    className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black font-sans tracking-tight"
-                                >
-                                    {eventcat} Events
-                                    <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-28 h-[4px] bg-gradient-to-r from-[#351332] to-[#9e1c9e] mt-1 rounded-full"></span>
-                                </motion.h1>
-                            </div>
+                            {filteredEvents.length > 0 && (
+                                <div className="relative">
+                                    <motion.h1
+                                        className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black font-sans tracking-tight"
+                                    >
+                                        {eventcat} Events
+                                        <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-28 h-[4px] bg-gradient-to-r from-[#351332] to-[#9e1c9e] mt-1 rounded-full"></span>
+                                    </motion.h1>
+                                </div>
+
+                            )}
 
                             {/* <motion.div
                                 className="relative w-96 max-w-2xl"
@@ -133,69 +136,68 @@ const Eventlist = () => {
 
                             </motion.div> */}
                         </motion.section>
-
                         <motion.div
-                            className="mt-20 flex flex-wrap justify-center gap-8"
-                            initial={{ opacity: 0, y: 160 }}
-                            whileInView={{ opacity: 1, y: 120 }}
-                            viewport={{ once: true, amount: 0.2 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                        >
-                            {filteredEvents.length > 0 ? (
-                                filteredEvents.map((event) => (
-                                    <div
-                                        key={event._id}
-                                        className="flex flex-col items-center bg-gray-50 rounded-2xl overflow-hidden border hover:shadow-2xl transition-shadow duration-300 group shadow-lg w-full sm:w-[calc(50%-16px)] lg:w-[calc(25%-16px)]"
-                                    >
-                                        <div className="relative w-full">
-                                            <img
-                                                className="object-cover w-full h-40 rounded-t-2xl"
-                                                src={event.eventImage}
-                                                alt={event.eventTitle}
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-                                        </div>
-                                        <div className="flex flex-col items-center w-full mt-4">
-                                            <h5
-                                                className="text-xl font-semibold text-gray-800 transition-colors duration-300 font-sans"
-                                            >
-                                                {event.eventTitle}
-                                            </h5>
-                                        </div>
-                                        <div className="w-full p-4">
-                                            <button
-                                                onClick={() =>
-                                                    navigate(`/skit-pravah-2025-events/${eventcat}/${event._id}`)
-                                                }
-                                                className="w-full bg-gradient-to-r from-black via-gray-800 to-gray-900 hover:from-gray-900 hover:via-black hover:to-gray-800 text-white font-medium py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                                            >
-                                                Book Your Spot
-                                                <FaArrowRight className="ml-2 inline-block" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                ))
-                            ) : loading ? (
-                                <div className="flex flex-wrap gap-8 w-full justify-center">
-                                    {[...Array(3)].map((_, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex flex-row flex-wrap items-center bg-gray-50 rounded-lg shadow-lg overflow-hidden w-80 border border-gray-200"
-                                        >
-                                            <div className="w-full h-20 md:h-24 relative p-3">
-                                                <Skeleton height={60} width="100%" />
-                                            </div>
-                                            <div className="flex justify-between items-center p-4 w-full">
-                                                <Skeleton height={30} width="40%" />
-                                                <Skeleton height={40} width={60} />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            ) : (
-                                <p className="text-gray-600 relative">No events found.</p>
-                            )}
-                        </motion.div>
+    className="mt-20 flex flex-wrap justify-center gap-8"
+    initial={{ opacity: 0, y: 160 }}
+    whileInView={{ opacity: 1, y: 120 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+>
+    {filteredEvents.length > 0 ? (
+        filteredEvents.map((event) => (
+            <div
+                key={event._id}
+                className="flex flex-col items-center bg-gray-50 rounded-2xl overflow-hidden border hover:shadow-2xl transition-shadow duration-300 group shadow-lg w-full sm:w-72"
+            >
+                <div className="relative w-full">
+                    <img
+                        className="object-cover w-full h-40 rounded-t-2xl"
+                        src={event.eventImage}
+                        alt={event.eventTitle}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                </div>
+                <div className="flex flex-col items-center w-full mt-4">
+                    <h5
+                        className="text-xl font-semibold text-gray-800 transition-colors duration-300 font-sans"
+                    >
+                        {event.eventTitle}
+                    </h5>
+                </div>
+                <div className="w-full p-4">
+                    <button
+                        onClick={() =>
+                            navigate(`/skit-pravah-2025-events/${eventcat}/${event._id}`)
+                        }
+                        className="w-full bg-gradient-to-r from-black via-gray-800 to-gray-900 hover:from-gray-900 hover:via-black hover:to-gray-800 text-white font-medium py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                    >
+                        Book Your Spot
+                        <FaArrowRight className="ml-2 inline-block" />
+                    </button>
+                </div>
+            </div>
+        ))
+    ) : loading ? (
+        <div className="flex flex-wrap gap-8 w-full justify-center">
+            {[...Array(3)].map((_, index) => (
+                <div
+                    key={index}
+                    className="flex flex-row flex-wrap items-center bg-gray-50 rounded-lg shadow-lg overflow-hidden w-80 border border-gray-200"
+                >
+                    <div className="w-full h-20 md:h-24 relative p-3">
+                        <Skeleton height={60} width="100%" />
+                    </div>
+                    <div className="flex justify-between items-center p-4 w-full">
+                        <Skeleton height={30} width="40%" />
+                        <Skeleton height={40} width={60} />
+                    </div>
+                </div>
+            ))}
+        </div>
+    ) : (
+        <p className="text-gray-600 relative">No events found.</p>
+    )}
+</motion.div>
 
 
                     </main>

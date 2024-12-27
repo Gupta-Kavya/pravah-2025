@@ -28,7 +28,7 @@ const Aaveg = () => {
       try {
         // loadingBar.current.continuousStart(); // Start loading bar when fetch begins
 
-        const response = await fetch('https://skit-pravah-backend.vercel.app/api/aaveg');
+        const response = await fetch(`${process.env.REACT_APP_API_URL}api/aaveg`);
         const data = await response.json();
         setEvents(data); // Store the fetched events data
         setFilteredEvents(data); // Initialize filtered events with all events
@@ -100,7 +100,7 @@ const Aaveg = () => {
       <Navbarr />
       <ParallaxProvider>
         <Parallax speed={-10}>
-          <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-32 relative mb-40">
+          <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-32 relative mb-20">
             {/* Heading Section */}
             <motion.section
               className="text-center space-y-8"
@@ -234,7 +234,7 @@ const Aaveg = () => {
                 transition={{ duration: 0.8, ease: 'easeOut' }} // Duration and easing for smooth transition
                 className="relative inline-block"
               >
-                Faculty Coordinators
+                Faculty Coordinator's
                 <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1/2 h-[3px] bg-gradient-to-r from-[#FF6A00] to-[#660066] mt-1 rounded-full"></span>
               </motion.span>
             </h2>
@@ -263,7 +263,7 @@ const Aaveg = () => {
                 transition={{ duration: 0.8, ease: 'easeOut' }} // Duration and easing for smooth transition
                 className="relative inline-block"
               >
-                Student Coordinators
+                Student Coordinator's
                 <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1/2 h-[3px] bg-gradient-to-r from-[#FF6A00] to-[#660066] mt-1 rounded-full"></span>
               </motion.span>
             </h2>
@@ -299,7 +299,7 @@ const Aaveg = () => {
           <img
             src="/rb_2149151140.png"
             alt="Himalayas"
-            className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-30"
+            className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-20"
           />
         </motion.div>
 

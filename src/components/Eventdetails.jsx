@@ -10,6 +10,7 @@ import Coordinator from "./Coordinator";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet";
+import RecommendedEventsSlider from "./RecommendedEventsSlider";
 
 const Eventdetails = () => {
   const { eventid } = useParams(); // Get the eventid from URL
@@ -17,6 +18,8 @@ const Eventdetails = () => {
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [relatedEvents, setRelatedEvents] = useState([]);
+  const [loadingRelated, setLoadingRelated] = useState(true);
 
   // Function to format date in '12 December 2024' format
   const formatDate = (date) => {
@@ -38,7 +41,7 @@ const Eventdetails = () => {
     const fetchEventDetails = async () => {
       try {
         const response = await fetch(
-          `https://skit-pravah-backend.vercel.app/api/events/${eventid}`
+          `${process.env.REACT_APP_API_URL}api/events/${eventid}`
         );
 
         if (response.status === 404) {
@@ -48,6 +51,7 @@ const Eventdetails = () => {
         } else {
           const data = await response.json();
           setEvent(data); // Set event details
+          fetchRelatedEvents(data.eventCategory); // Fetch related events by category
         }
       } catch (error) {
         setError("Failed to fetch event details. Please check your network connection.");
@@ -56,8 +60,46 @@ const Eventdetails = () => {
       }
     };
 
+    // Fetch related events by category
+    const fetchRelatedEvents = async (category) => {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_API_URL}api/events/category/${category}`
+        );
+        const data = await response.json();
+        const formattedEvents = data
+          .filter((e) => e._id !== eventid && e.eventFees !== 0)
+          .map((event) => ({
+            name: event.eventTitle,
+            image: event.eventImage,
+            url: `/skit-pravah-2025-events/${event.eventCategory}/${event._id}`,
+          }));
+        setRelatedEvents(formattedEvents);
+      } catch (error) {
+        console.error("Failed to fetch related events:", error);
+      } finally {
+        setLoadingRelated(false);
+      }
+    };
+
     fetchEventDetails();
   }, [eventid]);
+
+  if (loading) {
+    return (
+      <div className="w-full text-center py-10 text-gray-600">
+        Loading event details...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="w-full text-center py-10 text-red-500">
+        {error}
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -110,6 +152,7 @@ const Eventdetails = () => {
                   className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black font-sans tracking-tight"
                 >
                   {loading ? <Skeleton width={300} /> : event?.eventTitle}
+                  <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-[5px] bg-gradient-to-r from-[#351332] to-[#9e1c9e] mt-1 rounded-full"></span>
                 </motion.h1>
                 {/* <motion.h2
                   className="absolute right-0 top-6 md:top-16 text-sm md:text-md font-semibold text-gray-500 italic tracking-widest font-serif"
@@ -203,6 +246,8 @@ const Eventdetails = () => {
                     alt={event?.eventTitle}
                     draggable="false"
                   />
+                  <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
+
                 </div>
 
                 {/* Event Info */}
@@ -268,10 +313,7 @@ const Eventdetails = () => {
 
 
 
-
-
-
-            <h2 className="text-3xl font-semibold text-gray-800 text-center mb-3 mt-36 cookie-regular relative">
+            <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-3 mt-36 relative font-sans  tracking-tight">
               <motion.span
                 initial={{ opacity: 0, y: 100 }} // Start with the title off-screen and invisible
                 whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and position when in view
@@ -279,8 +321,8 @@ const Eventdetails = () => {
                 transition={{ duration: 0.8, ease: 'easeOut' }} // Duration and easing for smooth transition
                 className="relative inline-block"
               >
-                Student Coordinator's
-                <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1/2 h-[3px] bg-gradient-to-r from-[#FF6A00] to-[#660066] mt-1 rounded-full"></span>
+                Student Coordinator
+                <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-[4px] bg-gradient-to-r from-[#280f38] to-[#5a015a] mt-1 rounded-full"></span>
               </motion.span>
             </h2>
 
@@ -299,6 +341,9 @@ const Eventdetails = () => {
               </div>
             </div>
 
+
+
+            <RecommendedEventsSlider devents={relatedEvents} />
 
           </main>
         </Parallax>

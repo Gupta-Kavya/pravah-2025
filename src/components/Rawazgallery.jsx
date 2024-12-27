@@ -5,6 +5,8 @@ import DesktopFooter from './DesktopFooter';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa";
+import { RiVoiceprintFill } from "react-icons/ri";
+
 
 const Rawazgallery = () => {
 
@@ -192,7 +194,7 @@ const Rawazgallery = () => {
           className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-2xl border-2 border-purple-400"
 
         >
-          {isPlaying ? <FaMicrophoneSlash size={24} color='white' /> : <FaMicrophone size={24} color='white' />}
+          {isPlaying ? <FaMicrophoneSlash size={24} color='white' /> : <RiVoiceprintFill size={24} color='white' />}
         </button>
 
       </div>

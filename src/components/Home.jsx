@@ -152,40 +152,48 @@ const Home = () => {
     {
       id: 1,
       name: "Thirak",
-      description: "A mesmerizing cultural dance event.",
+      description:
+        "Immerse yourself in the vibrant rhythms and captivating movements of 'Thirak,' a cultural dance event celebrating the rich tapestry of traditional and modern dance forms. Witness talented performers expressing stories and emotions through the art of dance, leaving you spellbound with their grace and energy.",
       image: "/events/thirak.jpg",
     },
     {
       id: 2,
       name: "DJ Night",
-      description: "An electrifying night with popular DJs.",
+      description:
+        "Prepare for an electrifying experience at 'DJ Night,' where the beats are loud, the crowd is lively, and the atmosphere is nothing short of exhilarating. Dance the night away as renowned DJs spin chart-topping tracks and electrifying remixes, creating an unforgettable evening of music and fun.",
       image: "/events/djnight.jpg",
     },
     {
       id: 5,
       name: "Celebrity Night",
-      description: "Meet your favorite celebrities in person.",
+      description:
+        "Experience the glitz and glamour of 'Celebrity Night,' a star-studded event where you get the chance to see and interact with your favorite celebrities in person. Enjoy an evening filled with mesmerizing performances, candid moments, and unforgettable memories with the stars.",
       image: "/events/cnight.jpg",
     },
     {
       id: 1,
       name: "Sur",
-      description: "Feel the melody of enchanting voices.",
+      description:
+        "Let your soul be serenaded by the magical tunes of 'Sur,' an event dedicated to showcasing enchanting voices and melodious harmonies. Talented singers will take you on a journey through music, leaving you with a renewed appreciation for the art of vocal performance.",
       image: "/events/sur.jpg",
     },
     {
       id: 2,
       name: "Rawaz",
-      description: "A dazzling showcase of style and elegance through stunning modeling performances.",
+      description:
+        "Step into the world of fashion and elegance at 'Rawaz,' a dazzling showcase of style, creativity, and sophistication. Be captivated by stunning modeling performances, breathtaking designs, and a celebration of individuality that redefines glamour and grace.",
       image: "/events/rawaz.jpg",
     },
     {
       id: 5,
       name: "Annual Day",
-      description: "An electrifying rap battle where words ignite and rhythms collide.",
+      description:
+        "Celebrate a day of unity, talent, and achievements at 'Annual Day,' a grand event filled with spectacular performances and moments of pride. From cultural showcases to thought-provoking speeches, this day also features award ceremonies to honor outstanding achievements across various categories. Join us in recognizing excellence, celebrating creativity, and creating cherished memories together.",
       image: "/events/annual.jpg",
     },
   ];
+
+
 
 
 
@@ -456,7 +464,7 @@ const Home = () => {
 
                 {!isOpen && (
                   <motion.div
-                    className="fixed bottom-2 right-2 z-50 cursor-pointer"
+                    className="fixed bottom-2 right-2 z-50 cursor-pointer hidden sm:block"
                     onClick={() => { setIsOpen(true); setnavbarDisplay("hidden"); }}
                     style={{ zIndex: 1000 }}
                   >

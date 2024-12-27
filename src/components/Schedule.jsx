@@ -15,7 +15,7 @@ const Schedule = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await fetch('https://skit-pravah-backend.vercel.app/api/events');
+                const response = await fetch(`${process.env.REACT_APP_API_URL}api/events`);
                 const data = await response.json();
                 setEvents(data);
 
