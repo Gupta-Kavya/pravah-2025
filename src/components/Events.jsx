@@ -90,7 +90,7 @@ const Events = () => {
       {/* <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0 ">
                   <motion.img
                     src="/file (14).png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform"
                     initial={{ translateY: 600 }}
                     whileInView={{ translateY: 450 }}
@@ -106,7 +106,7 @@ const Events = () => {
         <Parallax speed={-15}>
 
 
-          <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-16 relative mb-60">
+          <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-28 relative mb-60">
             {/* Heading Section */}
             <motion.section
               className="text-center space-y-8"
@@ -197,9 +197,10 @@ const Events = () => {
                         className="object-cover w-80 h-48 rounded-xl border-2 border-gray-100"
                         src={category.categoryImage}
                         alt={category.categoryName}
+                        loading="lazy"
                       />
 
-                      <div className="absolute inset-0 bg-black bg-opacity-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center group rounded-xl w-80 h-48 m-3">
+                      <div className="absolute inset-0 bg-black bg-opacity-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out sm:flex items-center justify-center group rounded-xl w-80 h-48 m-3 hidden">
                         <p className="text-white text-md p-3 text-center font-sans">{category.categoryDescription}</p>
                       </div>
 
@@ -208,7 +209,7 @@ const Events = () => {
                     {/* Category name */}
                     <div className="flex flex-col justify-between p-6 leading-normal space-y-4 w-full">
                       <h5
-                        className="text-lg font-bold text-gray-900 tracking-tight cookie-regular text-center mt-2"
+                        className="text-lg font-bold text-gray-900 tracking-tight cookie-regular text-center mt-5"
                         style={{ fontSize: '35px' }}
                       >
                         {category.categoryName} Events
@@ -233,16 +234,16 @@ const Events = () => {
             >
               <img
                 src="/rb_2149151140.png"
-                alt="Himalayas"
-                className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-20"
+                alt="Pravah 2025 - Incredible India | SKIT"
+                className="w-full h-auto object-cover transform translate-y-[180px] translate-x-0 opacity-20"
               />
             </motion.div>
 
             <div className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-20 ">
               <img
                 src="/rb_2149158780.png"
-                alt="Himalayas"
-                className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-10 "
+                alt="Pravah 2025 - Incredible India | SKIT"
+                className="w-full h-auto object-cover transform translate-y-[150px] translate-x-0 opacity-10 "
               />
             </div>
 

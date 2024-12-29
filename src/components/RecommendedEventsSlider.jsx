@@ -38,7 +38,7 @@ const RecommendedEventsSlider = ({ devents }) => {
                 <>
                     <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-10 mt-0 relative font-sans tracking-tight">
                         Recommended Events
-                        <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-36 h-[4px] bg-gradient-to-r from-[#280f38] to-[#5a015a] mt-1 rounded-full"></span>
+                        <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-[4px] bg-gradient-to-r from-[#280f38] to-[#5a015a] mt-1 rounded-full"></span>
                     </h2>
                     <Slider {...sliderSettings}>
                         {devents.map((event, index) => (

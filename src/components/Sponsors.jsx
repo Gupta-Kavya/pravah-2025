@@ -62,7 +62,7 @@ const Sponsors = () => {
                 >
                     <img
                         src="/rb_2149151140.png"
-                        alt="Himalayas"
+                        alt="Pravah 2025 - Incredible India | SKIT"
                         className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-30"
                     />
                 </motion.div>
@@ -70,7 +70,7 @@ const Sponsors = () => {
                 <div className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-20">
                     <img
                         src="/rb_2149158780.png"
-                        alt="Himalayas"
+                        alt="Pravah 2025 - Incredible India | SKIT"
                         className="w-full h-auto object-cover transform translate-y-[300px] translate-x-0 opacity-10"
                     />
                 </div> */}

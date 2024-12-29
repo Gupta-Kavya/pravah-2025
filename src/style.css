@@ -446,9 +446,9 @@ html, body {
   --diameter: 8;
   --spacing: 14;
   --size: 12;
-  --spread: 40;
-  --light-color: #b0ccf7;
-  --bg-color: #000000;
+  --spread: 20;
+  --light-color: #ffffff;
+  --bg-color: #000516;
   --halftone: 0;
 
   background: var(--bg-color);

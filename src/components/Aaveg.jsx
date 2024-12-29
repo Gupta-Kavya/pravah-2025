@@ -97,7 +97,7 @@ const Aaveg = () => {
       /> */}
 
       {/* Navbar */}
-      <Navbarr />
+      <Navbarr logo = "https://res.cloudinary.com/dktkdi3sm/image/upload/v1735466875/aaveg_logo_wiqp6x.png"/>
       <ParallaxProvider>
         <Parallax speed={-10}>
           <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-32 relative mb-20">
@@ -244,10 +244,10 @@ const Aaveg = () => {
             {/* Coordinator Cards */}
             <div className="flex justify-center items-center font-sans">
               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 w-full">
-                <Coordinator name="Mr. M.K. Beniwal" />
-                <Coordinator name="Mr. Abhishek Gupta" />
-                <Coordinator name="Mr. Ajeet Sihag" />
-                <Coordinator name="Mrs. Amrita Bhandari" />
+                <Coordinator name="Mr. M.K. Beniwal" number="9414201634"/>
+                <Coordinator name="Mr. Chandan Kumar" number="9460481589"/>
+                <Coordinator name="Mr. Ajeet Sihag" number="9680190888"/>
+                <Coordinator name="Mrs. Amrita Bhandari" number="8619438737"/>
               </div>
             </div>
 
@@ -276,8 +276,8 @@ const Aaveg = () => {
             <center>
               <div className="flex justify-center items-center font-sans mb-8">
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-8 w-full max-w-6xl">
-                  <Coordinator name="Ishan Yadav" number="9414201634" />
-                  <Coordinator name="Yogesh Kumar" number="9462326804" />
+                  <Coordinator name="Chahat Shrimali" number="9929715052" />
+                  <Coordinator name="Harsh Nagori" number="9672419399   " />
                 </div>
               </div>
             </center>
@@ -298,7 +298,7 @@ const Aaveg = () => {
         >
           <img
             src="/rb_2149151140.png"
-            alt="Himalayas"
+            alt="Pravah 2025 - Incredible India | SKIT"
             className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-20"
           />
         </motion.div>
@@ -306,7 +306,7 @@ const Aaveg = () => {
         <div className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-20 ">
           <img
             src="/rb_2149158780.png"
-            alt="Himalayas"
+            alt="Pravah 2025 - Incredible India | SKIT"
             className="w-full h-auto object-cover transform translate-y-[300px] translate-x-0 opacity-10 "
           />
         </div>

@@ -139,7 +139,7 @@ const Eventdetails = () => {
       <Navbarr />
       <ParallaxProvider>
         <Parallax speed={-15}>
-          <main className="min-h-screen flex flex-col items-center px-6 md:px-12 mt-28 relative mb-40">
+          <main className="min-h-screen flex flex-col items-center px-6 md:px-12 mt-32 relative mb-40">
             {/* Heading Section */}
             <motion.section
               className="text-center space-y-8"
@@ -245,6 +245,7 @@ const Eventdetails = () => {
                     src={event?.eventImage}
                     alt={event?.eventTitle}
                     draggable="false"
+                    loading="lazy"
                   />
                   <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
 
@@ -258,7 +259,7 @@ const Eventdetails = () => {
                   </p>
 
                   {/* Time */}
-                  <p className="text-lg text-gray-700">
+                  <p className="text-lg text-gray-700 text-nowrap">
                     <strong>Timings:</strong> {formatTime(event?.eventTimings.from)} - {formatTime(event?.eventTimings.to)}
                   </p>
 
@@ -288,7 +289,7 @@ const Eventdetails = () => {
                       <div className="text-green-600 font-semibold text-lg">
                         <button
                           onClick={() => window.open(event?.erpLink, "_blank")}
-                          className="bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white font-semibold w-full px-6 py-3 rounded-md shadow-lg transform transition duration-300 flex justify-center items-center"
+                          className="bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white font-semibold w-full px-6 py-3 rounded-md shadow-lg transform transition duration-300 flex justify-center items-center text-sm"
                           disabled={true}
                         >
                           No Registration Fee Required
@@ -321,25 +322,34 @@ const Eventdetails = () => {
                 transition={{ duration: 0.8, ease: 'easeOut' }} // Duration and easing for smooth transition
                 className="relative inline-block"
               >
-                Student Coordinator
+
+                {event?.eventCoordinators?.length > 1 ? "Student Coordinator's" : "Student Coordinator"}
+
+
                 <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-[4px] bg-gradient-to-r from-[#280f38] to-[#5a015a] mt-1 rounded-full"></span>
               </motion.span>
             </h2>
 
 
 
-            {/* Coordinator Cards */}
             <div className="flex justify-center items-center font-sans relative z-50">
-              <div className="flex flex-wrap gap-8 w-full justify-center">
+              <div
+                className={`${event?.eventCoordinators?.length === 1
+                    ? "flex flex-col items-center gap-4 w-full max-w-sm"
+                    : "grid grid-cols-2 gap-x-4 w-full max-w-sm"
+                  } md:flex md:gap-8 md:justify-center`}
+              >
                 {event?.eventCoordinators?.map((coordinator, index) => (
                   <Coordinator
-                    key={index} // Use a unique key for each item in the list
+                    key={index}
                     name={coordinator.name}
                     number={coordinator.number}
                   />
                 ))}
               </div>
             </div>
+
+
 
 
 
@@ -352,7 +362,7 @@ const Eventdetails = () => {
 
 
         <motion.div
-          className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-10"
+          className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 0.5 }}
           viewport={{ once: true }}
@@ -360,16 +370,16 @@ const Eventdetails = () => {
         >
           <img
             src="/rb_2149151140.png"
-            alt="Himalayas"
-            className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-30"
+            alt="Pravah 2025 - Incredible India | SKIT"
+            className="w-full h-auto object-cover transform translate-y-[0px] sm:translate-y-[200px] translate-x-0 opacity-30"
           />
         </motion.div>
 
-        <div className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-20">
+        <div className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-20">
           <img
             src="/rb_2149158780.png"
-            alt="Himalayas"
-            className="w-full h-auto object-cover transform translate-y-[300px] translate-x-0 opacity-10"
+            alt="Pravah 2025 - Incredible India | SKIT"
+            className="w-full h-auto object-cover transform translate-y-[0px] sm:translate-y-[300px] translate-x-0 opacity-10"
           />
         </div>
 

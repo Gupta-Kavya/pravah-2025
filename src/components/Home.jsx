@@ -467,6 +467,7 @@ const Home = () => {
                     className="fixed bottom-2 right-2 z-50 cursor-pointer hidden sm:block"
                     onClick={() => { setIsOpen(true); setnavbarDisplay("hidden"); }}
                     style={{ zIndex: 1000 }}
+                    
                   >
                     <div className="flex items-center space-x-2 px-3   py-2 bg-black border-2 border-black rounded-full shadow-2xl group-hover:bg-[#9b4dff]">
                       <span className="text-sm font-bold text-gray-200 group-hover:text-white">
@@ -501,7 +502,7 @@ const Home = () => {
                   <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 sm:block z-0 pointer-events-none hidden">
                     <img
                       src="file (8).png"
-                      alt="Himalayas"
+                      alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[140px] 2xl:translate-y-[140px] opacity-70"
                     />
                   </div>
@@ -509,7 +510,7 @@ const Home = () => {
                   <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-20 pointer-events-none">
                     <img
                       src="file (9).png"
-                      alt="Himalayas"
+                      alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[380px]"
                     />
                   </div>
@@ -517,7 +518,7 @@ const Home = () => {
                   <div className="absolute bottom-10 -right-0 w-full sm:block z-0 pointer-events-none">
                     <img
                       src="rb_2149151140.png"
-                      alt="Himalayas"
+                      alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[170px] 2xl:translate-y-[210px] opacity-30"
                     />
                   </div>
@@ -525,7 +526,7 @@ const Home = () => {
                   <div className="absolute bottom-0 -right-0 w-full sm:block z-0 pointer-events-none">
                     <img
                       src="rb_2149151140.png"
-                      alt="Himalayas"
+                      alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[210px] opacity-20"
                     />
                   </div>
@@ -533,7 +534,7 @@ const Home = () => {
                   <div className="absolute bottom-0 -right-0 w-full sm:block z-0 pointer-events-none">
                     <img
                       src="rb_2149158780.png"
-                      alt="Himalayas"
+                      alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[450px] opacity-5"
                     />
                   </div>
@@ -541,7 +542,7 @@ const Home = () => {
                   <div className="absolute -bottom-20 -left-20 w-96 sm:block z-0 pointer-events-none">
                     <img
                       src="rb_24869.png"
-                      alt="Himalayas"
+                      alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform"
                     />
                   </div>
@@ -549,7 +550,7 @@ const Home = () => {
                   <div className="absolute bottom-0 -right-20 w-96 sm:block z-50 pointer-events-none">
                     <img
                       src="rb_2150428350.png"
-                      alt="Himalayas"
+                      alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[40px] 2xl:translate-y-[40px]"
                     />
                   </div>
@@ -684,7 +685,7 @@ const Home = () => {
                       <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
                         <img
                           src="rb_2149151140.png"
-                          alt="Himalayas"
+                          alt="Pravah 2025 - Incredible India | SKIT"
                           className="w-full object-cover transform lg:translate-y-[120px] 2xl:translate-y-[120px] opacity-30"
                         />
                       </div>
@@ -693,7 +694,7 @@ const Home = () => {
                       <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
                         <img
                           src="rb_2149151140.png"
-                          alt="Himalayas"
+                          alt="Pravah 2025 - Incredible India | SKIT"
                           className="w-full object-cover transform lg:translate-y-[50px] 2xl:translate-y-[50px] opacity-20"
                         />
                       </div>
@@ -702,7 +703,7 @@ const Home = () => {
                       <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
                         <img
                           src="rb_2149158780.png"
-                          alt="Himalayas"
+                          alt="Pravah 2025 - Incredible India | SKIT"
                           className="w-full object-cover transform lg:translate-y-[250px] 2xl:translate-y-[250px] opacity-5"
                         />
                       </div>
@@ -710,7 +711,7 @@ const Home = () => {
                       <div className="absolute -bottom-0 -left-20 w-96 hidden sm:block z-0 pointer-events-none">
                         <img
                           src="rb_24869.png"
-                          alt="Himalayas"
+                          alt="Pravah 2025 - Incredible India | SKIT"
                           className="w-full object-cover transform"
                         />
                       </div>
@@ -801,7 +802,7 @@ const Home = () => {
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96  sm:block z-50 pointer-events-none hidden">
                   <img
                     src="file (8).png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[140px] 2xl:translate-y-[140px]"
                   />
                 </div>
@@ -811,7 +812,7 @@ const Home = () => {
                 <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-20 pointer-events-none">
                   <img
                     src="file (9).png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[380px]"
                   />
                 </div>
@@ -821,7 +822,7 @@ const Home = () => {
                 <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-0 pointer-events-none">
                   <img
                     src="rb_2149151140.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[170px] 2xl:translate-y-[210px] opacity-30"
                   />
                 </div>
@@ -830,7 +831,7 @@ const Home = () => {
                 <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-0 pointer-events-none">
                   <img
                     src="rb_2149151140.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[210px] opacity-20"
                   />
                 </div>
@@ -839,7 +840,7 @@ const Home = () => {
                 <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-0 pointer-events-none">
                   <img
                     src="rb_2149158780.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[450px] opacity-5"
                   />
                 </div>
@@ -853,7 +854,7 @@ const Home = () => {
                 <div className="absolute -bottom-20 -left-20 w-96 hidden sm:block z-0 pointer-events-none">
                   <img
                     src="rb_24869.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform"
                   />
                 </div>
@@ -864,7 +865,7 @@ const Home = () => {
                 0 left-40 w-96 hidden sm:block z-0 pointer-events-none">
                   <img
                     src="rb_24869.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[0] 2xl:translate-y-[0]"
                   />
                 </div> */}
@@ -874,7 +875,7 @@ const Home = () => {
                 <div className="absolute bottom-0 -right-20 w-96 hidden sm:block z-50 pointer-events-none">
                   <img
                     src="rb_2150428350.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[40px] 2xl:translate-y-[40px]"
                   />
                 </div>
@@ -1076,11 +1077,11 @@ const Home = () => {
 
 
 
-                {/* Overlapping Himalayas Image */}
+                {/* Overlapping Pravah 2025 - Incredible India | SKIT Image */}
                 {/* <div className="absolute bottom-0 left-0 w-full hidden sm:block z-10 pointer-events-none">
                   <img
                     src="rb_2149158786.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[0px] 2xl:translate-y-[0px]"
                   />
                 </div> */}
@@ -1088,7 +1089,7 @@ const Home = () => {
                 {/* <div className="absolute bottom-60 right-0 w-full hidden sm:block z-0 pointer-events-none">
                   <img
                     src="rb_28055.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[250px] 2xl:translate-y-[0px] opacity-10"
                   />
                 </div> */}
@@ -1097,7 +1098,7 @@ const Home = () => {
                 {/* <div className="absolute -bottom-20 -left-20 w-96 hidden sm:block z-0 pointer-events-none">
                   <img
                     src="rb_4171.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-96 object-cover transform lg:-translate-y-[150px] 2xl:translate-y-[0px] opacity-5"
                   />
                 </div> */}
@@ -1106,7 +1107,7 @@ const Home = () => {
                 <div className="absolute bottom-60 -right-40 w-96 hidden sm:block z-0 pointer-events-none">
                   <img
                     src="rb_2149353847 (1).png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-96 object-cover transform lg:translate-y-[100px] 2xl:translate-y-[0px] opacity-5"
                   />
                 </div> */}
@@ -1273,7 +1274,7 @@ const Home = () => {
                 <div className="absolute lg:bottom-0 left-0 w-full hidden sm:block z-0 2xl:-bottom-16">
                   <motion.img
                     src="file (9).png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform"
                     initial={{ translateY: 400 }}
                     whileInView={{ translateY: 330 }}
@@ -1289,7 +1290,7 @@ const Home = () => {
                 <div className="absolute lg:bottom-0 left-0 w-full hidden z-10 2xl:-bottom-16 bottom-0">
                   <img
                     src="file (2).png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform"
                   />
                 </div>
@@ -1396,7 +1397,7 @@ const Home = () => {
                 <div className="absolute bottom-0 left-0 w-full sm:hidden z-0 hidden">
                   <motion.img
                     src="rb_28055.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform"
                     initial={{ translateY: 500 }}
                     whileInView={{ translateY: 170 }}
@@ -1566,7 +1567,7 @@ const Home = () => {
                 <div className="absolute bottom-0 left-0 w-full hidden sm:block z-10">
                   <img
                     src="file (2).png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform translate-y-0 lg:-translate-y-5 2xl:translate-y-96 opacity-5"
                   />
                 </div>
@@ -1575,7 +1576,7 @@ const Home = () => {
                 <div className="absolute bottom-0 left-0 w-full sm:block z-30">
                   <img
                     src="rb_37172.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform translate-y-16 lg:translate-y-80 2xl:translate-y-96"
                   />
                 </div>
@@ -1652,7 +1653,16 @@ const Home = () => {
 
 
                 <motion.h2
-                  className="text-3xl font-bold text-center cookie-regular mt-32 sm:block p-4 sm:mt-16"
+                  className="text-3xl font-bold text-center cookie-regular mt-32 sm:block p-4 sm:mt-16 hidden"
+                  initial={{ y: 0, opacity: 0 }}
+                  whileInView={{ y: 20, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                  Former Celebrity Guests
+                </motion.h2>
+
+                <motion.h2
+                  className="text-2xl font-bold text-center mt-20 mb-10 sm:hidden p-4"
                   initial={{ y: 0, opacity: 0 }}
                   whileInView={{ y: 20, opacity: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
@@ -1670,7 +1680,7 @@ const Home = () => {
                 <div className="absolute lg:-bottom-20 left-0 w-full sm:block z-0 2xl:-bottom-6 bottom-0 hidden">
                   <motion.img
                     src="/mandala.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform"
                     initial={{ translateY: 150 }}
                     animate={{ translateY: 0 }}
@@ -1682,11 +1692,36 @@ const Home = () => {
                 </div>
 
 
+
+                <motion.div
+                  className="absolute -bottom-0 left-0 w-full sm:hidden pointer-events-none -z-10"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 0.5 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1 }}
+                >
+                  <img
+                    src="/rb_2149151140.png"
+                    alt="Pravah 2025 - Incredible India | SKIT"
+                    className="w-full h-auto object-cover transform translate-y-[0px] translate-x-0 opacity-30"
+                  />
+                </motion.div>
+
+                <div className="absolute -bottom-0 left-0 w-full sm:hidden pointer-events-none -z-20">
+                  <img
+                    src="/rb_2149158780.png"
+                    alt="Pravah 2025 - Incredible India | SKIT"
+                    className="w-full h-auto object-cover transform translate-y-[0px] translate-x-0 opacity-10"
+                  />
+                </div>
+
+
+
                 {/* 
                 <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0">
                   <motion.img
                     src="rb_38558.png"
-                    alt="Himalayas"
+                    alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform opacity-5"
                     initial={{ translateY: 150 }}
                     whileInView={{ translateY: 150 }}

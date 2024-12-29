@@ -1,8 +1,16 @@
 import React, { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { FaMicrophone, FaMicrophoneSlash } from "react-icons/fa";
 import { RiVoiceprintFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { IoIosArrowBack } from "react-icons/io";
+
+
+import Confetti from 'react-confetti'
+import { Alert } from "flowbite-react";
+
+
+
 
 const SpotlightGrid = () => {
   const [selectedVideo, setSelectedVideo] = useState('');
@@ -35,6 +43,10 @@ const SpotlightGrid = () => {
     setMousePos({ x: `${x}%`, y: `${y}%` });
   };
 
+
+  const [isOpen, setIsOpen] = useState(null);
+
+
   return (
     <div
       className="relative h-screen w-screen overflow-hidden hidden sm:block"
@@ -45,11 +57,11 @@ const SpotlightGrid = () => {
         style={{ "--mx": mousePos.x, "--my": mousePos.y }}
       />
 
-      <div className="absolute bottom-4 right-4 z-50 hidden sm:block" style={{ zIndex: 1000 }}>
+      <div className="absolute bottom-4 right-4 z-50 hidden sm:block">
         <button
           onClick={handleAudioToggle}
 
-          className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-2xl border-2 border-purple-400"
+          className="p-3 bg-gradient-to-r from-black to-black text-white rounded-full shadow-2xl border border-purple-600"
 
         >
           {isPlaying ? <FaMicrophone size={24} color='white' /> : <RiVoiceprintFill size={24} color='white' />}
@@ -242,17 +254,87 @@ const SpotlightGrid = () => {
       </div>
 
 
-      <div className="justify-center absolute -right-1 top-6 hidden lg:flex" style={{ zIndex: 1000 }}>
-        <Link to="/skit-pravah-2025-events/Technical">
-          <button className="px-6 py-3 text-lg font-bold text-purple-100 bg-black border border-white rounded-l-full shadow-lg">
-            Discover Technical Events
-          </button>
-        </Link>
+      <div className="justify-center absolute -right-1 top-6 hidden lg:flex" >
+
+        <button className="px-6 py-3 text-lg font-bold text-purple-100 bg-black border border-white rounded-l-full shadow-lg" onClick={() => { setIsOpen(true); }}>
+          Discover Technical Events
+        </button>
+
       </div>
 
 
 
-      <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black to-transparent opacity-40 z-10"></div>
+
+      <AnimatePresence>
+        {(isOpen === null && isOpen !== false) ^ isOpen === true
+          && (
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: "0%" }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+              exit={{ x: "-100%" }}
+              className="absolute inset-0 bg-gradient-to-r from-black via-gray-500 to-black flex flex-col items-center h-screen z-50 justify-center overflow-hidden"
+            >
+
+              {/* Confetti animation */}
+              <Confetti
+                width={3000}
+                height={1000}
+              />
+
+              {/* Main heading with animated text */}
+              <h1 className="text-5xl font-extrabold text-white text-center animate__animated animate__bounceInDown mb-10">
+                Get Ready to Meet
+              </h1>
+
+              {/* Crazy animated posters for the reveal */}
+              <div className="flex justify-center items-center mt-8 space-x-16 z-50">
+                <div className="relative w-80 h-80 animate__animated animate__flipInY animate__delay-1s">
+                  <img
+                    src="https://www.lakshya.poornima.edu.in/images/days/3.jpg" // Replace with poster 1 image URL
+                    alt="Celebrity Poster"
+                    className="w-full h-full object-cover rounded-lg transform hover:scale-110 transition-all duration-500"
+                  />
+                </div>
+
+                <div className="relative w-80 h-80 animate__animated animate__flipInY animate__delay-1s">
+                  <img
+                    src="https://www.lakshya.poornima.edu.in/images/days/2.jpg" // Replace with poster 2 image URL
+                    alt="Comedian Poster"
+                    className="w-full h-full object-cover rounded-lg transform hover:scale-110 transition-all duration-500"
+                  />
+                </div>
+              </div>
+
+              {/* Close Button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-1/2 right-4 -translate-y-1/2 p-3 bg-white text-black rounded-full shadow-lg transition duration-300 font-extrabold border border-white z-10 "
+              >
+                <IoIosArrowBack />
+              </button>
+
+
+
+              {/* Glassmorphism background */}
+
+              <div className="absolute inset-0 backdrop-blur-md bg-white/0 rounded-lg opacity-10"></div>
+
+
+
+              {/* Animated Background image */}
+              <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
+                <img
+                  src="rb_2149151140 -celerity.png" // Replace with relevant dynamic background image
+                  alt="Background Image"
+                  className="w-full object-cover transform lg:translate-y-[120px] 2xl:translate-y-[120px] opacity-40"
+                />
+              </div>
+            </motion.div>
+          )}
+      </AnimatePresence>
+
+      <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black to-transparent opacity-15 z-10"></div>
 
 
 
@@ -268,7 +350,7 @@ const SpotlightGrid = () => {
       >
         <motion.img
           src="rb_2148402774.png"
-          alt="Himalayas"
+          alt="Pravah 2025 - Incredible India | SKIT"
           className="object-cover transform opacity-100 h-screen"
         />
       </motion.div>
@@ -277,7 +359,7 @@ const SpotlightGrid = () => {
       <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-0 pointer-events-none">
         <img
           src="rb_2.png"
-          alt="Himalayas"
+          alt="Pravah 2025 - Incredible India | SKIT"
           className="w-full object-cover transform lg:translate-y-[170px] 2xl:translate-y-[170px] opacity-100"
         />
       </div>

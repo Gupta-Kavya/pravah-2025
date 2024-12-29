@@ -97,7 +97,7 @@ const Eventlist = () => {
 
             <ParallaxProvider>
                 <Parallax speed={-15}>
-                    <main className="min-h-screen flex flex-col items-center px-6 md:px-12 mt-16 relative mb-72">
+                    <main className="min-h-screen flex flex-col items-center px-6 md:px-12 mt-28 sm:mt-16 relative mb-72">
                         <motion.section
                             className="text-center space-y-8"
                             initial={{ opacity: 0, y: -50 }}
@@ -154,6 +154,7 @@ const Eventlist = () => {
                         className="object-cover w-full h-40 rounded-t-2xl"
                         src={event.eventImage}
                         alt={event.eventTitle}
+                        loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
                 </div>
@@ -204,7 +205,7 @@ const Eventlist = () => {
                 </Parallax>
 
                 <motion.div
-                    className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-10"
+                    className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-10"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 0.5 }}
                     viewport={{ once: true }}
@@ -212,16 +213,16 @@ const Eventlist = () => {
                 >
                     <img
                         src="/rb_2149151140.png"
-                        alt="Himalayas"
-                        className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-30"
+                        alt="Pravah 2025 - Incredible India | SKIT"
+                        className="w-full h-auto object-cover transform translate-y-[0px] sm:translate-y-[200px] translate-x-0 opacity-30"
                     />
                 </motion.div>
 
-                <div className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-20">
+                <div className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-20">
                     <img
                         src="/rb_2149158780.png"
-                        alt="Himalayas"
-                        className="w-full h-auto object-cover transform translate-y-[300px] translate-x-0 opacity-10"
+                        alt="Pravah 2025 - Incredible India | SKIT"
+                        className="w-full h-auto object-cover transform translate-y-[0px] sm:translate-y-[300px]     translate-x-0 opacity-10"
                     />
                 </div>
             </ParallaxProvider>

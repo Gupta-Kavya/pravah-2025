@@ -18,10 +18,7 @@ const Carousel = ({ celebrities, frameImage }) => {
     const images = [...celebrities, ...celebrities];
 
     return (
-        <div className="relative w-full h-96  items-center justify-center overflow-hidden lg:mb-5 2xl:mb-28  sm:flex mt-20 sm:mt-0
-        
-        
-        ">
+        <div className="relative w-full h-96 items-center justify-center overflow-hidden lg:mb-5 2xl:mb-28  sm:flex mt-10 sm:mt-0">
             <div className="relative w-full flex items-center justify-center overflow-hidden">
                 <motion.div
                     className="flex items-center transition-transform ease-in-out duration-3000"
@@ -33,7 +30,7 @@ const Carousel = ({ celebrities, frameImage }) => {
                     {images.map((celebrity, index) => (
                         <div className="flex flex-col items-center" key={index}>
                             <motion.div
-                                className="flex flex-col items-center justify-center w-48 h-48 space-y-2 mx-7 relative"
+                                className="flex flex-col items-center justify-center sm:w-48 sm:h-48 space-y-2 mx-7 relative w-40 h-40"
                             >
                                 {/* Border Frame */}
                                 <img
@@ -43,7 +40,7 @@ const Carousel = ({ celebrities, frameImage }) => {
                                 />
 
                                 {/* Main Image */}
-                                <div className="w-48 h-48 rounded-full border-4 p-1 flex items-center justify-center overflow-hidden relative z-0">
+                                <div className="sm:w-48 sm:h-48 w-40 h-40 rounded-full border-4 p-1 flex items-center justify-center overflow-hidden relative z-0">
                                     <img
                                         src={celebrity.image}
                                         alt={celebrity.name}

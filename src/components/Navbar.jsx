@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom'; // Import useLocation to detect active link
 import '../style.css';
 
-const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
+const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay , logo }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const location = useLocation(); // Get the current location
@@ -105,7 +105,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
               />
 
               <img
-                src="/logo.png"
+                src={logo ? logo : "https://res.cloudinary.com/dktkdi3sm/image/upload/v1735358630/sxt058o5ftklmmq3biva.png"}
                 className="sm:w-16 w-16 hidden sm:block mx-4" // Apply filter dynamically
                 alt="SKIT M & G Logo"
               />
@@ -221,10 +221,10 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay }) => {
               TEAM PRAVAH
             </Link>
 
-            {/* Himalayas graphic image */}
+            {/* Pravah 2025 - Incredible India | SKIT graphic image */}
             <img
               src="/himalya.png"
-              alt="Himalayas Graphics"
+              alt="Pravah 2025 - Incredible India | SKIT Graphics"
               className="mt-8 w-full max-w-md object-contain transform translate-y-1/2"
             />
           </div>
