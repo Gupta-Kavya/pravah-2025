@@ -55,7 +55,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay , logo })
 
 
         {/* Navbar */}
-        <div className="max-w-screen-2xl flex items-center justify-between mx-auto px-4 py-4 dynapuff bg-slate-100">
+        <div className="flex items-center justify-between mx-auto px-4 py-4 dynapuff bg-slate-100">
           {/* Left Links (for desktop) */}
           <div className="hidden md:flex space-x-8 items-center flex-grow justify-start">
             <Link

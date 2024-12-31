@@ -31,12 +31,12 @@ const Footer = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className="hover:underline">
+                                    <a href="/skit-pravah-2025-AAVEG" className="hover:underline">
                                         AAVEG
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className="hover:underline">
+                                    <a href="/skit-pravah-2025-events" className="hover:underline">
                                         Events
                                     </a>
                                 </li>
@@ -55,14 +55,14 @@ const Footer = () => {
                             <ul className="text-white font-medium text-sm">
                                 <li>
                                     <a
-                                        href="#"
+                                        href="https://forms.gle/144TVY3D2bMTGUPh8"
                                         className="hover:underline"
                                     >
                                         Website
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className="hover:underline">
+                                    <a href="https://forms.gle/ntPVd8NgToLwsJ7M9" className="hover:underline">
                                         Events
                                     </a>
                                 </li>
@@ -72,15 +72,15 @@ const Footer = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className="hover:underline">
+                                    <a href="https://forms.gle/byd1D7Suq24a5LR2A" className="hover:underline">
                                         Bug Report
                                     </a>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <a href="#" className="hover:underline">
                                         Pravah Web Team
                                     </a>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
 
@@ -188,7 +188,7 @@ const Footer = () => {
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-white sm:text-center">
                         © 2025{" "}
-                        <a href="#" className="hover:underline">
+                        <a href="https://www.skit.ac.in/" className="hover:underline">
                             SKIT, Jaipur
                         </a>
                         . All Rights Reserved.
@@ -198,7 +198,7 @@ const Footer = () => {
                         <span className="text-sm text-white">
                             Designed and Developed by{" "}
                             <a
-                                href="https://pravah.skit.ac.in/"
+                                href="/skit-pravah-2025-web-team"
                                 className="text-yellow-100 hover:underline"
                                 target="_blank"
                                 rel="noopener noreferrer"

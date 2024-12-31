@@ -122,29 +122,29 @@ const Surgallery = () => {
         {/* Gallery Section */}
         <div className="grid gallery-grid">
           <div className="columnn">
-            <img src="Sur/1.png" alt="" />
-            <img src="Sur/2.png" alt="" />
-            <img src="Sur/3.png" alt="" />
-            <img src="Sur/4.png" alt="" />
-            <img src="Sur/5.png" alt="" />
-            <img src="Sur/6.png" alt="" />
+            <img src="SUR/1.png" alt="" />
+            <img src="SUR/2.png" alt="" />
+            <img src="SUR/3.png" alt="" />
+            <img src="SUR/4.png" alt="" />
+            <img src="SUR/5.png" alt="" />
+            <img src="SUR/6.png" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="Sur/7.png" alt="" />
-            <img src="Sur/8.png" alt="" />
-            <img src="Sur/9.png" alt="" />
-            <img src="Sur/10.png" alt="" />
-            <img src="Sur/11.png" alt="" />
-            <img src="Sur/15.png" alt="" />
+            <img src="SUR/7.png" alt="" />
+            <img src="SUR/8.png" alt="" />
+            <img src="SUR/9.png" alt="" />
+            <img src="SUR/10.png" alt="" />
+            <img src="SUR/11.png" alt="" />
+            <img src="SUR/15.png" alt="" />
           </div>
           <div className="columnn">
-            <img src="Sur/12.png" alt="" />
-            <img src="Sur/14.png" alt="" />
-            <img src="Sur/17.png" alt="" />
-            <img src="Sur/16.png" alt="" />
-            <img src="Sur/12.png" alt="" />
-            <img src="Sur/18.png" alt="" />
+            <img src="SUR/12.png" alt="" />
+            <img src="SUR/14.png" alt="" />
+            <img src="SUR/17.png" alt="" />
+            <img src="SUR/16.png" alt="" />
+            <img src="SUR/12.png" alt="" />
+            <img src="SUR/18.png" alt="" />
 
             <motion.section
               className="text-center"
@@ -165,21 +165,21 @@ const Surgallery = () => {
 
           </div>
           <div className="columnn">
-            <img src="Sur/13.png" alt="" />
-            <img src="Sur/18.png" alt="" />
-            <img src="Sur/19.png" alt="" />
-            <img src="Sur/20.png" alt="" />
-            <img src="Sur/21.png" alt="" />
-            <img src="Sur/22.png" alt="" />
+            <img src="SUR/13.png" alt="" />
+            <img src="SUR/18.png" alt="" />
+            <img src="SUR/19.png" alt="" />
+            <img src="SUR/20.png" alt="" />
+            <img src="SUR/21.png" alt="" />
+            <img src="SUR/22.png" alt="" />
 
           </div>
           <div className="columnn">
-            <img src="Sur/23.png" alt="" />
-            <img src="Sur/24.png" alt="" />
-            <img src="Sur/25.png" alt="" />
-            <img src="Sur/10.png" alt="" />
-            <img src="Sur/11.png" alt="" />
-            <img src="Sur/12.png" alt="" />
+            <img src="SUR/23.png" alt="" />
+            <img src="SUR/24.png" alt="" />
+            <img src="SUR/25.png" alt="" />
+            <img src="SUR/10.png" alt="" />
+            <img src="SUR/11.png" alt="" />
+            <img src="SUR/12.png" alt="" />
           </div>
 
 

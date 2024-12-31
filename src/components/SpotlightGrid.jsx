@@ -76,12 +76,11 @@ const SpotlightGrid = () => {
       <motion.h2
         className="text-4xl font-bold text-center mb-8 my-16 audiowide-regular text-white relative lg:left-20"
         initial={{ y: -50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
+        whileInView={{ y: 0, opacity: 1 }}  
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         Unveil Pravah'25
-        <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-40 h-[4px] bg-gradient-to-r from-[#dadada] to-[#ce02ce] mt-1 rounded-full"></span>
-
+        <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-[4px] bg-gradient-to-r from-[#FF6A00] to-[#660066] mt-1 rounded-full"></span>
 
 
 
@@ -273,7 +272,7 @@ const SpotlightGrid = () => {
               animate={{ x: "0%" }}
               transition={{ duration: 1, ease: "easeInOut" }}
               exit={{ x: "-100%" }}
-              className="absolute inset-0 bg-gradient-to-r from-black via-gray-500 to-black flex flex-col items-center h-screen z-50 justify-center overflow-hidden"
+              className="hidden absolute inset-0 bg-gradient-to-r from-black via-gray-500 to-black  flex-col items-center h-screen z-50 justify-center overflow-hidden"
             >
 
               {/* Confetti animation */}

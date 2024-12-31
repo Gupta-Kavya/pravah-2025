@@ -49,13 +49,13 @@ const About = () => {
       <ParallaxProvider>
         <Parallax speed={-10}>
 
-          <main className="min-h-screen px-6 md:px-12 mt-16 relative mb-40 flex flex-col items-center justify-center">
+          <main className="min-h-screen px-6 md:px-12 sm:mt-16 mt-32 relative mb-40 flex flex-col items-center justify-center">
 
 
 
 
 
-            <h1 className='bungee-shade-regular mt-10 text-7xl'>
+            <h1 className='bungee-shade-regular mt-10 text-7xl hidden sm:block'>
               <motion.span
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -50 }}
@@ -71,7 +71,7 @@ const About = () => {
 
               {/* Left Image */}
               <motion.div
-                className="w-full md:w-96 h-64 bg-cover bg-center relative md:left-0 -left-5 rounded-xl"
+                className="w-96 md:w-96 h-64 bg-contain bg-center relative md:left-0 -left-5 rounded-xl"
                 style={{ backgroundImage: 'url("/pravah_poster.jpg")' }}
                 whileInView={{ x: 0, opacity: 1 }}
                 initial={{ x: -100, opacity: 0 }}

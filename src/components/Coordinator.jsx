@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'; // Importing motion from framer-motion
 const Coordinator = ({ name, number }) => {
   return (
     <motion.div
-      className="flex justify-center items-center py-6"
+      className="flex py-6"
       initial={{ opacity: 0, y: 50 }} // Start with the card off-screen
       whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and position when in view
       viewport={{ once: true, amount: 0.2 }} // Trigger once when 20% of the card is visible
@@ -16,7 +16,7 @@ const Coordinator = ({ name, number }) => {
           }`} // Adjust padding if number is not present
       >
         {/* Name */}
-        <h2 className="text-xl font-semibold text-gray-800 font-sans">{name}</h2>
+        <h2 className="text-sm sm:text-lg font-semibold text-gray-800 font-sans">{name}</h2>
 
         {/* Call Button (Shown Only if the Phone Number Exists) */}
         {number && (

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Carousel = ({ celebrities, frameImage }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -62,9 +63,20 @@ const Carousel = ({ celebrities, frameImage }) => {
                                 </div>
                             </motion.div>
                         </div>
+
+
                     ))}
                 </motion.div>
+
+
             </div>
+
+            <Link to="/skit-pravah-2025-events-schedule" >
+                <button className="px-6 py-3 w-40 mt-14 text-white font-semibold rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-60 shadow-md transition-all flex justify-center items-center m-auto sm:hidden">
+                    View Schedule
+                </button>
+            </Link>
+
         </div>
     );
 };

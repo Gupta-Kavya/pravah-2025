@@ -11,14 +11,19 @@ import Coordinator from './Coordinator';
 import Comingsoon from './Comingsoon';
 import { Helmet } from 'react-helmet';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import { Modal } from "flowbite-react";
+
 
 const Aaveg = () => {
+  const [openModal, setOpenModal] = useState(false);
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]); // State for filtered events
   const [searchQuery, setSearchQuery] = useState(''); // State for search input
   const [loading, setLoading] = useState(true); // Track loading state
   const loadingBar = useRef(null); // Create a reference for the LoadingBar
   const [isOpen, setIsOpen] = useState(false);
+  const [form, setform] = useState("")
+  const [title, setTitle] = useState("second")
 
   const handleClose = () => setIsOpen(false);
 
@@ -97,7 +102,7 @@ const Aaveg = () => {
       /> */}
 
       {/* Navbar */}
-      <Navbarr logo = "https://res.cloudinary.com/dktkdi3sm/image/upload/v1735466875/aaveg_logo_wiqp6x.png"/>
+      <Navbarr logo="https://res.cloudinary.com/dktkdi3sm/image/upload/v1735466875/aaveg_logo_wiqp6x.png" />
       <ParallaxProvider>
         <Parallax speed={-10}>
           <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-32 relative mb-20">
@@ -114,7 +119,7 @@ const Aaveg = () => {
                   className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black tracking-tight"
                 >
                   AAVEG'25
-                  <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-28 h-[4px] bg-gradient-to-r from-[#632a6e] to-[#941694] mt-1 rounded-full"></span>
+                  <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-28 h-[4px] bg-gradient-to-r from-[#632a6e] to-[#941694] mt-1 rounded-full hidden sm:block"></span>
                 </motion.h1>
               </div>
 
@@ -175,8 +180,7 @@ const Aaveg = () => {
                     whileInView={{ opacity: 1, y: 120 }} // Trigger when in view
                     viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% of the card is visible
                     transition={{
-                      delay: index * 0.2, // Stagger based on index
-                      duration: 0.8,
+                      duration: 0.4,
                       ease: 'easeOut',
                     }}
                   >
@@ -189,31 +193,46 @@ const Aaveg = () => {
                   }}
                 ></div> */}
 
-                    <div className="relative w-full h-44 md:h-48 p-3 group">
-
+                    <div className="relative w-72 sm:w-64 h-40 sm:h-32 p-3 group">
+                      {/* Main Image */}
                       <img
-                        className="object-cover w-80 h-40 sm:h-48 rounded-xl border-2 border-gray-100"
+                        className="object-cover w-72 sm:w-64 h-40 sm:h-32 rounded-xl"
                         src={event.eventImage}
                         alt={event.eventName}
+                        draggable="false"
                       />
 
-
+                      {/* Border Image */}
+                      <div
+                        className="absolute inset-0 w-72 sm:w-64 h-40 sm:h-32 pointer-events-none hidden sm:block"
+                        style={{
+                          backgroundImage: `url('/rb_2149086440.png')`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'cover',
+                        }}
+                      />
                     </div>
+
+
 
                     <div className="flex flex-col justify-between p-3 leading-normal space-y-4 w-full">
                       <h5
-                        className="text-2xl font-bold text-gray-900 tracking-tight text-center mt-2"
+                        className="text-xl font-bold text-gray-900 tracking-tight text-center mt-2"
                       >
                         {event.eventName}
                       </h5>
                       <button
-                        className="bg-gradient-to-r from-black to-black text-white font-bold w-full px-6 py-3 rounded-lg shadow-sm hover:bg-gradient-to-r hover:from-[#FF6A00] hover:to-[#660066] transition duration-300 abeezee-regular relative z-50"
-                        onClick={() =>
-                          window.open(event.eventRegistrationLink, '_blank')
-                        }
+                        className="bg-gradient-to-r from-black to-black text-white font-medium w-full px-6 py-3 rounded-lg shadow-sm  relative z-50"
+                        // onClick={() =>
+                        //   window.open(event.eventRegistrationLink, '_blank')
+                        // }
+
+                        onClick={() => { setOpenModal(true); setform(event.eventRegistrationLink); setTitle(event.eventName) }}
+
                       >
                         Join the Game
                         <FaArrowRight className="ml-2 inline" />
+
                       </button>
                     </div>
                   </motion.div>
@@ -243,11 +262,11 @@ const Aaveg = () => {
 
             {/* Coordinator Cards */}
             <div className="flex justify-center items-center font-sans">
-              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 w-full">
-                <Coordinator name="Mr. M.K. Beniwal" number="9414201634"/>
-                <Coordinator name="Mr. Chandan Kumar" number="9460481589"/>
-                <Coordinator name="Mr. Ajeet Sihag" number="9680190888"/>
-                <Coordinator name="Mrs. Amrita Bhandari" number="8619438737"/>
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-x-8 w-full">
+                <Coordinator name="Mr. M.K. Beniwal" number="9414201634" />
+                <Coordinator name="Mr. Chandan Kumar" number="9460481589" />
+                <Coordinator name="Mr. Ajeet Sihag" number="9680190888" />
+                <Coordinator name="Mrs. Amrita Bhandari" number="8619438737" />
               </div>
             </div>
 
@@ -290,7 +309,7 @@ const Aaveg = () => {
 
 
         <motion.div
-          className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-10"
+          className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 0.5 }}
           viewport={{ once: true }}
@@ -299,19 +318,43 @@ const Aaveg = () => {
           <img
             src="/rb_2149151140.png"
             alt="Pravah 2025 - Incredible India | SKIT"
-            className="w-full h-auto object-cover transform translate-y-[200px] translate-x-0 opacity-20"
+            className="w-full h-auto object-cover transform translate-y-[0px] sm:translate-y-[200px] translate-x-0 opacity-20"
           />
         </motion.div>
 
-        <div className="fixed -bottom-0 left-0 w-full hidden sm:block pointer-events-none -z-20 ">
+        <div className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-20 ">
           <img
             src="/rb_2149158780.png"
             alt="Pravah 2025 - Incredible India | SKIT"
-            className="w-full h-auto object-cover transform translate-y-[300px] translate-x-0 opacity-10 "
+            className="w-full h-auto object-cover transform translate-y-[0px] sm:translate-y-[300px] translate-x-0 opacity-10 "
           />
         </div>
 
       </ParallaxProvider>
+
+      <Modal
+        show={openModal}
+        onClose={() => setOpenModal(false)}
+        style={{ zIndex: 2000 }}
+        size="lg"
+      >
+        <Modal.Header>{title} - Registeration</Modal.Header>
+        <Modal.Body className="h-[100vh] overflow-hidden">
+          <iframe
+            src={form}
+            frameBorder="0"
+            className="w-full h-screen"
+          />
+        </Modal.Body>
+        {/* <Modal.Footer>
+    <Button color="gray" onClick={() => setOpenModal(false)}>
+      Close
+    </Button>
+  </Modal.Footer> */}
+      </Modal>
+
+
+
       {/* Desktop Footer */}
       <DesktopFooter />
     </div>

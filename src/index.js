@@ -32,9 +32,14 @@ import Schedule from './components/Schedule';
 import Clashofbandsgallery from './components/Clashofbandsgallery';
 import NotFound from './components/NotFound';
 import OneSignal from 'react-onesignal';
+import Webteampravah from './components/Webteampravah';
 
 
-
+console.log = () => {};
+console.warn = () => {};
+console.error = () => {};
+console.info = () => {};
+console.debug = () => {};
 
 
 const router = createBrowserRouter([
@@ -110,6 +115,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
   },
+  {
+    path: "/skit-pravah-2025-web-team",
+    element: <Webteampravah />,
+  },
 ]);
 
 function Root() {
@@ -124,7 +133,11 @@ function Root() {
         notifyButton: {
           enable: false,
         },
-        allowLocalhostAsSecureOrigin: true
+        allowLocalhostAsSecureOrigin: false,
+        autoRegister: true,
+        autoResubscribe: true,
+        requiresUserPrivacyConsent: true,
+        persistNotification: true,
       });
     }
   }, []);

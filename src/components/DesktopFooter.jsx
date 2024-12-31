@@ -33,10 +33,10 @@ const DesktopFooter = () => {
                   <a href="#">Team Pravah</a>
                 </li>
                 <li className="mb-2">
-                  <a href="#">AAVEG</a>
+                  <a href="/skit-pravah-2025-AAVEG">AAVEG</a>
                 </li>
                 <li className="mb-2">
-                  <a href="#">Events</a>
+                  <a href="/skit-pravah-2025-events">Events</a>
                 </li>
                 <li className="mb-2">
                   <a href="#">Campus Ambassador</a>
@@ -51,16 +51,16 @@ const DesktopFooter = () => {
               </h2>
               <ul className="text-white font-medium text-sm">
                 <li className="mb-2">
-                  <a href="#">Website</a>
+                  <a href="https://forms.gle/144TVY3D2bMTGUPh8">Website</a>
                 </li>
                 <li className="mb-2">
-                  <a href="#">Events</a>
+                  <a href="https://forms.gle/ntPVd8NgToLwsJ7M9">Events</a>
                 </li>
                 <li className="mb-2">
                   <a href="#">Accommodation</a>
                 </li>
                 <li className="mb-2">
-                  <a href="#">Bug Report</a>
+                  <a href="https://forms.gle/byd1D7Suq24a5LR2A">Bug Report</a>
                 </li>
               </ul>
             </div>
@@ -170,7 +170,7 @@ const DesktopFooter = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-white sm:text-center mb-0">
             © 2025{" "}
-            <a href="#" className="hover:underline">
+            <a href="https://www.skit.ac.in/" className="hover:underline">
               SKIT, Jaipur
             </a>
             . All Rights Reserved.
@@ -179,7 +179,7 @@ const DesktopFooter = () => {
             <span className="text-sm text-white mb-0">
               Designed and Developed by{" "}
               <a
-                href="#"
+                href="skit-pravah-2025-web-team"
                 className="text-gray-400 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"

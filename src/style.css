@@ -448,7 +448,7 @@ html, body {
   --size: 12;
   --spread: 20;
   --light-color: #ffffff;
-  --bg-color: #000516;
+  --bg-color: #0f0f0f;
   --halftone: 0;
 
   background: var(--bg-color);

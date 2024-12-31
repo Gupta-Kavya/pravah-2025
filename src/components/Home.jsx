@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -138,11 +138,13 @@ const Home = () => {
 
 
   const highlights = [
-    { number: '100+', label: 'Events' },
-    { number: '4000+', label: 'Registrations' },
-    { number: '6500+', label: 'Footfall' },
-    { number: '300+', label: 'Winners' },
-    { number: '20+', label: 'Sponsors' },
+    { number: '150+', label: 'Events' },
+    { number: '6000+', label: 'Registrations' },
+    { number: '800+', label: 'Footfall' },
+    { number: '320+', label: 'Winners' },
+    { number: '100+', label: 'Sponsors' },
+    { number: '5L+', label: 'Prize Pool' },
+
   ];
 
   const [activeIndex, setActiveIndex] = useState(1);
@@ -467,7 +469,7 @@ const Home = () => {
                     className="fixed bottom-2 right-2 z-50 cursor-pointer hidden sm:block"
                     onClick={() => { setIsOpen(true); setnavbarDisplay("hidden"); }}
                     style={{ zIndex: 1000 }}
-                    
+
                   >
                     <div className="flex items-center space-x-2 px-3   py-2 bg-black border-2 border-black rounded-full shadow-2xl group-hover:bg-[#9b4dff]">
                       <span className="text-sm font-bold text-gray-200 group-hover:text-white">
@@ -509,7 +511,7 @@ const Home = () => {
 
                   <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-20 pointer-events-none">
                     <img
-                      src="file (9).png"
+                      src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1735652378/file_9_zso7ew.png"
                       alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[380px]"
                     />
@@ -621,12 +623,12 @@ const Home = () => {
                         "Celebrating Incredible India",
                         "The Silver Jubilee Year",
                       ]}
-                      className="text-7xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-pink-500 hidden sm:block"
+                      className="text-7xl sm:text-7xl 2xl:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-pink-500 hidden sm:block"
                       speed={200}
                       eraseDelay={100}
                       typingDelay={300}
                       displayTextRenderer={(text) => (
-                        <h1 className="text-7xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-800 via-indigo-700 to-pink-600">
+                        <h1 className="text-7xl sm:text-7xl 2xl:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-800 via-indigo-700 to-pink-600">
                           {text}
                           <span className="text-black">|</span>
                         </h1>
@@ -647,13 +649,14 @@ const Home = () => {
 
 
 
-
+                  <AnimatePresence>
 
                   {isOpen && (
                     <motion.div
                       initial={{ x: "-100%" }}
                       animate={{ x: 0 }}
                       transition={{ duration: 0.4, ease: "easeInOut" }}
+                      exit={{ y: "100%" }}
                       className="absolute inset-0 bg-slate-100 flex flex-col items-center h-screen z-0"
                     >
 
@@ -721,7 +724,7 @@ const Home = () => {
                   )}
 
 
-
+</AnimatePresence>
 
 
 
@@ -811,7 +814,7 @@ const Home = () => {
 
                 <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-20 pointer-events-none">
                   <img
-                    src="file (9).png"
+                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1735652378/file_9_zso7ew.png"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[380px]"
                   />
@@ -1018,7 +1021,7 @@ const Home = () => {
 
                   {/* Right Video Card */}
                   <motion.div
-                    className="video-card relative rounded-lg w-72 h-48 bg-gray-100 shadow-md overflow-hidden hover:scale-105 transform transition z-50"
+                    className="video-card relative rounded-lg w-72 h-48 bg-gray-100 shadow-md overflow-hidden hover:scale-105 transform transition z-50 hidden"
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 30 }}
                     viewport={{ once: false }}
@@ -1201,7 +1204,7 @@ const Home = () => {
                     {devents.map((event, index) => (
                       <div
                         key={index}
-                        className="relative flex-shrink-0 w-96 h-52 rounded-xl bg-cover bg-center snap-center  transform transition-transform duration-300 ease-in-out bg-clip-padding shadow-xl"
+                        className="relative flex-shrink-0 w-96 sm:h-52 2xl:h-72 rounded-xl bg-cover bg-center snap-center  transform transition-transform duration-300 ease-in-out bg-clip-padding shadow-xl"
                         style={{
                           backgroundImage: `url(${event.image})`,
                           backgroundPosition: "center",
@@ -1273,7 +1276,7 @@ const Home = () => {
 
                 <div className="absolute lg:bottom-0 left-0 w-full hidden sm:block z-0 2xl:-bottom-16">
                   <motion.img
-                    src="file (9).png"
+                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1735652378/file_9_zso7ew.png"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform"
                     initial={{ translateY: 400 }}
@@ -1536,7 +1539,7 @@ const Home = () => {
                   transition={{ duration: 0.5 }}
                   viewport={{ once: false }}
                 >
-                  Pravah'25 Highlights
+                  Pravah'24 Highlights
                 </motion.h2>
 
                 {/* Highlight Cards */}
@@ -1673,11 +1676,10 @@ const Home = () => {
                 <Carousel celebrities={celebrities} frameImage={"/mandala-frame.png"} />
 
 
+          
 
 
-
-
-                <div className="absolute lg:-bottom-20 left-0 w-full sm:block z-0 2xl:-bottom-6 bottom-0 hidden">
+                <div className="absolute -bottom-20  left-0 w-full sm:block z-0  hidden">
                   <motion.img
                     src="/mandala.png"
                     alt="Pravah 2025 - Incredible India | SKIT"

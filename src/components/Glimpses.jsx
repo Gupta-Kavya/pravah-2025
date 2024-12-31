@@ -83,27 +83,27 @@ const Glimpses = () => {
         ],
         sur: [
             [
-                "Sur/1.png",
-                "Sur/2.png",
-                "Sur/3.png",
-                "Sur/4.png",
-                "Sur/5.png",
-                "Sur/6.png"
+                "SUR/1.png",
+                "SUR/2.png",
+                "SUR/3.png",
+                "SUR/4.png",
+                "SUR/5.png",
+                "SUR/6.png"
             ],
             [
-                "Sur/7.png",
-                "Sur/8.png",
-                "Sur/9.png",
-                "Sur/10.png",
-                "Sur/11.png"
+                "SUR/7.png",
+                "SUR/8.png",
+                "SUR/9.png",
+                "SUR/10.png",
+                "SUR/11.png"
             ],
             [
-                "Sur/12.png",
-                "Sur/13.png",
-                "Sur/14.png",
-                "Sur/15.png",
-                "Sur/16.png",
-                "Sur/17.png"
+                "SUR/12.png",
+                "SUR/13.png",
+                "SUR/14.png",
+                "SUR/15.png",
+                "SUR/16.png",
+                "SUR/17.png"
             ],
         ],
         celebnight: [
@@ -168,7 +168,7 @@ const Glimpses = () => {
             [
                 "COB/7.JPG",
                 "COB/8.JPG",
-                "COB/9.JPG",
+                "COB/22.JPG",
                 "COB/10.JPG",
                 "COB/11.JPG"
             ],

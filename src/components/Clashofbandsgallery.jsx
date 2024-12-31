@@ -200,7 +200,7 @@ const Clashofbandsgallery = () => {
       </div>
 
       {/* Audio Element */}
-      <audio ref={audioRef} src="COB/audio.mp3" />
+      <audio ref={audioRef} src="/COB/audio.mp3" />
 
       <DesktopFooter />
     </div>
