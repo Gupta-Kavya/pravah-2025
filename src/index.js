@@ -138,8 +138,18 @@ function Root() {
         autoResubscribe: true,
         requiresUserPrivacyConsent: true,
         persistNotification: true,
+        promptOptions: {
+          slidedown: {
+            enabled: true,
+            actionMessage: "Stay updated with the latest events and announcements from Pravah!",
+            acceptButtonText: "Allow",
+            cancelButtonText: "No thanks",
+          },
+        },
       });
     }
+
+    OneSignal.Slidedown.promptPush();
   }, []);
 
   return (

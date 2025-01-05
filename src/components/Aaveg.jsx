@@ -24,7 +24,8 @@ const Aaveg = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [form, setform] = useState("")
   const [title, setTitle] = useState("second")
-
+  const [fees, setFees] = useState(0)
+  const [isLoading, setIsLoading] = useState(true);
   const handleClose = () => setIsOpen(false);
 
   // Fetch Aaveg data from the API
@@ -60,6 +61,7 @@ const Aaveg = () => {
     setFilteredEvents(filtered);
   };
 
+  
   return (
 
     <div className=" text-gray-900 relative overflow-hidden  ">
@@ -119,16 +121,16 @@ const Aaveg = () => {
                   className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black tracking-tight"
                 >
                   AAVEG'25
-                  <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-28 h-[4px] bg-gradient-to-r from-[#632a6e] to-[#941694] mt-1 rounded-full hidden sm:block"></span>
+                  <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-28 h-[4px] bg-gradient-to-r from-[#632a6e] to-[#7c087c] mt-1 rounded-full hidden sm:block"></span>
                 </motion.h1>
               </div>
 
 
-
+   
 
               {/* Search Bar */}
-              {/* <motion.div
-                className="relative w-96 max-w-2xl"
+              <motion.div
+                className="relative w-96 max-w-2xl hidden sm:block"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5, duration: 1 }}
@@ -145,7 +147,7 @@ const Aaveg = () => {
                   <FaSearch className="text-lg" />
                 </span>
 
-              </motion.div> */}
+              </motion.div>
 
             </motion.section>
 
@@ -174,24 +176,28 @@ const Aaveg = () => {
                 filteredEvents.map((event, index) => (
                   <motion.div
                     key={event._id}
-                    className="flex flex-col items-center bg-gray-100 rounded-xl overflow-hidden border border-gray-400 cursor-pointer"
-                    style={{ position: 'relative' }}
+                    className="flex flex-col items-center bg-gray-100 rounded-xl overflow-hidden border border-gray-400 cursor-pointer opacity-10"
+                    style={{
+                      position: 'relative',
+
+
+                    }}
                     initial={{ opacity: 0, y: 160 }} // Start animation state
                     whileInView={{ opacity: 1, y: 120 }} // Trigger when in view
-                    viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% of the card is visible
+                    viewport={{ once: false, amount: 0.2 }} // Trigger once, when 20% of the card is visible
                     transition={{
                       duration: 0.4,
                       ease: 'easeOut',
                     }}
                   >
                     {/* Background Image with Opacity Overlay */}
-                    {/* <div
-                  className="absolute inset-0 w-full h-full bg-cover bg-center rounded-xl"
+                    <div
+                  className="absolute inset-0 w-full h-full bg-cover bg-center rounded-xl hidden"
                   style={{
-                    backgroundImage: 'url(/22501515_15201.jpg)',
+                    backgroundImage: 'url(/rb_36380.png)',
                     opacity: 0.1,
                   }}
-                ></div> */}
+                ></div>
 
                     <div className="relative w-72 sm:w-64 h-40 sm:h-32 p-3 group">
                       {/* Main Image */}
@@ -204,7 +210,7 @@ const Aaveg = () => {
 
                       {/* Border Image */}
                       <div
-                        className="absolute inset-0 w-72 sm:w-64 h-40 sm:h-32 pointer-events-none hidden sm:block"
+                        className="absolute inset-0 w-72 sm:w-64 h-40 sm:h-32 pointer-events-none hidden sm:hidden"
                         style={{
                           backgroundImage: `url('/rb_2149086440.png')`,
                           backgroundSize: 'cover',
@@ -222,12 +228,27 @@ const Aaveg = () => {
                         {event.eventName}
                       </h5>
                       <button
-                        className="bg-gradient-to-r from-black to-black text-white font-medium w-full px-6 py-3 rounded-lg shadow-sm  relative z-50"
+                        className="bg-gradient-to-r from-black to-black text-white font-medium w-full px-6 py-3 rounded-lg shadow-sm  relative z-50 hidden sm:block"
                         // onClick={() =>
                         //   window.open(event.eventRegistrationLink, '_blank')
                         // }
 
-                        onClick={() => { setOpenModal(true); setform(event.eventRegistrationLink); setTitle(event.eventName) }}
+                        onClick={() => { setOpenModal(true); setform(event.eventRegistrationLink); setTitle(event.eventName); setFees(event.eventFees) }}
+
+                      >
+                        Join the Game
+                        <FaArrowRight className="ml-2 inline" />
+
+                      </button>
+
+
+                      <button
+                        className="bg-gradient-to-r from-black to-black text-white font-medium w-full px-6 py-3 rounded-lg shadow-sm  relative z-50 sm:hidden"
+                        // onClick={() =>
+                        //   window.open(event.eventRegistrationLink, '_blank')
+                        // }
+
+                        onClick={() => { setIsOpen(true); setform(event.eventRegistrationLink); setTitle(event.eventName); setFees(event.eventFees) }}
 
                       >
                         Join the Game
@@ -334,25 +355,92 @@ const Aaveg = () => {
 
       <Modal
         show={openModal}
-        onClose={() => setOpenModal(false)}
+        onClose={() => { setOpenModal(false); setIsLoading(true); }}
         style={{ zIndex: 2000 }}
         size="lg"
+        className='backdrop-filter backdrop-blur-lg'
       >
-        <Modal.Header>{title} - Registeration</Modal.Header>
-        <Modal.Body className="h-[100vh] overflow-hidden">
+        <Modal.Header className="border-b border-gray-300 py-4 px-6 bg-gray-100 rounded-t-2xl">
+          <h2 className="text-xl font-bold text-gray-800">{title} Registration</h2>
+        </Modal.Header>
+
+        <Modal.Body className="h-[100vh] relative p-0 bg-gray-100 overflow-hidden" >
+          {isLoading && (
+            <div className="flex items-center justify-center absolute inset-0 bg-white bg-opacity-60">
+              <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-600 border-t-transparent"></div>
+            </div>
+          )}
+
           <iframe
             src={form}
             frameBorder="0"
-            className="w-full h-screen"
+            className={`w-full h-96 transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}  `}
+            onLoad={() => setIsLoading(false)}
           />
         </Modal.Body>
-        {/* <Modal.Footer>
-    <Button color="gray" onClick={() => setOpenModal(false)}>
-      Close
-    </Button>
-  </Modal.Footer> */}
+
+        <Modal.Footer className="bg-gray-50 border-t border-gray-300 py-5 px-6 shadow-md rounded-b-2xl">
+          <div className="flex justify-between items-center w-full">
+            <h3 className="text-lg font-semibold text-gray-800">Registration Fee</h3>
+            <span className="text-xl font-bold text-gray-600">
+              {fees === 0 ? "Available Soon" : "₹" + fees}
+            </span>
+          </div>
+        </Modal.Footer>
       </Modal>
 
+
+
+      <Drawer
+        open={isOpen}
+        onClose={() => {
+          handleClose();
+          setIsLoading(true);
+        }}
+        style={{ zIndex: 2000 }}
+        className="w-full sm:w-[500px] bg-white h-full shadow-lg"
+      >
+        {/* Header Section */}
+        <Drawer.Header title={title + ' - Registration'}>
+          <div className="flex justify-between items-center p-6 bg-gradient-to-r from-gray-700 to-gray-800 text-white rounded-t-xl shadow-md">
+            <h2 className="text-xl font-semibold">{title}</h2>
+            <button
+              onClick={handleClose}
+              className="text-white text-2xl hover:text-gray-300 transition-all"
+            >
+              ×
+            </button>
+          </div>
+        </Drawer.Header>
+
+        {/* Drawer Content */}
+        <Drawer.Items className="h-[calc(100vh-120px)] overflow-hidden relative p-0 bg-gray-100">
+          {/* Loading Spinner */}
+          {isLoading && (
+            <div className="flex items-center justify-center absolute inset-0 bg-white bg-opacity-50">
+              <div className="animate-spin rounded-full h-16 w-16 border-4 border-gray-600 border-t-transparent"></div>
+            </div>
+          )}
+
+          {/* Iframe Content */}
+          <iframe
+            src={form}
+            frameBorder="0"
+            className={`w-full h-full transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+            onLoad={() => setIsLoading(false)}
+          />
+        </Drawer.Items>
+
+        {/* Footer Section */}
+        <div className="absolute bottom-0 left-0 w-full p-6 bg-gray-50 border-t border-gray-300 rounded-b-xl shadow-md">
+          <div className="flex justify-between items-center">
+            <h3 className="text-lg font-semibold text-gray-800">Registration Fee</h3>
+            <span className="text-xl font-bold text-blue-700">
+              {fees === 0 ? 'Available Soon' : `₹${fees}`}
+            </span>
+          </div>
+        </div>
+      </Drawer>
 
 
       {/* Desktop Footer */}
