@@ -176,7 +176,7 @@ const Aaveg = () => {
                 filteredEvents.map((event, index) => (
                   <motion.div
                     key={event._id}
-                    className="flex flex-col items-center bg-gray-100 rounded-xl overflow-hidden border border-gray-400 cursor-pointer opacity-10"
+                    className="flex flex-col items-center bg-gray-100 rounded-xl overflow-hidden border border-gray-400 cursor-pointer opacity-10 shadow-sm"
                     style={{
                       position: 'relative',
 

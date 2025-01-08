@@ -51,6 +51,7 @@ const SpotlightGrid = () => {
     <div
       className="relative h-screen w-screen overflow-hidden hidden sm:block"
       onMouseMove={handleMouseMove}
+      style={{ zIndex: 1000 }}
     >
       <div
         className="radial-grid absolute inset-0"
@@ -76,7 +77,7 @@ const SpotlightGrid = () => {
       <motion.h2
         className="text-4xl font-bold text-center mb-8 my-16 audiowide-regular text-white relative lg:left-20"
         initial={{ y: -50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}  
+        whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         Unveil Pravah'25
@@ -101,9 +102,9 @@ const SpotlightGrid = () => {
                   ? 'https://res.cloudinary.com/dktkdi3sm/video/upload/v1735058849/jh7kxjik6xrk9ya0tjnm.mp4'
                   : 'http://res.cloudinary.com/dktkdi3sm/video/upload/v1735058976/pdgzqt05kbfyrcts8rkz.mov'
               }
-              autoPlay
               className="w-full h-full object-cover"
               loop
+              autoPlay
             ></video>
             <button
               className="absolute lg:bottom-4 left-4 bg-orange-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-orange-600 font-bold bottom-20"
@@ -118,7 +119,7 @@ const SpotlightGrid = () => {
 
 
 
-      <div className="relative sm:flex sm:flex-row gap-0 min-h-screen hidden justify-center z-10 pointer-events-auto left-20 ">
+      <div className="relative sm:flex sm:flex-row gap-0 min-h-screen hidden justify-center z-10 pointer-events-auto left-20 " >
         {/* Left Video Card */}
         <motion.div
           className="video-card p-4 hover:scale-105 transform transition self-center relative z-10 pointer-events-auto cursor-pointer bg-gray-800"
@@ -210,7 +211,7 @@ const SpotlightGrid = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-black opacity-0 rounded-lg"></div>
 
           {/* Video Thumbnail */}
-          <iframe src="https://www.youtube.com/embed/esOx6T4uQwI" title="Teaser Launch of Pravah 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-64 h-44 rounded-lg relative z-50"></iframe>
+          <iframe src="https://www.youtube.com/embed/esOx6T4uQwI" title="Teaser Launch of Pravah 2024" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen className="w-64 h-44 rounded-lg relative z-50"></iframe>
 
           {/* Title */}
           <h3 className="text-lg font-bold text-white text-center mt-4 z-20 font-mono">
