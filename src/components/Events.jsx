@@ -84,7 +84,7 @@ const Events = () => {
 
 
 
-      <Navbarr />
+      <Navbarr eventName={" The Event Collection"}/>
 
 
       {/* <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0 ">
@@ -105,56 +105,11 @@ const Events = () => {
       <ParallaxProvider>
         <Parallax speed={-15}>
 
-
-          <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-28 relative mb-60">
+        
+          <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-20 relative mb-60">
             {/* Heading Section */}
-            <motion.section
-              className="text-center space-y-8"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 130 }}
-              transition={{ duration: 1, ease: 'easeOut' }}
-            >
-              <div className="relative">
-                <motion.h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black font-sans tracking-tight">
-                  The Event Collection
-                  <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-[4px] bg-gradient-to-r from-[#351332] to-[#9e1c9e] mt-1 rounded-full"></span>
-
-
-                </motion.h1>
-
-                {/* <motion.h2
-              className="absolute right-0 top-6 md:top-16 text-sm md:text-md font-semibold text-gray-700 italic tracking-widest font-serif"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5, duration: 1 }}
-            >
-              of Incredible India
-            </motion.h2> */}
-              </div>
-
-              {/* Search Bar */}
-              {/* <motion.div
-            className="relative w-96 max-w-2xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
-          >
-            <input
-              type="text"
-              placeholder="Search Event categories..."
-              value={searchQuery}
-              onChange={handleSearch}
-              className="w-full px-5 py-3 text-gray-800 bg-white bg-opacity-70 border border-gray-300 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent pr-12"
-              style={{ backdropFilter: 'blur(10px)' }}
-            />
-            <span className="absolute inset-y-0 right-4 flex items-center text-purple-600">
-              <FaSearch className="text-lg" />
-            </span>
-          </motion.div> */}
-
-            </motion.section>
-
-
+           
+    
 
             {/* Render categories dynamically */}
             <motion.div className="mt-20 flex flex-wrap justify-center items-center gap-8 w-full max-w-6xl mb-20">

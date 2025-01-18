@@ -11,6 +11,13 @@ import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 import RecommendedEventsSlider from "./RecommendedEventsSlider";
+import Dynamicfield from "./Dynamicfield";
+import { FaDownload } from "react-icons/fa6";
+import { Button, Drawer } from "flowbite-react";
+import { IoMdArrowDroprightCircle } from "react-icons/io";
+import { faL } from "@fortawesome/free-solid-svg-icons";
+import Confetti from 'react-confetti'
+import { FaShareAlt} from "react-icons/fa";
 
 const Eventdetails = () => {
   const { eventid } = useParams(); // Get the eventid from URL
@@ -20,6 +27,35 @@ const Eventdetails = () => {
   const [error, setError] = useState(null);
   const [relatedEvents, setRelatedEvents] = useState([]);
   const [loadingRelated, setLoadingRelated] = useState(true);
+
+
+
+  const handleClose = () => setIsOpen(false);
+  const [isDesktop, setIsDesktop] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
+  const [bottomdrawer, setBottomdrawer] = useState(false);
+
+  useEffect(() => {
+
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsDesktop(true);
+        setIsOpen(false)
+      } else {
+        setIsOpen(true)
+        setIsDesktop(false);
+      }
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
+
 
   // Function to format date in '12 December 2024' format
   const formatDate = (date) => {
@@ -35,6 +71,25 @@ const Eventdetails = () => {
     date.setMinutes(minute);
     return date.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" });
   };
+
+
+
+  const currentUrl = window.location.href;
+  const pageTitle = document.title;
+
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: pageTitle,
+        url: currentUrl,
+      })
+        .then(() => console.log("Shared successfully!"))
+        .catch((error) => console.error("Error sharing:", error));
+    } else {
+      alert("Web Share API is not supported on your device.");
+    }
+  };
+
 
   // Fetch event details using event ID
   useEffect(() => {
@@ -101,11 +156,55 @@ const Eventdetails = () => {
     );
   }
 
+
+
+  function startCountdown(targetDate, elementId) {
+    const target = new Date(targetDate).getTime();
+  
+    if (isNaN(target)) {
+      console.error("Invalid date format. Please provide a valid date.");
+      return;
+    }
+  
+    const countdownElement = document.getElementById(elementId);
+    if (!countdownElement) {
+      console.error(`Element with id "${elementId}" not found.`);
+      return;
+    }
+  
+    const countdownInterval = setInterval(() => {
+      const now = new Date().getTime();
+      const timeRemaining = target - now;
+  
+      if (timeRemaining <= 0) {
+        clearInterval(countdownInterval);
+        countdownElement.innerHTML = ``;
+        return;
+      }
+  
+      // Calculate hours, minutes, and seconds
+      const totalSeconds = Math.floor(timeRemaining / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+  
+      // Update the countdown element
+      countdownElement.innerHTML = `
+        <div class="countdown-box">${hours}<span>H</span></div>
+        <div class="countdown-box">${minutes}<span>M</span></div>
+        <div class="countdown-box">${seconds}<span>S</span></div>
+      `;
+    }, 1000);
+  }
+  
+  startCountdown(event?.eventDate , "countdown")
+
   return (
     <div>
       {event && (
         <Helmet>
           <title>{`${event?.eventTitle} - Explore ${event?.eventCategory} Excellence | SKIT`}</title>
+          <meta name="theme-color" content="white" />
           <meta
             name="description"
             content={`Dive into ${event?.eventTitle}, a hallmark of ${event?.eventCategory} excellence at SKIT. Join us for an unforgettable experience celebrating innovation and culture.`}
@@ -126,6 +225,7 @@ const Eventdetails = () => {
             property="og:url"
             content={`https://pravah.skit.ac.in/skit-pravah-2025-events/${event?.eventCategory}/${eventid}`}
           />
+          
           <meta
             name="author"
             content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -136,34 +236,11 @@ const Eventdetails = () => {
           />
         </Helmet>
       )}
-      <Navbarr />
+      <Navbarr eventName={event?.eventTitle} />
       <ParallaxProvider>
         <Parallax speed={-15}>
           <main className="min-h-screen flex flex-col items-center px-6 md:px-12 mt-32 relative mb-40">
-            {/* Heading Section */}
-            <motion.section
-              className="text-center space-y-8"
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 100 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-            >
-              <div className="relative">
-                <motion.h1
-                  className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black font-sans tracking-tight"
-                >
-                  {loading ? <Skeleton width={300} /> : event?.eventTitle}
-                  <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-[5px] bg-gradient-to-r from-[#351332] to-[#9e1c9e] mt-1 rounded-full"></span>
-                </motion.h1>
-                {/* <motion.h2
-                  className="absolute right-0 top-6 md:top-16 text-sm md:text-md font-semibold text-gray-500 italic tracking-widest font-serif"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5, duration: 1 }}
-                >
-                  {loading ? <Skeleton width={150} /> : event?.eventCategory}
-                </motion.h2> */}
-              </div>
-            </motion.section>
+
 
             {/* Event Details */}
             {loading ? (
@@ -181,131 +258,176 @@ const Eventdetails = () => {
             ) : error ? (
               <p className="text-red-500 relative">{error}</p>
             ) : (
-              <motion.div
-                className="relative flex flex-col md:flex-row items-center bg-gradient-to-br from-gray-100 to-gray-100 rounded-lg shadow-lg overflow-hidden w-full max-w-4xl mb-16 transition-transform transform hover:scale-105 border border-gray-200 mt-0"
-                initial={{ opacity: 0, y: 160 }}
-                animate={{ opacity: 1, y: 150 }}
-                transition={{
-                  duration: 0.8,
-                  ease: "easeOut",
-                }}
-              >
-                {/* Copy Link Button */}
-                <button
-                  onClick={() => {
-                    if (navigator.clipboard) {
-                      navigator.clipboard.writeText(window.location.href)
-                        .then(() => {
-                          toast.success("Link copied to clipboard!", {
-                            position: "top-right",
-                            autoClose: 3000,
-                            hideProgressBar: true,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            theme: "colored",
-                          });
-                        })
-                        .catch((err) => {
-                          toast.error("Failed to copy link. Please try again.", {
-                            position: "top-right",
-                            autoClose: 3000,
-                            hideProgressBar: true,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            theme: "colored",
-                          });
-                          console.error("Clipboard error:", err);
-                        });
-                    } else {
-                      toast.error("Clipboard API not supported in this browser.", {
-                        position: "top-right",
-                        autoClose: 3000,
-                        hideProgressBar: true,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        theme: "colored",
-                      });
-                    }
+
+
+              <div className="flex flex-row gap-6 h-auto w-full justify-center">
+                {/* Left Card */}
+                <motion.div
+                  className="relative flex flex-col md:flex-row items-center bg-gradient-to-br from-gray-50 to-gray-50 rounded-2xl shadow-lg overflow-hidden w-full md:w-5/6 mb-16 transition-transform transform hover:scale-105 border border-gray-200 h-full m-auto"
+                  initial={{ opacity: 0, y: 160 }}
+                  animate={{ opacity: 1, y: 150 }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeOut",
                   }}
-                  className="absolute top-4 right-4 bg-gray-200 text-black font-medium text-sm px-3 py-1 rounded-lg  transition duration-300 border border-gray-300 shadow-sm"
                 >
-                  Copy Link
-                </button>
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes -z-10 opacity-10"></div>
 
-                {/* Event Image */}
-                <div className="w-full md:w-1/2 h-60 md:h-80 relative ml-0">
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-green-400 to-green-600 text-white text-xs font-semibold py-1 px-3 rounded-full shadow-md">
-                    {event.eventparticipationCategory === "Single" ? "Individual Event" : "Team Event"}
+
+                  {/* Event Image */}
+                  <div className="w-full md:w-1/2 h-60 md:h-80 relative border-r border-gray-200">
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-green-400 to-green-600 text-white text-xs font-semibold py-1 px-3 rounded-full shadow-md">
+                      {event.eventparticipationCategory === "Single"
+                        ? "Individual Event"
+                        : "Team Event"}
+                    </div>
+                    <img
+                      className="object-cover w-full h-full rounded-l-lg"
+                      src={event?.eventImage}
+                      alt={event?.eventTitle}
+                      draggable="false"
+                      loading="lazy"
+                    />
+                    <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-t from-black via-transparent to-transparent z-0 opacity-40"></div>
                   </div>
-                  <img
-                    className="object-cover w-full h-full rounded-l-lg"
-                    src={event?.eventImage}
-                    alt={event?.eventTitle}
-                    draggable="false"
-                    loading="lazy"
-                  />
-                  <div className="absolute left-0 top-0 h-full w-full bg-gradient-to-t from-black via-transparent to-transparent z-0"></div>
 
-                </div>
+                  {/* Event Info */}
+                  <div className="flex flex-col items-center md:items-start w-full md:w-1/2 p-8 space-y-6 h-full justify-stretch text-center md:text-left font-sans">
 
-                {/* Event Info */}
-                <div className="flex flex-col items-center md:items-start w-full md:w-1/2 p-8 space-y-6 h-full justify-between text-center md:text-left font-sans">
-                  {/* Date */}
-                  <p className="text-lg text-gray-700">
-                    <strong>Date:</strong> {formatDate(event?.eventDate)}
-                  </p>
-
-                  {/* Time */}
-                  <p className="text-lg text-gray-700 text-nowrap">
-                    <strong>Timings:</strong> {formatTime(event?.eventTimings.from)} - {formatTime(event?.eventTimings.to)}
-                  </p>
-
-                  {/* Venue */}
-                  <p className="text-lg text-gray-700">
-                    <strong>Venue:</strong> {event?.eventVenue}
-                  </p>
-
-                  {/* Event Fees */}
-                  <p className="text-lg text-gray-700">
-                    <strong>Registration Fee:</strong>{" "}
-                    {event?.eventFees !== 0
-                      ? `₹${event?.eventFees} per ${event.eventparticipationCategory === "Single" ? "Individual" : "Team"}`
-                      : "FREE"}
-                  </p>
-
-                  {/* Conditionally Render Notes */}
-                  {event?.eventNote && (
-                    <p className="text-lg text-gray-700 italic">
-                      <strong>Note:</strong> {event?.eventNote}
+                    <p className="text-lg text-gray-700">
+                      <strong>Date:</strong> {formatDate(event?.eventDate)}
                     </p>
-                  )}
-
-                  {/* Conditional Button/Message */}
-                  <div className="w-full mt-4">
-                    {event?.eventFees === 0 ? (
-                      <div className="text-green-600 font-semibold text-lg">
-                        <button
-                          onClick={() => window.open(event?.erpLink, "_blank")}
-                          className="bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white font-semibold w-full px-6 py-3 rounded-md shadow-lg transform transition duration-300 flex justify-center items-center text-sm"
-                          disabled={true}
-                        >
-                          No Registration Fee Required
-                        </button>
-                      </div>
-                    ) : (
-                      <button
-                        onClick={() => window.open(event?.erpLink, "_blank")}
-                        className="bg-gradient-to-r from-green-400 to-green-600  text-white font-semibold w-full px-6 py-3 rounded-md shadow-lg transform transition duration-300 flex justify-center items-center"
-                      >
-                        Register Now <FaArrowRight className="ml-2" />
-                      </button>
+                    <p className="text-lg text-gray-700">
+                      <strong>Timings:</strong>{" "}
+                      {formatTime(event?.eventTimings.from)} - {formatTime(event?.eventTimings.to)}
+                    </p>
+                    <p className="text-lg text-gray-700">
+                      <strong>Venue:</strong> {event?.eventVenue}
+                    </p>
+                    <p className="text-lg text-gray-700">
+                      <strong>Registration Fee:</strong>{" "}
+                      {event?.eventFees !== 0
+                        ? `₹${event?.eventFees} per ${event.eventparticipationCategory === "Single"
+                          ? "Individual"
+                          : "Team"
+                        }`
+                        : "FREE"}
+                    </p>
+                    {event?.eventNote && (
+                      <p className="text-lg text-gray-700 italic">
+                        <strong>Note:</strong> {event?.eventNote}
+                      </p>
                     )}
+                    {/* <div className="w-full mt-4">
+        {event?.eventFees === 0 ? (
+          <button
+            className="bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold w-full px-6 py-3 rounded-md shadow-lg flex justify-center items-center text-sm"
+            disabled
+          >
+            No Registration Fee Required
+          </button>
+        ) : (
+          <button
+            onClick={() => window.open(event?.erpLink, "_blank")}
+            className="bg-gradient-to-r from-green-400 to-green-600 text-white font-semibold w-full px-6 py-3 rounded-md shadow-lg flex justify-center items-center"
+          >
+            Register Now <FaArrowRight className="ml-2" />
+          </button>
+        )}
+      </div> */}
+
+
+                    <div className="w-full mt-4">
+                      <button
+                        onClick={() => window.open(event?.ruleBook, "_blank")}
+                        className="bg-gradient-to-r from-gray-500 to-gray-500 text-white font-semibold w-full px-6 py-3 rounded-md shadow-lg flex justify-center items-center"
+                      >
+                        Download Rule Book <FaDownload className="ml-2" />
+                      </button>
+                    </div>
+
                   </div>
-                </div>
-              </motion.div>
+
+
+                  {/* Right Card */}
+                  <motion.div
+                    className="w-full md:w-1/2 h-60 md:h-80 relative bg-gray-50 p-4 border-l border-gray-400 rounded-r-lg border-dotted"
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: "easeOut",
+                    }}
+                  >
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes z-0 opacity-10"></div>
+                    <div className="border-b border-gray-300 pb-2 mb-4">
+                      <h1 className="text-xl font-semibold text-gray-800">Register</h1>
+                      <button
+                        onClick={() => {
+                          if (navigator.clipboard) {
+                            navigator.clipboard.writeText(window.location.href)
+                              .then(() => {
+                                toast.success("Link copied to clipboard!", {
+                                  position: "top-right",
+                                  autoClose: 3000,
+                                  hideProgressBar: true,
+                                  closeOnClick: true,
+                                  pauseOnHover: true,
+                                  draggable: true,
+                                  theme: "colored",
+                                });
+                              })
+                              .catch((err) => {
+                                toast.error("Failed to copy link. Please try again.", {
+                                  position: "top-right",
+                                  autoClose: 3000,
+                                  hideProgressBar: true,
+                                  closeOnClick: true,
+                                  pauseOnHover: true,
+                                  draggable: true,
+                                  theme: "colored",
+                                });
+                                console.error("Clipboard error:", err);
+                              });
+                          } else {
+                            toast.error("Clipboard API not supported in this browser.", {
+                              position: "top-right",
+                              autoClose: 3000,
+                              hideProgressBar: true,
+                              closeOnClick: true,
+                              pauseOnHover: true,
+                              draggable: true,
+                              theme: "colored",
+                            });
+                          }
+                        }}
+                        className="absolute top-4 right-4 bg-gray-200 text-black font-medium text-sm px-3 py-1 rounded-lg  transition duration-300 border border-gray-300"
+                      >
+                        Copy Link
+                      </button>
+                    </div>
+                    {!event?.erpLink &&
+                      <Dynamicfield additionalFields={event?.additionalFields} />
+                    }
+
+                    {event?.erpLink && (
+                      <a
+                        href={event.erpLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative inline-block px-6 py-3 font-semibold text-white bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full overflow-hidden shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-blue-400"
+                      >
+                        <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-50 rounded-full"></span>
+                        <span className="relative z-10">Register Now</span>
+                      </a>
+                    )}
+
+                  </motion.div>
+
+                </motion.div>
+
+
+              </div>
 
 
 
@@ -313,8 +435,37 @@ const Eventdetails = () => {
             )}
 
 
+            <motion.div
+              className="max-w-6xl mx-auto px-6 md:px-0 mt-24"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 40 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+            >
+              <h3 className="text-3xl font-extrabold text-gray-800 text-center mb-10  relative font-sans  tracking-tight">
+                Event Description
+                <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-[5px] bg-gradient-to-r from-[#351332] to-[#9e1c9e] mt-1 rounded-full"></span>
+              </h3>
+              <motion.p
+                className="text-2xl text-gray-600 leading-relaxed text-center squada-one-regular tracking-wide"
+              >
 
-            <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-3 mt-36 relative font-sans  tracking-tight">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: event?.eventDescription || "No description available.",
+                  }}
+                />
+
+
+              </motion.p>
+            </motion.div>
+
+
+
+
+            <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-3 mt-20 relative font-sans  tracking-tight">
               <motion.span
                 initial={{ opacity: 0, y: 100 }} // Start with the title off-screen and invisible
                 whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and position when in view
@@ -335,8 +486,8 @@ const Eventdetails = () => {
             <div className="flex justify-center items-center font-sans relative z-50">
               <div
                 className={`${event?.eventCoordinators?.length === 1
-                    ? "flex flex-col items-center gap-4 w-full max-w-sm"
-                    : "grid grid-cols-2 gap-x-4 w-full max-w-sm"
+                  ? "flex flex-col items-center gap-4 w-full max-w-sm"
+                  : "grid grid-cols-2 gap-x-4 w-full max-w-sm"
                   } md:flex md:gap-8 md:justify-center`}
               >
                 {event?.eventCoordinators?.map((coordinator, index) => (
@@ -359,6 +510,207 @@ const Eventdetails = () => {
         </Parallax>
 
 
+
+        <Drawer
+          open={isOpen}
+          onClose={() => window.location.href = `/skit-pravah-2025-events/${event?.eventCategory}`}
+          style={{ zIndex: 1000 }}
+          className="w-screen h-screen  flex flex-col bg-white"
+        >
+            {/* <Confetti
+                width={500}
+                height={50}
+              /> */}
+          <Drawer.Header title="Event Registration" className="border-b border-gray-300"  />
+          <Drawer.Items>
+          {/* Main Content Area */}
+
+          
+
+          <div className="flex-grow overflow-y-auto px-0 py-6 scrollbar-hide ">
+
+          {/* <h2 className="text-2xl font-bold text-gray-800 font-sans mb-4">{event?.eventTitle}</h2> */}
+<div className="relative">
+            <img
+              className="object-cover w-full h-52 rounded-2xl  shadow-md"
+              src={event?.eventImage}
+              alt={event?.eventTitle}
+              draggable="false"
+              loading="lazy"
+            />
+
+<button
+        onClick={handleShare}
+        className="text-gray-600 text-2xl absolute top-2 right-2 bg-white rounded-xl p-2 border border-gray-100 shadow-lg"
+      >
+        <FaShareAlt />
+      </button>
+
+</div>
+
+            <div className="mt-6 space-y-5">
+            
+{/* <hr className="border-gray-100 w-full" /> */}
+<div className="flex justify-between items-center gap-4">
+               
+
+<h2 className="text-2xl font-semibold text-gray-800 font-sans">{event?.eventTitle}</h2>
+
+
+
+      <div id="countdown" ></div>
+            
+              </div>
+              
+              {/* <hr className="mt-4 border-gray-100 w-full" /> */}
+              
+              <a
+                href={event.ruleBook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full px-6 py-3 text-center text-white bg-gray-800 hover:bg-gray-700 rounded-lg shadow-md transition-all duration-300 focus:outline-none focus:ring focus:ring-gray-600 flex justify-between align-middle items-center gap-2 font-normal"
+              >
+                Download Event Rulebook <FaDownload />
+              </a>
+
+              {/* <hr className="mt-4 border-gray-100 w-full shadow-xl" /> */}
+
+              <div className="bg-gray-50 p-3 rounded-lg border border-gray-300 shadow-sm mt-4">
+
+              <div className="flex items-center mb-2 justify-between">
+                <span className="text-sm font-medium text-gray-600">Date:</span>
+                <p className="ml-2 text-sm text-gray-800">{formatDate(event?.eventDate)}</p>
+                
+              </div>
+             
+              <hr className="border-gray-100 w-full" />
+
+              <div className="flex items-center mb-2 justify-between mt-2">
+                <span className="text-sm font-medium text-gray-600">Time:</span>
+                <p className="ml-2 text-sm text-gray-800">
+                  {formatTime(event?.eventTimings.from)} - {formatTime(event?.eventTimings.to)}
+                </p>
+              </div>
+
+              <hr className="border-gray-100 w-full" />
+
+              <div className="flex items-center mb-2 justify-between mt-2">
+                <span className="text-sm font-medium text-gray-600">Venue:</span>
+                <p className="ml-2 text-sm text-gray-800">{event?.eventVenue}</p>
+              </div>
+
+              <hr className="border-gray-100 w-full" />
+
+              <div className="flex items-center justify-between mt-2">
+                <span className="text-sm font-medium text-gray-600">Registration Fee:</span>
+                <p className="ml-2 text-sm text-gray-800">
+                  {event?.eventFees !== 0
+                    ? `₹${event?.eventFees} per ${event.eventparticipationCategory === "Single" ? "Individual" : "Team"
+                    }`
+                    : "FREE"}
+                </p>
+              </div>
+
+              </div>
+              
+            </div>
+           
+            <div className="bg-white p-3 rounded-lg mt-4 shadow-lg w-full shadow-gray-50 border ">
+            <div className="text-justify">
+              <span className='text-black font-bold '>Description : </span>
+              <span className="text-pretty text-justify text-sm mt-4 text-gray-600 font-sans font-normal"
+                dangerouslySetInnerHTML={{
+                  __html: event?.eventDescription || "No description available.",
+                }}
+              />
+           
+           </div>
+            </div>
+            <div className="flex flex-col items-center">
+      {/* Main Share Button */}
+
+
+    </div>
+           
+
+
+            <div className="flex justify-center items-center font-sans relative mb-20">
+              <div
+                className={`${event?.eventCoordinators?.length === 1
+                  ? "grid grid-cols-2 gap-x-4 w-full max-w-sm"
+                  : "grid grid-cols-2 gap-x-4 w-full max-w-sm"
+                  } md:flex md:gap-8 md:justify-center`}
+              >
+                {event?.eventCoordinators?.map((coordinator, index) => (
+                  <Coordinator
+                    key={index}
+                    name={coordinator.name}
+                    number={coordinator.number}
+                  />
+                ))}
+              </div>
+            </div>
+
+
+
+          </div>
+
+          {/* Fixed Footer Section */}
+          <div className="bg-gray-50 border-t border-gray-300 p-6 w-full fixed bottom-0 left-0 z-10">
+            <div className="flex justify-between items-center flex-col gap-4">
+  
+
+              {event?.erpLink && (
+                <a
+                  href={event.erpLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative px-6 py-3 font-semibold text-black rounded-xl w-full text-center overflow-hidden flex justify-between items-center gap-2 text-md bg-opacity-30 backdrop-blur-md border border-black shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+                  style={{
+                    backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1))",
+                  }}
+                >
+                  <span className="relative z-10">Register Now</span>
+                  <IoMdArrowDroprightCircle className="text-2xl" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 opacity-30 animate-move-background"></div>
+                </a>
+              )}
+
+
+
+{!event?.erpLink && (
+                <a
+                 onClick={() => setBottomdrawer(true)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative px-6 py-3 font-semibold text-black rounded-lg w-full text-center overflow-hidden flex justify-between items-center gap-2 text-md bg-opacity-30 backdrop-blur-md border border-black shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+                  style={{
+                    backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1))",
+                  }}
+                >
+                  <span className="relative z-10">Register Now</span>
+                  <IoMdArrowDroprightCircle className="text-2xl" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 opacity-30 animate-move-background"></div>
+                </a>
+              )}
+
+            </div>
+          </div>
+          </Drawer.Items>
+        </Drawer>
+
+
+
+
+
+  <Drawer open={bottomdrawer} onClose={() => setBottomdrawer(false)} position="bottom" style={{zIndex:20000}} className="shadow-2xl border-t border-gray-300 rounded-t-xl bg-gray-50">
+        <Drawer.Header title="Register" />
+        <Drawer.Items>
+        <div className="rounded-xl p-4">
+              <Dynamicfield additionalFields={event?.additionalFields} />
+            </div>
+        </Drawer.Items>
+      </Drawer>
 
 
         <motion.div

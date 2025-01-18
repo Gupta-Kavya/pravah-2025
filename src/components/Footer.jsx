@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaLink, FaHeadset, FaGlobe, FaPhoneVolume } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -26,7 +27,7 @@ const Footer = () => {
                             </h2>
                             <ul className="text-white font-medium text-sm">
                                 <li>
-                                    <a href="#" className="hover:underline">
+                                    <a href="/the-team-behind-skit-pravah-2025" className="hover:underline">
                                         Team Pravah
                                     </a>
                                 </li>
@@ -130,6 +131,11 @@ const Footer = () => {
                                         >
                                             9001928479
                                         </a>
+                                        <br />
+                                        Uday Singh Sisodia -{" "}
+                                        <a href="tel:9587483461" className="underline hover:text-gray-400 transition">
+                                        7733917219
+                                        </a>
                                     </p>
                                 </li>
                                 <li>
@@ -197,14 +203,14 @@ const Footer = () => {
 
                         <span className="text-sm text-white">
                             Designed and Developed by{" "}
-                            <a
-                                href="/skit-pravah-2025-web-team"
+                            <Link
+                                to={"/skit-pravah-2025-web-team"}
                                 className="text-yellow-100 hover:underline"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 Pravah Web Team
-                            </a>
+                            </Link>
                         </span>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ const Coordinator = ({ name, number }) => {
           }`} // Adjust padding if number is not present
       >
         {/* Name */}
-        <h2 className="text-sm sm:text-lg font-semibold text-gray-800 font-sans">{name}</h2>
+        <h2 className="text-sm sm:text-lg font-semibold text-gray-800 font-sans capitalize">{name}</h2>
 
         {/* Call Button (Shown Only if the Phone Number Exists) */}
         {number && (

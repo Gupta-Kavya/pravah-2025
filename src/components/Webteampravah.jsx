@@ -4,6 +4,7 @@ import DesktopFooter from "./DesktopFooter";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaBehance } from "react-icons/fa";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { Helmet } from "react-helmet";
 
 const Webteampravah = () => {
   const profiles = [
@@ -44,6 +45,35 @@ const Webteampravah = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Pravah Web Team 2025 - Meet the Creators | SKIT</title>
+        <meta
+          name="description"
+          content="Meet the talented Pravah Web Team 2025 at SKIT, the creative minds behind the Pravah website. Learn about their journey and contributions."
+        />
+        <meta
+          name="keywords"
+          content="Pravah Web Team 2025, SKIT, Swami Keshvanand Institute of Technology, website team, developers, designers, Pravah 2025"
+        />
+        <meta
+          property="og:title"
+          content="Pravah Web Team 2025 - Meet the Creators | SKIT"
+        />
+        <meta
+          property="og:description"
+          content="Discover the team of passionate developers and designers who brought the Pravah 2025 website to life at SKIT."
+        />
+        <meta property="og:url" content="https://pravah.skit.ac.in/skit-pravah-2025-web-team" />
+        <meta
+          name="author"
+          content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+        />
+        <meta
+          name="organization"
+          content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
+        />
+      </Helmet>
+
       <Navbarr />
       <ParallaxProvider>
         <Parallax speed={-10}>
@@ -74,7 +104,7 @@ const Webteampravah = () => {
                       alt={profile.name}
                       className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-gray-200"
                       draggable="false"
-                    />   
+                    />
                     {/* <span className="absolute top-1 right-1 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                   PRO
                 </span> */}

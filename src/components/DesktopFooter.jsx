@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaLink, FaHeadset, FaPhoneVolume, FaGlobe, FaUsers } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 const DesktopFooter = () => {
   return (
@@ -30,7 +31,7 @@ const DesktopFooter = () => {
               </h2>
               <ul className="text-white font-medium text-sm">
                 <li className="mb-2">
-                  <a href="#">Team Pravah</a>
+                  <a href="/the-team-behind-skit-pravah-2025">Team Pravah</a>
                 </li>
                 <li className="mb-2">
                   <a href="/skit-pravah-2025-AAVEG">AAVEG</a>
@@ -143,7 +144,13 @@ const DesktopFooter = () => {
                   <a href="tel:9001928479" className="underline hover:text-gray-400 transition">
                     9001928479
                   </a>
+                  <br />
+                  Uday Singh Sisodia -{" "}
+                  <a href="tel:9587483461" className="underline hover:text-gray-400 transition">
+                    7733917219
+                  </a>
                 </p>
+
 
               </li>
 
@@ -178,14 +185,14 @@ const DesktopFooter = () => {
           <div className="flex sm:justify-center sm:mt-0 space-x-4">
             <span className="text-sm text-white mb-0">
               Designed and Developed by{" "}
-              <a
-                href="skit-pravah-2025-web-team"
+              <Link
+                to={"/skit-pravah-2025-web-team"}
                 className="text-gray-400 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Pravah Web Team
-              </a>
+              </Link>
             </span>
           </div>
         </div>

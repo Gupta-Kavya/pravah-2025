@@ -72,7 +72,7 @@ const Home = () => {
 
   ];
 
-  const [bgColor, setBgColor] = useState('bg-white');
+  const [bgColor, setBgColor] = useState('bg-transparent');
   const [textColor, settextColor] = useState('text-gray-700');
   const [filter, setFilter] = useState();
   const [announce, setAnnounce] = useState();
@@ -88,10 +88,11 @@ const Home = () => {
       setnavbarDisplay("hidden");
     } else if (destination.index === 0) {
       setAnnounce("block");
+      setBgColor('bg-transparent');
       isOpen ? setnavbarDisplay("hidden") : setnavbarDisplay("block")
 
     } else {
-      setBgColor('bg-white');
+      setBgColor('bg-transparent');
       settextColor("text-black");
       setFilter("");
       setAnnounce("hidden");
@@ -436,7 +437,7 @@ const Home = () => {
 
         <ReactFullpage
 
-          licenseKey={"YOUR_KEY_HERE"}
+          licenseKey={"jkh78@#gf"}
           scrollingSpeed={300}
           navigation={true}
           scrollOverflow={false}
@@ -451,22 +452,117 @@ const Home = () => {
               {/* Section 1 */}
               <div
                 className="section relative overflow-hidden bg-slate-100"
-                style={{
-                  overflowX: "hidden",
-                  // backgroundImage: "url('/background.jpg')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  position: "relative",
-                }}
+              // style={{
+              //   overflowX: "hidden",
+              //   backgroundImage: "url('/34592018_8190161.jpg')",
+              //   backgroundSize: "cover",
+              //   backgroundPosition: "center",
+              //   backgroundRepeat: "no-repeat",
+              //   position: "relative",
+              // }}
               >
 
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    backgroundImage: "url('https://res.cloudinary.com/dktkdi3sm/image/upload/v1736597477/a6zdfboooimxw2hp9hcz.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    opacity: 0.2, // Adjust the opacity here
+                    zIndex: 0, // Ensure it's behind the content
+                  }}
+                >
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes z-0"></div>
+                </div>
 
+
+
+
+                <AnimatePresence>
+
+{isOpen && (
+  <motion.div
+    initial={{ x: "-100%" }}
+    animate={{ x: 0 }}
+    transition={{ duration: 0.4, ease: "easeInOut" }}
+    exit={{ y: "100%" }}
+    style={{zIndex:1000}}
+    className="absolute inset-0 bg-slate-100 flex flex-col items-center h-screen z-50 justify-center"
+  >
+
+
+
+                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes -z-10 opacity-10"></div>
+                
+    <Confetti
+      width={3000}
+      height={1000}
+    />
+
+
+    <h1 className="text-6xl font-extrabold mb-6 text-gray-500 text-center">
+      Finally, it's happening!
+    </h1>
+
+
+    {/* Date */}
+    <p className="text-8xl font-extrabold text-black">
+      15th - 22nd February
+    </p>
+
+    {/* Close Button aligned to left center */}
+    <button
+      onClick={() => { setIsOpen(false); setnavbarDisplay("block"); }}
+      className="fixed top-4 right-4 px-6 py-3 bg-[#f55474] text-white rounded-full shadow-lg hover:bg-[#e14b6b] transition duration-300 font-semibold"
+    >
+      Close
+    </button>
+
+{/* 
+    <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
+      <img
+        src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
+        alt="Pravah 2025 - Incredible India | SKIT"
+        className="w-full object-cover transform lg:translate-y-[120px] 2xl:translate-y-[120px] opacity-30"
+      />
+    </div>
+
+
+    <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
+      <img
+        src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
+        alt="Pravah 2025 - Incredible India | SKIT"
+        className="w-full object-cover transform lg:translate-y-[50px] 2xl:translate-y-[50px] opacity-20"
+      />
+    </div>
+
+
+    <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
+      <img
+        src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151161/rb_2149158780_k69ryx.png"
+        alt="Pravah 2025 - Incredible India | SKIT"
+        className="w-full object-cover transform lg:translate-y-[250px] 2xl:translate-y-[250px] opacity-5"
+      />
+    </div> */}
+
+  
+
+
+  </motion.div>
+)}
+
+
+</AnimatePresence>
 
 
                 {!isOpen && (
                   <motion.div
-                    className="fixed bottom-2 right-2 z-50 cursor-pointer hidden sm:block"
+                    className="fixed bottom-2 right-2 z-50 cursor-pointer hidden sm:hidden"
                     onClick={() => { setIsOpen(true); setnavbarDisplay("hidden"); }}
                     style={{ zIndex: 1000 }}
 
@@ -483,22 +579,67 @@ const Home = () => {
 
 
                 <div className="relative h-screen w-screen overflow-hidden bg-slate-100 sm:hidden">
+
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      backgroundImage: "url('https://res.cloudinary.com/dktkdi3sm/image/upload/v1736597477/a6zdfboooimxw2hp9hcz.jpg')",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      opacity: 0.1, // Adjust the opacity here
+                      zIndex: 0, // Ensure it's behind the content
+                    }}
+                  >
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes z-0"></div>
+                  </div>
+
+
                   {/* Flex container for centering h1 and EventCountdown */}
+           
+
                   <div className="flex flex-col justify-center items-center min-h-screen px-4 sm:px-6">
                     {/* Logo Image */}
-                    <img src="logo-text.png" alt="Pravah Logo" className="w-3/4 sm:w-1/2 md:w-1/3 mb-4" />
+                    <motion.img
+                      src="logo-text.png"
+                      alt="Pravah Logo"
+                      className="w-3/4 sm:w-1/2 md:w-1/3 mb-4"
+                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 50 }}
+                      transition={{ duration: 0.5 }}
+                      viewport={{ once: false }}
+                    />
 
                     {/* Event Date */}
-                    <p className="text-lg sm:text-xl md:text-2xl font-medium text-black mb-8 abeezee-regular mt-5">
+                    <motion.p
+                      className="text-lg sm:text-xl md:text-2xl font-medium text-black mb-8 abeezee-regular mt-5"
+                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 50 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      viewport={{ once: false }}
+                    >
                       February 15<sup>th</sup> - February 22<sup>nd</sup>, 2025
-                    </p>
+                    </motion.p>
 
                     {/* Explore Button */}
-                    <button className="relative px-8 py-4 text-xl font-semibold text-white bg-transparent rounded-full overflow-hidden group mb-20">
-                      <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-60 group-hover:opacity-40 rounded-full"></span>
-                      <span className="relative z-10">Explore Events </span>
-                    </button>
+                    <Link to={"/skit-pravah-2025-events"} >
+                      <motion.button
+                        className="relative px-8 py-4 text-xl font-semibold text-white bg-transparent rounded-full overflow-hidden group mb-20"
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        viewport={{ once: false }}
+                      >
+                        <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-60 group-hover:opacity-40 rounded-full"></span>
+                        <span className="relative z-10">Explore Events </span>
+                      </motion.button>
+                    </Link>
                   </div>
+
 
                   {/* Images with the background */}
                   <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 sm:block z-0 pointer-events-none hidden">
@@ -611,30 +752,31 @@ const Home = () => {
 
 
 
-                  {/* Dynamic Typing Effect */}
                   <motion.div
-                    initial={{ opacity: 0, y: 50 }}  // Start above the viewport
-                    whileInView={{ opacity: 1, y: 0 }}  // Animate to normal position
+                    initial={{ opacity: 0, y: 50 }} // Start above the viewport
+                    whileInView={{ opacity: 1, y: 0 }} // Animate to normal position
                     transition={{ duration: 1, ease: "easeOut" }}
                   >
                     <ReactTypingEffect
                       text={[
                         "Pravah 2025",
                         "Celebrating Incredible India",
+                        "Pravah 2025",
                         "The Silver Jubilee Year",
                       ]}
-                      className="text-7xl sm:text-7xl 2xl:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-indigo-500 to-pink-500 hidden sm:block"
+                      className="text-7xl sm:text-7xl 2xl:text-8xl font-extrabold text-transparent hidden sm:block"
                       speed={200}
                       eraseDelay={100}
                       typingDelay={300}
                       displayTextRenderer={(text) => (
-                        <h1 className="text-7xl sm:text-7xl 2xl:text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-800 via-indigo-700 to-pink-600">
+                        <h1 className="text-7xl sm:text-7xl 2xl:text-8xl font-extrabold text-blue-800 outline-2">
                           {text}
                           <span className="text-black">|</span>
                         </h1>
                       )}
                     />
                   </motion.div>
+
 
                   <div className="mt-10 mb-20 hidden sm:block">
                     <motion.div
@@ -649,82 +791,7 @@ const Home = () => {
 
 
 
-                  <AnimatePresence>
-
-                  {isOpen && (
-                    <motion.div
-                      initial={{ x: "-100%" }}
-                      animate={{ x: 0 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
-                      exit={{ y: "100%" }}
-                      className="absolute inset-0 bg-slate-100 flex flex-col items-center h-screen z-0"
-                    >
-
-                      <Confetti
-                        width={3000}
-                        height={1000}
-                      />
-
-
-                      <h1 className="text-6xl font-extrabold mb-6 text-gray-500 text-center">
-                        Finally, it's happening!
-                      </h1>
-
-
-                      {/* Date */}
-                      <p className="text-8xl font-extrabold text-black">
-                        15th - 22nd February
-                      </p>
-
-                      {/* Close Button aligned to left center */}
-                      <button
-                        onClick={() => { setIsOpen(false); setnavbarDisplay("block"); }}
-                        className="fixed top-4 right-4 px-6 py-3 bg-[#f55474] text-white rounded-full shadow-lg hover:bg-[#e14b6b] transition duration-300 font-semibold"
-                      >
-                        Close
-                      </button>
-
-
-                      <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
-                        <img
-                          src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
-                          alt="Pravah 2025 - Incredible India | SKIT"
-                          className="w-full object-cover transform lg:translate-y-[120px] 2xl:translate-y-[120px] opacity-30"
-                        />
-                      </div>
-
-
-                      <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
-                        <img
-                          src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
-                          alt="Pravah 2025 - Incredible India | SKIT"
-                          className="w-full object-cover transform lg:translate-y-[50px] 2xl:translate-y-[50px] opacity-20"
-                        />
-                      </div>
-
-
-                      <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
-                        <img
-                          src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151161/rb_2149158780_k69ryx.png"
-                          alt="Pravah 2025 - Incredible India | SKIT"
-                          className="w-full object-cover transform lg:translate-y-[250px] 2xl:translate-y-[250px] opacity-5"
-                        />
-                      </div>
-
-                      <div className="absolute -bottom-0 -left-20 w-96 hidden sm:block z-0 pointer-events-none">
-                        <img
-                          src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151201/rb_24869_k7ycdf.png"
-                          alt="Pravah 2025 - Incredible India | SKIT"
-                          className="w-full object-cover transform"
-                        />
-                      </div>
-
-
-                    </motion.div>
-                  )}
-
-
-</AnimatePresence>
+        
 
 
 
@@ -812,6 +879,8 @@ const Home = () => {
 
 
 
+
+
                 <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-20 pointer-events-none">
                   <img
                     src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1735652378/file_9_zso7ew.png"
@@ -836,6 +905,15 @@ const Home = () => {
                     src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[210px] opacity-20"
+                  />
+                </div>
+
+
+                <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-0 pointer-events-none">
+                  <img
+                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736597567/yva3n1tkz7xkfswpvmg7.png"
+                    alt="Pravah 2025 - Incredible India | SKIT"
+                    className="w-full object-cover transform lg:translate-y-[0px] 2xl:translate-y-[210px] opacity-5"
                   />
                 </div>
 
@@ -1156,6 +1234,10 @@ const Home = () => {
 
 
 
+                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes -z-10 opacity-10"></div>
+               
+
+
                 <div className="absolute bottom-4 right-4 z-50 hidden sm:block" style={{ zIndex: 1000 }}>
                   <button
                     onClick={handleAudioToggle}
@@ -1195,7 +1277,7 @@ const Home = () => {
                   {/* Slider container animation with whileInView */}
                   <div
                     ref={scrollRef}
-                    className="space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide lg:mb-80 xl:mb-0 flex z-50 relative bg-slate-100"
+                    className="space-x-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide lg:mb-80 xl:mb-0 flex z-50 relative bg-transparent"
                     initial={{ y: 300, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 2, ease: "easeOut" }}
@@ -1319,7 +1401,7 @@ const Home = () => {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
-                
+
                 }}
               >
 
@@ -1429,6 +1511,10 @@ const Home = () => {
               >
 
 
+
+
+                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes z-0 opacity-10"></div>
+            
                 {/* desktop */}
 
 
@@ -1622,6 +1708,29 @@ const Home = () => {
                   />
                 </div>
 
+
+
+                
+                <div
+                          style={{
+                            position: "absolute",
+                            top: 0,
+                            left: 0,
+                            width: "100%",
+                            height: "100%",
+                            backgroundImage: "url('https://res.cloudinary.com/dktkdi3sm/image/upload/v1736757952/vsezwa26ofmiwqk8ivrn.jpg')",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            backgroundRepeat: "no-repeat",
+                            opacity: 0.1, // Adjust the opacity here
+                            zIndex: 0, // Ensure it's behind the content
+                          }}
+                        >
+                          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes z-0"></div>
+                        </div>
+
+
+
                 {/* Event Cards */}
                 <div className="space-y-6 top-16 relative sm:hidden hidden">
                   {events2.map((event, index) => (
@@ -1662,7 +1771,7 @@ const Home = () => {
                   whileInView={{ y: 20, opacity: 1 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                  Former Celebrity Guests
+                  Former Celebrity Stars
                 </motion.h2>
 
                 <motion.h2
@@ -1677,7 +1786,7 @@ const Home = () => {
                 <Carousel celebrities={celebrities} frameImage={"/mandala-frame.png"} />
 
 
-          
+
 
 
                 <div className="absolute -bottom-20  left-0 w-full sm:block z-0  hidden">
@@ -1704,7 +1813,7 @@ const Home = () => {
                   transition={{ duration: 1 }}
                 >
                   <img
-                    src="/https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
+                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full h-auto object-cover transform translate-y-[0px] translate-x-0 opacity-30"
                   />
@@ -1712,7 +1821,7 @@ const Home = () => {
 
                 <div className="absolute -bottom-0 left-0 w-full sm:hidden pointer-events-none -z-20">
                   <img
-                    src="/https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151161/rb_2149158780_k69ryx.png"
+                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151161/rb_2149158780_k69ryx.png"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full h-auto object-cover transform translate-y-[0px] translate-x-0 opacity-10"
                   />
@@ -1720,21 +1829,9 @@ const Home = () => {
 
 
 
-                {/* 
-                <div className="absolute bottom-0 left-0 w-full hidden sm:block z-0">
-                  <motion.img
-                    src="rb_38558.png"
-                    alt="Pravah 2025 - Incredible India | SKIT"
-                    className="w-full object-cover transform opacity-5"
-                    initial={{ translateY: 150 }}
-                    whileInView={{ translateY: 150 }}
-                    viewport={{ once: false, amount: 0 }}
-                    transition={{
-                      duration: 0.3,
-                      ease: "easeOut",
-                    }}
-                  />
-                </div> */}
+
+
+
 
               </div>
 
@@ -1781,6 +1878,9 @@ const Home = () => {
                     zIndex: 1,
                   }}
                 />
+
+
+<div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes z-0 opacity-10"></div>
 
                 <div className="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2 opacity-50 sm:hidden">
                   <img

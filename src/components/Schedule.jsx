@@ -6,6 +6,7 @@ import { FaCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import { Helmet } from 'react-helmet';
+import Comingsoon from './Comingsoon';
 
 const Schedule = () => {
     const [events, setEvents] = useState([]);
@@ -113,8 +114,8 @@ const Schedule = () => {
             <Navbarr />
             <ParallaxProvider>
                 <Parallax speed={-10}>
-
-                    <main className="min-h-screen px-6 md:px-12 mt-16 relative mb-40">
+<Comingsoon />
+                    <main className="min-h-screen px-6 md:px-12 mt-16 relative mb-40 hidden">
                         <motion.section
                             className="text-center space-y-8"
                             initial={{ opacity: 0, y: -50 }}

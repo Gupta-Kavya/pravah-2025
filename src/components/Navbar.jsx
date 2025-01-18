@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom'; // Import useLocation to detect active link
 import '../style.css';
 
-const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay , logo }) => {
+const Navbarr = ({ bgColor = "bg-slate-100", textColor, filter, announce, navbarDisplay , logo , eventName }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const location = useLocation(); // Get the current location
@@ -17,6 +17,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay , logo })
   };
 
   useEffect(() => {
+    // alert(bgColor);
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setIsDesktop(true);
@@ -55,18 +56,19 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay , logo })
 
 
         {/* Navbar */}
-        <div className="flex items-center justify-between mx-auto px-4 py-4 dynapuff bg-slate-100">
+        <div className={`flex items-center justify-between mx-auto px-4 py-4 dynapuff ${isDesktop ? bgColor : 'bg-slate-100'}`}>
+          
           {/* Left Links (for desktop) */}
           <div className="hidden md:flex space-x-8 items-center flex-grow justify-start">
-            <Link
-              to="/"
-              className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
-            >
+          <a 
+  href={`/skit-pravah-2025?_=${new Date().getTime()}`}
+  className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
+>
               HOME
               <span
                 className={`absolute bottom-0 left-0 h-1 bg-yellow-900 rounded-full transition-all duration-500 group-hover:w-full ${isActiveLink('/skit-pravah-2025') || isActiveLink('/') ? 'w-full' : 'w-0'}`}
               ></span>
-            </Link>
+            </a>
             <Link
               to="/skit-pravah-2025-events"
               className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
@@ -88,7 +90,7 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay , logo })
           </div>
 
           {/* Logo (Centered) */}
-          <a href="/skit-pravah-2025">
+          <a href={`/skit-pravah-2025?_=${new Date().getTime()}`}>
             <div className="sm:flex sm:justify-center sm:items-center flex-grow">
 
               <img
@@ -143,18 +145,15 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay , logo })
 
           </div>
 
+
+
+
           {/* Toggler Button for Mobile */}
           <button
-            className="md:hidden text-yellow-800 focus:outline-none"
+            className="md:hidden text-black focus:outline-none text-3xl"
             onClick={toggleNavbar}
           >
-            <motion.img
-              src="https://cdn.iconscout.com/icon/free/png-256/free-diwali-rangoli-icon-download-in-svg-png-gif-file-formats--decoration-festival-celebration-pack-days-icons-1579239.png" // Replace with the path to your image
-              alt="Menu Icon"
-              className="h-8 w-8 transform transition-transform duration-300"
-              animate={{ rotate: isOpen ? 90 : 0 }}
-              transition={{ duration: 0.3 }}
-            />
+☰
           </button>
         </div>
 
@@ -209,6 +208,12 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay , logo })
               ABOUT US
             </Link>
             <Link
+              to="/skit-pravah-2025-events-schedule"
+              className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
+            >
+              EVENT SCHEDULE
+            </Link>
+            <Link
               to="/skit-pravah-2025-sponsors"
               className="text-lg font-medium text-black hover:text-yellow-600 transition pb-4"
             >
@@ -231,6 +236,48 @@ const Navbarr = ({ bgColor, textColor, filter, announce, navbarDisplay , logo })
 
         </motion.div>
       </nav>
+
+
+      <motion.section
+                            className={`text-center space-y-8 mt-6 ${eventName ? "block" : "hidden"} `}
+                            initial={{ opacity: 0, y: -50 }}
+                            animate={{ opacity: 1, y: 130 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                        >
+                           
+                                <div className="relative">
+                                    <motion.h1
+                                        className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black font-sans tracking-tight"
+                                    >
+                                        {eventName}
+                                        <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-28 h-[4px] bg-gradient-to-r from-[#581852] to-[#9e1c9e] mt-1 rounded-full"></span>
+                                    </motion.h1>
+                                </div>
+
+                           
+
+                            {/* <motion.div
+                                className="relative w-96 max-w-2xl"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.5, duration: 1 }}
+                            >
+                                <input
+                                    type="text"
+                                    placeholder={`Search ${eventcat} events...`}
+                                    value={searchQuery}
+                                    onChange={handleSearch}
+                                    className="w-full px-5 py-3 text-gray-800 bg-white bg-opacity-70 border border-gray-300 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent pr-12"
+                                    style={{ backdropFilter: 'blur(10px)' }}
+                                />
+                                <span className="absolute inset-y-0 right-4 flex items-center text-purple-600">
+                                    <FaSearch className="text-lg" />
+                                </span>
+
+                            </motion.div> */}
+                        </motion.section>
+
+
     </>
   );
 };

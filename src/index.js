@@ -35,11 +35,11 @@ import OneSignal from 'react-onesignal';
 import Webteampravah from './components/Webteampravah';
 
 
-console.log = () => {};
-console.warn = () => {};
-console.error = () => {};
-console.info = () => {};
-console.debug = () => {};
+console.log = () => { };
+console.warn = () => { };
+console.error = () => { };
+console.info = () => { };
+console.debug = () => { };
 
 
 const router = createBrowserRouter([
@@ -156,6 +156,12 @@ function Root() {
     <HelmetProvider>
       <Loader />
       <div className="hide-scrollbar">
+        {/* <AnimatedCursor innerStyle={{ zIndex: 10000 }} innerSize={8}
+          outerSize={9}
+          color='193, 11, 111'
+          outerAlpha={0.2}
+          innerScale={0.7}
+          outerScale={5} /> */}
         <RouterProvider router={router} />
       </div>
     </HelmetProvider>

@@ -357,7 +357,7 @@ const Aaveg = () => {
         show={openModal}
         onClose={() => { setOpenModal(false); setIsLoading(true); }}
         style={{ zIndex: 2000 }}
-        size="lg"
+        size="xl"
         className='backdrop-filter backdrop-blur-lg'
       >
         <Modal.Header className="border-b border-gray-300 py-4 px-6 bg-gray-100 rounded-t-2xl">
