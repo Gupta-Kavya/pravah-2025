@@ -105,9 +105,9 @@ const Eventlist = () => {
             <ParallaxProvider>
                 <Parallax speed={-15}>
                     
-                    <main className="min-h-screen flex flex-col items-center px-6 md:px-0 mt-28 sm:mt-24 relative mb-72 gap-8">
+                    <main className="min-h-screen flex flex-col items-center px-4 sm:px-6 md:px-0 mt-8 sm:mt-24 relative mb-72 gap-8">
                     <motion.div
-    className="mt-20 flex flex-wrap gap-8 justify-center"
+    className="mt-20 grid grid-cols-2 sm:flex sm:flex-wrap gap-4 sm:gap-8 sm:justify-center"
     initial={{ opacity: 0, y: 160 }}
     whileInView={{ opacity: 1, y: 120 }}
     viewport={{ once: true, amount: 0.2 }}
@@ -116,8 +116,8 @@ const Eventlist = () => {
     {events.map((event) => (
         <div
     key={event._id}
-    className="flex flex-col items-center bg-gray-50 rounded-2xl overflow-hidden border hover:shadow-2xl transition-shadow duration-300 group shadow-lg 
-    w-full sm:w-[calc(33.33%-1rem)] md:w-[calc(25%-1rem)] lg:w-64"
+    className="flex flex-col items-center bg-gray-50 rounded-lg sm:rounded-2xl overflow-hidden border hover:shadow-2xl transition-shadow duration-300 group shadow-sm sm:shadow-lg 
+    w-full sm:w-[calc(33.33%-1rem)] md:w-[calc(25%-1rem)] lg:w-64 border-gray-300"
 >
 
 
@@ -125,31 +125,36 @@ const Eventlist = () => {
  
             <div className="relative w-full">
                 <img
-                    className="object-cover w-full h-40 rounded-t-2xl"
+                    className="object-cover w-full h-20 sm:h-40 rounded-t-lg sm:rounded-t-2xl"
                     src={event.eventImage}
                     alt={event.eventTitle}
                     loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
             </div>
-            <div className="flex flex-col items-center w-full mt-4 mb-4">
+            <div className={`flex flex-col items-center w-full mt-4 `}>
                 <h5
-                    className="text-lg font-semibold text-gray-800 transition-colors duration-300 font-sans text-center px-4"
+                    className="text-sm sm:text-lg font-semibold text-gray-800 transition-colors duration-300 font-sans text-center px-4"
                 >
                     {event.eventTitle}
                 </h5>
             </div>
-            <div className="w-full p-4 hidden">
+
+
+            <div className="w-full sm:p-4 p-2">
                 <button
                     onClick={() =>
                         navigate(`/skit-pravah-2025-events/${eventcat}/${event._id}`)
                     }
-                    className="w-full bg-gradient-to-r from-black via-gray-800 to-gray-900 hover:from-gray-900 hover:via-black hover:to-gray-800 text-white font-medium py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                    className="w-full bg-gradient-to-r from-black via-gray-800 to-gray-900 hover:from-gray-900 hover:via-black hover:to-gray-800 text-white font-medium py-2 sm:py-3 rounded-xl sm:rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 text-sm"
                 >
                     Book Your Spot
                     <FaArrowRight className="ml-2 inline-block" />
                 </button>
             </div>
+
+              
+
         </div>
     ))}
 </motion.div>
@@ -170,7 +175,7 @@ const Eventlist = () => {
                 </Parallax>
 
                 <motion.div
-                    className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-10"
+                    className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-10 hidden "
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 0.5 }}
                     viewport={{ once: true }}
@@ -183,7 +188,7 @@ const Eventlist = () => {
                     />
                 </motion.div>
 
-                <div className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-20">
+                <div className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-20 hidden">
                     <img
                         src="/rb_2149158780.png"
                         alt="Pravah 2025 - Incredible India | SKIT"

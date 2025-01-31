@@ -61,7 +61,36 @@ const Aaveg = () => {
     setFilteredEvents(filtered);
   };
 
-  
+
+
+  const esportsEvents = [
+    {
+      name: "BGMI",
+      registrationLink: "https://erp.skit.ac.in/register/r/pravah25bgmi",
+      prize: "₹200",
+    },
+    {
+      name: "Freefire",
+      registrationLink: "https://erp.skit.ac.in/register/r/pravah25freefir",
+      prize: "₹200",
+    },
+    {
+      name: "Valorant",
+      registrationLink: "https://erp.skit.ac.in/register/r/pravah25valo",
+      prize: "₹200",
+    },
+    {
+      name: "Real Cricket",
+      registrationLink: "https://erp.skit.ac.in/register/r/pravah25realcri",
+      prize: "₹50",
+    },
+    {
+      name: "Battlefronts",
+      registrationLink: "https://forms.gle/8eL3ZZMms9pr1ron8",
+      prize: "Free",
+    },
+  ];
+
   return (
 
     <div className=" text-gray-900 relative overflow-hidden  ">
@@ -126,7 +155,7 @@ const Aaveg = () => {
               </div>
 
 
-   
+
 
               {/* Search Bar */}
               <motion.div
@@ -192,12 +221,12 @@ const Aaveg = () => {
                   >
                     {/* Background Image with Opacity Overlay */}
                     <div
-                  className="absolute inset-0 w-full h-full bg-cover bg-center rounded-xl hidden"
-                  style={{
-                    backgroundImage: 'url(/rb_36380.png)',
-                    opacity: 0.1,
-                  }}
-                ></div>
+                      className="absolute inset-0 w-full h-full bg-cover bg-center rounded-xl hidden"
+                      style={{
+                        backgroundImage: 'url(/rb_36380.png)',
+                        opacity: 0.1,
+                      }}
+                    ></div>
 
                     <div className="relative w-72 sm:w-64 h-40 sm:h-32 p-3 group">
                       {/* Main Image */}
@@ -364,28 +393,57 @@ const Aaveg = () => {
           <h2 className="text-xl font-bold text-gray-800">{title} Registration</h2>
         </Modal.Header>
 
-        <Modal.Body className="h-[100vh] relative p-0 bg-gray-100 overflow-hidden" >
-          {isLoading && (
+        <Modal.Body className="h-[100vh] relative p-0 bg-gray-100 scrollbar-hide overflow-auto" >
+          {title !== "Esports" && isLoading && (
             <div className="flex items-center justify-center absolute inset-0 bg-white bg-opacity-60">
               <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-600 border-t-transparent"></div>
             </div>
           )}
 
-          <iframe
-            src={form}
-            frameBorder="0"
-            className={`w-full h-96 transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}  `}
-            onLoad={() => setIsLoading(false)}
-          />
+          {title !== "Esports" &&
+            <iframe
+              src={form}
+              frameBorder="0"
+              className={`w-full h-96 transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}  `}
+              onLoad={() => setIsLoading(false)}
+            />
+          }
+     <div className="p-6 max-w-4xl mx-auto">
+      {title === "Esports" && (
+        <div className="space-y-6">
+          {esportsEvents.map((event, index) => (
+            <div
+              key={index}
+              className="p-5 border border-gray-300 rounded-xl shadow-sm flex justify-between items-center bg-white hover:shadow-md transition-shadow"
+            >
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {event.name}
+                </h3>
+                <p className="text-sm text-gray-500">Registration Fee: {event.prize}</p>
+              </div>
+              <a
+                href={event.registrationLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-blue-500 text-white rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
+              >
+                Register Now
+              </a>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
         </Modal.Body>
 
-        <Modal.Footer className="bg-gray-50 border-t border-gray-300 py-5 px-6 shadow-md rounded-b-2xl">
-          <div className="flex justify-between items-center w-full">
+        <Modal.Footer className="bg-gray-50 border-t border-gray-300 shadow-md rounded-b-2xl">
+          {/* <div className="flex justify-between items-center w-full">
             <h3 className="text-lg font-semibold text-gray-800">Registration Fee</h3>
             <span className="text-xl font-bold text-gray-600">
               {fees === 0 ? "Available Soon" : "₹" + fees}
             </span>
-          </div>
+          </div> */}
         </Modal.Footer>
       </Modal>
 
@@ -398,7 +456,7 @@ const Aaveg = () => {
           setIsLoading(true);
         }}
         style={{ zIndex: 2000 }}
-        className="w-full sm:w-[500px] bg-white h-full shadow-lg"
+        className="w-full sm:w-[500px] bg-white h-screen shadow-lg "
       >
         {/* Header Section */}
         <Drawer.Header title={title + ' - Registration'}>
@@ -414,32 +472,64 @@ const Aaveg = () => {
         </Drawer.Header>
 
         {/* Drawer Content */}
-        <Drawer.Items className="h-[calc(100vh-120px)] overflow-hidden relative p-0 bg-gray-100">
+        <Drawer.Items className="h-[calc(100vh-120px)] overflow-hidden relative p-0">
           {/* Loading Spinner */}
-          {isLoading && (
+          {title !== "Esports" && isLoading && (
             <div className="flex items-center justify-center absolute inset-0 bg-white bg-opacity-50">
               <div className="animate-spin rounded-full h-16 w-16 border-4 border-gray-600 border-t-transparent"></div>
             </div>
           )}
 
           {/* Iframe Content */}
+
+          {title !== "Esports"  && 
           <iframe
             src={form}
             frameBorder="0"
             className={`w-full h-full transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
             onLoad={() => setIsLoading(false)}
           />
+
+        }
+
+<div className="p-0 max-w-4xl mx-auto">
+      {title === "Esports" && (
+        <div className="space-y-6">
+          {esportsEvents.map((event, index) => (
+            <div
+              key={index}
+              className="p-5 border border-gray-300 rounded-xl shadow-sm flex justify-between items-center bg-white hover:shadow-md transition-shadow"
+            >
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {event.name}
+                </h3>
+                <p className="text-sm text-gray-500">Registration Fee: {event.prize}</p>
+              </div>
+              <a
+                href={event.registrationLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-blue-500 text-white rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
+              >
+                Register Now
+              </a>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
         </Drawer.Items>
 
         {/* Footer Section */}
-        <div className="absolute bottom-0 left-0 w-full p-6 bg-gray-50 border-t border-gray-300 rounded-b-xl shadow-md">
+        {/* <div className="absolute bottom-0 left-0 w-full p-6 bg-gray-50 border-t border-gray-300 rounded-b-xl shadow-md">
           <div className="flex justify-between items-center">
             <h3 className="text-lg font-semibold text-gray-800">Registration Fee</h3>
             <span className="text-xl font-bold text-blue-700">
               {fees === 0 ? 'Available Soon' : `₹${fees}`}
             </span>
           </div>
-        </div>
+        </div> */}
       </Drawer>
 
 

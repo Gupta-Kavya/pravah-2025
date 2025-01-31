@@ -12,7 +12,11 @@ const Dynamicfield = ({ additionalFields }) => {
   // Extract categories based on the selected type
   const filteredCategories = additionalFields
     ?.filter((field) => field.type === selectedType)
-    ?.map((field) => ({ category: field.category, link: field.link }));
+    ?.map((field) => ({
+      category: field.category,
+      link: field.link,
+      price: field.price,
+    }));
 
   const handleTypeChange = (e) => {
     setSelectedType(e.target.value);
@@ -27,10 +31,12 @@ const Dynamicfield = ({ additionalFields }) => {
     filteredCategories?.find((cat) => cat.category === selectedCategory)?.link ||
     "";
 
+  const selectedCategoryPrice =
+    filteredCategories?.find((cat) => cat.category === selectedCategory)
+      ?.price || 0;
+
   return (
     <div>
-
-
       {/* Dropdown for Type */}
       <div className="w-full mb-4 z-10 relative">
         <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-2">
@@ -58,7 +64,7 @@ const Dynamicfield = ({ additionalFields }) => {
             htmlFor="category"
             className="block text-sm font-medium text-gray-700 mb-2"
           >
-            Category
+            Participation Category
           </label>
           <select
             id="category"
@@ -73,22 +79,28 @@ const Dynamicfield = ({ additionalFields }) => {
               </option>
             ))}
           </select>
+         
         </div>
       )}
 
       {/* Register Button */}
       {selectedCategory && (
-        <div className="mt-6 z-10 relative">
+        <div className="mt-4 z-10 relative">
           <a
             href={selectedCategoryLink}
             target="_blank"
             rel="noopener noreferrer"
           >
             <button className="w-full px-4 py-3 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400">
-              Register
+              Register ( ₹{selectedCategoryPrice} )
             </button>
           </a>
+           {/* Non-refundable Fee Note */}
+           <p className="text-sm text-gray-500 mt-2">
+            * Note: The fee once paid is non-refundable.
+          </p>
         </div>
+        
       )}
     </div>
   );

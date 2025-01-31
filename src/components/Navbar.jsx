@@ -56,7 +56,7 @@ const Navbarr = ({ bgColor = "bg-slate-100", textColor, filter, announce, navbar
 
 
         {/* Navbar */}
-        <div className={`flex items-center justify-between mx-auto px-4 py-4 dynapuff ${isDesktop ? bgColor : 'bg-slate-100'}`}>
+        <div className={`flex items-center justify-between mx-auto px-4 py-4 dynapuff ${isDesktop ? bgColor : 'bg-white'} sm:border-b border-gray-200 sm:border-none`}>
           
           {/* Left Links (for desktop) */}
           <div className="hidden md:flex space-x-8 items-center flex-grow justify-start">
@@ -239,7 +239,7 @@ const Navbarr = ({ bgColor = "bg-slate-100", textColor, filter, announce, navbar
 
 
       <motion.section
-                            className={`text-center space-y-8 mt-6 ${eventName ? "block" : "hidden"} `}
+                            className={`text-center mt-6 p-2  border-gray-200 sm:border-none ${eventName ? "block" : "hidden"} bg-white h-auto sm:bg-slate-100`}
                             initial={{ opacity: 0, y: -50 }}
                             animate={{ opacity: 1, y: 130 }}
                             transition={{ duration: 1, ease: "easeOut" }}
@@ -247,10 +247,10 @@ const Navbarr = ({ bgColor = "bg-slate-100", textColor, filter, announce, navbar
                            
                                 <div className="relative">
                                     <motion.h1
-                                        className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black font-sans tracking-tight"
+                                        className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black font-sans tracking-tight"
                                     >
                                         {eventName}
-                                        <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-28 h-[4px] bg-gradient-to-r from-[#581852] to-[#9e1c9e] mt-1 rounded-full"></span>
+                                        <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-28 h-[4px] bg-gradient-to-r from-[#581852] to-[#9e1c9e] mt-1 rounded-full  sm:block"></span>
                                     </motion.h1>
                                 </div>
 

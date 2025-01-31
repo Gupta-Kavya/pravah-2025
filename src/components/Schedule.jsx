@@ -18,17 +18,17 @@ const Schedule = () => {
             try {
                 const response = await fetch(`${process.env.REACT_APP_API_URL}api/events`);
                 const data = await response.json();
-                setEvents(data);
+
+                // Filter out events where schedule === false
+                const filteredEvents = data.filter(event => event.schedule !== false);
+
+                setEvents(filteredEvents);
 
                 // Determine the events for the current day
-                const today = new Date();
-                const todayEvents = data.filter((event) => {
-                    const eventDate = new Date(event.eventDate);
-                    return (
-                        eventDate.getFullYear() === today.getFullYear() &&
-                        eventDate.getMonth() === today.getMonth() &&
-                        eventDate.getDate() === today.getDate()
-                    );
+                const today = new Date().toISOString().split('T')[0];
+                const todayEvents = filteredEvents.filter((event) => {
+                    const eventDate = event.eventDate.split('T')[0];
+                    return eventDate === today;
                 });
 
                 setCurrentDayEvents(todayEvents);
@@ -42,13 +42,22 @@ const Schedule = () => {
 
     // Group events by days
     const groupedEvents = events.reduce((acc, event) => {
-        const eventDate = new Date(event.eventDate).toDateString();
+        // Extract the date portion (YYYY-MM-DD) from the ISO string
+        const eventDate = event.eventDate.split('T')[0];
         if (!acc[eventDate]) {
             acc[eventDate] = [];
         }
         acc[eventDate].push(event);
         return acc;
     }, {});
+
+    // Sort events by date
+    const sortedGroupedEvents = Object.entries(groupedEvents)
+        .sort(([dateA], [dateB]) => new Date(dateA) - new Date(dateB)) // Sort by date
+        .reduce((acc, [date, events]) => {
+            acc[date] = events;
+            return acc;
+        }, {});
 
     // Check if the current time is within event timings
     const isLiveEvent = (timings) => {
@@ -66,13 +75,13 @@ const Schedule = () => {
         return currentTime >= fromTime && currentTime <= toTime;
     };
 
-
     const formatTime = (time) => {
         const [hours, minutes] = time.split(':').map(Number);
         const period = hours >= 12 ? 'PM' : 'AM';
         const formattedHours = hours % 12 || 12;
         return `${formattedHours}:${minutes.toString().padStart(2, '0')} ${period}`;
     };
+
 
 
     return (
@@ -111,12 +120,12 @@ const Schedule = () => {
             </Helmet>
 
 
-            <Navbarr />
+            <Navbarr eventName={"Event's Schedule"} />
             <ParallaxProvider>
                 <Parallax speed={-10}>
-<Comingsoon />
-                    <main className="min-h-screen px-6 md:px-12 mt-16 relative mb-40 hidden">
-                        <motion.section
+                    {/* <Comingsoon /> */}
+                    <main className="min-h-screen px-6 md:px-12 mt-16 relative mb-72">
+                        {/* <motion.section
                             className="text-center space-y-8"
                             initial={{ opacity: 0, y: -50 }}
                             whileInView={{ opacity: 1, y: 130 }}
@@ -127,15 +136,15 @@ const Schedule = () => {
                                 Event's Schedule
                                 <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-40 h-[4px] bg-gradient-to-r from-[#632a6e] to-[#941694] mt-1 rounded-full"></span>
                             </motion.h1>
-                        </motion.section>
+                        </motion.section> */}
 
                         <div className="flex flex-col space-y-10 mb-20 mt-36">
-                            {Object.entries(groupedEvents).map(([day, eventsForDay], index) => (
+                            {Object.entries(sortedGroupedEvents).map(([day, eventsForDay], index) => (
                                 <motion.div
                                     key={day}
                                     className="flex flex-col space-y-4"
                                     initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
+                                    whileInView={{ opacity: 1, y: 130 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.2, duration: 0.6 }}
                                 >
@@ -148,14 +157,13 @@ const Schedule = () => {
                                         transition={{ duration: 0.8 }}
                                     >
                                         <div className="flex items-center">
-                                            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black audiowide-regular ">
+                                            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black audiowide-regular">
                                                 {`DAY ${index + 1}`}
-
                                             </h2>
                                         </div>
 
                                         {/* Live Icon */}
-                                        {day === new Date().toDateString() && (
+                                        {day === new Date().toISOString().split('T')[0] && (
                                             <motion.div
                                                 className="flex items-center space-x-2"
                                                 initial={{ opacity: 0 }}
@@ -170,7 +178,7 @@ const Schedule = () => {
                                     </motion.div>
 
                                     {/* Events for this Day */}
-                                    <div className="flex flex-wrap gap-8 p-0 rounded-lg justify-start z-20">
+                                    <div className="sm:flex sm:flex-wrap grid grid-cols-2 gap-4 sm:gap-8 p-0 rounded-lg sm:justify-start z-20">
                                         {eventsForDay.map((event, i) => (
                                             <motion.div
                                                 key={event._id}
@@ -184,7 +192,7 @@ const Schedule = () => {
                                                     <div className="relative bg-gradient-to-r from-gray-50 via-gray-50 to-gray-50 rounded-xl p-2 shadow-lg hover:shadow-2xl transition-all duration-300 group border border-black cursor-pointer">
                                                         {/* Event Image */}
                                                         <div
-                                                            className="relative w-full h-32 bg-cover bg-center rounded-xl"
+                                                            className="relative w-full h-20 sm:h-32 bg-cover bg-center rounded-xl"
                                                             style={{ backgroundImage: `url(${event.eventImage})` }}
                                                         >
                                                             <div className="absolute inset-0 bg-black bg-opacity-20 rounded-xl"></div>
@@ -192,16 +200,21 @@ const Schedule = () => {
 
                                                         {/* Event Name and Timing */}
                                                         <div className="flex justify-between items-center mt-3 py-2">
-                                                            <h3 className="text-lg font-bold text-black z-10 font-sans">
-                                                                {event.eventTitle}
+                                                            <h3 className="text-lg font-bold text-black z-10 font-sans text-wrap hidden sm:block">
+                                                                {event.eventTitle.length > 10 ? `${event.eventTitle.substring(0, 10)}...` : event.eventTitle}
                                                             </h3>
+
+                                                            <h3 className="text-sm font-bold text-black z-10 font-sans text-wrap sm:hidden">
+                                                                {event.eventTitle.length > 6 ? `${event.eventTitle.substring(0, 6)}...` : event.eventTitle}
+                                                            </h3>
+
                                                             <p className="text-sm text-gray-600 font-medium bg-gray-200 px-2 py-1 rounded-lg">
                                                                 {formatTime(event.eventTimings.from)}
                                                             </p>
                                                         </div>
 
                                                         {/* Live Indicator for Specific Events */}
-                                                        {day === new Date().toDateString() &&
+                                                        {day === new Date().toISOString().split('T')[0] &&
                                                             isLiveEvent(event.eventTimings) && (
                                                                 <div className="flex items-center space-x-2 mt-2 absolute top-2 right-4 p-1 bg-red-200 rounded-full justify-center">
                                                                     <FaCircle className="text-red-600 animate-pulse" />
@@ -213,9 +226,9 @@ const Schedule = () => {
                                             </motion.div>
                                         ))}
                                     </div>
-
                                 </motion.div>
                             ))}
+
 
 
 

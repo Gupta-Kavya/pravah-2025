@@ -64,7 +64,7 @@ const Sponsors = () => {
             <h3 className="text-xl font-medium uppercase tracking-wider mb-6 audiowide-regular">
                 Technology Partner
             </h3>
-            <div className="flex gap-8">
+            <div className="flex gap-8 flex-wrap justify-center items-center">
                 <img
                     src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736790221/v7fbrrt9malhtx8jmkxy.png"
                     alt="Technology Partner 1"
@@ -72,6 +72,11 @@ const Sponsors = () => {
                 />
                 <img
                     src="http://res.cloudinary.com/dktkdi3sm/image/upload/v1736790225/adqzj3vrzserlrocygb6.svg"
+                    alt="Technology Partner 2"
+                    className="w-28 h-auto"
+                />
+                     <img
+                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1737378995/logo_k0wrhg.svg"
                     alt="Technology Partner 2"
                     className="w-28 h-auto"
                 />
@@ -87,6 +92,32 @@ const Sponsors = () => {
                 src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736790233/esnjmv4legytq2ohmirj.png"
                 alt="Workplace Readiness Solution Partner"
                 className="w-96 h-auto"
+            />
+        </div>
+
+
+
+        <div className="flex flex-col items-center">
+            <h3 className="text-xl font-medium uppercase tracking-wider mb-6 audiowide-regular text-center">
+                Food Partner
+            </h3>
+            <img
+                src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1737437860/Screenshot_2025-01-21_110549_cj4ccb.png"
+                alt="Workplace Readiness Solution Partner"
+                className="w-28 h-auto"
+            />
+        </div>
+
+
+
+        <div className="flex flex-col items-center">
+            <h3 className="text-xl font-medium uppercase tracking-wider mb-6 audiowide-regular text-center">
+                Assessment Partner
+            </h3>
+            <img
+                src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1737449549/SkillWiz_branding-white_1_rkkryu.png"
+                alt="Workplace Readiness Solution Partner"
+                className="w-52 h-auto"
             />
         </div>
     </div>
@@ -146,6 +177,13 @@ const Sponsors = () => {
 
 
                     </main>
+
+
+                   
+
+
+
+
                 </Parallax>
 
                 {/* Background Image */}
@@ -163,6 +201,26 @@ const Sponsors = () => {
                     />
                 </motion.div>
             </ParallaxProvider>
+
+
+            <div
+            className='sm:hidden'
+  style={{
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundImage: "url('20549607_6308364.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    opacity: 0.1, // Adjust the opacity here
+    zIndex: 0, // Ensure it's behind the content
+  }}
+>
+  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#4f4f4f] to-[#474747] bg-pattern-stripes z-0"></div>
+</div>
 
             <DesktopFooter />
         </div>

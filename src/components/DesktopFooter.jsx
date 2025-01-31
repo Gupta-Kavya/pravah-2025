@@ -97,7 +97,7 @@ const DesktopFooter = () => {
                   <p className="text-sm">
                     <span className="font-bold">Chief Coordinator, Pravah'25</span>
                     <br />
-                    Mr. Rohit Mukherjee -{" "}
+                    Dr. Rohit Mukherjee -{" "}
                     <a href="tel:9414051576" className="underline hover:text-gray-400 transition">
                       9414051576
                     </a>
@@ -109,7 +109,7 @@ const DesktopFooter = () => {
                   <p className="text-sm">
                     <span className="font-bold">Chief Co-Coordinator, Pravah'25</span>
                     <br />
-                    Mr. Amber Srivastava -{" "}
+                    Dr. Amber Srivastava -{" "}
                     <a href="tel:9828298243" className="underline hover:text-gray-400 transition">
                       9828298243
                     </a>
@@ -140,14 +140,14 @@ const DesktopFooter = () => {
                 <p className="text-sm">
                   <span className="font-bold">For Events</span>
                   <br />
-                  Dipesh Kaushik -{" "}
-                  <a href="tel:9001928479" className="underline hover:text-gray-400 transition">
-                    9001928479
+                  Yashvardhan Sharma -{" "}
+                  <a href="tel:9587483461" className="underline hover:text-gray-400 transition">
+                    9587483461
                   </a>
                   <br />
-                  Uday Singh Sisodia -{" "}
-                  <a href="tel:9587483461" className="underline hover:text-gray-400 transition">
-                    7733917219
+                  Vaibhav Upadhyay -{" "}
+                  <a href="tel:9105939291" className="underline hover:text-gray-400 transition">
+                    9105939291
                   </a>
                 </p>
 

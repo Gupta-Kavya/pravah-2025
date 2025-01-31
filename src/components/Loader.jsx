@@ -29,16 +29,26 @@ const Loader = () => {
                     variants={LoaderExitAnimationVariants}
                     initial="initial"
                     exit="exit"
-                    className="fixed top-0 z-[60] flex h-screen w-full items-center justify-center bg-black"
+                    className="fixed top-0 z-[60] flex h-full w-full items-center justify-center bg-black"
                     style={{ zIndex: 5000 }}
                 >
                     {loaderProgress !== 100 && (
-                        <div className="absolute bottom-0 right-0 m-5">
+                        <div className="absolute bottom-0 sm:right-0 m-5">
                             <p className="text-2xl font-bold uppercase text-white">
                                 Loading {Math.floor(loaderProgress)}%
                             </p>
                         </div>
                     )}
+
+{loaderProgress === 100 && (
+                        <div className="absolute bottom-0  m-5">
+                            <p className="text-2xl font-bold uppercase text-white">
+                                PRAVAH 2025
+                            </p>
+                        </div>
+                    )}
+
+
                     <svg width="300" height="300" viewBox="0 0 667 778" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="tricolorGradient" x1="0%" y1="0%" x2="100%" y2="0%">

@@ -5,7 +5,7 @@ import DesktopFooter from "./DesktopFooter";
 import { motion } from "framer-motion";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaInfoCircle, FaPhoneAlt } from "react-icons/fa";
 import Coordinator from "./Coordinator";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { ToastContainer, toast } from "react-toastify";
@@ -17,7 +17,10 @@ import { Button, Drawer } from "flowbite-react";
 import { IoMdArrowDroprightCircle } from "react-icons/io";
 import { faL } from "@fortawesome/free-solid-svg-icons";
 import Confetti from 'react-confetti'
-import { FaShareAlt} from "react-icons/fa";
+import { FaShareAlt } from "react-icons/fa";
+import { Tooltip } from "flowbite-react";
+import CategoryTable from "./CategoryTable";
+import { Alert } from "flowbite-react";
 
 const Eventdetails = () => {
   const { eventid } = useParams(); // Get the eventid from URL
@@ -34,6 +37,8 @@ const Eventdetails = () => {
   const [isDesktop, setIsDesktop] = useState(true);
   const [isOpen, setIsOpen] = useState(true);
   const [bottomdrawer, setBottomdrawer] = useState(false);
+  const [bottomteamdrawer, setBottomteamdrawer] = useState(false);
+
 
   useEffect(() => {
 
@@ -160,34 +165,34 @@ const Eventdetails = () => {
 
   function startCountdown(targetDate, elementId) {
     const target = new Date(targetDate).getTime();
-  
+
     if (isNaN(target)) {
       console.error("Invalid date format. Please provide a valid date.");
       return;
     }
-  
+
     const countdownElement = document.getElementById(elementId);
     if (!countdownElement) {
       console.error(`Element with id "${elementId}" not found.`);
       return;
     }
-  
+
     const countdownInterval = setInterval(() => {
       const now = new Date().getTime();
       const timeRemaining = target - now;
-  
+
       if (timeRemaining <= 0) {
         clearInterval(countdownInterval);
         countdownElement.innerHTML = ``;
         return;
       }
-  
+
       // Calculate hours, minutes, and seconds
       const totalSeconds = Math.floor(timeRemaining / 1000);
       const hours = Math.floor(totalSeconds / 3600);
       const minutes = Math.floor((totalSeconds % 3600) / 60);
       const seconds = totalSeconds % 60;
-  
+
       // Update the countdown element
       countdownElement.innerHTML = `
         <div class="countdown-box">${hours}<span>H</span></div>
@@ -196,8 +201,8 @@ const Eventdetails = () => {
       `;
     }, 1000);
   }
-  
-  startCountdown(event?.eventDate , "countdown")
+
+  startCountdown(event?.eventDate, "countdown")
 
   return (
     <div>
@@ -225,7 +230,7 @@ const Eventdetails = () => {
             property="og:url"
             content={`https://pravah.skit.ac.in/skit-pravah-2025-events/${event?.eventCategory}/${eventid}`}
           />
-          
+
           <meta
             name="author"
             content="Swami Keshvanand Institute of Technology, Management, and Gramothan"
@@ -271,16 +276,16 @@ const Eventdetails = () => {
                     ease: "easeOut",
                   }}
                 >
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes -z-10 opacity-10"></div>
+                  {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes -z-10 opacity-10"></div> */}
 
 
                   {/* Event Image */}
                   <div className="w-full md:w-1/2 h-60 md:h-80 relative border-r border-gray-200">
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-green-400 to-green-600 text-white text-xs font-semibold py-1 px-3 rounded-full shadow-md">
+                    {/* <div className="absolute top-4 left-4 bg-gradient-to-r from-green-400 to-green-600 text-white text-xs font-semibold py-1 px-3 rounded-full shadow-md">
                       {event.eventparticipationCategory === "Single"
                         ? "Individual Event"
                         : "Team Event"}
-                    </div>
+                    </div> */}
                     <img
                       className="object-cover w-full h-full rounded-l-lg"
                       src={event?.eventImage}
@@ -304,20 +309,21 @@ const Eventdetails = () => {
                     <p className="text-lg text-gray-700">
                       <strong>Venue:</strong> {event?.eventVenue}
                     </p>
+
                     <p className="text-lg text-gray-700">
-                      <strong>Registration Fee:</strong>{" "}
-                      {event?.eventFees !== 0
-                        ? `₹${event?.eventFees} per ${event.eventparticipationCategory === "Single"
-                          ? "Individual"
-                          : "Team"
-                        }`
-                        : "FREE"}
+                      <strong>Team Size:</strong> {event?.additionalFields.length > 0 ? (
+                        <span className="bg-gray-200 px-2 text-gray-700 rounded-md font-medium border border-gray-500 ml-2 cursor-pointer" onClick={() => setBottomteamdrawer(true)}>
+                          View
+
+                        </span>
+                      ) : event?.teamSize + " Member"}
                     </p>
-                    {event?.eventNote && (
-                      <p className="text-lg text-gray-700 italic">
-                        <strong>Note:</strong> {event?.eventNote}
-                      </p>
-                    )}
+
+
+
+
+
+
                     {/* <div className="w-full mt-4">
         {event?.eventFees === 0 ? (
           <button
@@ -411,16 +417,46 @@ const Eventdetails = () => {
                     }
 
                     {event?.erpLink && (
-                      <a
-                        href={event.erpLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative inline-block px-6 py-3 font-semibold text-white bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full overflow-hidden shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-blue-400"
-                      >
-                        <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-50 rounded-full"></span>
-                        <span className="relative z-10">Register Now</span>
-                      </a>
+                      <>
+                        {/* Registration Fee */}
+                        <p className="text-lg text-gray-700 mb-2 border rounded-xl p-3 opacity-100 bg-white">
+                          <strong>Registration Fee:</strong>{" "}
+                          {event?.additionalFields.length > 0
+                            ? "Fees may vary"
+                            : event?.eventFees !== 0
+                              ? `₹${event?.eventFees}`
+                              : "FREE"}
+                        </p>
+                        <p className="text-sm text-gray-500 mb-4">
+                          * Note: The fee once paid is non-refundable.
+                        </p>
+                        {/* Register Button */}
+                        <a
+                          href={event.erpLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative inline-flex items-center justify-center px-6 py-3 font-semibold text-white bg-gradient-to-r from-black via-black to-black rounded-xl shadow-md transition-transform focus:outline-none focus:ring focus:ring-offset-2 text-center space-x-3 w-full"
+                        >
+                          <span className="relative z-10">Register Now</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-5 h-5 relative z-10"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            />
+                          </svg>
+                        </a>
+                    
+                      </>
                     )}
+
 
                   </motion.div>
 
@@ -449,7 +485,7 @@ const Eventdetails = () => {
                 <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-[5px] bg-gradient-to-r from-[#351332] to-[#9e1c9e] mt-1 rounded-full"></span>
               </h3>
               <motion.p
-                className="text-2xl text-gray-600 leading-relaxed text-center squada-one-regular tracking-wide"
+                className="text-2xl text-gray-600 leading-relaxed text-center squada-one-regular tracking-wider"
               >
 
                 <div
@@ -482,12 +518,11 @@ const Eventdetails = () => {
             </h2>
 
 
-
-            <div className="flex justify-center items-center font-sans relative z-50">
+            <div className="flex justify-center items-center font-sans relative z-50 flex-row">
               <div
                 className={`${event?.eventCoordinators?.length === 1
                   ? "flex flex-col items-center gap-4 w-full max-w-sm"
-                  : "grid grid-cols-2 gap-x-4 w-full max-w-sm"
+                  : "grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4 w-full max-w-xs sm:max-w-md md:max-w-lg"
                   } md:flex md:gap-8 md:justify-center`}
               >
                 {event?.eventCoordinators?.map((coordinator, index) => (
@@ -499,7 +534,6 @@ const Eventdetails = () => {
                 ))}
               </div>
             </div>
-
 
 
 
@@ -512,190 +546,254 @@ const Eventdetails = () => {
 
 
         <Drawer
+
           open={isOpen}
           onClose={() => window.location.href = `/skit-pravah-2025-events/${event?.eventCategory}`}
           style={{ zIndex: 1000 }}
           className="w-screen h-screen  flex flex-col bg-white"
         >
-            {/* <Confetti
+          {/* <Confetti
                 width={500}
                 height={50}
               /> */}
-          <Drawer.Header title="Event Registration" className="border-b border-gray-300"  />
+
+          {bottomdrawer && (
+            <div className="bg-black opacity-60 fixed top-0 left-0 w-full h-full z-50"></div>
+          )}
+
+          {bottomteamdrawer && (
+            <div className="bg-black opacity-60 fixed top-0 left-0 w-full h-full z-50"></div>
+          )}
+
+
+          <Drawer.Header title="Event Registration" className="border-b border-gray-300" />
           <Drawer.Items>
-          {/* Main Content Area */}
-
-          
-
-          <div className="flex-grow overflow-y-auto px-0 py-6 scrollbar-hide ">
-
-          {/* <h2 className="text-2xl font-bold text-gray-800 font-sans mb-4">{event?.eventTitle}</h2> */}
-<div className="relative">
-            <img
-              className="object-cover w-full h-52 rounded-2xl  shadow-md"
-              src={event?.eventImage}
-              alt={event?.eventTitle}
-              draggable="false"
-              loading="lazy"
-            />
-
-<button
-        onClick={handleShare}
-        className="text-gray-600 text-2xl absolute top-2 right-2 bg-white rounded-xl p-2 border border-gray-100 shadow-lg"
-      >
-        <FaShareAlt />
-      </button>
-
-</div>
-
-            <div className="mt-6 space-y-5">
-            
-{/* <hr className="border-gray-100 w-full" /> */}
-<div className="flex justify-between items-center gap-4">
-               
-
-<h2 className="text-2xl font-semibold text-gray-800 font-sans">{event?.eventTitle}</h2>
+            {/* Main Content Area */}
 
 
 
-      <div id="countdown" ></div>
-            
-              </div>
-              
-              {/* <hr className="mt-4 border-gray-100 w-full" /> */}
-              
-              <a
-                href={event.ruleBook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full px-6 py-3 text-center text-white bg-gray-800 hover:bg-gray-700 rounded-lg shadow-md transition-all duration-300 focus:outline-none focus:ring focus:ring-gray-600 flex justify-between align-middle items-center gap-2 font-normal"
-              >
-                Download Event Rulebook <FaDownload />
-              </a>
+            <div className="flex-grow overflow-y-auto px-0 py-6 scrollbar-hide ">
 
-              {/* <hr className="mt-4 border-gray-100 w-full shadow-xl" /> */}
+              {/* <h2 className="text-2xl font-bold text-gray-800 font-sans mb-4">{event?.eventTitle}</h2> */}
+              <div className="relative">
+                <img
+                  className="object-cover w-full h-52 rounded-2xl  shadow-md"
+                  src={event?.eventImage}
+                  alt={event?.eventTitle}
+                  draggable="false"
+                  loading="lazy"
+                />
 
-              <div className="bg-gray-50 p-3 rounded-lg border border-gray-300 shadow-sm mt-4">
 
-              <div className="flex items-center mb-2 justify-between">
-                <span className="text-sm font-medium text-gray-600">Date:</span>
-                <p className="ml-2 text-sm text-gray-800">{formatDate(event?.eventDate)}</p>
-                
-              </div>
-             
-              <hr className="border-gray-100 w-full" />
+                {/* <div className="absolute top-2 left-2 bg-gradient-to-r from-green-400 to-green-400 text-white text-xs font-semibold py-1 px-3 rounded-full shadow-md">
+                  {event.eventparticipationCategory === "Single"
+                    ? "Individual Event"
+                    : "Team Event"}
+                </div> */}
 
-              <div className="flex items-center mb-2 justify-between mt-2">
-                <span className="text-sm font-medium text-gray-600">Time:</span>
-                <p className="ml-2 text-sm text-gray-800">
-                  {formatTime(event?.eventTimings.from)} - {formatTime(event?.eventTimings.to)}
-                </p>
-              </div>
-
-              <hr className="border-gray-100 w-full" />
-
-              <div className="flex items-center mb-2 justify-between mt-2">
-                <span className="text-sm font-medium text-gray-600">Venue:</span>
-                <p className="ml-2 text-sm text-gray-800">{event?.eventVenue}</p>
-              </div>
-
-              <hr className="border-gray-100 w-full" />
-
-              <div className="flex items-center justify-between mt-2">
-                <span className="text-sm font-medium text-gray-600">Registration Fee:</span>
-                <p className="ml-2 text-sm text-gray-800">
-                  {event?.eventFees !== 0
-                    ? `₹${event?.eventFees} per ${event.eventparticipationCategory === "Single" ? "Individual" : "Team"
-                    }`
-                    : "FREE"}
-                </p>
-              </div>
+                <button
+                  onClick={handleShare}
+                  className="text-gray-600 text-2xl absolute top-2 right-2 bg-white rounded-xl p-2 border border-gray-100 shadow-lg"
+                >
+                  <FaShareAlt />
+                </button>
 
               </div>
-              
-            </div>
-           
-            <div className="bg-white p-3 rounded-lg mt-4 shadow-lg w-full shadow-gray-50 border ">
-            <div className="text-justify">
-              <span className='text-black font-bold '>Description : </span>
-              <span className="text-pretty text-justify text-sm mt-4 text-gray-600 font-sans font-normal"
-                dangerouslySetInnerHTML={{
-                  __html: event?.eventDescription || "No description available.",
-                }}
-              />
-           
-           </div>
-            </div>
-            <div className="flex flex-col items-center">
-      {/* Main Share Button */}
+
+              <div className="mt-6 space-y-5">
+
+                {/* <hr className="border-gray-100 w-full" /> */}
+                <div className="flex justify-between items-center gap-4">
 
 
-    </div>
-           
+                  <h2 className="text-2xl font-semibold text-gray-800 font-sans">{event?.eventTitle}</h2>
 
 
-            <div className="flex justify-center items-center font-sans relative mb-20">
-              <div
-                className={`${event?.eventCoordinators?.length === 1
-                  ? "grid grid-cols-2 gap-x-4 w-full max-w-sm"
-                  : "grid grid-cols-2 gap-x-4 w-full max-w-sm"
-                  } md:flex md:gap-8 md:justify-center`}
-              >
-                {event?.eventCoordinators?.map((coordinator, index) => (
-                  <Coordinator
-                    key={index}
-                    name={coordinator.name}
-                    number={coordinator.number}
+
+                  <div id="countdown" ></div>
+
+                </div>
+
+                {/* <hr className="mt-4 border-gray-100 w-full" /> */}
+
+                <a
+                  href={event?.ruleBook}
+                  target="_blank"
+                  rel=""
+                  className="w-full px-6 py-3 text-center text-white bg-gray-800 hover:bg-gray-700 rounded-lg shadow-md transition-all duration-300 focus:outline-none focus:ring focus:ring-gray-600 flex justify-between align-middle items-center gap-2 font-normal"
+                >
+                  Download Event Rulebook <FaDownload />
+                </a>
+
+                {/* <hr className="mt-4 border-gray-100 w-full shadow-xl" /> */}
+
+                <div className="bg-gray-50 p-3 rounded-lg border border-gray-300 shadow-sm mt-4">
+
+                  <div className="flex items-center mb-2 justify-between">
+                    <span className="text-sm font-medium text-gray-600">Date:</span>
+                    <p className="ml-2 text-sm text-gray-800">{formatDate(event?.eventDate)}</p>
+
+                  </div>
+
+                  <hr className="border-gray-100 w-full" />
+
+                  <div className="flex items-center mb-2 justify-between mt-2">
+                    <span className="text-sm font-medium text-gray-600">Time:</span>
+                    <p className="ml-2 text-sm text-gray-800">
+                      {formatTime(event?.eventTimings.from)} - {formatTime(event?.eventTimings.to)}
+                    </p>
+                  </div>
+
+
+                  <hr className="border-gray-100 w-full" />
+
+                  <div className="flex items-center mb-2 justify-between mt-2 ">
+                    <span className="text-sm font-medium text-gray-600">Team Size:</span>
+                    <p className="ml-2 text-sm text-gray-800 ">
+
+                      {event?.additionalFields.length > 0 ? (
+                        <span className="flex justify-center items-center gap-2 bg-gray-200 px-2 text-gray-700 rounded-md font-medium border border-gray-500" onClick={() => setBottomteamdrawer(true)}>
+                          View
+
+                        </span>
+                      ) : event?.teamSize + " Member"}
+
+                    </p>
+                  </div>
+
+
+                  <hr className="border-gray-100 w-full" />
+
+                  <div className="flex items-center mb-2 justify-between mt-2 ">
+                    <span className="text-sm font-medium text-gray-600">Venue:</span>
+                    <p className="ml-2 text-sm text-gray-800 ">{event?.eventVenue}</p>
+                  </div>
+
+
+
+
+                  <hr className="border-gray-100 w-full" />
+
+                  <div className="flex items-center justify-between mt-2">
+                    <span className="text-sm font-medium text-gray-600">Registration Fee:</span>
+                    <p className="ml-2 text-sm text-gray-800">
+                      {event?.additionalFields.length > 0 ? (
+                        <span className="flex justify-center items-center gap-2">
+                          Fees may vary{" "}
+                          <Tooltip content="Fee varies by category (e.g., skit/non-skit, solo/duo/group). Click register to know the exact fee amount.">
+                            <FaInfoCircle className="text-gray-600" />
+                          </Tooltip>
+
+                        </span>
+                      ) : event?.eventFees !== 0 ? (
+                        `₹${event?.eventFees}`
+                      ) : (
+                        "FREE"
+                      )}
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+              {event?.eventNote &&
+                <Alert color="gray" className="mt-4 border border-gray-300">
+                  <span className="font-bold">Note : </span>{event?.eventNote}
+                </Alert>
+              }
+              <div className="bg-white p-3 rounded-lg mt-4 shadow-lg w-full shadow-gray-50 border ">
+                <div className="text-justify">
+                  <span className='text-black font-bold '>Description : </span>
+                  <span className="text-pretty text-justify text-sm mt-4 text-gray-600 font-sans font-normal"
+                    dangerouslySetInnerHTML={{
+                      __html: event?.eventDescription || "No description available.",
+                    }}
                   />
-                ))}
+
+                </div>
+              </div>
+              <div className="flex flex-col items-center">
+                {/* Main Share Button */}
+
+
+              </div>
+
+
+              <div className="w-full max-w-sm rounded-xl mt-4 mb-20 border p-4 border-gray-300">
+                {event?.eventCoordinators?.length > 0 ? (
+                  <ul className="space-y-4">
+                    {event.eventCoordinators.map((coordinator, index) => (
+                      <li
+                        key={index}
+                        className="flex justify-between items-center bg-white shadow-sm rounded-lg p-4"
+                      >
+                        <div className="flex flex-col">
+                          <span className="text-gray-900 font-semibold text-lg">
+                            {coordinator.name}
+                          </span>
+                          <span className="text-gray-600 text-sm">
+                            +91 {coordinator.number}
+                          </span>
+                        </div>
+                        <a
+                          className="bg-gray-700 text-white px-4 py-2 rounded-lg text-sm hover:bg-indigo-600 transition flex gap-3 justify-center items-center font-medium"
+                          href={`tel:${coordinator?.number}`}
+                        >
+                          <FaPhoneAlt className="h-4 w-4" />     Call
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-white text-center">No coordinators available.</p>
+                )}
+              </div>
+
+
+
+            </div>
+
+            {/* Fixed Footer Section */}
+            <div className="bg-gray-50 border-t border-gray-300 p-5 w-full fixed bottom-0 left-0 z-10">
+              <div className="flex justify-between items-center flex-col gap-4">
+
+
+                {event?.erpLink && (
+                  <a
+                    href={event.erpLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative px-6 py-3 font-semibold text-black rounded-xl w-full text-center overflow-hidden flex justify-between items-center gap-2 text-md bg-opacity-30 backdrop-blur-md border border-black shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+                    style={{
+                      backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1))",
+                    }}
+                  >
+                    <span className="relative z-10">Register Now</span>
+                    <IoMdArrowDroprightCircle className="text-2xl" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 opacity-30 animate-move-background"></div>
+                  </a>
+                )}
+
+
+
+                {!event?.erpLink && (
+                  <a
+                    onClick={() => setBottomdrawer(true)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative px-6 py-3 font-semibold text-black rounded-lg w-full text-center overflow-hidden flex justify-between items-center gap-2 text-md bg-opacity-30 backdrop-blur-md border border-black shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+                    style={{
+                      backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1))",
+                    }}
+                  >
+                    <span className="relative z-10">Register Now</span>
+                    <IoMdArrowDroprightCircle className="text-2xl" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 opacity-30 animate-move-background"></div>
+                  </a>
+                )}
+
               </div>
             </div>
-
-
-
-          </div>
-
-          {/* Fixed Footer Section */}
-          <div className="bg-gray-50 border-t border-gray-300 p-6 w-full fixed bottom-0 left-0 z-10">
-            <div className="flex justify-between items-center flex-col gap-4">
-  
-
-              {event?.erpLink && (
-                <a
-                  href={event.erpLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative px-6 py-3 font-semibold text-black rounded-xl w-full text-center overflow-hidden flex justify-between items-center gap-2 text-md bg-opacity-30 backdrop-blur-md border border-black shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-                  style={{
-                    backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1))",
-                  }}
-                >
-                  <span className="relative z-10">Register Now</span>
-                  <IoMdArrowDroprightCircle className="text-2xl" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 opacity-30 animate-move-background"></div>
-                </a>
-              )}
-
-
-
-{!event?.erpLink && (
-                <a
-                 onClick={() => setBottomdrawer(true)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative px-6 py-3 font-semibold text-black rounded-lg w-full text-center overflow-hidden flex justify-between items-center gap-2 text-md bg-opacity-30 backdrop-blur-md border border-black shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
-                  style={{
-                    backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1))",
-                  }}
-                >
-                  <span className="relative z-10">Register Now</span>
-                  <IoMdArrowDroprightCircle className="text-2xl" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 opacity-30 animate-move-background"></div>
-                </a>
-              )}
-
-            </div>
-          </div>
           </Drawer.Items>
         </Drawer>
 
@@ -703,15 +801,25 @@ const Eventdetails = () => {
 
 
 
-  <Drawer open={bottomdrawer} onClose={() => setBottomdrawer(false)} position="bottom" style={{zIndex:20000}} className="shadow-2xl border-t border-gray-300 rounded-t-xl bg-gray-50">
-        <Drawer.Header title="Register" />
-        <Drawer.Items>
-        <div className="rounded-xl p-4">
+        <Drawer open={bottomdrawer} onClose={() => setBottomdrawer(false)} position="bottom" style={{ zIndex: 20000 }} className="shadow-2xl border-t border-gray-300 rounded-t-2xl bg-white">
+          <Drawer.Header title="Register" />
+          <Drawer.Items>
+            <div className="rounded-xl p-3">
               <Dynamicfield additionalFields={event?.additionalFields} />
             </div>
-        </Drawer.Items>
-      </Drawer>
+          </Drawer.Items>
+        </Drawer>
 
+
+
+        <Drawer open={bottomteamdrawer} onClose={() => setBottomteamdrawer(false)} position={isDesktop ? "right" : "bottom"} style={{ zIndex: 20000 }} className="shadow-2xl border-t border-gray-300 rounded-t-2xl sm:rounded-none bg-white h-m" backdrop={false}>
+          <Drawer.Header title="Team Size" />
+          <Drawer.Items>
+            <div className="p-3">
+              <CategoryTable additionalFields={event?.additionalFields} />
+            </div>
+          </Drawer.Items>
+        </Drawer>
 
         <motion.div
           className="fixed -bottom-0 left-0 w-full sm:block pointer-events-none -z-10"
