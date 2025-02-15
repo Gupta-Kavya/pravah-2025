@@ -68,26 +68,31 @@ const Aaveg = () => {
       name: "BGMI",
       registrationLink: "https://erp.skit.ac.in/register/r/pravah25bgmi",
       prize: "₹200",
+      rulebookLink: "https://czgscxfecdtvpjuoxqkx.supabase.co/storage/v1/object/public/pravah2025//RuleBook%20BGMI-min.pdf"
     },
     {
       name: "Freefire",
       registrationLink: "https://erp.skit.ac.in/register/r/pravah25freefir",
       prize: "₹200",
+      rulebookLink: "https://czgscxfecdtvpjuoxqkx.supabase.co/storage/v1/object/public/pravah2025//FREE%20FIRE%20RULE%20BOOK%202025%20(3)-min.pdf"
     },
     {
       name: "Valorant",
       registrationLink: "https://erp.skit.ac.in/register/r/pravah25valo",
       prize: "₹200",
+      rulebookLink: "https://czgscxfecdtvpjuoxqkx.supabase.co/storage/v1/object/public/pravah2025//valorant%20RULE%20BOOK%202025-min.pdf"
     },
     {
       name: "Real Cricket",
       registrationLink: "https://erp.skit.ac.in/register/r/pravah25realcri",
       prize: "₹50",
+      rulebookLink: "https://czgscxfecdtvpjuoxqkx.supabase.co/storage/v1/object/public/pravah2025//REAL%20CRICKET%2024%20TOURNAMENT%20RULEBOOK%20FOR%20E%20(1)-min.pdf"
     },
     {
       name: "Battlefronts",
       registrationLink: "https://forms.gle/8eL3ZZMms9pr1ron8",
       prize: "Free",
+      rulebookLink: "#"
     },
   ];
 
@@ -133,7 +138,7 @@ const Aaveg = () => {
       /> */}
 
       {/* Navbar */}
-      <Navbarr logo="https://res.cloudinary.com/dktkdi3sm/image/upload/v1735466875/aaveg_logo_wiqp6x.png" />
+      <Navbarr logo="https://res.cloudinary.com/dktkdi3sm/image/upload/v1735466875/aaveg_logo_wiqp6x.png" eventName={"AAVEG"} />
       <ParallaxProvider>
         <Parallax speed={-10}>
           <main className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 mt-32 relative mb-20">
@@ -144,15 +149,6 @@ const Aaveg = () => {
               animate={{ opacity: 1, y: 100 }}
               transition={{ duration: 1, ease: 'easeOut' }}
             >
-              <div className="relative">
-                {/* Main Heading */}
-                <motion.h1
-                  className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black tracking-tight"
-                >
-                  AAVEG'25
-                  <span className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-28 h-[4px] bg-gradient-to-r from-[#632a6e] to-[#7c087c] mt-1 rounded-full hidden sm:block"></span>
-                </motion.h1>
-              </div>
 
 
 
@@ -178,7 +174,29 @@ const Aaveg = () => {
 
               </motion.div>
 
+
+              <button className="px-6 py-3 bg-black text-white font-semibold rounded-3xl shadow-md hover:bg-black transition duration-300 flex items-center gap-2 m-auto" onClick={() => window.location.href = "https://czgscxfecdtvpjuoxqkx.supabase.co/storage/v1/object/public/pravah2025//one%20fold-min.pdf"}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 4v12m0 0l-3-3m3 3l3-3M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"
+                  />
+                </svg>
+                Download Rulebook
+              </button>
+
+
             </motion.section>
+
+
 
             {/* Render events dynamically */}
             <motion.div className="mt-10 flex flex-wrap justify-center items-center gap-8 w-full max-w-6xl mb-20">
@@ -408,33 +426,44 @@ const Aaveg = () => {
               onLoad={() => setIsLoading(false)}
             />
           }
-     <div className="p-6 max-w-4xl mx-auto">
-      {title === "Esports" && (
-        <div className="space-y-6">
-          {esportsEvents.map((event, index) => (
-            <div
-              key={index}
-              className="p-5 border border-gray-300 rounded-xl shadow-sm flex justify-between items-center bg-white hover:shadow-md transition-shadow"
-            >
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {event.name}
-                </h3>
-                <p className="text-sm text-gray-500">Registration Fee: {event.prize}</p>
+          <div className="p-6 max-w-4xl mx-auto">
+            {title === "Esports" && (
+              <div className="space-y-6">
+                {esportsEvents.map((event, index) => (
+                  <div
+                    key={index}
+                    className="p-5 border border-gray-300 rounded-xl shadow-sm flex justify-between items-center bg-white hover:shadow-md transition-shadow"
+                  >
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800">{event.name}</h3>
+                      <p className="text-sm text-gray-500">
+                        Registration Fee: {event.prize}
+                      </p>
+                    </div>
+                    <div className="flex gap-3">
+                      <a
+                        href={event.rulebookLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-gray-500 text-white rounded-md text-sm font-medium hover:bg-gray-600 transition-colors cursor-pointer"
+                      >
+                        Rulebook
+                      </a>
+                      <a
+                        href={event.registrationLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-blue-500 text-white rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
+                      >
+                        Register Now
+                      </a>
+                    </div>
+                  </div>
+                ))}
+
               </div>
-              <a
-                href={event.registrationLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-blue-500 text-white rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
-              >
-                Register Now
-              </a>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+            )}
+          </div>
         </Modal.Body>
 
         <Modal.Footer className="bg-gray-50 border-t border-gray-300 shadow-md rounded-b-2xl">
@@ -482,44 +511,55 @@ const Aaveg = () => {
 
           {/* Iframe Content */}
 
-          {title !== "Esports"  && 
-          <iframe
-            src={form}
-            frameBorder="0"
-            className={`w-full h-full transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-            onLoad={() => setIsLoading(false)}
-          />
+          {title !== "Esports" &&
+            <iframe
+              src={form}
+              frameBorder="0"
+              className={`w-full h-full transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+              onLoad={() => setIsLoading(false)}
+            />
 
-        }
+          }
 
-<div className="p-0 max-w-4xl mx-auto">
-      {title === "Esports" && (
-        <div className="space-y-6">
-          {esportsEvents.map((event, index) => (
-            <div
-              key={index}
-              className="p-5 border border-gray-300 rounded-xl shadow-sm flex justify-between items-center bg-white hover:shadow-md transition-shadow"
-            >
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {event.name}
-                </h3>
-                <p className="text-sm text-gray-500">Registration Fee: {event.prize}</p>
+          <div className="p-0 max-w-4xl mx-auto">
+            {title === "Esports" && (
+              <div className="space-y-6">
+                {esportsEvents.map((event, index) => (
+                  <div
+                    key={index}
+                    className="p-5 border border-gray-300 rounded-xl shadow-sm flex justify-between items-center bg-white hover:shadow-md transition-shadow"
+                  >
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800">{event.name}</h3>
+                      <p className="text-sm text-gray-500">
+                        Registration Fee: {event.prize}
+                      </p>
+                    </div>
+                    <div className="flex gap-3">
+                      <a
+                        href={event.rulebookLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-gray-500 text-white rounded-md text-sm font-medium hover:bg-gray-600 transition-colors"
+                      >
+                        Rulebook
+                      </a>
+                      <a
+                        href={event.registrationLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2 bg-blue-500 text-white rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
+                      >
+                        Register
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <a
-                href={event.registrationLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-blue-500 text-white rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
-              >
-                Register Now
-              </a>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+            )}
+          </div>
         </Drawer.Items>
+
 
         {/* Footer Section */}
         {/* <div className="absolute bottom-0 left-0 w-full p-6 bg-gray-50 border-t border-gray-300 rounded-b-xl shadow-md">

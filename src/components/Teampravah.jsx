@@ -43,11 +43,13 @@ const Teampravah = () => {
             <Navbarr eventName={"Team Pravah"} />
 
             <ParallaxProvider>
+
+                {/* <Comingsoon /> */}
                 <Parallax speed={-15}>
-                    <main className="min-h-screen flex flex-col items-center justify-center mt-60 relative mb-40 md:p-16 p-4">
+                    <main className="min-h-screen flex-col items-center justify-center mt-60 relative mb-40 md:p-16 p-4">
 
 
-                        <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-10 mt-6 relative font-sans  tracking-tight">
+                        <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-10 mt-10 relative font-sans  tracking-tight">
                             <motion.span
                                 initial={{ opacity: 0, y: 100 }} // Start with the title off-screen and invisible
                                 whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and position when in view
@@ -56,73 +58,23 @@ const Teampravah = () => {
                                 className="relative inline-block"
                             >
 
-                                Pravah head
+                                Fest head
 
 
 
                             </motion.span>
                         </h2>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-1 gap-x-4 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 gap-8 mt-8">
-
-
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
                             <Coordinator
                                 name={"Dipesh Kaushik"}
                                 photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1738151658/tyeiz6wkpn2ypnfy1fqh.jpg"}
-
-
-
                             />
-
-
-
-
-
-                        </div>
-
-
-
-
-
-
-
-                        <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-16 mt-6 relative font-sans  tracking-tight">
-                            <motion.span
-                                initial={{ opacity: 0, y: 100 }} // Start with the title off-screen and invisible
-                                whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and position when in view
-                                viewport={{ once: true, amount: 0.2 }} // Trigger the animation once when 20% of the title is visible
-                                transition={{ duration: 0.8, ease: 'easeOut' }} // Duration and easing for smooth transition
-                                className="relative inline-block"
-                            >
-
-                                Event Queries
-
-
-
-                            </motion.span>
-                        </h2>
-
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-sm font-sans sm:w-auto sm:max-w-full relative z-50 gap-8">
-
-
                             <Coordinator
-                                name={"Yashvardhan Sharma"}
-                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737732321/IMG-20250114-WA0029_lr6z5g.jpg"}
-                                number={9587483461}
-
+                                name={"Uday Singh Sisodia"}
+                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737817030/IMG_5002-1_1_lrh7vo.jpg"}
                             />
-
-                            <Coordinator
-                                name={"Vaibhav Upadhyay"}
-                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737737193/IMG-20241001-WA0035_mgmt11.jpg"}
-                                number={9105939291}
-                            />
-
-
                         </div>
-
-
 
 
 
@@ -141,16 +93,10 @@ const Teampravah = () => {
                             </motion.span>
                         </h2>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-4 gap-x-4 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 gap-8 mt-8">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
 
 
 
-                            <Coordinator
-                                name={"Uday Singh Sisodia"}
-
-                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737817030/IMG_5002-1_1_lrh7vo.jpg"}
-
-                            />
 
 
 
@@ -163,21 +109,7 @@ const Teampravah = () => {
 
 
 
-                            <Coordinator
-                                name={"Daksh Meena"}
-                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737822676/20250125_211459_dvhl1g.jpg"}
 
-
-                            />
-
-
-
-                            <Coordinator
-                                name={"Sachin Meena"}
-                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737817103/WhatsApp_Image_2025-01-25_at_18.33.51_chsvck.jpg"}
-
-
-                            />
 
 
 
@@ -202,14 +134,23 @@ const Teampravah = () => {
                         </h2>
 
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-sm sm:w-auto sm:max-w-full sm:flex sm:justify-center font-sans relative z-50 gap-3 flex-wrap">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
+
+
+                            <Coordinator
+                                name={"Daksh Meena"}
+                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737822676/20250125_211459_dvhl1g.jpg"}
+
+
+                            />
 
 
 
-                        <Coordinator
-                                name={"Kaynat Ansari"}
-                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737732494/IMG_20250107_175244_radirq.jpg"}
-                                number={8112236498}
+                            <Coordinator
+                                name={"Sachin Meena"}
+                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737817103/WhatsApp_Image_2025-01-25_at_18.33.51_chsvck.jpg"}
+
+
                             />
 
                             <Coordinator
@@ -219,11 +160,68 @@ const Teampravah = () => {
                             />
 
 
-                        
+
+                            <Coordinator
+                                name={"Kaynat Ansari"}
+                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737732494/IMG_20250107_175244_radirq.jpg"}
+
+                            />
+
+
+
+
+
 
 
 
                         </div>
+
+
+
+                        <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-16 mt-6 relative font-sans  tracking-tight">
+                            <motion.span
+                                initial={{ opacity: 0, y: 100 }} // Start with the title off-screen and invisible
+                                whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and position when in view
+                                viewport={{ once: true, amount: 0.2 }} // Trigger the animation once when 20% of the title is visible
+                                transition={{ duration: 0.8, ease: 'easeOut' }} // Duration and easing for smooth transition
+                                className="relative inline-block"
+                            >
+
+                                Event Queries
+
+
+
+                            </motion.span>
+                        </h2>
+
+
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
+
+
+                            <Coordinator
+                                name={"Yashvardhan Sharma"}
+                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737732321/IMG-20250114-WA0029_lr6z5g.jpg"}
+                                number={9587483461}
+
+                            />
+
+                            <Coordinator
+                                name={"Vaibhav Upadhyay"}
+                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737737193/IMG-20241001-WA0035_mgmt11.jpg"}
+                                number={9105939291}
+                            />
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -245,7 +243,7 @@ const Teampravah = () => {
                         </h2>
 
 
-                        <div className="grid grid-cols-1 sm:grid-cols-3 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 gap-4 flex-wrap">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
 
 
                             <Coordinator
@@ -256,7 +254,7 @@ const Teampravah = () => {
 
                             <Coordinator
                                 name={"Ansh Kasat"}
-                                photo={"https://res.cloudinary.com/dktkdi3sm/image/upload/v1737908339/WhatsApp_Image_2025-01-26_at_21.38.56_eze7p0.jpg"}
+                                photo={"https://res.cloudinary.com/dcw8a8qlb/image/upload/v1739508306/kgcr0ikcocsl9grdga9j.jpg"}
 
                             />
 
@@ -289,7 +287,7 @@ const Teampravah = () => {
                         </h2>
 
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 gap-8 flex-wrap">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
 
 
                             <Coordinator
@@ -331,7 +329,7 @@ const Teampravah = () => {
 
 
 
-                        <div className="grid grid-cols-1 sm:grid-cols-3 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 gap-x-8 flex-wrap">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
 
 
 
@@ -372,7 +370,7 @@ const Teampravah = () => {
                         </h2>
 
 
-                        <div className="grid grid-cols-1 w-full max-w-sm font-sans sm:w-auto sm:max-w-full relative z-50 gap-8 flex-wrap">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
 
 
                             <Coordinator
@@ -402,7 +400,7 @@ const Teampravah = () => {
                         </h2>
 
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 gap-8 flex-wrap">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
 
 
                             <Coordinator
@@ -446,7 +444,7 @@ const Teampravah = () => {
                         </h2>
 
 
-                        <div className="grid grid-cols-1 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 gap-8 flex-wrap">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
 
 
                             <Coordinator
@@ -482,7 +480,7 @@ const Teampravah = () => {
                         </h2>
 
 
-                        <div className="grid grid-cols-2 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 gap-3 flex-wrap">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
 
 
 
@@ -523,7 +521,7 @@ const Teampravah = () => {
                         </h2>
 
 
-                        <div className="grid grid-cols-1 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 gap-8 flex-wrap">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
 
 
                             <Coordinator
@@ -553,7 +551,7 @@ const Teampravah = () => {
                         </h2>
 
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 gap-8 flex-wrap">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
 
 
                             <Coordinator
@@ -592,7 +590,7 @@ const Teampravah = () => {
                         </h2>
 
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 gap-8 flex-wrap">
+                        <div className="flex flex-col sm:flex-row justify-center items-center gap-8 w-full max-w-sm sm:w-auto sm:max-w-full font-sans relative z-50 mt-8">
 
 
                             <Coordinator

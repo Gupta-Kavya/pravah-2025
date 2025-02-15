@@ -469,7 +469,7 @@ const Home = () => {
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    backgroundImage: "url('https://res.cloudinary.com/dktkdi3sm/image/upload/v1736597477/a6zdfboooimxw2hp9hcz.jpg')",
+                    backgroundImage: "url('https://res.cloudinary.com/dbwgfnop7/image/upload/v1739371883/s62fzdlocjj2w2o00jwd.jpg')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
@@ -526,7 +526,7 @@ const Home = () => {
 {/* 
     <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
       <img
-        src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
+        src="https://ik.imagekit.io/mkqo83m1r/rb_2149151140_y77eff.png?updatedAt=1739242990487"
         alt="Pravah 2025 - Incredible India | SKIT"
         className="w-full object-cover transform lg:translate-y-[120px] 2xl:translate-y-[120px] opacity-30"
       />
@@ -535,7 +535,7 @@ const Home = () => {
 
     <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
       <img
-        src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
+        src="https://ik.imagekit.io/mkqo83m1r/rb_2149151140_y77eff.png?updatedAt=1739242990487"
         alt="Pravah 2025 - Incredible India | SKIT"
         className="w-full object-cover transform lg:translate-y-[50px] 2xl:translate-y-[50px] opacity-20"
       />
@@ -544,7 +544,7 @@ const Home = () => {
 
     <div className="absolute bottom-0 -right-0 w-full hidden sm:block pointer-events-none">
       <img
-        src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151161/rb_2149158780_k69ryx.png"
+        src="https://ik.imagekit.io/mkqo83m1r/rb_2149158780_k69ryx.png?updatedAt=1739243122067"
         alt="Pravah 2025 - Incredible India | SKIT"
         className="w-full object-cover transform lg:translate-y-[250px] 2xl:translate-y-[250px] opacity-5"
       />
@@ -587,7 +587,7 @@ const Home = () => {
                       left: 0,
                       width: "100%",
                       height: "100%",
-                      backgroundImage: "url('https://res.cloudinary.com/dktkdi3sm/image/upload/v1736597477/a6zdfboooimxw2hp9hcz.jpg')",
+                      backgroundImage: "url('https://res.cloudinary.com/dbwgfnop7/image/upload/v1739371883/s62fzdlocjj2w2o00jwd.jpg')",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
@@ -644,7 +644,7 @@ const Home = () => {
                   {/* Images with the background */}
                   <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 sm:block z-0 pointer-events-none hidden">
                     <img
-                      src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151026/file_8_fo9nvt.png"
+                      src="https://ik.imagekit.io/mkqo83m1r/file_8_fo9nvt.png?updatedAt=1739242778269"
                       alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[140px] 2xl:translate-y-[140px] opacity-70"
                     />
@@ -652,7 +652,7 @@ const Home = () => {
 
                   <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-20 pointer-events-none">
                     <img
-                      src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1735652378/file_9_zso7ew.png"
+                      src="https://ik.imagekit.io/mkqo83m1r/file_9_zso7ew.png?updatedAt=1739242902103"
                       alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[380px]"
                     />
@@ -660,7 +660,7 @@ const Home = () => {
 
                   <div className="absolute bottom-10 -right-0 w-full sm:block z-0 pointer-events-none">
                     <img
-                      src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
+                      src="https://ik.imagekit.io/mkqo83m1r/rb_2149151140_y77eff.png?updatedAt=1739242990487"
                       alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[170px] 2xl:translate-y-[210px] opacity-30"
                     />
@@ -668,7 +668,7 @@ const Home = () => {
 
                   <div className="absolute bottom-0 -right-0 w-full sm:block z-0 pointer-events-none">
                     <img
-                      src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
+                      src="https://ik.imagekit.io/mkqo83m1r/rb_2149151140_y77eff.png?updatedAt=1739242990487"
                       alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[210px] opacity-20"
                     />
@@ -676,7 +676,7 @@ const Home = () => {
 
                   <div className="absolute bottom-0 -right-0 w-full sm:block z-0 pointer-events-none">
                     <img
-                      src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151161/rb_2149158780_k69ryx.png"
+                      src="https://ik.imagekit.io/mkqo83m1r/rb_2149158780_k69ryx.png?updatedAt=1739243122067"
                       alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[450px] opacity-5"
                     />
@@ -684,7 +684,7 @@ const Home = () => {
 
                   <div className="absolute -bottom-20 -left-20 w-96 sm:block z-0 pointer-events-none">
                     <img
-                      src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151201/rb_24869_k7ycdf.png"
+                      src="https://res.cloudinary.com/dbwgfnop7/image/upload/v1739371979/wk2hvoaoegtn4tuocjmx.png"
                       alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform"
                     />
@@ -692,7 +692,7 @@ const Home = () => {
 
                   <div className="absolute bottom-0 -right-20 w-96 sm:block z-50 pointer-events-none">
                     <img
-                      src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151226/rb_2150428350_oen28t.png"
+                      src="https://ik.imagekit.io/mkqo83m1r/rb_2150428350_oen28t.png?updatedAt=1739243375060"
                       alt="Pravah 2025 - Incredible India | SKIT"
                       className="w-full object-cover transform lg:translate-y-[40px] 2xl:translate-y-[40px]"
                     />
@@ -871,7 +871,7 @@ const Home = () => {
 
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96  sm:block z-50 pointer-events-none hidden">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151026/file_8_fo9nvt.png"
+                    src="https://ik.imagekit.io/mkqo83m1r/file_8_fo9nvt.png?updatedAt=1739242778269"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[140px] 2xl:translate-y-[140px]"
                   />
@@ -883,7 +883,7 @@ const Home = () => {
 
                 <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-20 pointer-events-none">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1735652378/file_9_zso7ew.png"
+                    src="https://ik.imagekit.io/mkqo83m1r/file_9_zso7ew.png?updatedAt=1739242902103"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[380px]"
                   />
@@ -893,7 +893,7 @@ const Home = () => {
 
                 <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-0 pointer-events-none">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
+                    src="https://ik.imagekit.io/mkqo83m1r/rb_2149151140_y77eff.png?updatedAt=1739242990487"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[170px] 2xl:translate-y-[210px] opacity-30"
                   />
@@ -902,7 +902,7 @@ const Home = () => {
 
                 <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-0 pointer-events-none">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
+                    src="https://ik.imagekit.io/mkqo83m1r/rb_2149151140_y77eff.png?updatedAt=1739242990487"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[100px] 2xl:translate-y-[210px] opacity-20"
                   />
@@ -911,7 +911,7 @@ const Home = () => {
 
                 <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-0 pointer-events-none">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736597567/yva3n1tkz7xkfswpvmg7.png"
+                    src="https://ik.imagekit.io/mkqo83m1r/yva3n1tkz7xkfswpvmg7.png?updatedAt=1739243074107"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[0px] 2xl:translate-y-[210px] opacity-5"
                   />
@@ -920,7 +920,7 @@ const Home = () => {
 
                 <div className="absolute bottom-0 -right-0 w-full hidden sm:block z-0 pointer-events-none">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151161/rb_2149158780_k69ryx.png"
+                    src="https://ik.imagekit.io/mkqo83m1r/rb_2149158780_k69ryx.png?updatedAt=1739243122067"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[300px] 2xl:translate-y-[450px] opacity-5"
                   />
@@ -934,7 +934,7 @@ const Home = () => {
 
                 <div className="absolute -bottom-20 -left-20 w-96 hidden sm:block z-0 pointer-events-none">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151201/rb_24869_k7ycdf.png"
+                    src="https://ik.imagekit.io/mkqo83m1r/rb_24869_k7ycdf.png?updatedAt=1739243270769"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform"
                   />
@@ -945,7 +945,7 @@ const Home = () => {
                 {/* <div className="absolute -bottom-1
                 0 left-40 w-96 hidden sm:block z-0 pointer-events-none">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151201/rb_24869_k7ycdf.png"
+                    src="https://res.cloudinary.com/dbwgfnop7/image/upload/v1739371979/wk2hvoaoegtn4tuocjmx.png"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[0] 2xl:translate-y-[0]"
                   />
@@ -955,7 +955,7 @@ const Home = () => {
 
                 <div className="absolute bottom-0 -right-20 w-96 hidden sm:block z-50 pointer-events-none">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151226/rb_2150428350_oen28t.png"
+                    src="https://ik.imagekit.io/mkqo83m1r/rb_2150428350_oen28t.png?updatedAt=1739243375060"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform lg:translate-y-[40px] 2xl:translate-y-[40px]"
                   />
@@ -980,22 +980,6 @@ const Home = () => {
 
               >
 
-
-                <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-10 sm:hidden hidden">
-                  <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-                    alt="Bottom Center Pattern"
-                    className="w-auto"
-                  />
-                </div>
-
-                <div className="absolute top-0 right-0 opacity-10 translate-x-1/2 -translate-y-16 sm:hidden hidden">
-                  <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-                    alt="Top Right Pattern"
-                    className="w-auto"
-                  />
-                </div>
 
 
                 {/* <div className="relative hidden sm:block">
@@ -1213,25 +1197,9 @@ const Home = () => {
               <div
                 className="section p-8 sm:p-16 lg:bg-slate-100 z-50 bg-slate-100 "
               >
-                {/* Bottom Center Pattern */}
-                <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-50 sm:hidden hidden">
-                  <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-                    alt="Bottom Center Pattern"
-                    className="w-auto"
-                  />
-                </div>
+   
 
-                {/* Top Right Pattern */}
-                <div className="absolute top-0 right-0 opacity-50 translate-x-1/2 -translate-y-16 sm:hidden hidden">
-                  <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-                    alt="Top Right Pattern"
-                    className="w-auto"
-                  />
-                </div>
-
-
+         
 
 
                       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes -z-10 opacity-10"></div>
@@ -1358,7 +1326,7 @@ const Home = () => {
 
                 <div className="absolute lg:bottom-0 left-0 w-full hidden sm:block z-0 2xl:-bottom-16">
                   <motion.img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1735652378/file_9_zso7ew.png"
+                    src="https://ik.imagekit.io/mkqo83m1r/file_9_zso7ew.png?updatedAt=1739242902103"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform"
                     initial={{ translateY: 400 }}
@@ -1656,7 +1624,7 @@ const Home = () => {
 
                 <div className="absolute bottom-0 left-0 w-full hidden sm:block z-10">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151370/file_2_sbdqgx.png"
+                    src="https://res.cloudinary.com/dbwgfnop7/image/upload/v1739372137/nuij5o6f4ucipsyyi7r8.png"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform translate-y-0 lg:-translate-y-5 2xl:translate-y-96 opacity-5"
                   />
@@ -1665,7 +1633,7 @@ const Home = () => {
 
                 <div className="absolute bottom-0 left-0 w-full sm:block z-30">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151325/rb_37172_uirryg.png"
+                    src="https://res.cloudinary.com/dbwgfnop7/image/upload/v1739372171/bl1qmkgr41wqc3ewlwtr.png"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full object-cover transform translate-y-16 lg:translate-y-80 2xl:translate-y-96"
                   />
@@ -1690,25 +1658,7 @@ const Home = () => {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                {/* Bottom Center Pattern */}
-                <div className="absolute bottom-0 transform -translate-x-1/2 translate-y-1/2 opacity-50 sm:hidden hidden">
-                  <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-                    alt="Bottom Center Pattern"
-                    className="w-auto"
-                  />
-                </div>
-
-                {/* Top Right Pattern */}
-                <div className="absolute top-0 right-0 opacity-50 translate-x-1/2 -translate-y-16 sm:hidden hidden">
-                  <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1731942286/klovm3j5eouby04wwjpq.png"
-                    alt="Top Right Pattern"
-                    className="w-auto"
-                  />
-                </div>
-
-
+          
 
                 
                 <div
@@ -1718,7 +1668,7 @@ const Home = () => {
                             left: 0,
                             width: "100%",
                             height: "100%",
-                            backgroundImage: "url('https://res.cloudinary.com/dktkdi3sm/image/upload/v1736757952/vsezwa26ofmiwqk8ivrn.jpg')",
+                            backgroundImage: "url('https://res.cloudinary.com/dbwgfnop7/image/upload/v1739372230/ayvpwbgqn1n23aa0ihia.jpg')",
                             backgroundSize: "cover",
                             backgroundPosition: "center",
                             backgroundRepeat: "no-repeat",
@@ -1813,7 +1763,7 @@ const Home = () => {
                   transition={{ duration: 1 }}
                 >
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151088/rb_2149151140_y77eff.png"
+                    src="https://ik.imagekit.io/mkqo83m1r/rb_2149151140_y77eff.png?updatedAt=1739242990487"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full h-auto object-cover transform translate-y-[0px] translate-x-0 opacity-30"
                   />
@@ -1821,7 +1771,7 @@ const Home = () => {
 
                 <div className="absolute -bottom-0 left-0 w-full sm:hidden pointer-events-none -z-20">
                   <img
-                    src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1736151161/rb_2149158780_k69ryx.png"
+                    src="https://ik.imagekit.io/mkqo83m1r/rb_2149158780_k69ryx.png?updatedAt=1739243122067"
                     alt="Pravah 2025 - Incredible India | SKIT"
                     className="w-full h-auto object-cover transform translate-y-[0px] translate-x-0 opacity-10"
                   />

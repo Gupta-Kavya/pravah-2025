@@ -39,9 +39,7 @@ const DesktopFooter = () => {
                 <li className="mb-2">
                   <a href="/skit-pravah-2025-events">Events</a>
                 </li>
-                <li className="mb-2">
-                  <a href="#">Campus Ambassador</a>
-                </li>
+              
               </ul>
             </div>
 
@@ -57,9 +55,7 @@ const DesktopFooter = () => {
                 <li className="mb-2">
                   <a href="https://forms.gle/ntPVd8NgToLwsJ7M9">Events</a>
                 </li>
-                <li className="mb-2">
-                  <a href="#">Accommodation</a>
-                </li>
+           
                 <li className="mb-2">
                   <a href="https://forms.gle/byd1D7Suq24a5LR2A">Bug Report</a>
                 </li>

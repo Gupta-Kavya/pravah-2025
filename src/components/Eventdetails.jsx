@@ -202,7 +202,7 @@ const Eventdetails = () => {
     }, 1000);
   }
 
-  startCountdown(event?.eventDate, "countdown")
+  startCountdown(event?.timerDate ? event?.timerDate : event?.eventDate, "countdown")
 
   return (
     <div>
@@ -365,7 +365,7 @@ const Eventdetails = () => {
                       ease: "easeOut",
                     }}
                   >
-                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#f0f9ff] to-[#e9ffff] bg-pattern-stripes z-0 opacity-10"></div>
+        
                     <div className="border-b border-gray-300 pb-2 mb-4">
                       <h1 className="text-xl font-semibold text-gray-800">Register</h1>
                       <button

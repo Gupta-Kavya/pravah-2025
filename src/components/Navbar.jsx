@@ -61,7 +61,7 @@ const Navbarr = ({ bgColor = "bg-slate-100", textColor, filter, announce, navbar
           {/* Left Links (for desktop) */}
           <div className="hidden md:flex space-x-8 items-center flex-grow justify-start">
           <a 
-  href={`/skit-pravah-2025?_=${new Date().getTime()}`}
+  href={`/skit-pravah-2025`}
   className={`text-md font-medium ${isDesktop ? textColor : 'text-black'} relative pb-1 group`}
 >
               HOME
@@ -90,7 +90,7 @@ const Navbarr = ({ bgColor = "bg-slate-100", textColor, filter, announce, navbar
           </div>
 
           {/* Logo (Centered) */}
-          <a href={`/skit-pravah-2025?_=${new Date().getTime()}`}>
+          <a href={`/skit-pravah-2025`}>
             <div className="sm:flex sm:justify-center sm:items-center flex-grow">
 
               <img
@@ -107,7 +107,7 @@ const Navbarr = ({ bgColor = "bg-slate-100", textColor, filter, announce, navbar
               />
 
               <img
-                src={logo ? logo : "https://res.cloudinary.com/dktkdi3sm/image/upload/v1735358630/sxt058o5ftklmmq3biva.png"}
+                src={logo ? logo : "https://ik.imagekit.io/2lfvkrya5/sxt058o5ftklmmq3biva-min.png?updatedAt=1739642885356"}
                 className="sm:w-16 w-16 hidden sm:block mx-4" // Apply filter dynamically
                 alt="SKIT M & G Logo"
               />

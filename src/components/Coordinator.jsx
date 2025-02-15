@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'; // Importing motion from framer-motion
 const Coordinator = ({ name, number, photo }) => {
   return (
     <motion.div
-      className="flex py-10 sm:py-10 sm:w-64"
+      className="flex py-10 sm:py-10 sm:w-64 w-full"
       initial={{ opacity: 0, y: 50 }} // Start with the card off-screen
       whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and position when in view
       viewport={{ once: true, amount: 0.2 }} // Trigger once when 20% of the card is visible

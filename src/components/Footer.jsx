@@ -41,11 +41,7 @@ const Footer = () => {
                                         Events
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#" className="hover:underline">
-                                        Campus Ambassador
-                                    </a>
-                                </li>
+                              
                             </ul>
                         </div>
                         <div>
@@ -67,11 +63,7 @@ const Footer = () => {
                                         Events
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#" className="hover:underline">
-                                        Accomodation
-                                    </a>
-                                </li>
+                               
                                 <li>
                                     <a href="https://forms.gle/byd1D7Suq24a5LR2A" className="hover:underline">
                                         Bug Report

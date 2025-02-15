@@ -257,7 +257,7 @@ const SpotlightGrid = () => {
       <div className="justify-center absolute -right-1 top-6 hidden lg:flex" >
 
         <button className="px-6 py-3 text-lg font-bold text-purple-100 bg-black border border-white rounded-l-full shadow-lg" onClick={() => { setIsOpen(true); }}>
-          Discover Technical Events
+          Reveal Celebrities
         </button>
 
       </div>
@@ -273,7 +273,7 @@ const SpotlightGrid = () => {
               animate={{ x: "0%" }}
               transition={{ duration: 1, ease: "easeInOut" }}
               exit={{ x: "-100%" }}
-              className="hidden absolute inset-0 bg-gradient-to-r from-black via-gray-500 to-black  flex-col items-center h-screen z-50 justify-center overflow-hidden"
+              className="flex absolute inset-0 bg-gradient-to-r from-black via-gray-500 to-black  flex-col items-center h-screen z-50 justify-center overflow-hidden"
             >
 
               {/* Confetti animation */}
@@ -288,23 +288,40 @@ const SpotlightGrid = () => {
               </h1>
 
               {/* Crazy animated posters for the reveal */}
-              <div className="flex justify-center items-center mt-8 space-x-16 z-50">
-                <div className="relative w-80 h-80 animate__animated animate__flipInY animate__delay-1s">
-                  <img
-                    src="https://www.lakshya.poornima.edu.in/images/days/3.jpg" // Replace with poster 1 image URL
-                    alt="Celebrity Poster"
-                    className="w-full h-full object-cover rounded-lg transform hover:scale-110 transition-all duration-500"
-                  />
-                </div>
+              <div className="flex justify-center items-center mt-8 space-x-16 z-50 perspective-1000">
+  <div
+    className="relative w-80 h-80 animate__animated animate__flipInY animate__delay-1s"
+    style={{ transform: "rotateY(20deg)", transformOrigin: "center", perspective: "1000px" }}
+  >
+    <img
+      src="https://res.cloudinary.com/dcw8a8qlb/image/upload/v1739423198/sswpswp5rortpx2qawmx.png"
+      alt="Celebrity Poster"
+      className="w-full h-full object-cover rounded-lg hover:scale-110 transition-all duration-500"
+    />
+  </div>
 
-                <div className="relative w-80 h-80 animate__animated animate__flipInY animate__delay-1s">
-                  <img
-                    src="https://www.lakshya.poornima.edu.in/images/days/2.jpg" // Replace with poster 2 image URL
-                    alt="Comedian Poster"
-                    className="w-full h-full object-cover rounded-lg transform hover:scale-110 transition-all duration-500"
-                  />
-                </div>
-              </div>
+  <div
+    className="relative w-80 h-80 animate__animated animate__flipInY animate__delay-1s"
+    style={{ transform: "rotateY(0deg)", transformOrigin: "center", perspective: "1000px" }}
+  >
+    <img
+      src="https://res.cloudinary.com/dcw8a8qlb/image/upload/v1739423198/dhjza6ljt2hnwz28vi31.png"
+      alt="Comedian Poster"
+      className="w-full h-full object-cover rounded-lg scale-110 transition-all duration-500"
+    />
+  </div>
+
+  <div
+    className="relative w-80 h-80 animate__animated animate__flipInY animate__delay-1s"
+    style={{ transform: "rotateY(-20deg)", transformOrigin: "center", perspective: "1000px" }}
+  >
+    <img
+      src="https://res.cloudinary.com/dcw8a8qlb/image/upload/v1739423198/luugmfurhwye9mkar9le.png"
+      alt="Comedian Poster"
+      className="w-full h-full object-cover rounded-lg hover:scale-110 transition-all duration-500"
+    />
+  </div>
+</div>
 
               {/* Close Button */}
               <button

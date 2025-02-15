@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbarr from "./Navbar";
 import DesktopFooter from "./DesktopFooter";
@@ -8,6 +8,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { FaArrowRight } from "react-icons/fa";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { Helmet } from "react-helmet";
+import Coordinator from "./Coordinator";
 
 const Eventlist = () => {
     const { eventcat } = useParams();
@@ -15,57 +16,26 @@ const Eventlist = () => {
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [hasMore, setHasMore] = useState(true);
-    const loader = useRef(null);
-
-
-    const fetchEvents = useCallback(async (page = 1) => {
-        setLoading(true);
-        try {
-            const response = await fetch(
-                `${process.env.REACT_APP_API_URL}api/events/category/${eventcat}?page=${page}`
-            );
-            const data = await response.json();
-
-            const eventsData = Array.isArray(data.events) ? data.events : [];
-         
-            if (eventsData.length === 0) {
-                setHasMore(false);
-            } else {
-                setEvents((prevEvents) => [...prevEvents, ...eventsData]);
-            }
-        } catch (error) {
-            setError("Failed to fetch events. Please try again.");
-        } finally {
-            setLoading(false);
-        }
-    }, [eventcat]);
 
     useEffect(() => {
-        fetchEvents();
-        console.log("object");
-    }, [eventcat, fetchEvents]);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                if (entries[0].isIntersecting && hasMore && !loading) {
-                    fetchEvents(Math.ceil(events.length / 10) + 1);
-                }
-            },
-            { threshold: 1.0 }
-        );
-
-        if (loader.current) {
-            observer.observe(loader.current);
-        }
-
-        return () => {
-            if (loader.current) {
-                observer.unobserve(loader.current);
+        const fetchEvents = async () => {
+            setLoading(true);
+            try {
+                const response = await fetch(
+                    `${process.env.REACT_APP_API_URL}api/events/category/${eventcat}`
+                );
+                const data = await response.json();
+                setEvents(Array.isArray(data.events) ? data.events : []);
+            } catch (error) {
+                setError("Failed to fetch events. Please try again.");
+            } finally {
+                setLoading(false);
             }
         };
-    }, [loader, hasMore, loading, fetchEvents, events.length]);
+
+        fetchEvents();
+    }, [eventcat]);
+
 
     return (
         <div>
@@ -107,7 +77,7 @@ const Eventlist = () => {
                     
                     <main className="min-h-screen flex flex-col items-center px-4 sm:px-6 md:px-0 mt-8 sm:mt-24 relative mb-72 gap-8">
                     <motion.div
-    className="mt-20 grid grid-cols-2 sm:flex sm:flex-wrap gap-4 sm:gap-8 sm:justify-center"
+    className="mt-28 grid grid-cols-2 sm:flex sm:flex-wrap gap-4 sm:gap-8 sm:justify-center"
     initial={{ opacity: 0, y: 160 }}
     whileInView={{ opacity: 1, y: 120 }}
     viewport={{ once: true, amount: 0.2 }}
@@ -160,17 +130,37 @@ const Eventlist = () => {
 </motion.div>
 
 
-                        {loading && (
-                            <div className="flex justify-center mt-10">
-                                Loading...
-                            </div>
-                        )}
 
-                        {error && (
-                            <p className="text-red-600 mt-4">{error}</p>
-                        )}
 
-                        <div ref={loader} className="w-full h-10"></div>
+                         {/* <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-3 mt-10 relative font-sans  tracking-tight">
+                                      <motion.span
+                                        initial={{ opacity: 0, y: 100 }} // Start with the title off-screen and invisible
+                                        whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and position when in view
+                                        viewport={{ once: true, amount: 0.2 }} // Trigger the animation once when 20% of the title is visible
+                                        transition={{ duration: 0.8, ease: 'easeOut' }} // Duration and easing for smooth transition
+                                        className="relative inline-block"
+                                      >
+                        
+                                      Student Coordinators
+                        
+                        
+                                        <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-[4px] bg-gradient-to-r from-[#280f38] to-[#5a015a] mt-1 rounded-full"></span>
+                                      </motion.span>
+                                    </h2> */}
+
+
+
+
+                                    
+            {/* <center>
+              <div className="flex justify-center items-center font-sans mb-8">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-8 w-full max-w-6xl">
+                  <Coordinator name="Snehal Gajraj" number="9929715052" />
+                  <Coordinator name="Kunal Vishnoi" number="9672419399" />
+                  <Coordinator name="Aditya Sharma" number="9672419399" />
+                </div>
+              </div>
+            </center> */}
                     </main>
                 </Parallax>
 

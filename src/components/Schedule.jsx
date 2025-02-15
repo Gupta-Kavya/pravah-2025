@@ -51,13 +51,18 @@ const Schedule = () => {
         return acc;
     }, {});
 
-    // Sort events by date
+    // Sort events by date and within each date, sort by event start time
     const sortedGroupedEvents = Object.entries(groupedEvents)
         .sort(([dateA], [dateB]) => new Date(dateA) - new Date(dateB)) // Sort by date
         .reduce((acc, [date, events]) => {
-            acc[date] = events;
+            acc[date] = events.sort((a, b) => {
+                const [aHour, aMinute] = a.eventTimings.from.split(':').map(Number);
+                const [bHour, bMinute] = b.eventTimings.from.split(':').map(Number);
+                return aHour * 60 + aMinute - (bHour * 60 + bMinute); // Convert time to minutes and compare
+            });
             return acc;
         }, {});
+
 
     // Check if the current time is within event timings
     const isLiveEvent = (timings) => {
@@ -82,7 +87,18 @@ const Schedule = () => {
         return `${formattedHours}:${minutes.toString().padStart(2, '0')} ${period}`;
     };
 
-
+    const formatDayWithSuffix = (dateString) => {
+        const date = new Date(dateString);
+        const day = date.getDate();
+    
+        let suffix = "th";
+        if (day % 10 === 1 && day !== 11) suffix = "st";
+        else if (day % 10 === 2 && day !== 12) suffix = "nd";
+        else if (day % 10 === 3 && day !== 13) suffix = "rd";
+    
+        return `${day}${suffix}`;
+    };
+    
 
     return (
         <div>
@@ -158,8 +174,9 @@ const Schedule = () => {
                                     >
                                         <div className="flex items-center">
                                             <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-black to-black audiowide-regular">
-                                                {`DAY ${index + 1}`}
+                                                {`DAY ${index + 1} - ${formatDayWithSuffix(day)}`} Feb
                                             </h2>
+
                                         </div>
 
                                         {/* Live Icon */}
