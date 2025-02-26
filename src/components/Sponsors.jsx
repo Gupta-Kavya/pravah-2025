@@ -155,19 +155,19 @@ const Sponsors = () => {
                                     <div className="flex gap-8 flex-wrap justify-center items-center">
                                         <img
                                             src="https://res.cloudinary.com/dcw8a8qlb/image/upload/v1739098633/a71j8d8bucfusm2keadi.png"
-                                            alt="Workplace Readiness Solution Partner"
+                                            alt=""
                                             className="w-52 h-auto"
                                         />
 
                                         <img
                                             src="https://res.cloudinary.com/dcw8a8qlb/image/upload/v1739204667/zb9skcclrfrdpljx8yob.png"
-                                            alt="Workplace Readiness Solution Partner"
+                                            alt=""
                                             className="w-52 h-auto "
                                         />
 
                                         <img
                                             src="http://res.cloudinary.com/dbwgfnop7/image/upload/v1739289672/mnokcekm9qsi4rh8ieh7.svg"
-                                            alt="Workplace Readiness Solution Partner"
+                                            alt=""
                                             className="w-52 h-auto"
                                         />
 
@@ -181,11 +181,23 @@ const Sponsors = () => {
                                     </h3>
                                     <img
                                         src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1738593791/mc0ios9qihp944xez0s4.png"
-                                        alt="Workplace Readiness Solution Partner"
+                                        alt=""
                                         className="w-52 h-auto"
                                     />
                                 </div>
 
+
+
+                                <div className="flex flex-col items-center">
+                                    <h3 className="text-xl font-medium uppercase tracking-wider mb-6 audiowide-regular text-center">
+                                        Health Partner
+                                    </h3>
+                                    <img
+                                        src="https://res.cloudinary.com/dbwgfnop7/image/upload/v1739865801/lwtgqg7h7gcscot4o5tp.png"
+                                        alt=""
+                                        className="w-52 h-auto"
+                                    />
+                                </div>
 
                                 
                                 {/* <div className="flex flex-col items-center">
@@ -308,7 +320,7 @@ const Sponsors = () => {
                             <div className="flex flex-col items-center">
                                 <img
                                     src="http://res.cloudinary.com/dktkdi3sm/image/upload/v1736790236/rsnfhxkznnongeu3dhsl.svg"
-                                    alt="Akshat"
+                                    alt=""
                                     className="w-48 h-auto mb-4"
                                 />
                             </div>
@@ -317,7 +329,7 @@ const Sponsors = () => {
                             <div className="flex flex-col items-center">
                                 <img
                                     src="https://res.cloudinary.com/dcw8a8qlb/image/upload/v1739433758/vivhtemp26hh91xzmmas.png"
-                                    alt="Akshat"
+                                    alt=""
                                     className="w-48 h-auto mb-4"
                                 />
                             </div>
@@ -326,7 +338,7 @@ const Sponsors = () => {
                             <div className="flex flex-col items-center">
                                 <img
                                     src="https://res.cloudinary.com/dktkdi3sm/image/upload/v1738861132/l2eg3r9cudnaed5eitep.png"
-                                    alt="Akshat"
+                                    alt=""
                                     className="w-48 h-auto mb-4"
                                 />
                             </div>
@@ -336,7 +348,7 @@ const Sponsors = () => {
                             <div className="flex flex-col items-center">
                                 <img
                                     src="https://res.cloudinary.com/dcw8a8qlb/image/upload/v1739433433/yuapu6jk8adeop4fbjhe.png"
-                                    alt="Akshat"
+                                    alt=""
                                     className="w-40 h-auto mb-4"
                                 />
                             </div>
@@ -345,11 +357,29 @@ const Sponsors = () => {
                             <div className="flex flex-col items-center">
                                 <img
                                     src="https://res.cloudinary.com/dcw8a8qlb/image/upload/v1739530215/deyp8ldqxwv5ko9hiaac.png"
-                                    alt="Akshat"
+                                    alt=""
                                     className="w-48 h-auto mb-4 filter grayscale brightness-0 contrast-100"
                                 />
                             </div>
 
+
+
+                            <div className="flex flex-col items-center">
+                                <img
+                                    src="https://res.cloudinary.com/dbwgfnop7/image/upload/v1739853556/aofsui4wdxw4jwl0payy.png"
+                                    alt=""
+                                    className="w-48 h-auto mb-4"
+                                />
+                            </div>
+
+
+                            <div className="flex flex-col items-center">
+                                <img
+                                    src="https://res.cloudinary.com/dbwgfnop7/image/upload/v1739865865/zpmd8xsxm9fec0xigzyr.jpg"
+                                    alt=""
+                                    className="w-48 h-auto mb-4"
+                                />
+                            </div>
 
                         </motion.section>
 

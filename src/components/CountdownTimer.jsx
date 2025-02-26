@@ -38,18 +38,18 @@ const CountdownTimer = ({ eventDate }) => {
     return (
       <div className="flex items-center justify-center mt-8 space-x-3">
         {/* Gradient Circle */}
-        <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-ping relative">
+        {/* <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-ping relative">
           <div className="absolute inset-0 w-full h-full bg-red-500 rounded-full"></div>
-        </div>
+        </div> */}
         {/* Live Text */}
-        <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-600 tracking-wide dynapuff">
-          Event is Live Now
+        <span className="text-lg font-bold tracking-wide dynapuff text-red-600">
+          15 <sup>th</sup> - 22 <sup>nd</sup> February
         </span>
 
         {/* Gradient Circle */}
-        <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-ping relative">
+        {/* <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-ping relative">
           <div className="absolute inset-0 w-full h-full bg-red-500 rounded-full"></div>
-        </div>
+        </div> */}
       </div>
     );
   }
