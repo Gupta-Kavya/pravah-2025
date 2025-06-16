@@ -44,20 +44,10 @@ This is the official event registration website for **Pravah 2025**, the annual 
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](./screenshots/homepage.png)
+![Homepage](https://i.ibb.co/0yTF5nbW/Screenshot-2025-06-17-002555.png)
 
 ### Event Details
-![Event Page](./screenshots/event-details.png)
+![Event Page](https://i.postimg.cc/LXJtSzrY/Screenshot-2025-06-17-002649.png)
 
 ### Admin Dashboard
-![Admin Panel](./screenshots/admin-panel.png)
-
----
-
-## 🧑‍💻 Getting Started
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/pravah-2025.git
-cd pravah-2025
+![Admin Panel](https://i.postimg.cc/bJ4QwZh6/Screenshot-2025-06-17-003600.png)
