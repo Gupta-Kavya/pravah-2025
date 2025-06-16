@@ -51,3 +51,9 @@ This is the official event registration website for **Pravah 2025**, the annual 
 
 ### Admin Dashboard
 ![Admin Panel](https://i.postimg.cc/bJ4QwZh6/Screenshot-2025-06-17-003600.png)
+
+## 🌐 Visit the Live Site
+
+👉 [pravah.skit.ac.in](https://pravah.skit.ac.in)  
+Experience the full platform live and explore the events of **Pravah 2025**!
+
